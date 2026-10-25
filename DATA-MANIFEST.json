@@ -1,0 +1,272 @@
+{
+  "schema": "climate-plus/frozen-data-manifest-v1",
+  "createdAt": "2026-10-22",
+  "meaning": "Frozen handoff snapshots; byte identity does not establish measurement truth.",
+  "files": [
+    {
+      "path": "public/data/benchmark.json",
+      "bytes": 54755,
+      "sha256": "7917e4b423acdcf73000c39dcdf062170c77d30d44433e0823d6f21ac1d37279"
+    },
+    {
+      "path": "public/data/climate-analysis.json",
+      "bytes": 26901,
+      "sha256": "e208cc2ba065c82e0566db551d1f248c5149aada1197c5b42479fc875ebcac8a"
+    },
+    {
+      "path": "public/data/credibility-audit.json",
+      "bytes": 2635,
+      "sha256": "012d57d4076cfaec3247bf5f06b65b1c1e9ee0f322cdc588e55cf5b8ae835a51"
+    },
+    {
+      "path": "public/data/gis-network.geojson",
+      "bytes": 17363,
+      "sha256": "586b439d930a69b3ac35bc698e8df5c7d62314a523eb11ce2f1e9a469adc7775"
+    },
+    {
+      "path": "public/data/gis-network.json",
+      "bytes": 8978,
+      "sha256": "96550624c5192e9058c4c41b4ff887f61e77b4bd00392ee445a1a72218e71797"
+    },
+    {
+      "path": "public/data/water-evidence.json",
+      "bytes": 1044355,
+      "sha256": "f6e14c93fac76b94a68d172e205d54292b9048b230139317f5eef8de1b658ffe"
+    },
+    {
+      "path": "public/data/water-stations.geojson",
+      "bytes": 897587,
+      "sha256": "448efa00bcfee7a83c56bf2b792f0bdb060aa50b420adb0952a3f00e3be39ac1"
+    },
+    {
+      "path": "public/data/water-validation.json",
+      "bytes": 86367,
+      "sha256": "e408e7ed0415dfd88909463709f38a1d34944299d2285fdec30c9629e6dec721"
+    },
+    {
+      "path": "public/fonts/manrope-latin.ttf",
+      "bytes": 95688,
+      "sha256": "b8f802f05b322a7345805f5b89f8bb976604cc719a91530918d5ce3c47160950"
+    },
+    {
+      "path": "public/fonts/OFL.txt",
+      "bytes": 4387,
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    {
+      "path": "public/fonts/SOURCE.txt",
+      "bytes": 231,
+      "sha256": "d50bb31d202829be4ae0df83d3cec15ae6808bfe1fd70c0d5703019b679395a7"
+    },
+    {
+      "path": "research/gis/v1/climate_gis.gpkg",
+      "bytes": 2732032,
+      "sha256": "033646cae59e23c55655668323a72bca7219e257d21050b05fa2ca96de2ced65"
+    },
+    {
+      "path": "research/raw/power.txt",
+      "bytes": 8315,
+      "sha256": "af6f8b715919e3d4b067b7b141627db1f9b4464249795896d9c2d627795c54fe"
+    },
+    {
+      "path": "research/raw/roni.txt",
+      "bytes": 97820,
+      "sha256": "c3a07a7f28a7d69acef4fe03eb91482b062d1a1d63f462c181b0f5d5d4f23ff8"
+    },
+    {
+      "path": "research/water/basis-metadata.json",
+      "bytes": 7828,
+      "sha256": "347f023eee8c85a9134d65d783dea7ff64e70cfa65c686811b9fda6670942961"
+    },
+    {
+      "path": "research/water/basis-v2.xlsx",
+      "bytes": 85999,
+      "sha256": "3ab21b826163b70fe34370d7816784f394bae22a39830634e19a8affe84704f7"
+    },
+    {
+      "path": "research/water/dhaka-metadata.json",
+      "bytes": 4590,
+      "sha256": "feeb9424acdbb319a947aa5d534d0d334f32cbdac427462c254adb43f4df3abc"
+    },
+    {
+      "path": "research/water/ecr2023-page53.png",
+      "bytes": 223932,
+      "sha256": "f28c85bc7e70b9530ee133dd0e27b3ecc8d1e39560db71e3efc3f14281353195"
+    },
+    {
+      "path": "research/water/ecr2023.pdf",
+      "bytes": 826000,
+      "sha256": "21c2b53f98a4e061f4321818c262149c4aaccf44a6f2a8635b152bde43c23c4a"
+    },
+    {
+      "path": "research/water/Water quality.csv",
+      "bytes": 182314,
+      "sha256": "baa149c139cc514b1f339015f49cb8afca459e1c2e7323e10f5d7b6defa49a7a"
+    },
+    {
+      "path": "public/data/regions/chattogram-graph.json",
+      "bytes": 1152453,
+      "sha256": "ed0096ed0fad33debef343c5a3a465e7f460006b68af4757636f552f1a793b3b"
+    },
+    {
+      "path": "public/data/regions/chattogram-scenario.json",
+      "bytes": 5210,
+      "sha256": "9fb1ef7fb2d7a171506748802a30efcdd41363b7aeffd625d8034e4b05b86be2"
+    },
+    {
+      "path": "public/data/regions/dacope-graph.json",
+      "bytes": 905352,
+      "sha256": "22d5a896ad278b01570748fe9589e205f4f4e3de4b75d54a356fca4908826d0f"
+    },
+    {
+      "path": "public/data/regions/dacope-scenario.json",
+      "bytes": 6202,
+      "sha256": "b4983a3b3d24d002d83017d889b957d3657855cb29e35eb3aa9d9531c6bb5a10"
+    },
+    {
+      "path": "public/data/regions/index.json",
+      "bytes": 5184,
+      "sha256": "e3e5b29899dfe996ec7a826617bc8915dfebcdb0e0ea92439c4a9a84d7daa3f3"
+    },
+    {
+      "path": "public/data/regions/khulna-graph.json",
+      "bytes": 443452,
+      "sha256": "2750fc1145d892eaaef9ed7e6d103c29e292f8c94169180bcd378e6acaf74e19"
+    },
+    {
+      "path": "public/data/regions/khulna-scenario.json",
+      "bytes": 5039,
+      "sha256": "fbd6d3aca4408ecdc05b56d349916a93f580b3faf77a2527effde3c472cc250e"
+    },
+    {
+      "path": "public/data/regions/tongi-graph.json",
+      "bytes": 689499,
+      "sha256": "e668ace4e2228065ed74c23b3cadcbfd70047bb878567fa742abd4ff80c780e5"
+    },
+    {
+      "path": "public/data/regions/tongi-scenario.json",
+      "bytes": 5022,
+      "sha256": "795ecad12af472b29b0e4445a8e9b3dcb9e33ba551d0363e7cc2d40c1a0dfa1a"
+    },
+    {
+      "path": "public/data/regions/ukhia-graph.json",
+      "bytes": 234049,
+      "sha256": "b099e0e65a72b3e7fd8a1776d131f20def9cb9cd541cafb8fefe95c0e27322d9"
+    },
+    {
+      "path": "public/data/regions/ukhia-scenario.json",
+      "bytes": 5030,
+      "sha256": "ac58320a426e98e12d5f63ebdcfc58aed1287172cc197011cfd9bc7572dfee2a"
+    },
+    {
+      "path": "public/data/river-pollution-context.json",
+      "bytes": 580461,
+      "sha256": "470bd538a0b1c41c0d591ba307c6d94dfc3430b93ac661d8988efd65bf24398e"
+    },
+    {
+      "path": "public/data/source-register.json",
+      "bytes": 16814,
+      "sha256": "dea4a0a7eb29a5e0102b2332e34c2cceebb6088c94336e8bc1d7f92e831cf6ac"
+    },
+    {
+      "path": "research/gis/kaggle-v2/Pollution_Intensity_Coordinates_Updated.csv",
+      "bytes": 570583,
+      "sha256": "6b485b31ef664cfb0ae79f4bef6dab9968916e2646db79ec76363ac6b098d665"
+    },
+    {
+      "path": "research/gis/kaggle-v2/acquisition.json",
+      "bytes": 1179,
+      "sha256": "43dd0b301b29389a9e7a75b1823d340b93963e3b5bcbd226e2e914fb76237993"
+    },
+    {
+      "path": "research/gis/kaggle-v2/dataset-metadata.json",
+      "bytes": 2399,
+      "sha256": "f90c9b1a9965623d59088183ff1e134d9cc895ed0b603a7e3e886927a21b0f5a"
+    },
+    {
+      "path": "research/gis/kaggle-v2/dataset-search.json",
+      "bytes": 1695,
+      "sha256": "cf66869b4a93b6a48d729cc1f7e206d4742e47597cf2ac36a6b8f65989ca55fa"
+    },
+    {
+      "path": "research/gis/kaggle-v2/file-catalogue.json",
+      "bytes": 6063,
+      "sha256": "921a0e9f39654eeef9a669a52d92b7e108dcccfe85998b1cb7873b11a6309a2c"
+    },
+    {
+      "path": "research/gis/regions-v3/chattogram/query.overpassql",
+      "bytes": 80,
+      "sha256": "b66b47e6729f9386d1c3dd072ff42919b8c2f3921cfa346eccf6a1f0d21e5f66"
+    },
+    {
+      "path": "research/gis/regions-v3/chattogram/roads.overpass.json",
+      "bytes": 1483447,
+      "sha256": "41e73f2fa6efaa76430ae48448e384e31b0c68b7002fcd642fc5987b5e636c76"
+    },
+    {
+      "path": "research/gis/regions-v3/chattogram/source.json",
+      "bytes": 1321,
+      "sha256": "34b6787acf2a2fe676714746cf76813e8fc2fa3295039fa15e24a985fc4ce6cb"
+    },
+    {
+      "path": "research/gis/regions-v3/khulna/query.overpassql",
+      "bytes": 81,
+      "sha256": "3dc35dda697bc477e619a2ea419932c71a6c5439e679d2433215628695b202f5"
+    },
+    {
+      "path": "research/gis/regions-v3/khulna/roads.overpass.json",
+      "bytes": 607248,
+      "sha256": "f20d64c54cdddc6752070ef3a6a01f16ba95defe9a186c222b7fbd6d25e30cc1"
+    },
+    {
+      "path": "research/gis/regions-v3/khulna/source.json",
+      "bytes": 1660,
+      "sha256": "a383c346ccf7d970fc94f6caf8fc166f6cc9e16ba913f2d92276ad6b1673bbbe"
+    },
+    {
+      "path": "research/gis/regions-v3/tongi/history/a1e6e3ff983fd7fb/query.overpassql",
+      "bytes": 81,
+      "sha256": "9530350b4a5b3a0daa99501dc851a174f518317a8b7c5b77ca6883c78deae619"
+    },
+    {
+      "path": "research/gis/regions-v3/tongi/history/a1e6e3ff983fd7fb/roads.overpass.json",
+      "bytes": 679698,
+      "sha256": "a1e6e3ff983fd7fb81d240009a3cae0081744511de70f9ba811c412f23514b74"
+    },
+    {
+      "path": "research/gis/regions-v3/tongi/history/a1e6e3ff983fd7fb/source.json",
+      "bytes": 1300,
+      "sha256": "a8846f2910cb6c37e6b8caafd786e9c064f6cf4c63e8973359ef86f3bf7bbfcc"
+    },
+    {
+      "path": "research/gis/regions-v3/tongi/query.overpassql",
+      "bytes": 80,
+      "sha256": "e486f8b38c8f0d8e2cd9568f58e1d39890d2fea2f7826d0e6f09d96743a5fe05"
+    },
+    {
+      "path": "research/gis/regions-v3/tongi/roads.overpass.json",
+      "bytes": 826155,
+      "sha256": "36a0c3c78320f0073ba8e1a1af5c69150cf41d744cac0d66dae394d65b2350d5"
+    },
+    {
+      "path": "research/gis/regions-v3/tongi/source.json",
+      "bytes": 1298,
+      "sha256": "9598134edb1b45ebd44a83b3cfd6ecdee039ebb3e9de86f486de3b7f25625d93"
+    },
+    {
+      "path": "research/gis/regions-v3/ukhia/query.overpassql",
+      "bytes": 80,
+      "sha256": "3ae6f0dbe249af538e4fb432013d9b1cd2412309c6617146679ab7d742959b0e"
+    },
+    {
+      "path": "research/gis/regions-v3/ukhia/roads.overpass.json",
+      "bytes": 426176,
+      "sha256": "89cfb946513feac986f115e7861c9dbb7806dc3b3a8cd0262751ef18ca80849a"
+    },
+    {
+      "path": "research/gis/regions-v3/ukhia/source.json",
+      "bytes": 1298,
+      "sha256": "a2c83ff31f64bb0b287e215847741fa59d0e63f76e4e8b2d255e9cb87e4e4155"
+    }
+  ]
+}

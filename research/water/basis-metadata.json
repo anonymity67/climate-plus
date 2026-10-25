@@ -1,0 +1,162 @@
+{
+  "id": "bncwnj8yjt",
+  "doi": {
+    "id": "10.17632/bncwnj8yjt.2",
+    "status": "allocated",
+    "prefix": "10.17632"
+  },
+  "name": "Dataset for the BASIS Framework: High-Resolution Spatial, Diurnal, and Hydraulic Fecal Pollution Tracking in Resource-Limited Urban Channels",
+  "description": "This dataset contains high-frequency spatial, temporal, and hydraulic measurements collected from two urban natural drainage networks (Malnichara and Goali Chara) and the receiving Surma River in Sylhet, Bangladesh. The data was collected over a four-week dry-weather monitoring campaign to develop and validate the Behavioral-Anthropogenic Synchronization for Inference of Sources (BASIS) framework.\nThe dataset includes:\nSpatial Baseline Data: Geolocations (Latitude/Longitude), urban land-use classifications (e.g., Slum, Residential, Commercial), and baseline Fecal Coliform (FC) concentrations for 62 monitoring stations.\nHigh-Frequency Temporal Data: Hourly and daily measurements of FC (10\u2075 CFU/100 mL), Turbidity (NTU), and pH from targeted outfall nodes to capture diurnal and weekly \"Anthropogenic Pulses.\"\nBiochemical Oxygen Demand (BOD\u2085): 7-day organic loading data (mg/L) from strategic channel outfalls and river transects to quantify the \"Organic Stress Gradient\" and \"Shoreline Plume\" effects.\nHydraulic Mass-Balance Data: Detailed open-channel physical parameters (channel width, depth profiles, cross-sectional areas) and flow velocities. This data is coupled with concurrent FC concentrations to calculate steady-state mass-balance closure between engineered household drains and natural receiving channels.\nFile name: Sylhet_Urban_Drainage_WaterQuality_Dataset.xlsx\nData Structure / Tab Names:\n01_Spatial_62_Stations: (Contains: Channel, Date, Time, Mean FC, pH, Turbidity)\n02_Hourly_FC_Turbidity_pH: (Contains: Day, Time, Date, FC, pH, Turbidity)\n03_Daily_FC_Turbidity_pH: (Contains: Day, Date, FC, pH, Turbidity)\n04_River_BOD5_Profile: (Contains: Date, BOD\u2085)\n05_Mass_Balance_Hydraulics: (Contains: Channel/Location, Cross-sectional parameters [Width, Depth/Height, Area], Flow Velocity [V], Discharge [Q_drain, Q_upstream, Q_downstream], and FC Concentrations [C_drain, C_upstream, C_downstream])\n06_Average_Channel_Velocity: (Contains: Date, ID, Time, Chainage, Latitude, Longitude, Velocity triplicate, Average velocity)\n07_Rainfall: (Contains: Station, Source, Date, Rainfall)",
+  "version": 2,
+  "contributors": [
+    {
+      "institution": {
+        "id": "e7e98d6d-0ff5-498f-8459-637457f03145",
+        "name": "Shahjalal University of Science and Technology",
+        "ror_id": "https://ror.org/05hm0vv72"
+      },
+      "profile_id": "eb23eace-add1-41eb-b408-ef6e7a7ca084",
+      "first_name": "Bijit Kumar",
+      "last_name": "Banik",
+      "orcid_id": "0000-0002-3966-7430"
+    },
+    {
+      "first_name": "Rahul Das ",
+      "last_name": "Gupta"
+    },
+    {
+      "profile_id": "aeb04012-3435-460b-b315-25c7b597becd",
+      "first_name": "Md. Hasibul ",
+      "last_name": "Chowdhury"
+    },
+    {
+      "first_name": "Imran ",
+      "last_name": "Hasan"
+    },
+    {
+      "first_name": "Md. Imran ",
+      "last_name": "Kabir"
+    },
+    {
+      "first_name": "Muhammad Azizul ",
+      "last_name": "Hoque"
+    }
+  ],
+  "files": [
+    {
+      "filename": "BASIS_Framework_WaterQuality_Hydraulics_Dataset_V1.xlsx",
+      "id": "e09674b5-0ab3-42e3-891b-90e51fc8214a",
+      "content_details": {
+        "id": "966f9593-281f-4f32-b7ce-d003756e92b3",
+        "sha256_hash": "6a1edc0d735ebf90d6fc645c24469aa028b185aba8e2a0820a0b14b90ce01cf1",
+        "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size": 78427,
+        "created_date": "2026-06-20T07:45:54.574Z",
+        "download_url": "https://data.mendeley.com/public-files/datasets/bncwnj8yjt/files/e09674b5-0ab3-42e3-891b-90e51fc8214a/file_downloaded",
+        "view_url": "https://data.mendeley.com/public-files/datasets/bncwnj8yjt/files/e09674b5-0ab3-42e3-891b-90e51fc8214a/file_viewed",
+        "download_expiry_time": "2126-10-20T04:51:19.492534645Z"
+      },
+      "metrics": {
+        "downloads": 0,
+        "previews": 0
+      },
+      "size": 78427,
+      "status": "COMPLETED"
+    },
+    {
+      "filename": "BASIS_Framework_WaterQuality_Hydraulics_Dataset_V2.xlsx",
+      "id": "2fa6cf68-e7fd-4536-a83f-ade9de08a674",
+      "content_details": {
+        "id": "187c5162-378b-40e9-acc1-2c1bc9263d01",
+        "sha256_hash": "3ab21b826163b70fe34370d7816784f394bae22a39830634e19a8affe84704f7",
+        "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size": 85999,
+        "created_date": "2026-07-04T08:17:17.977Z",
+        "download_url": "https://data.mendeley.com/public-files/datasets/bncwnj8yjt/files/2fa6cf68-e7fd-4536-a83f-ade9de08a674/file_downloaded",
+        "view_url": "https://data.mendeley.com/public-files/datasets/bncwnj8yjt/files/2fa6cf68-e7fd-4536-a83f-ade9de08a674/file_viewed",
+        "download_expiry_time": "2126-10-20T04:51:19.492539215Z"
+      },
+      "metrics": {
+        "downloads": 0,
+        "previews": 0
+      },
+      "size": 85999,
+      "status": "COMPLETED"
+    }
+  ],
+  "versions": [
+    {
+      "version": 2,
+      "available": true,
+      "publish_date": "2026-07-08T15:23:40.645Z"
+    },
+    {
+      "version": 1,
+      "available": true,
+      "publish_date": "2026-06-22T17:54:05.19Z"
+    }
+  ],
+  "articles": [],
+  "categories": [
+    {
+      "id": "data.elsevier.com/vocabulary/OmniScience/Concept-262491672",
+      "label": "Drainage Water Quality"
+    }
+  ],
+  "institutions": [],
+  "metrics": {
+    "views": 0,
+    "file_downloads": 0,
+    "file_previews": 0
+  },
+  "available": true,
+  "size": 164426,
+  "owner": {
+    "institution": {
+      "id": "e7e98d6d-0ff5-498f-8459-637457f03145",
+      "name": "Shahjalal University of Science and Technology",
+      "ror_id": "https://ror.org/05hm0vv72"
+    },
+    "profile_id": "eb23eace-add1-41eb-b408-ef6e7a7ca084",
+    "first_name": "Bijit Kumar",
+    "last_name": "Banik",
+    "orcid_id": "0000-0002-3966-7430"
+  },
+  "channel": "WEB",
+  "owner_id": "eb23eace-add1-41eb-b408-ef6e7a7ca084",
+  "publish_date": "2026-07-08T15:23:40.645Z",
+  "data_licence": {
+    "id": "01d9c749-3c4d-4431-9df3-620b2dcfe144",
+    "description": "You can share, copy and modify this dataset so long as you give appropriate credit, provide a link to the CC BY license, and indicate if changes were made, but you may not do so in a way that suggests the rights holder has endorsed you or your use of the dataset. Note that further permission may be required for any content within the dataset that is identified as belonging to a third party.",
+    "url": "http://creativecommons.org/licenses/by/4.0",
+    "category": "Creative",
+    "short_name": "CC BY 4.0",
+    "full_name": "Creative Commons Attribution 4.0 International"
+  },
+  "related_links": [],
+  "funders": [
+    {
+      "identity": "https://ror.org/05hm0vv72",
+      "grant_id": "AS/2024/1/19",
+      "name": "Shahjalal University of Science and Technology",
+      "location": "Sylhet"
+    },
+    {
+      "identity": "https://ror.org/05hm0vv72",
+      "grant_id": "AS/2025/2/14",
+      "name": "Shahjalal University of Science and Technology",
+      "location": "Sylhet"
+    }
+  ],
+  "customer_id": "7377952c-6404-4428-bbfc-77242cfc301e",
+  "modified_on": "2026-07-04T08:21:48.347Z",
+  "created_on": "2026-06-20T07:40:23.324Z",
+  "confidential": false,
+  "links": {
+    "view": "https://data.mendeley.com/datasets/bncwnj8yjt"
+  },
+  "repository": {
+    "id": "MENDELEY_DATA",
+    "name": "Mendeley Data"
+  }
+}

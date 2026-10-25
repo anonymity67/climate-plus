@@ -1,0 +1,129 @@
+{
+  "id": "xftpv7jvx3",
+  "doi": {
+    "id": "10.17632/xftpv7jvx3.1",
+    "status": "allocated",
+    "prefix": "10.17632"
+  },
+  "name": "Water Quality and Hydroclimatic Dataset for Rivers and Streams of Dhaka, Bangladesh",
+  "description": "The dataset contains river/stream location information, physicochemical water quality parameters (temperature, pH, dissolved oxygen, COD, nitrate, turbidity, phosphate), rainfall records, seasonal information, Water Quality Index (WQI), and pollution classification labels for environmental monitoring and machine learning applications.",
+  "version": 1,
+  "contributors": [
+    {
+      "institution": {
+        "id": "c6db1a80-151d-4886-b2f0-21478e26cab9",
+        "name": "Leading University",
+        "ror_id": "https://ror.org/03eb1ae70"
+      },
+      "profile_id": "ec53decc-f027-49e3-9dbd-765ac33894ab",
+      "first_name": "Parishmita",
+      "last_name": "Sinha"
+    },
+    {
+      "institution": {
+        "id": "c6db1a80-151d-4886-b2f0-21478e26cab9",
+        "name": "Leading University",
+        "ror_id": "https://ror.org/03eb1ae70"
+      },
+      "first_name": "Nirab ",
+      "last_name": "Debnath"
+    },
+    {
+      "institution": {
+        "id": "c6db1a80-151d-4886-b2f0-21478e26cab9",
+        "name": "Leading University",
+        "ror_id": "https://ror.org/03eb1ae70"
+      },
+      "first_name": "Prithwiraj",
+      "last_name": "Bhattacharjee"
+    }
+  ],
+  "files": [
+    {
+      "filename": "Water quality.csv",
+      "id": "626fcf52-946d-458f-ba9e-eac81c6ae48f",
+      "content_details": {
+        "id": "1bb642c9-8475-4faf-8fd8-e19ef16e5219",
+        "sha256_hash": "baa149c139cc514b1f339015f49cb8afca459e1c2e7323e10f5d7b6defa49a7a",
+        "content_type": "text/csv",
+        "size": 182314,
+        "created_date": "2026-06-01T18:16:48.652Z",
+        "download_url": "https://data.mendeley.com/public-files/datasets/xftpv7jvx3/files/626fcf52-946d-458f-ba9e-eac81c6ae48f/file_downloaded",
+        "view_url": "https://data.mendeley.com/public-files/datasets/xftpv7jvx3/files/626fcf52-946d-458f-ba9e-eac81c6ae48f/file_viewed",
+        "download_expiry_time": "2126-10-20T04:51:47.11387665Z"
+      },
+      "metrics": {
+        "downloads": 0,
+        "previews": 0
+      },
+      "size": 182314,
+      "status": "COMPLETED"
+    }
+  ],
+  "versions": [
+    {
+      "version": 1,
+      "available": true,
+      "publish_date": "2026-06-01T20:31:32.943Z"
+    }
+  ],
+  "articles": [],
+  "categories": [
+    {
+      "id": "data.elsevier.com/vocabulary/OmniScience/Concept-189723281",
+      "label": "Environmental Science"
+    },
+    {
+      "id": "data.elsevier.com/vocabulary/OmniScience/Concept-249523402",
+      "label": "Machine Learning"
+    }
+  ],
+  "institutions": [
+    {
+      "id": "c6db1a80-151d-4886-b2f0-21478e26cab9",
+      "name": "Leading University",
+      "ror_id": "https://ror.org/03eb1ae70"
+    }
+  ],
+  "metrics": {
+    "views": 0,
+    "file_downloads": 0,
+    "file_previews": 0
+  },
+  "available": true,
+  "size": 182314,
+  "owner": {
+    "institution": {
+      "id": "c6db1a80-151d-4886-b2f0-21478e26cab9",
+      "name": "Leading University",
+      "ror_id": "https://ror.org/03eb1ae70"
+    },
+    "profile_id": "ec53decc-f027-49e3-9dbd-765ac33894ab",
+    "first_name": "Parishmita",
+    "last_name": "Sinha"
+  },
+  "channel": "WEB",
+  "owner_id": "ec53decc-f027-49e3-9dbd-765ac33894ab",
+  "publish_date": "2026-06-01T20:31:32.943Z",
+  "data_licence": {
+    "id": "01d9c749-3c4d-4431-9df3-620b2dcfe144",
+    "description": "You can share, copy and modify this dataset so long as you give appropriate credit, provide a link to the CC BY license, and indicate if changes were made, but you may not do so in a way that suggests the rights holder has endorsed you or your use of the dataset. Note that further permission may be required for any content within the dataset that is identified as belonging to a third party.",
+    "url": "http://creativecommons.org/licenses/by/4.0",
+    "category": "Creative",
+    "short_name": "CC BY 4.0",
+    "full_name": "Creative Commons Attribution 4.0 International"
+  },
+  "related_links": [],
+  "funders": [],
+  "customer_id": "7377952c-6404-4428-bbfc-77242cfc301e",
+  "modified_on": "2026-06-01T18:19:13.092Z",
+  "created_on": "2026-06-01T18:10:11.008Z",
+  "confidential": false,
+  "links": {
+    "view": "https://data.mendeley.com/datasets/xftpv7jvx3"
+  },
+  "repository": {
+    "id": "MENDELEY_DATA",
+    "name": "Mendeley Data"
+  }
+}

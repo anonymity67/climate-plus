@@ -1,0 +1,44 @@
+{
+  "regionId": "khulna",
+  "name": "Khulna",
+  "bounds": [
+    89.548,
+    22.805,
+    89.585,
+    22.84
+  ],
+  "endpoint": "https://z.overpass-api.de/api/interpreter",
+  "requestUrl": "https://z.overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3Bway%5B%22highway%22%5D%2822.805%2C89.548%2C22.84%2C89.585%29%3Bout+body+geom%3B%0A",
+  "queryFile": "query.overpassql",
+  "responseFile": "roads.overpass.json",
+  "acquisitionStartedAt": "2026-10-24T17:16:35.638776+00:00",
+  "acquiredAt": "2026-10-24T17:17:12.894634+00:00",
+  "httpStatus": 200,
+  "responseHeaders": {
+    "Server": "nginx",
+    "Date": "Sat, 24 Oct 2026 17:17:10 GMT",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "close"
+  },
+  "sourceSha256": "f20d64c54cdddc6752070ef3a6a01f16ba95defe9a186c222b7fbd6d25e30cc1",
+  "querySha256": "3dc35dda697bc477e619a2ea419932c71a6c5439e679d2433215628695b202f5",
+  "osmBaseTimestamp": "2026-10-24T17:15:57Z",
+  "attribution": "© OpenStreetMap contributors",
+  "licence": "Open Database License (ODbL) 1.0",
+  "licenceUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "copyrightUrl": "https://www.openstreetmap.org/copyright",
+  "sourceDocumentation": "https://dev.overpass-api.de/command_line.html",
+  "priorAttempts": [
+    {
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "startedAt": "2026-10-24T17:16:34.354071+00:00",
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "endpoint": "https://lz4.overpass-api.de/api/interpreter",
+      "startedAt": "2026-10-24T17:16:34.976938+00:00",
+      "error": "HTTP Error 502: Bad Gateway"
+    }
+  ]
+}

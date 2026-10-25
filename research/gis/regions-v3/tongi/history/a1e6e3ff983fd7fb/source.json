@@ -1,0 +1,33 @@
+{
+  "regionId": "tongi",
+  "name": "Tongi",
+  "bounds": [
+    90.385,
+    23.885,
+    90.425,
+    23.92
+  ],
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "requestUrl": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3Bway%5B%22highway%22%5D%2823.885%2C90.385%2C23.92%2C90.425%29%3Bout+body+geom%3B%0A",
+  "queryFile": "query.overpassql",
+  "responseFile": "roads.overpass.json",
+  "acquisitionStartedAt": "2026-10-24T17:17:13.898475+00:00",
+  "acquiredAt": "2026-10-24T17:17:46.269298+00:00",
+  "httpStatus": 200,
+  "responseHeaders": {
+    "Server": "nginx",
+    "Date": "Sat, 24 Oct 2026 17:17:43 GMT",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "close"
+  },
+  "sourceSha256": "a1e6e3ff983fd7fb81d240009a3cae0081744511de70f9ba811c412f23514b74",
+  "querySha256": "9530350b4a5b3a0daa99501dc851a174f518317a8b7c5b77ca6883c78deae619",
+  "osmBaseTimestamp": "2026-10-24T17:15:57Z",
+  "attribution": "© OpenStreetMap contributors",
+  "licence": "Open Database License (ODbL) 1.0",
+  "licenceUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "copyrightUrl": "https://www.openstreetmap.org/copyright",
+  "sourceDocumentation": "https://dev.overpass-api.de/command_line.html",
+  "priorAttempts": []
+}

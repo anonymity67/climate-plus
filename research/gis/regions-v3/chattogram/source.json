@@ -1,0 +1,33 @@
+{
+  "regionId": "chattogram",
+  "name": "Chattogram (Chittagong)",
+  "bounds": [
+    91.812,
+    22.33,
+    91.85,
+    22.365
+  ],
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "requestUrl": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3Bway%5B%22highway%22%5D%2822.33%2C91.812%2C22.365%2C91.85%29%3Bout+body+geom%3B%0A",
+  "queryFile": "query.overpassql",
+  "responseFile": "roads.overpass.json",
+  "acquisitionStartedAt": "2026-10-24T17:16:00.015463+00:00",
+  "acquiredAt": "2026-10-24T17:16:33.350562+00:00",
+  "httpStatus": 200,
+  "responseHeaders": {
+    "Server": "nginx",
+    "Date": "Sat, 24 Oct 2026 17:16:30 GMT",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "close"
+  },
+  "sourceSha256": "41e73f2fa6efaa76430ae48448e384e31b0c68b7002fcd642fc5987b5e636c76",
+  "querySha256": "b66b47e6729f9386d1c3dd072ff42919b8c2f3921cfa346eccf6a1f0d21e5f66",
+  "osmBaseTimestamp": "2026-10-24T17:14:54Z",
+  "attribution": "© OpenStreetMap contributors",
+  "licence": "Open Database License (ODbL) 1.0",
+  "licenceUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "copyrightUrl": "https://www.openstreetmap.org/copyright",
+  "sourceDocumentation": "https://dev.overpass-api.de/command_line.html",
+  "priorAttempts": []
+}

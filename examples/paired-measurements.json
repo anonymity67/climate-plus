@@ -1,0 +1,11 @@
+{
+  "qu": 1,
+  "qs": 0.1,
+  "qd": 1.1,
+  "cu": 10,
+  "cs": 100,
+  "cd": 20,
+  "units": { "flow": "m3/s", "concentration": "mg/L" },
+  "pollutant": "COD",
+  "provenance": "Synthetic schema example; not a measured source attribution"
+}

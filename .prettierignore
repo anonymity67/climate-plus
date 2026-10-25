@@ -1,0 +1,14 @@
+node_modules
+dist
+reproductions
+research
+public/data
+public/fonts
+provenance
+verification
+EVIDENCE-MANIFEST.json
+documentation
+*.py
+*.sol
+package-lock.json
+tools/local-chain/package-lock.json

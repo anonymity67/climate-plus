@@ -1,0 +1,2447 @@
+{
+  "generatedAt": "2026-10-17T13:00:38.979Z",
+  "provenance": "simulated",
+  "note": "36 known-input scenarios, four policies. Sensitivity grid, not independent field trials. Scheduling and allocation ablation included. No stochastic forecast skill claimed.",
+  "results": [
+    {
+      "scenario": "storm",
+      "budget": 0,
+      "demandMultiplier": 0.8,
+      "policy": "fixed-first-arrival",
+      "unmet": 2380,
+      "worstHouseholdCoverage": 0.6830357142857143,
+      "schoolCoverage": 0.42857142857142855,
+      "cost": 0,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "storm",
+      "budget": 0,
+      "demandMultiplier": 0.8,
+      "policy": "threshold-first-arrival",
+      "unmet": 2380,
+      "worstHouseholdCoverage": 0.6830357142857143,
+      "schoolCoverage": 0.42857142857142855,
+      "cost": 0,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "storm",
+      "budget": 0,
+      "demandMultiplier": 0.8,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 2380,
+      "worstHouseholdCoverage": 0.6830357142857143,
+      "schoolCoverage": 0.42857142857142855,
+      "cost": 0,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "storm",
+      "budget": 0,
+      "demandMultiplier": 0.8,
+      "policy": "climate-plus",
+      "unmet": 2380,
+      "worstHouseholdCoverage": 0.804642857142857,
+      "schoolCoverage": 0.8857142857142857,
+      "cost": 0,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "storm",
+      "budget": 0,
+      "demandMultiplier": 1,
+      "policy": "fixed-first-arrival",
+      "unmet": 5600,
+      "worstHouseholdCoverage": 0.2857142857142857,
+      "schoolCoverage": 0.2857142857142857,
+      "cost": 0,
+      "shortageDays": 5,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "storm",
+      "budget": 0,
+      "demandMultiplier": 1,
+      "policy": "threshold-first-arrival",
+      "unmet": 5600,
+      "worstHouseholdCoverage": 0.2857142857142857,
+      "schoolCoverage": 0.2857142857142857,
+      "cost": 0,
+      "shortageDays": 5,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "storm",
+      "budget": 0,
+      "demandMultiplier": 1,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 5600,
+      "worstHouseholdCoverage": 0.2857142857142857,
+      "schoolCoverage": 0.2857142857142857,
+      "cost": 0,
+      "shortageDays": 5,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "storm",
+      "budget": 0,
+      "demandMultiplier": 1,
+      "policy": "climate-plus",
+      "unmet": 5600,
+      "worstHouseholdCoverage": 0.6214285714285714,
+      "schoolCoverage": 0.8571428571428571,
+      "cost": 0,
+      "shortageDays": 5,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "storm",
+      "budget": 0,
+      "demandMultiplier": 1.2,
+      "policy": "fixed-first-arrival",
+      "unmet": 8820,
+      "worstHouseholdCoverage": 0.2857142857142857,
+      "schoolCoverage": 0.15873015873015872,
+      "cost": 0,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "storm",
+      "budget": 0,
+      "demandMultiplier": 1.2,
+      "policy": "threshold-first-arrival",
+      "unmet": 8820,
+      "worstHouseholdCoverage": 0.2857142857142857,
+      "schoolCoverage": 0.15873015873015872,
+      "cost": 0,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "storm",
+      "budget": 0,
+      "demandMultiplier": 1.2,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 8820,
+      "worstHouseholdCoverage": 0.2857142857142857,
+      "schoolCoverage": 0.15873015873015872,
+      "cost": 0,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "storm",
+      "budget": 0,
+      "demandMultiplier": 1.2,
+      "policy": "climate-plus",
+      "unmet": 8820,
+      "worstHouseholdCoverage": 0.5007142857142856,
+      "schoolCoverage": 0.8285714285714286,
+      "cost": 0,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "storm",
+      "budget": 1600,
+      "demandMultiplier": 0.8,
+      "policy": "fixed-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 1600,
+      "shortageDays": 0,
+      "terminalStock": 1620,
+      "spill": 0,
+      "schedule": [
+        2,
+        4
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 1600,
+      "demandMultiplier": 0.8,
+      "policy": "threshold-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 1600,
+      "shortageDays": 0,
+      "terminalStock": 1620,
+      "spill": 0,
+      "schedule": [
+        0,
+        2
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 1600,
+      "demandMultiplier": 0.8,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 1600,
+      "shortageDays": 0,
+      "terminalStock": 1620,
+      "spill": 0,
+      "schedule": [
+        0,
+        2
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 1600,
+      "demandMultiplier": 0.8,
+      "policy": "climate-plus",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 1600,
+      "shortageDays": 0,
+      "terminalStock": 1620,
+      "spill": 0,
+      "schedule": [
+        0,
+        2
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 1600,
+      "demandMultiplier": 1,
+      "policy": "fixed-first-arrival",
+      "unmet": 1600,
+      "worstHouseholdCoverage": 0.8571428571428571,
+      "schoolCoverage": 0.6190476190476191,
+      "cost": 1600,
+      "shortageDays": 3,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        4
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 1600,
+      "demandMultiplier": 1,
+      "policy": "threshold-first-arrival",
+      "unmet": 1600,
+      "worstHouseholdCoverage": 0.8214285714285714,
+      "schoolCoverage": 0.7142857142857143,
+      "cost": 1600,
+      "shortageDays": 2,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        2
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 1600,
+      "demandMultiplier": 1,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 1600,
+      "worstHouseholdCoverage": 0.8571428571428571,
+      "schoolCoverage": 0.6190476190476191,
+      "cost": 1600,
+      "shortageDays": 3,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        4
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 1600,
+      "demandMultiplier": 1,
+      "policy": "climate-plus",
+      "unmet": 1600,
+      "worstHouseholdCoverage": 0.8985714285714286,
+      "schoolCoverage": 0.9142857142857143,
+      "cost": 1600,
+      "shortageDays": 3,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        4
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 1600,
+      "demandMultiplier": 1.2,
+      "policy": "fixed-first-arrival",
+      "unmet": 4820,
+      "worstHouseholdCoverage": 0.6011904761904762,
+      "schoolCoverage": 0.3412698412698413,
+      "cost": 1600,
+      "shortageDays": 5,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        4
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 1600,
+      "demandMultiplier": 1.2,
+      "policy": "threshold-first-arrival",
+      "unmet": 4820,
+      "worstHouseholdCoverage": 0.5714285714285714,
+      "schoolCoverage": 0.5158730158730159,
+      "cost": 1600,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        2
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 1600,
+      "demandMultiplier": 1.2,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 4820,
+      "worstHouseholdCoverage": 0.6011904761904762,
+      "schoolCoverage": 0.3412698412698413,
+      "cost": 1600,
+      "shortageDays": 5,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 1600,
+      "demandMultiplier": 1.2,
+      "policy": "climate-plus",
+      "unmet": 4820,
+      "worstHouseholdCoverage": 0.7345238095238095,
+      "schoolCoverage": 0.8571428571428571,
+      "cost": 1600,
+      "shortageDays": 5,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 2400,
+      "demandMultiplier": 0.8,
+      "policy": "fixed-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 2400,
+      "shortageDays": 0,
+      "terminalStock": 3620,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 2400,
+      "demandMultiplier": 0.8,
+      "policy": "threshold-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 2400,
+      "shortageDays": 0,
+      "terminalStock": 3620,
+      "spill": 0,
+      "schedule": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 2400,
+      "demandMultiplier": 0.8,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 1600,
+      "shortageDays": 0,
+      "terminalStock": 1620,
+      "spill": 0,
+      "schedule": [
+        0,
+        2
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 2400,
+      "demandMultiplier": 0.8,
+      "policy": "climate-plus",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 1600,
+      "shortageDays": 0,
+      "terminalStock": 1620,
+      "spill": 0,
+      "schedule": [
+        0,
+        2
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 2400,
+      "demandMultiplier": 1,
+      "policy": "fixed-first-arrival",
+      "unmet": 500,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 0.7619047619047619,
+      "cost": 2400,
+      "shortageDays": 2,
+      "terminalStock": 900,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 2400,
+      "demandMultiplier": 1,
+      "policy": "threshold-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 2400,
+      "shortageDays": 0,
+      "terminalStock": 400,
+      "spill": 0,
+      "schedule": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 2400,
+      "demandMultiplier": 1,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 2400,
+      "shortageDays": 0,
+      "terminalStock": 400,
+      "spill": 0,
+      "schedule": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 2400,
+      "demandMultiplier": 1,
+      "policy": "climate-plus",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 2400,
+      "shortageDays": 0,
+      "terminalStock": 400,
+      "spill": 0,
+      "schedule": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 2400,
+      "demandMultiplier": 1.2,
+      "policy": "fixed-first-arrival",
+      "unmet": 3260,
+      "worstHouseholdCoverage": 0.7440476190476191,
+      "schoolCoverage": 0.48412698412698413,
+      "cost": 2400,
+      "shortageDays": 4,
+      "terminalStock": 440,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 2400,
+      "demandMultiplier": 1.2,
+      "policy": "threshold-first-arrival",
+      "unmet": 2820,
+      "worstHouseholdCoverage": 0.7232142857142857,
+      "schoolCoverage": 0.7142857142857143,
+      "cost": 2400,
+      "shortageDays": 2,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 2400,
+      "demandMultiplier": 1.2,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 2820,
+      "worstHouseholdCoverage": 0.8095238095238095,
+      "schoolCoverage": 0.48412698412698413,
+      "cost": 2400,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 2400,
+      "demandMultiplier": 1.2,
+      "policy": "climate-plus",
+      "unmet": 2820,
+      "worstHouseholdCoverage": 0.8492857142857142,
+      "schoolCoverage": 0.8857142857142857,
+      "cost": 2400,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 4000,
+      "demandMultiplier": 0.8,
+      "policy": "fixed-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 2400,
+      "shortageDays": 0,
+      "terminalStock": 3620,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 4000,
+      "demandMultiplier": 0.8,
+      "policy": "threshold-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 3200,
+      "shortageDays": 0,
+      "terminalStock": 5620,
+      "spill": 0,
+      "schedule": [
+        0,
+        2,
+        3,
+        6
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 4000,
+      "demandMultiplier": 0.8,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 1600,
+      "shortageDays": 0,
+      "terminalStock": 1620,
+      "spill": 0,
+      "schedule": [
+        0,
+        2
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 4000,
+      "demandMultiplier": 0.8,
+      "policy": "climate-plus",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 1600,
+      "shortageDays": 0,
+      "terminalStock": 1620,
+      "spill": 0,
+      "schedule": [
+        0,
+        2
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 4000,
+      "demandMultiplier": 1,
+      "policy": "fixed-first-arrival",
+      "unmet": 500,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 0.7619047619047619,
+      "cost": 2400,
+      "shortageDays": 2,
+      "terminalStock": 900,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 4000,
+      "demandMultiplier": 1,
+      "policy": "threshold-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 4000,
+      "shortageDays": 0,
+      "terminalStock": 4400,
+      "spill": 0,
+      "schedule": [
+        0,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 4000,
+      "demandMultiplier": 1,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 2400,
+      "shortageDays": 0,
+      "terminalStock": 400,
+      "spill": 0,
+      "schedule": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 4000,
+      "demandMultiplier": 1,
+      "policy": "climate-plus",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 2400,
+      "shortageDays": 0,
+      "terminalStock": 400,
+      "spill": 0,
+      "schedule": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 4000,
+      "demandMultiplier": 1.2,
+      "policy": "fixed-first-arrival",
+      "unmet": 3260,
+      "worstHouseholdCoverage": 0.7440476190476191,
+      "schoolCoverage": 0.48412698412698413,
+      "cost": 2400,
+      "shortageDays": 4,
+      "terminalStock": 440,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 4000,
+      "demandMultiplier": 1.2,
+      "policy": "threshold-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 4000,
+      "shortageDays": 0,
+      "terminalStock": 1180,
+      "spill": 0,
+      "schedule": [
+        0,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 4000,
+      "demandMultiplier": 1.2,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 4000,
+      "shortageDays": 0,
+      "terminalStock": 1180,
+      "spill": 0,
+      "schedule": [
+        0,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "scenario": "storm",
+      "budget": 4000,
+      "demandMultiplier": 1.2,
+      "policy": "climate-plus",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 4000,
+      "shortageDays": 0,
+      "terminalStock": 1180,
+      "spill": 0,
+      "schedule": [
+        0,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 0,
+      "demandMultiplier": 0.8,
+      "policy": "fixed-first-arrival",
+      "unmet": 7080,
+      "worstHouseholdCoverage": 0.2857142857142857,
+      "schoolCoverage": 0.2857142857142857,
+      "cost": 0,
+      "shortageDays": 5,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "salinity",
+      "budget": 0,
+      "demandMultiplier": 0.8,
+      "policy": "threshold-first-arrival",
+      "unmet": 7080,
+      "worstHouseholdCoverage": 0.2857142857142857,
+      "schoolCoverage": 0.2857142857142857,
+      "cost": 0,
+      "shortageDays": 5,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "salinity",
+      "budget": 0,
+      "demandMultiplier": 0.8,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 7080,
+      "worstHouseholdCoverage": 0.2857142857142857,
+      "schoolCoverage": 0.2857142857142857,
+      "cost": 0,
+      "shortageDays": 5,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "salinity",
+      "budget": 0,
+      "demandMultiplier": 0.8,
+      "policy": "climate-plus",
+      "unmet": 7079.999999999999,
+      "worstHouseholdCoverage": 0.38928571428571435,
+      "schoolCoverage": 0.8571428571428571,
+      "cost": 0,
+      "shortageDays": 5,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "salinity",
+      "budget": 0,
+      "demandMultiplier": 1,
+      "policy": "fixed-first-arrival",
+      "unmet": 10300,
+      "worstHouseholdCoverage": 0.19642857142857142,
+      "schoolCoverage": 0.14285714285714285,
+      "cost": 0,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "salinity",
+      "budget": 0,
+      "demandMultiplier": 1,
+      "policy": "threshold-first-arrival",
+      "unmet": 10300,
+      "worstHouseholdCoverage": 0.19642857142857142,
+      "schoolCoverage": 0.14285714285714285,
+      "cost": 0,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "salinity",
+      "budget": 0,
+      "demandMultiplier": 1,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 10300,
+      "worstHouseholdCoverage": 0.19642857142857142,
+      "schoolCoverage": 0.14285714285714285,
+      "cost": 0,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "salinity",
+      "budget": 0,
+      "demandMultiplier": 1,
+      "policy": "climate-plus",
+      "unmet": 10300,
+      "worstHouseholdCoverage": 0.29,
+      "schoolCoverage": 0.8285714285714286,
+      "cost": 0,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "salinity",
+      "budget": 0,
+      "demandMultiplier": 1.2,
+      "policy": "fixed-first-arrival",
+      "unmet": 13520,
+      "worstHouseholdCoverage": 0.14285714285714285,
+      "schoolCoverage": 0.14285714285714285,
+      "cost": 0,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "salinity",
+      "budget": 0,
+      "demandMultiplier": 1.2,
+      "policy": "threshold-first-arrival",
+      "unmet": 13520,
+      "worstHouseholdCoverage": 0.14285714285714285,
+      "schoolCoverage": 0.14285714285714285,
+      "cost": 0,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "salinity",
+      "budget": 0,
+      "demandMultiplier": 1.2,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 13520,
+      "worstHouseholdCoverage": 0.14285714285714285,
+      "schoolCoverage": 0.14285714285714285,
+      "cost": 0,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "salinity",
+      "budget": 0,
+      "demandMultiplier": 1.2,
+      "policy": "climate-plus",
+      "unmet": 13520,
+      "worstHouseholdCoverage": 0.2209523809523809,
+      "schoolCoverage": 0.8285714285714286,
+      "cost": 0,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "salinity",
+      "budget": 1600,
+      "demandMultiplier": 0.8,
+      "policy": "fixed-first-arrival",
+      "unmet": 3080,
+      "worstHouseholdCoverage": 0.5982142857142857,
+      "schoolCoverage": 0.5714285714285714,
+      "cost": 1600,
+      "shortageDays": 3,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        4
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 1600,
+      "demandMultiplier": 0.8,
+      "policy": "threshold-first-arrival",
+      "unmet": 3080,
+      "worstHouseholdCoverage": 0.7142857142857143,
+      "schoolCoverage": 0.5952380952380952,
+      "cost": 1600,
+      "shortageDays": 3,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 1600,
+      "demandMultiplier": 0.8,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 3080,
+      "worstHouseholdCoverage": 0.7142857142857143,
+      "schoolCoverage": 0.5952380952380952,
+      "cost": 1600,
+      "shortageDays": 3,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 1600,
+      "demandMultiplier": 0.8,
+      "policy": "climate-plus",
+      "unmet": 3080,
+      "worstHouseholdCoverage": 0.7378571428571428,
+      "schoolCoverage": 0.9142857142857143,
+      "cost": 1600,
+      "shortageDays": 3,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 1600,
+      "demandMultiplier": 1,
+      "policy": "fixed-first-arrival",
+      "unmet": 6300,
+      "worstHouseholdCoverage": 0.48214285714285715,
+      "schoolCoverage": 0.42857142857142855,
+      "cost": 1600,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        4
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 1600,
+      "demandMultiplier": 1,
+      "policy": "threshold-first-arrival",
+      "unmet": 6300,
+      "worstHouseholdCoverage": 0.5178571428571429,
+      "schoolCoverage": 0.42857142857142855,
+      "cost": 1600,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 1600,
+      "demandMultiplier": 1,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 6300,
+      "worstHouseholdCoverage": 0.5178571428571429,
+      "schoolCoverage": 0.42857142857142855,
+      "cost": 1600,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 1600,
+      "demandMultiplier": 1,
+      "policy": "climate-plus",
+      "unmet": 6300,
+      "worstHouseholdCoverage": 0.5671428571428572,
+      "schoolCoverage": 0.8857142857142857,
+      "cost": 1600,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 1600,
+      "demandMultiplier": 1.2,
+      "policy": "fixed-first-arrival",
+      "unmet": 9520,
+      "worstHouseholdCoverage": 0.42857142857142855,
+      "schoolCoverage": 0.14285714285714285,
+      "cost": 1600,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        4
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 1600,
+      "demandMultiplier": 1.2,
+      "policy": "threshold-first-arrival",
+      "unmet": 9520,
+      "worstHouseholdCoverage": 0.42857142857142855,
+      "schoolCoverage": 0.3968253968253968,
+      "cost": 1600,
+      "shortageDays": 5,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 1600,
+      "demandMultiplier": 1.2,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 9520,
+      "worstHouseholdCoverage": 0.42857142857142855,
+      "schoolCoverage": 0.14285714285714285,
+      "cost": 1600,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 1600,
+      "demandMultiplier": 1.2,
+      "policy": "climate-plus",
+      "unmet": 9520,
+      "worstHouseholdCoverage": 0.45904761904761904,
+      "schoolCoverage": 0.8285714285714286,
+      "cost": 1600,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 2400,
+      "demandMultiplier": 0.8,
+      "policy": "fixed-first-arrival",
+      "unmet": 1640,
+      "worstHouseholdCoverage": 0.7410714285714286,
+      "schoolCoverage": 0.7142857142857143,
+      "cost": 2400,
+      "shortageDays": 2,
+      "terminalStock": 560,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 2400,
+      "demandMultiplier": 0.8,
+      "policy": "threshold-first-arrival",
+      "unmet": 1080,
+      "worstHouseholdCoverage": 0.8571428571428571,
+      "schoolCoverage": 0.8571428571428571,
+      "cost": 2400,
+      "shortageDays": 1,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 2400,
+      "demandMultiplier": 0.8,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 1080,
+      "worstHouseholdCoverage": 0.8571428571428571,
+      "schoolCoverage": 0.7380952380952381,
+      "cost": 2400,
+      "shortageDays": 2,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        5
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 2400,
+      "demandMultiplier": 0.8,
+      "policy": "climate-plus",
+      "unmet": 1080,
+      "worstHouseholdCoverage": 0.912142857142857,
+      "schoolCoverage": 0.9428571428571428,
+      "cost": 2400,
+      "shortageDays": 2,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        5
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 2400,
+      "demandMultiplier": 1,
+      "policy": "fixed-first-arrival",
+      "unmet": 4400,
+      "worstHouseholdCoverage": 0.625,
+      "schoolCoverage": 0.5714285714285714,
+      "cost": 2400,
+      "shortageDays": 3,
+      "terminalStock": 100,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 2400,
+      "demandMultiplier": 1,
+      "policy": "threshold-first-arrival",
+      "unmet": 4300,
+      "worstHouseholdCoverage": 0.6785714285714286,
+      "schoolCoverage": 0.5714285714285714,
+      "cost": 2400,
+      "shortageDays": 3,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 2400,
+      "demandMultiplier": 1,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 4300,
+      "worstHouseholdCoverage": 0.6785714285714286,
+      "schoolCoverage": 0.5714285714285714,
+      "cost": 2400,
+      "shortageDays": 3,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 2400,
+      "demandMultiplier": 1,
+      "policy": "climate-plus",
+      "unmet": 4300,
+      "worstHouseholdCoverage": 0.7057142857142857,
+      "schoolCoverage": 0.9142857142857143,
+      "cost": 2400,
+      "shortageDays": 3,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 2400,
+      "demandMultiplier": 1.2,
+      "policy": "fixed-first-arrival",
+      "unmet": 7520,
+      "worstHouseholdCoverage": 0.5714285714285714,
+      "schoolCoverage": 0.14285714285714285,
+      "cost": 2400,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 2400,
+      "demandMultiplier": 1.2,
+      "policy": "threshold-first-arrival",
+      "unmet": 7520,
+      "worstHouseholdCoverage": 0.5595238095238095,
+      "schoolCoverage": 0.42857142857142855,
+      "cost": 2400,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 2400,
+      "demandMultiplier": 1.2,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 7520,
+      "worstHouseholdCoverage": 0.5714285714285714,
+      "schoolCoverage": 0.14285714285714285,
+      "cost": 2400,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 2400,
+      "demandMultiplier": 1.2,
+      "policy": "climate-plus",
+      "unmet": 7520,
+      "worstHouseholdCoverage": 0.5780952380952381,
+      "schoolCoverage": 0.8285714285714286,
+      "cost": 2400,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 4000,
+      "demandMultiplier": 0.8,
+      "policy": "fixed-first-arrival",
+      "unmet": 1640,
+      "worstHouseholdCoverage": 0.7410714285714286,
+      "schoolCoverage": 0.7142857142857143,
+      "cost": 2400,
+      "shortageDays": 2,
+      "terminalStock": 560,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 4000,
+      "demandMultiplier": 0.8,
+      "policy": "threshold-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 4000,
+      "shortageDays": 0,
+      "terminalStock": 2920,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 4000,
+      "demandMultiplier": 0.8,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 3200,
+      "shortageDays": 0,
+      "terminalStock": 920,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 4000,
+      "demandMultiplier": 0.8,
+      "policy": "climate-plus",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 3200,
+      "shortageDays": 0,
+      "terminalStock": 920,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 4000,
+      "demandMultiplier": 1,
+      "policy": "fixed-first-arrival",
+      "unmet": 4400,
+      "worstHouseholdCoverage": 0.625,
+      "schoolCoverage": 0.5714285714285714,
+      "cost": 2400,
+      "shortageDays": 3,
+      "terminalStock": 100,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 4000,
+      "demandMultiplier": 1,
+      "policy": "threshold-first-arrival",
+      "unmet": 300,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 0.8571428571428571,
+      "cost": 4000,
+      "shortageDays": 1,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 4000,
+      "demandMultiplier": 1,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 300,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 0.8571428571428571,
+      "cost": 4000,
+      "shortageDays": 1,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 4000,
+      "demandMultiplier": 1,
+      "policy": "climate-plus",
+      "unmet": 300,
+      "worstHouseholdCoverage": 0.9828571428571429,
+      "schoolCoverage": 0.9714285714285714,
+      "cost": 4000,
+      "shortageDays": 1,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 4000,
+      "demandMultiplier": 1.2,
+      "policy": "fixed-first-arrival",
+      "unmet": 7520,
+      "worstHouseholdCoverage": 0.5714285714285714,
+      "schoolCoverage": 0.14285714285714285,
+      "cost": 2400,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 4000,
+      "demandMultiplier": 1.2,
+      "policy": "threshold-first-arrival",
+      "unmet": 3520,
+      "worstHouseholdCoverage": 0.7380952380952381,
+      "schoolCoverage": 0.7142857142857143,
+      "cost": 4000,
+      "shortageDays": 2,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 4000,
+      "demandMultiplier": 1.2,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 3520,
+      "worstHouseholdCoverage": 0.8571428571428571,
+      "schoolCoverage": 0.14285714285714285,
+      "cost": 4000,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "scenario": "salinity",
+      "budget": 4000,
+      "demandMultiplier": 1.2,
+      "policy": "climate-plus",
+      "unmet": 3520,
+      "worstHouseholdCoverage": 0.8161904761904762,
+      "schoolCoverage": 0.8285714285714286,
+      "cost": 4000,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 0,
+      "demandMultiplier": 0.8,
+      "policy": "fixed-first-arrival",
+      "unmet": 3980,
+      "worstHouseholdCoverage": 0.5,
+      "schoolCoverage": 0.42857142857142855,
+      "cost": 0,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "dry",
+      "budget": 0,
+      "demandMultiplier": 0.8,
+      "policy": "threshold-first-arrival",
+      "unmet": 3980,
+      "worstHouseholdCoverage": 0.5,
+      "schoolCoverage": 0.42857142857142855,
+      "cost": 0,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "dry",
+      "budget": 0,
+      "demandMultiplier": 0.8,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 3980,
+      "worstHouseholdCoverage": 0.5,
+      "schoolCoverage": 0.42857142857142855,
+      "cost": 0,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "dry",
+      "budget": 0,
+      "demandMultiplier": 0.8,
+      "policy": "climate-plus",
+      "unmet": 3980,
+      "worstHouseholdCoverage": 0.6617857142857141,
+      "schoolCoverage": 0.8857142857142857,
+      "cost": 0,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "dry",
+      "budget": 0,
+      "demandMultiplier": 1,
+      "policy": "fixed-first-arrival",
+      "unmet": 7200,
+      "worstHouseholdCoverage": 0.3392857142857143,
+      "schoolCoverage": 0.2857142857142857,
+      "cost": 0,
+      "shortageDays": 5,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "dry",
+      "budget": 0,
+      "demandMultiplier": 1,
+      "policy": "threshold-first-arrival",
+      "unmet": 7200,
+      "worstHouseholdCoverage": 0.3392857142857143,
+      "schoolCoverage": 0.2857142857142857,
+      "cost": 0,
+      "shortageDays": 5,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "dry",
+      "budget": 0,
+      "demandMultiplier": 1,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 7200,
+      "worstHouseholdCoverage": 0.3392857142857143,
+      "schoolCoverage": 0.2857142857142857,
+      "cost": 0,
+      "shortageDays": 5,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "dry",
+      "budget": 0,
+      "demandMultiplier": 1,
+      "policy": "climate-plus",
+      "unmet": 7200,
+      "worstHouseholdCoverage": 0.5071428571428571,
+      "schoolCoverage": 0.8571428571428571,
+      "cost": 0,
+      "shortageDays": 5,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "dry",
+      "budget": 0,
+      "demandMultiplier": 1.2,
+      "policy": "fixed-first-arrival",
+      "unmet": 10420,
+      "worstHouseholdCoverage": 0.2857142857142857,
+      "schoolCoverage": 0.23809523809523808,
+      "cost": 0,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "dry",
+      "budget": 0,
+      "demandMultiplier": 1.2,
+      "policy": "threshold-first-arrival",
+      "unmet": 10420,
+      "worstHouseholdCoverage": 0.2857142857142857,
+      "schoolCoverage": 0.23809523809523808,
+      "cost": 0,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "dry",
+      "budget": 0,
+      "demandMultiplier": 1.2,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 10420,
+      "worstHouseholdCoverage": 0.2857142857142857,
+      "schoolCoverage": 0.23809523809523808,
+      "cost": 0,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "dry",
+      "budget": 0,
+      "demandMultiplier": 1.2,
+      "policy": "climate-plus",
+      "unmet": 10420,
+      "worstHouseholdCoverage": 0.4054761904761904,
+      "schoolCoverage": 0.8285714285714286,
+      "cost": 0,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": []
+    },
+    {
+      "scenario": "dry",
+      "budget": 1600,
+      "demandMultiplier": 0.8,
+      "policy": "fixed-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 1600,
+      "shortageDays": 0,
+      "terminalStock": 20,
+      "spill": 0,
+      "schedule": [
+        2,
+        4
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 1600,
+      "demandMultiplier": 0.8,
+      "policy": "threshold-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 1600,
+      "shortageDays": 0,
+      "terminalStock": 20,
+      "spill": 0,
+      "schedule": [
+        0,
+        2
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 1600,
+      "demandMultiplier": 0.8,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 1600,
+      "shortageDays": 0,
+      "terminalStock": 20,
+      "spill": 0,
+      "schedule": [
+        0,
+        1
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 1600,
+      "demandMultiplier": 0.8,
+      "policy": "climate-plus",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 1600,
+      "shortageDays": 0,
+      "terminalStock": 20,
+      "spill": 0,
+      "schedule": [
+        0,
+        1
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 1600,
+      "demandMultiplier": 1,
+      "policy": "fixed-first-arrival",
+      "unmet": 3200,
+      "worstHouseholdCoverage": 0.6964285714285714,
+      "schoolCoverage": 0.5714285714285714,
+      "cost": 1600,
+      "shortageDays": 3,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        4
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 1600,
+      "demandMultiplier": 1,
+      "policy": "threshold-first-arrival",
+      "unmet": 3200,
+      "worstHouseholdCoverage": 0.7142857142857143,
+      "schoolCoverage": 0.7142857142857143,
+      "cost": 1600,
+      "shortageDays": 2,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 1600,
+      "demandMultiplier": 1,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 3200,
+      "worstHouseholdCoverage": 0.6964285714285714,
+      "schoolCoverage": 0.5714285714285714,
+      "cost": 1600,
+      "shortageDays": 3,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        4
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 1600,
+      "demandMultiplier": 1,
+      "policy": "climate-plus",
+      "unmet": 3200,
+      "worstHouseholdCoverage": 0.7842857142857143,
+      "schoolCoverage": 0.9142857142857143,
+      "cost": 1600,
+      "shortageDays": 3,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        4
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 1600,
+      "demandMultiplier": 1.2,
+      "policy": "fixed-first-arrival",
+      "unmet": 6420,
+      "worstHouseholdCoverage": 0.5714285714285714,
+      "schoolCoverage": 0.47619047619047616,
+      "cost": 1600,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        4
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 1600,
+      "demandMultiplier": 1.2,
+      "policy": "threshold-first-arrival",
+      "unmet": 6420,
+      "worstHouseholdCoverage": 0.5714285714285714,
+      "schoolCoverage": 0.47619047619047616,
+      "cost": 1600,
+      "shortageDays": 4,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 1600,
+      "demandMultiplier": 1.2,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 6420,
+      "worstHouseholdCoverage": 0.5714285714285714,
+      "schoolCoverage": 0.47619047619047616,
+      "cost": 1600,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 1600,
+      "demandMultiplier": 1.2,
+      "policy": "climate-plus",
+      "unmet": 6420,
+      "worstHouseholdCoverage": 0.642142857142857,
+      "schoolCoverage": 0.8380952380952381,
+      "cost": 1600,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 2400,
+      "demandMultiplier": 0.8,
+      "policy": "fixed-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 2400,
+      "shortageDays": 0,
+      "terminalStock": 2020,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 2400,
+      "demandMultiplier": 0.8,
+      "policy": "threshold-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 2400,
+      "shortageDays": 0,
+      "terminalStock": 2020,
+      "spill": 0,
+      "schedule": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 2400,
+      "demandMultiplier": 0.8,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 1600,
+      "shortageDays": 0,
+      "terminalStock": 20,
+      "spill": 0,
+      "schedule": [
+        0,
+        1
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 2400,
+      "demandMultiplier": 0.8,
+      "policy": "climate-plus",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 1600,
+      "shortageDays": 0,
+      "terminalStock": 20,
+      "spill": 0,
+      "schedule": [
+        0,
+        1
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 2400,
+      "demandMultiplier": 1,
+      "policy": "fixed-first-arrival",
+      "unmet": 1600,
+      "worstHouseholdCoverage": 0.8392857142857143,
+      "schoolCoverage": 0.7142857142857143,
+      "cost": 2400,
+      "shortageDays": 2,
+      "terminalStock": 400,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 2400,
+      "demandMultiplier": 1,
+      "policy": "threshold-first-arrival",
+      "unmet": 1200,
+      "worstHouseholdCoverage": 0.8571428571428571,
+      "schoolCoverage": 0.8571428571428571,
+      "cost": 2400,
+      "shortageDays": 1,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 2400,
+      "demandMultiplier": 1,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 1200,
+      "worstHouseholdCoverage": 0.8928571428571429,
+      "schoolCoverage": 0.7142857142857143,
+      "cost": 2400,
+      "shortageDays": 2,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        4,
+        5
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 2400,
+      "demandMultiplier": 1,
+      "policy": "climate-plus",
+      "unmet": 1200,
+      "worstHouseholdCoverage": 0.9228571428571428,
+      "schoolCoverage": 0.9428571428571428,
+      "cost": 2400,
+      "shortageDays": 2,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        4,
+        5
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 2400,
+      "demandMultiplier": 1.2,
+      "policy": "fixed-first-arrival",
+      "unmet": 4420,
+      "worstHouseholdCoverage": 0.7142857142857143,
+      "schoolCoverage": 0.5952380952380952,
+      "cost": 2400,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 2400,
+      "demandMultiplier": 1.2,
+      "policy": "threshold-first-arrival",
+      "unmet": 4420,
+      "worstHouseholdCoverage": 0.7142857142857143,
+      "schoolCoverage": 0.5952380952380952,
+      "cost": 2400,
+      "shortageDays": 3,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 2400,
+      "demandMultiplier": 1.2,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 4420,
+      "worstHouseholdCoverage": 0.7142857142857143,
+      "schoolCoverage": 0.5952380952380952,
+      "cost": 2400,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 2400,
+      "demandMultiplier": 1.2,
+      "policy": "climate-plus",
+      "unmet": 4420,
+      "worstHouseholdCoverage": 0.7604761904761904,
+      "schoolCoverage": 0.8428571428571429,
+      "cost": 2400,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 4000,
+      "demandMultiplier": 0.8,
+      "policy": "fixed-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 2400,
+      "shortageDays": 0,
+      "terminalStock": 2020,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 4000,
+      "demandMultiplier": 0.8,
+      "policy": "threshold-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 3200,
+      "shortageDays": 0,
+      "terminalStock": 4020,
+      "spill": 0,
+      "schedule": [
+        0,
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 4000,
+      "demandMultiplier": 0.8,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 1600,
+      "shortageDays": 0,
+      "terminalStock": 20,
+      "spill": 0,
+      "schedule": [
+        0,
+        1
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 4000,
+      "demandMultiplier": 0.8,
+      "policy": "climate-plus",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 1600,
+      "shortageDays": 0,
+      "terminalStock": 20,
+      "spill": 0,
+      "schedule": [
+        0,
+        1
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 4000,
+      "demandMultiplier": 1,
+      "policy": "fixed-first-arrival",
+      "unmet": 1600,
+      "worstHouseholdCoverage": 0.8392857142857143,
+      "schoolCoverage": 0.7142857142857143,
+      "cost": 2400,
+      "shortageDays": 2,
+      "terminalStock": 400,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 4000,
+      "demandMultiplier": 1,
+      "policy": "threshold-first-arrival",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 4000,
+      "shortageDays": 0,
+      "terminalStock": 2800,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 4000,
+      "demandMultiplier": 1,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 3200,
+      "shortageDays": 0,
+      "terminalStock": 800,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 4000,
+      "demandMultiplier": 1,
+      "policy": "climate-plus",
+      "unmet": 0,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 1,
+      "cost": 3200,
+      "shortageDays": 0,
+      "terminalStock": 800,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 4000,
+      "demandMultiplier": 1.2,
+      "policy": "fixed-first-arrival",
+      "unmet": 4420,
+      "worstHouseholdCoverage": 0.7142857142857143,
+      "schoolCoverage": 0.5952380952380952,
+      "cost": 2400,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 4000,
+      "demandMultiplier": 1.2,
+      "policy": "threshold-first-arrival",
+      "unmet": 420,
+      "worstHouseholdCoverage": 0.9910714285714286,
+      "schoolCoverage": 0.8571428571428571,
+      "cost": 4000,
+      "shortageDays": 1,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 4000,
+      "demandMultiplier": 1.2,
+      "policy": "optimized-first-arrival-ablation",
+      "unmet": 420,
+      "worstHouseholdCoverage": 1,
+      "schoolCoverage": 0.8333333333333334,
+      "cost": 4000,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "scenario": "dry",
+      "budget": 4000,
+      "demandMultiplier": 1.2,
+      "policy": "climate-plus",
+      "unmet": 420,
+      "worstHouseholdCoverage": 0.9971428571428572,
+      "schoolCoverage": 0.8523809523809524,
+      "cost": 4000,
+      "shortageDays": 6,
+      "terminalStock": 0,
+      "spill": 0,
+      "schedule": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  ]
+}

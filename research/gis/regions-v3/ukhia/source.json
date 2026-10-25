@@ -1,0 +1,33 @@
+{
+  "regionId": "ukhia",
+  "name": "Ukhia",
+  "bounds": [
+    92.118,
+    21.225,
+    92.15,
+    21.26
+  ],
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "requestUrl": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3Bway%5B%22highway%22%5D%2821.225%2C92.118%2C21.26%2C92.15%29%3Bout+body+geom%3B%0A",
+  "queryFile": "query.overpassql",
+  "responseFile": "roads.overpass.json",
+  "acquisitionStartedAt": "2026-10-24T17:15:20.055957+00:00",
+  "acquiredAt": "2026-10-24T17:15:59.007328+00:00",
+  "httpStatus": 200,
+  "responseHeaders": {
+    "Server": "nginx",
+    "Date": "Sat, 24 Oct 2026 17:15:56 GMT",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "close"
+  },
+  "sourceSha256": "89cfb946513feac986f115e7861c9dbb7806dc3b3a8cd0262751ef18ca80849a",
+  "querySha256": "3ae6f0dbe249af538e4fb432013d9b1cd2412309c6617146679ab7d742959b0e",
+  "osmBaseTimestamp": "2026-10-24T17:14:54Z",
+  "attribution": "© OpenStreetMap contributors",
+  "licence": "Open Database License (ODbL) 1.0",
+  "licenceUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "copyrightUrl": "https://www.openstreetmap.org/copyright",
+  "sourceDocumentation": "https://dev.overpass-api.de/command_line.html",
+  "priorAttempts": []
+}

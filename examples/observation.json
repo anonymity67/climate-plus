@@ -1,0 +1,12 @@
+{
+  "date": "2025-01-15",
+  "location": "ILLUSTRATIVE INPUT — replace before operational use",
+  "river": "Example only",
+  "latitude": 23.8,
+  "longitude": 90.4,
+  "ph": 7.2,
+  "do": 4.1,
+  "cod": 65,
+  "units": { "do": "mg/L", "cod": "mg/L" },
+  "provenance": "Synthetic schema example; not a field measurement"
+}

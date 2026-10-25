@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-22",
+  "status": "passed",
+  "method": "Fresh extraction of the source/data archive, with no preexisting node_modules or dist; checked source bytes preserved. This record is added to the final sealed package after the checks.",
+  "coreTests": 33,
+  "optionalContractTests": 1,
+  "checks": [
+    {
+      "check": "received-file-integrity",
+      "command": [
+        "node",
+        "scripts/verify-manifest.mjs"
+      ],
+      "exitCode": 0,
+      "output": "96/96 evidence files match the manifest.\n"
+    },
+    {
+      "check": "fresh-core-install",
+      "command": [
+        "npm",
+        "ci"
+      ],
+      "exitCode": 0,
+      "output": "\nadded 68 packages, and audited 69 packages in 15s\n\n10 packages are looking for funding\n  run `npm fund` for details\n\nfound 0 vulnerabilities\n"
+    },
+    {
+      "check": "core-format-tests-build-data",
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "exitCode": 0,
+      "output": "\n> climateplus-collaborator-kit@0.2.0 check\n> npm run format:check && npm test && npm run build && npm run verify:data\n\n\n> climateplus-collaborator-kit@0.2.0 format:check\n> prettier --check .\n\nChecking formatting...\nAll matched files use Prettier code style!\n\n> climateplus-collaborator-kit@0.2.0 test\n> node --test tests/*.test.mjs\n\n\u2714 browser model reproduces every supported held-out Python prediction (4.5023ms)\n\u2714 dataset transformation retains real coordinates, exclusions and separate surveys (0.8453ms)\n\u2714 all published source scenarios retain finite mass-balance diagnostics (0.4326ms)\n\u2714 scenario config is seven days with an explicit synthetic provenance (2.8603ms)\n\u2714 planner conserves water and respects budget and storage (5.5016ms)\n\u2714 no money and no water returns all unmet demand without NaN (0.4023ms)\n\u2714 balanced allocation meets school floor when feasible and avoids household starvation (0.2529ms)\n\u2714 zero demand produces defined full coverage (0.3572ms)\n\u2714 optimizer is no worse than every feasible schedule in its catalogue (1.7732ms)\n\u2714 invalid demand and budgets are rejected (1.0214ms)\n\u2714 inspections respect access and available hours (2.0474ms)\n\u2714 receipt verifies and detects tampering; canonical keys are order independent (16.1042ms)\n\u2714 documented observation example imports and produces the documented partial index (3.921ms)\n\u2714 documented paired example has closed flow and finite conditional predictions (1.4125ms)\n\u2714 mixing rejects non-finite, negative or greater-than-one closure tolerances (1.5893ms)\n\u2714 mixing rejects numerical overflow instead of exporting infinite results (1.3209ms)\n\u2714 CCME rejects reversed objective bounds explicitly (1.9936ms)\n\u2714 planner rejects missing arrays and invalid delivery quantities with a domain error (0.9925ms)\n\u2714 inspection jobs cannot buy capacity using negative hours or NaN priorities (0.3682ms)\n\u2714 a map sample with no valid tested parameter uses a missing-data color (1.3897ms)\n\u2714 survey markers use their hydraulic-layer color independently of quality (0.178ms)\n\u2714 notices expire at 24 hours and invalid or future confirmations are withheld (1.2526ms)\n\u2714 screening reports failed tests and limited coverage without calling water safe (1.0861ms)\n\u2714 missing and negative measurements never become passing tests (0.2218ms)\n\u2714 CCME uses scope frequency and amplitude and refuses underspecified panels (1.6481ms)\n\u2714 zero lower-bound measurement is handled explicitly without epsilon (0.2983ms)\n\u2714 replicates on one date do not satisfy the sampling gate (0.14ms)\n\u2714 mixing conserves incoming loads and shows a conditional reduction (0.2497ms)\n\u2714 unmeasured water or load prevents source-attribution conclusions (0.5001ms)\n\u2714 observation validation rejects impossible dates, coordinates and units (0.2777ms)\n\u2714 model abstains on out-of-range inputs and never receives target as predictor (0.3116ms)\n\u2714 observation display labels must be strings and future measurements are rejected (0.2681ms)\n\u2714 CCME cannot pool unrelated sites or count impossible dates (0.2233ms)\n\u2139 tests 33\n\u2139 suites 0\n\u2139 pass 33\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 222.5438\n\n> climateplus-collaborator-kit@0.2.0 build\n> vite build\n\nvite v6.4.4 building for production...\ntransforming...\n\u2713 1590 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.60 kB \u2502 gzip:   0.37 kB\ndist/assets/index-CqAhqbSB.css   37.30 kB \u2502 gzip:  11.57 kB\ndist/assets/index-CKPS1cw2.js   452.02 kB \u2502 gzip: 137.74 kB\n\u2713 built in 2.98s\n\n> climateplus-collaborator-kit@0.2.0 verify:data\n> node scripts/verify-data.mjs\n\n17 frozen data/reference assets checked; 0 failures.\n"
+    },
+    {
+      "check": "fresh-optional-install",
+      "command": [
+        "npm",
+        "run",
+        "chain:install"
+      ],
+      "exitCode": 0,
+      "output": "\n> climateplus-collaborator-kit@0.2.0 chain:install\n> npm ci --prefix tools/local-chain\n\n\nadded 353 packages, and audited 383 packages in 24s\n\n10 packages are looking for funding\n  run `npm fund` for details\n\n38 vulnerabilities (1 low, 8 moderate, 24 high, 5 critical)\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n\nRun `npm audit` for details.\n"
+    },
+    {
+      "check": "optional-contract",
+      "command": [
+        "npm",
+        "run",
+        "test:chain"
+      ],
+      "exitCode": 0,
+      "output": "\n> climateplus-collaborator-kit@0.2.0 test:chain\n> npm test --prefix tools/local-chain\n\n\n> climateplus-optional-local-chain@0.2.0 test\n> node --test tests/*.test.mjs\n\nThis version of \u00b5WS is not compatible with your Node.js build:\n\nError: Cannot find module '../binaries/uws_win32_x64_137.node'\nRequire stack:\n- [extracted-project]\\tools\\local-chain\\node_modules\\ganache\\node_modules\\@trufflesuite\\uws-js-unofficial\\src\\uws.js\n- [extracted-project]\\tools\\local-chain\\node_modules\\ganache\\dist\\node\\core.js\nFalling back to a NodeJS implementation; performance may be degraded.\n\n\n\u2714 EVM registry stores author, rejects duplicates and links corrections (980.1768ms)\n\u2139 tests 1\n\u2139 suites 0\n\u2139 pass 1\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 2028.837\n"
+    },
+    {
+      "check": "isolated-scientific-reproduction",
+      "command": [
+        "python",
+        "scripts/reproduce.py"
+      ],
+      "exitCode": 0,
+      "output": "17 frozen data/reference assets checked; 0 failures.\n{\n  \"status\": \"passed\",\n  \"outputDirectory\": \"D:\\\\Climate ++\\\\.build-artifacts\\\\handoff-verification\\\\20261022T105921Z-d333d9\\\\ClimatePlus-Collaborator-Kit\\\\reproductions\\\\20261022T110015Z-bd2308\",\n  \"numericalTolerance\": 1e-09,\n  \"dataManifestSha256\": \"43c438236e724f40f69f445db26172e5787c11a6143783e8f69dc965b9d1c1e7\",\n  \"frozenDataManifestPreserved\": true,\n  \"checks\": [\n    \"water normalized records\",\n    \"survey and hydraulics\",\n    \"frozen model\",\n    \"held-out predictions and metrics\",\n    \"144 operational policy runs\",\n    \"climate metrics thresholds and test rows\"\n  ]\n}\n"
+    },
+    {
+      "check": "file-integrity-after-checks",
+      "command": [
+        "node",
+        "scripts/verify-manifest.mjs"
+      ],
+      "exitCode": 0,
+      "output": "96/96 evidence files match the manifest.\n"
+    }
+  ]
+}

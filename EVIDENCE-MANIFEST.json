@@ -1,0 +1,493 @@
+{
+  "schema": "climate-plus/collaborator-handoff-v1",
+  "version": "0.2.0",
+  "createdAt": "2026-10-22T11:01:38.609088+00:00",
+  "scope": "Delivered source, data, documentation, configuration and verification records; excludes manifest itself and generated runtime folders.",
+  "files": [
+    {
+      "path": ".editorconfig",
+      "bytes": 140,
+      "sha256": "d4fe8bdd59c2114be8505db9446e9c53fbc81e7c99902eb185da740ec7f3a9eb"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 187,
+      "sha256": "e911eab13165a942c77c5d2359165c67780e2c50d5877ffbd9ecdbb3ad8aec83"
+    },
+    {
+      "path": ".nvmrc",
+      "bytes": 8,
+      "sha256": "b911698dc3cf3227d34d0ad6727f1c4408791203c9665de99ab959331a1fb07d"
+    },
+    {
+      "path": ".prettierignore",
+      "bytes": 192,
+      "sha256": "cef3daa72a5efada70834911aa100bf997a3f0cf1cb8ddbe03bb9424984c82f2"
+    },
+    {
+      "path": ".prettierrc.json",
+      "bytes": 94,
+      "sha256": "628852799bcfc3165a0795f9c409946f78c4dac3e6be219d6f096070439112f9"
+    },
+    {
+      "path": ".vscode/extensions.json",
+      "bytes": 72,
+      "sha256": "94fa32df068edf69db7ca8127f7b7c044c39b34183b8ad5af27264aa1b4fe182"
+    },
+    {
+      "path": ".vscode/launch.json",
+      "bytes": 258,
+      "sha256": "9890b306e59ba65113126d5dc29267220ac141cf235c925f7a9e98b2c5756af8"
+    },
+    {
+      "path": ".vscode/settings.json",
+      "bytes": 544,
+      "sha256": "9332e37158d33fcdc2789d0929ffac38c70abc2a2686d681366661cd3bc8311c"
+    },
+    {
+      "path": ".vscode/tasks.json",
+      "bytes": 784,
+      "sha256": "2d00b3dc9208cab7095090eda7d46f83c6bde81a30c06154f4968904cd31620e"
+    },
+    {
+      "path": "ATTRIBUTIONS.md",
+      "bytes": 3330,
+      "sha256": "e92cf8e492e0449c025c57860f5b110195462b5bd8e06fc0aacf65122ca9a497"
+    },
+    {
+      "path": "climateplus.code-workspace",
+      "bytes": 105,
+      "sha256": "f609951a169d9882febeac023b83fdbc5aa2f7260c171deb846a6bca6937679c"
+    },
+    {
+      "path": "contracts/EvidenceRegistry.sol",
+      "bytes": 809,
+      "sha256": "5442908182d702cd652041c68e0fa8eb42cb4a662c0f01572c634fcfdcf9bc77"
+    },
+    {
+      "path": "DATA-MANIFEST.json",
+      "bytes": 3000,
+      "sha256": "43c438236e724f40f69f445db26172e5787c11a6143783e8f69dc965b9d1c1e7"
+    },
+    {
+      "path": "DATASETS.json",
+      "bytes": 5623,
+      "sha256": "6a49d86e5673f7fc002679db7b2eed0ae61de4fe341c6227e6cff4d809fb90d2"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 4709,
+      "sha256": "0e6b0346a5e0ce2e77c9dec06b9c0f2e29edcff9e164692271e3a833b95a7ae2"
+    },
+    {
+      "path": "docs/AUDIT.md",
+      "bytes": 8375,
+      "sha256": "21809bb133b75444b0c1d80167618fb5ce7105c15ad88dfd72d69ac6a9b19e28"
+    },
+    {
+      "path": "docs/CONTRIBUTING.md",
+      "bytes": 3868,
+      "sha256": "20a43c6780788843244487206248b22524a6e0c7f67fad3b9e388f27d833f5f2"
+    },
+    {
+      "path": "docs/DATA-CONTRACTS.md",
+      "bytes": 5414,
+      "sha256": "b28e86c0d54a958e44240353a84ca4966e5a756712d42cfe560826316b993d9b"
+    },
+    {
+      "path": "docs/GIS-EXTENSION.md",
+      "bytes": 3994,
+      "sha256": "a213f585bfdf18f9113bc9d3b332dabac0aa38d3d33ea20dc4500170f71d1c35"
+    },
+    {
+      "path": "docs/REPRODUCTION.md",
+      "bytes": 3211,
+      "sha256": "7ee5db4d7a030876cb89d4ea1e3b618c32509c71daee14055ab3e03b3db374c6"
+    },
+    {
+      "path": "documentation/AUDIT-AND-ENHANCED-PLAN.md",
+      "bytes": 15439,
+      "sha256": "1defbd9d05ad24431a26cf63928b189c969639b70709f260353415035e6f97a4"
+    },
+    {
+      "path": "documentation/BUILD-LEDGER.md",
+      "bytes": 2540,
+      "sha256": "4d97141c1b5d4accb3eb156290fdf203f00827fffee3570fff1ca88b653d2927"
+    },
+    {
+      "path": "documentation/CLAIM-LEDGER.md",
+      "bytes": 3714,
+      "sha256": "ab009d430e1c3392947a0ab6813a5853ffc71b46f17d6ea08e3a3429ffd58187"
+    },
+    {
+      "path": "documentation/DATASETS.md",
+      "bytes": 6995,
+      "sha256": "96bdd34695e78f10e56d9b4cc990f3fcc4e2360fbcad345515b121d475b4c7ce"
+    },
+    {
+      "path": "documentation/METHODS-AND-VALIDATION.md",
+      "bytes": 12472,
+      "sha256": "aa699a56b121385dc97728223e7e237d9e8958b2045a922fbc46cef6612a3fe4"
+    },
+    {
+      "path": "documentation/OPERATOR-GUIDE.md",
+      "bytes": 5224,
+      "sha256": "ee578911ee9aa7b6a7e0416dc241aefad6da0e7a976b2807021e35de76570112"
+    },
+    {
+      "path": "documentation/PILOT-AND-VENTURE.md",
+      "bytes": 7326,
+      "sha256": "1aaa5723a166c775df913d407a0ff6a4c3b2a575a9e4b3d4dcb08ea151dfa550"
+    },
+    {
+      "path": "documentation/POLLUTION-IMPLEMENTATION.md",
+      "bytes": 4941,
+      "sha256": "f8c60e03a6c75f83d8f1be447753d227846985d16985584a7578f1bb494ec000"
+    },
+    {
+      "path": "documentation/SUBMISSION-PACK.md",
+      "bytes": 6454,
+      "sha256": "845d3bfc7c812b8750077749b51d753e2d7f41754a0821d10e2ca414f31ddcf0"
+    },
+    {
+      "path": "documentation/VALIDATION-REPORT.md",
+      "bytes": 3910,
+      "sha256": "af1369a6d62cd91460d18c851e10620a75dc0712b36db5e7418fe51ee06a097b"
+    },
+    {
+      "path": "examples/observation.json",
+      "bytes": 318,
+      "sha256": "c15b9ec2497a6ac046280f84f42148259fc684c85ab2821d2a61564463a58c1a"
+    },
+    {
+      "path": "examples/paired-measurements.json",
+      "bytes": 234,
+      "sha256": "b22c078aa01a78a247148542f4774a9b9de0e061a2d10968b0ec7ed42db19906"
+    },
+    {
+      "path": "index.html",
+      "bytes": 505,
+      "sha256": "e2845d3ab64f8422cfb18704ebcc6eb03f4e70b521fbffff3462db90e5c5cad4"
+    },
+    {
+      "path": "LICENSE-NOTICE.md",
+      "bytes": 1054,
+      "sha256": "ec338cd67cf1a6b3ab3cb258beb8eafc2c1a45f166a671b9ff3d41ac8c9359f0"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 63506,
+      "sha256": "5069898397e795932ba754f9d0f5f63f0125f9f522d528160b1639a8e148799c"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1208,
+      "sha256": "2abe332ec44cf14e0675e85de8d3bb2d30430d46491017b5d68e8a8377a44ae1"
+    },
+    {
+      "path": "provenance/original-release-manifest.json",
+      "bytes": 10025,
+      "sha256": "bc6049a33f149c92efafe2e2080312be994df8841d54303b547ce4b16e7881e2"
+    },
+    {
+      "path": "provenance/README.md",
+      "bytes": 1099,
+      "sha256": "a25b0dfa28a071b35f8453738b9cb6a3959bb18597be5da3e6db92570efb70eb"
+    },
+    {
+      "path": "public/data/benchmark.json",
+      "bytes": 54755,
+      "sha256": "7917e4b423acdcf73000c39dcdf062170c77d30d44433e0823d6f21ac1d37279"
+    },
+    {
+      "path": "public/data/climate-analysis.json",
+      "bytes": 26901,
+      "sha256": "e208cc2ba065c82e0566db551d1f248c5149aada1197c5b42479fc875ebcac8a"
+    },
+    {
+      "path": "public/data/credibility-audit.json",
+      "bytes": 2635,
+      "sha256": "012d57d4076cfaec3247bf5f06b65b1c1e9ee0f322cdc588e55cf5b8ae835a51"
+    },
+    {
+      "path": "public/data/water-evidence.json",
+      "bytes": 1044355,
+      "sha256": "f6e14c93fac76b94a68d172e205d54292b9048b230139317f5eef8de1b658ffe"
+    },
+    {
+      "path": "public/data/water-stations.geojson",
+      "bytes": 897587,
+      "sha256": "448efa00bcfee7a83c56bf2b792f0bdb060aa50b420adb0952a3f00e3be39ac1"
+    },
+    {
+      "path": "public/data/water-validation.json",
+      "bytes": 86367,
+      "sha256": "e408e7ed0415dfd88909463709f38a1d34944299d2285fdec30c9629e6dec721"
+    },
+    {
+      "path": "public/fonts/manrope-latin.ttf",
+      "bytes": 95688,
+      "sha256": "b8f802f05b322a7345805f5b89f8bb976604cc719a91530918d5ce3c47160950"
+    },
+    {
+      "path": "public/fonts/OFL.txt",
+      "bytes": 4387,
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    {
+      "path": "public/fonts/SOURCE.txt",
+      "bytes": 231,
+      "sha256": "d50bb31d202829be4ae0df83d3cec15ae6808bfe1fd70c0d5703019b679395a7"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11760,
+      "sha256": "16b73a02f6d7b8bef6dc67078237be620ea2a001ccea71367643305e4075f955"
+    },
+    {
+      "path": "requirements-research.txt",
+      "bytes": 152,
+      "sha256": "b7dec01801ee5bbd14233724a214638441dfac79ff62c788ba013cef7614beaf"
+    },
+    {
+      "path": "research/raw/power.txt",
+      "bytes": 8315,
+      "sha256": "af6f8b715919e3d4b067b7b141627db1f9b4464249795896d9c2d627795c54fe"
+    },
+    {
+      "path": "research/raw/roni.txt",
+      "bytes": 97820,
+      "sha256": "c3a07a7f28a7d69acef4fe03eb91482b062d1a1d63f462c181b0f5d5d4f23ff8"
+    },
+    {
+      "path": "research/water/basis-metadata.json",
+      "bytes": 7828,
+      "sha256": "347f023eee8c85a9134d65d783dea7ff64e70cfa65c686811b9fda6670942961"
+    },
+    {
+      "path": "research/water/basis-v2.xlsx",
+      "bytes": 85999,
+      "sha256": "3ab21b826163b70fe34370d7816784f394bae22a39830634e19a8affe84704f7"
+    },
+    {
+      "path": "research/water/dhaka-metadata.json",
+      "bytes": 4590,
+      "sha256": "feeb9424acdbb319a947aa5d534d0d334f32cbdac427462c254adb43f4df3abc"
+    },
+    {
+      "path": "research/water/ecr2023-page53.png",
+      "bytes": 223932,
+      "sha256": "f28c85bc7e70b9530ee133dd0e27b3ecc8d1e39560db71e3efc3f14281353195"
+    },
+    {
+      "path": "research/water/ecr2023.pdf",
+      "bytes": 826000,
+      "sha256": "21c2b53f98a4e061f4321818c262149c4aaccf44a6f2a8635b152bde43c23c4a"
+    },
+    {
+      "path": "research/water/Water quality.csv",
+      "bytes": 182314,
+      "sha256": "baa149c139cc514b1f339015f49cb8afca459e1c2e7323e10f5d7b6defa49a7a"
+    },
+    {
+      "path": "schemas/observation.schema.json",
+      "bytes": 1546,
+      "sha256": "0b9ce48e3ded934038ef1cb399fedbd04271a955d5a77939f26f143d5bce613d"
+    },
+    {
+      "path": "scripts/benchmark.mjs",
+      "bytes": 1891,
+      "sha256": "b13bea3def3058b87dc59bc226149ef46d1603db4d8056d68ca9127b4516dacd"
+    },
+    {
+      "path": "scripts/climate-analysis.py",
+      "bytes": 8408,
+      "sha256": "77a9d99f3dd260f2cc03bc401e2b494a667dd6cc9892e30630bce6cb3a5d1244"
+    },
+    {
+      "path": "scripts/credibility-audit.py",
+      "bytes": 5055,
+      "sha256": "4ce1d0041c69cd48a97160c35a892997662860fef520cd0e3d4a118d0a914044"
+    },
+    {
+      "path": "scripts/prepare-water-data.py",
+      "bytes": 15872,
+      "sha256": "cfe29c99f1148f822a7979e297dab01bc14f703df631f18f57608440f96a9430"
+    },
+    {
+      "path": "scripts/reproduce.py",
+      "bytes": 3171,
+      "sha256": "6f692d6935971b3850a44231d58aec141a6e38ff881c4a4c2268959242933cac"
+    },
+    {
+      "path": "scripts/verify-data.mjs",
+      "bytes": 1210,
+      "sha256": "f6297cf034ffd8938bd08dac108fe399d42e3254be12c32c8c68fdc18fb83f40"
+    },
+    {
+      "path": "scripts/verify-manifest.mjs",
+      "bytes": 810,
+      "sha256": "45b8109b17f37e96bf926972ea25b8ad561bf58929b097ab96a768c0298c72f3"
+    },
+    {
+      "path": "src/App.jsx",
+      "bytes": 46757,
+      "sha256": "e5e848b1063976d41758a664b1bd24ca940e05520318bb2801dd29d5738deae9"
+    },
+    {
+      "path": "src/components/ResearchMap.jsx",
+      "bytes": 3813,
+      "sha256": "4aaba60df77f60c53982562129af1e6867c95087e9fef5384303adc13345284f"
+    },
+    {
+      "path": "src/engine.mjs",
+      "bytes": 9075,
+      "sha256": "771fb8acb9836b19e1b66b472fa1a4a85046d3c5656de40495b279a3df0bac12"
+    },
+    {
+      "path": "src/main.jsx",
+      "bytes": 191,
+      "sha256": "4aebdf5022bf85a80d1629d496debc8c87dea629489701fa18812dc551ef63c4"
+    },
+    {
+      "path": "src/map-style.mjs",
+      "bytes": 336,
+      "sha256": "35ac442c5261a0ace3f7e2e34f1130174b6ee1539c4284c443896ac453173438"
+    },
+    {
+      "path": "src/notice.mjs",
+      "bytes": 265,
+      "sha256": "527c0bb4b582070895af5a9d7d17549d8415bb7a8dc60e95050d8f72d6fe6987"
+    },
+    {
+      "path": "src/pollution.css",
+      "bytes": 7790,
+      "sha256": "a941b722a63d95d1a9e0ab2a7dc4a0bb53e1b57a7d8a41e119a83cbd2b633e13"
+    },
+    {
+      "path": "src/PollutionPanel.jsx",
+      "bytes": 38380,
+      "sha256": "d7d1da2979fbe19617c381a6d8eb97df50fcdbc90d6d286c4c470f62f134b21a"
+    },
+    {
+      "path": "src/styles.css",
+      "bytes": 20112,
+      "sha256": "babc019f15986129804ee41a0e9951cbf8ce82b19f36b79ff05a9f12b4eb5d64"
+    },
+    {
+      "path": "src/water-engine.mjs",
+      "bytes": 8657,
+      "sha256": "6595cf03fb814dd8f29200026f65d541bf5c987bb792776c125a541dba377016"
+    },
+    {
+      "path": "tests/data-validation.test.mjs",
+      "bytes": 1902,
+      "sha256": "995faa3e402ec2aa47de1f7a69fa7298d6462a7bc518bd172e603d4dc27547b8"
+    },
+    {
+      "path": "tests/engine.test.mjs",
+      "bytes": 3486,
+      "sha256": "6fbac5bfda9c21954b83cbee3683c4e59baf07c1c039c796c3aad2bb4109d364"
+    },
+    {
+      "path": "tests/examples.test.mjs",
+      "bytes": 916,
+      "sha256": "7ee45876164145bfa37e2e7b240898de47758b00d4e7ba839954c4796ae5caee"
+    },
+    {
+      "path": "tests/handoff-regressions.test.mjs",
+      "bytes": 1638,
+      "sha256": "9c317852bfa5f152e0c8acad67ea02c05f93e7f8a038698e5f832ade652a97d0"
+    },
+    {
+      "path": "tests/map-style.test.mjs",
+      "bytes": 535,
+      "sha256": "6122bd91a5be013784e41816e45f7947f826a076bace20efb1956e267c5d1c6d"
+    },
+    {
+      "path": "tests/notice.test.mjs",
+      "bytes": 558,
+      "sha256": "1e30a18a2c69a86f0dd3f6c507132bd7a2ebddd15356e6896c39109baaea70a8"
+    },
+    {
+      "path": "tests/water.test.mjs",
+      "bytes": 4845,
+      "sha256": "453b74fa628096a60fcfce8aed782453fcd330b362f0981923c72bf3e550e83b"
+    },
+    {
+      "path": "tools/local-chain/package-lock.json",
+      "bytes": 167057,
+      "sha256": "70f70fb7b9eab4103bd16ef3a4b1c0b395a78e2ecc8dfc3405e3fa7feb100c57"
+    },
+    {
+      "path": "tools/local-chain/package.json",
+      "bytes": 430,
+      "sha256": "8af513c9ef0de187c32a84319ee348790e5460b4bdf3761448ef175c5456d0a8"
+    },
+    {
+      "path": "tools/local-chain/README.md",
+      "bytes": 1626,
+      "sha256": "97833a379452702bda6d813e6ee030f60549b73c4a5d4b5e06edda59c06c1594"
+    },
+    {
+      "path": "tools/local-chain/registry.mjs",
+      "bytes": 1334,
+      "sha256": "0823f9d7ae14e8d12ccdc594d15886a3009976b599e03c9d227f8ce78d1ab94d"
+    },
+    {
+      "path": "tools/local-chain/server.mjs",
+      "bytes": 2059,
+      "sha256": "33afaec26a184885f6ba6302323ae9c96a93f6bda144055b9f9d1bd1768d65dd"
+    },
+    {
+      "path": "tools/local-chain/tests/registry.test.mjs",
+      "bytes": 1106,
+      "sha256": "0e2952611be273f4051f1f15e2ee7498174c17ec9e91223c77e77faf5668235b"
+    },
+    {
+      "path": "verification/archive-checks.json",
+      "bytes": 7771,
+      "sha256": "cc3dec5216ef7df5fdd55d1c038fb39972ec4af701b52b16883fa34d9cde1f0a"
+    },
+    {
+      "path": "verification/core-audit.json",
+      "bytes": 385,
+      "sha256": "e101486a7030392afa6aab51b2f843f7df0a2772d1de6e5ec347a45c7d0284de"
+    },
+    {
+      "path": "verification/handoff-checks.json",
+      "bytes": 6321,
+      "sha256": "effac156714cddeb1956420863d26428b67b9bc3cead096ef91ce1b88dc1c8a3"
+    },
+    {
+      "path": "verification/local-chain-smoke.json",
+      "bytes": 153,
+      "sha256": "7715b76f9f757117994845e28d80dcd9a75d18e2c0f3b33586e48e676e3e016a"
+    },
+    {
+      "path": "verification/optional-chain-audit.json",
+      "bytes": 51973,
+      "sha256": "e89178e9d75c53d1463f0c8f3caab7c8c6bea54d6353099a654e1670857dc83d"
+    },
+    {
+      "path": "verification/pollution-gis.png",
+      "bytes": 78317,
+      "sha256": "aa292287e31d4887e7f9854f2825c1abd8a325dd3d212def714c3980e981e594"
+    },
+    {
+      "path": "verification/research-environment.txt",
+      "bytes": 161,
+      "sha256": "ebff8ed5537d74ce4fe0525bff60dc8911135513149233ff718be8989d889aa3"
+    },
+    {
+      "path": "verification/scientific-reproduction.json",
+      "bytes": 541,
+      "sha256": "7d266a65b7f3584c2eab25da7c52d408f1d92e5fb55dbe98cec3c2daeb296fb0"
+    },
+    {
+      "path": "vite.config.js",
+      "bytes": 224,
+      "sha256": "6649c0c54138e74698278765fffebfff70a58088fb359aaae83e6b7600258396"
+    }
+  ]
+}

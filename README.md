@@ -2,8 +2,6 @@
 
 **Watch:** [20-second overview](media/Aquavelle-20s.mp4) · **Deploy:** `web/docs/DEPLOY-AQUAVELLE.md`, or push to `main` after adding the three Cloudflare secrets listed in `.github/workflows/aquavelle.yml`.
 
-The October 2026 IEEE ClimateChain version of Climate++ is kept at the tag `climatechain-oct-2026`.
-
 **Store the rain. Have water all year.** Aquavelle is a rainwater-harvesting planner for Bangladesh, in Bangla and English. Many rivers are too polluted to rely on, and only 134 of 2,301 mm of yearly rain falls in the five driest months (Dhaka area, CHIRPS 2017–2021). Aquavelle helps households, schools, NGOs and local government plan rain tanks, choose shared tank sites and keep a backup water source.
 
 - **Rainwater:** size a tank for a home, shared site or school, see which months need backup water, and use the Borsha-Bandhu construction drawings.

@@ -3131,8 +3131,8 @@
     },
     {
       "path": "src/platform/SourceFinder.jsx",
-      "bytes": 25761,
-      "sha256": "c5bccaf1a875f1864d26ce6ab8af585c2f72585f21cd219507ab02b33080ed96"
+      "bytes": 25723,
+      "sha256": "612d46d80c6f34fb820d46a2351b12524beb8db023a7c42b74177a982f7d6fe6"
     },
     {
       "path": "src/platform/story.css",

@@ -485,7 +485,6 @@ export function SourceFinder({
                           'Map of recorded points. The results list contains the same points.',
                           'নথিভুক্ত উৎসের মানচিত্র। একই উৎস ফলাফলের তালিকাতেও আছে।',
                         )}
-                        tiles={false}
                         bangla={bn}
                       />
                     </Suspense>

@@ -1,5 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
-import { Brief } from './brief.jsx';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, FlaskConical, MapPin, Search } from 'lucide-react';
 import { useMapData } from '../mvp/use-map-data.mjs';
 import { useWaterQuery } from './use-water-query.mjs';
@@ -37,6 +36,7 @@ export function RiverWatchAtlas({ bn, onSample }) {
   const [showZone, setShowZone] = useState(false);
   const [showSamples, setShowSamples] = useState(false);
   const panel = useRef(null);
+  const focusResult = useRef(null);
 
   const base = useMapData(root + 'bangladesh.json');
   const catalogue = useMapData(root + run + '.json');
@@ -62,11 +62,28 @@ export function RiverWatchAtlas({ bn, onSample }) {
       ? ['industrial', 'landfill', 'wastewater', 'reference']
       : ['industrial', 'landfill', 'wastewater'];
 
+  useEffect(() => {
+    if (lead || !focusResult.current) return;
+    const button = panel.current?.querySelector(
+      '[data-site-id="' + CSS.escape(focusResult.current) + '"]',
+    );
+    (button || panel.current)?.focus();
+    focusResult.current = null;
+  }, [lead]);
+
+  function returnToResults() {
+    focusResult.current = lead;
+    chooseSite(null);
+  }
+
   function chooseSite(site) {
     setLead(site?.id || null);
     setShowZone(false);
     saveLocation(run, site?.id);
-    if (site) panel.current?.focus({ preventScroll: true });
+    if (site && panel.current) {
+      panel.current.scrollTop = 0;
+      panel.current.focus();
+    }
   }
   function chooseRun(next, site = null) {
     setRun(next);
@@ -88,23 +105,12 @@ export function RiverWatchAtlas({ bn, onSample }) {
           <h1 id="water-content" tabIndex={-1}>
             {t('Rivers and pollution', 'নদী ও দূষণ')}
           </h1>
-          <Brief
-            bn={bn}
-            problem={[
-              'Factories, dumps and sewage beside a river make the water unsafe downstream.',
-              'নদীর পাশের কারখানা, ময়লার স্তূপ ও পয়োবর্জ্য ভাটির পানি অনিরাপদ করে।',
-            ]}
-            purpose={['Find which sites to check first.', 'কোন স্থান আগে যাচাই করবেন, খুঁজে নিন।']}
-            steps={[
-              ['Pick a district or search a river', 'জেলা বাছুন বা নদীর নাম লিখুন'],
-              ['Tap a site', 'একটি স্থানে চাপুন'],
-              ['See who lives downstream', 'ভাটিতে কারা থাকেন দেখুন'],
-            ]}
-            result={[
-              '4,898 mapped sites, each a lead to check on the ground.',
-              '৪,৮৯৮টি চিহ্নিত স্থান, প্রতিটি মাঠে যাচাইয়ের সূত্র।',
-            ]}
-          />
+          <p>
+            {t(
+              'Explore mapped sites and river evidence across Bangladesh. Open a site to see where its river link leads and what still needs checking.',
+              'বাংলাদেশের মানচিত্রে নদী ও সম্ভাব্য দূষণের স্থান দেখুন। কোনো স্থান খুলে নদীর সংযোগ ও কী যাচাই দরকার জেনে নিন।',
+            )}
+          </p>
         </div>
         <TaskLink view="samples" bn={bn} className="aq-inline">
           <FlaskConical size={17} aria-hidden="true" />
@@ -270,6 +276,12 @@ export function RiverWatchAtlas({ bn, onSample }) {
                         {t('Reference', 'তুলনার স্থান')}
                       </span>
                     )}
+                    {detail?.link?.type === 'Point' && (
+                      <span>
+                        <i className="rw-dashed rw-link-key" />
+                        {t('Site to river', 'স্থান থেকে নদী')}
+                      </span>
+                    )}
                     {detail?.trace.length > 0 && (
                       <span>
                         <i className="rw-dashed" />
@@ -316,7 +328,7 @@ export function RiverWatchAtlas({ bn, onSample }) {
                           <button onClick={record.retry} type="button">
                             {t('Retry', 'আবার চেষ্টা করুন')}
                           </button>
-                          <button onClick={() => chooseSite(null)} type="button">
+                          <button onClick={returnToResults} type="button">
                             {t('Back to results', 'ফলাফলে ফিরে যান')}
                           </button>
                         </div>
@@ -328,7 +340,7 @@ export function RiverWatchAtlas({ bn, onSample }) {
                         nearby={nearby}
                         showZone={showZone}
                         onZone={setShowZone}
-                        onBack={() => chooseSite(null)}
+                        onBack={returnToResults}
                         onSample={onSample}
                         bn={bn}
                       />
@@ -377,7 +389,11 @@ export function RiverWatchAtlas({ bn, onSample }) {
                           <ul className="rw-result-list">
                             {filtered.slice(page * perPage, (page + 1) * perPage).map((site) => (
                               <li key={site.id}>
-                                <button type="button" onClick={() => chooseSite(site)}>
+                                <button
+                                  type="button"
+                                  data-site-id={site.id}
+                                  onClick={() => chooseSite(site)}
+                                >
                                   <i
                                     className={
                                       'rw-dot' +

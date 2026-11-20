@@ -43,8 +43,7 @@ const labels = {
   evidence: ['Data sources', 'তথ্যসূত্র'],
   response: ['Response practice', 'সরবরাহের মহড়া'],
 };
-const navigation = ['supply', 'hubs', 'water', 'field'];
-const navLabels = { hubs: ['Shared tanks', 'যৌথ ট্যাংক'], water: ['Find water', 'পানির উৎস'] };
+const navigation = ['water', 'rivers', 'supply', 'field'];
 
 function validView(view) {
   return Object.hasOwn(labels, view) ? view : 'home';
@@ -132,9 +131,13 @@ export function WaterPlatform({ initialView = '', initialBangla = false }) {
                 view={id}
                 bn={bn}
                 onGo={go}
-                current={view === id || (id === 'field' && fieldView && view !== 'hubs')}
+                current={
+                  view === id ||
+                  (id === 'rivers' && ['sources', 'samples'].includes(view)) ||
+                  (id === 'field' && fieldView && !['sources', 'samples'].includes(view))
+                }
               >
-                {(navLabels[id] || labels[id])[index]}
+                {labels[id][index]}
               </TaskLink>
             ))}
           </nav>
@@ -144,11 +147,7 @@ export function WaterPlatform({ initialView = '', initialBangla = false }) {
           </TaskLink>
         </div>
       </header>
-      <Content
-        id="water-main"
-        tabIndex={-1}
-        lang={bn && (fieldView || view === 'hubs') ? 'en' : undefined}
-      >
+      <Content id="water-main" tabIndex={-1} lang={bn && fieldView ? 'en' : undefined}>
         {view === 'home' && <Home bn={bn} onGo={go} />}
         {view === 'care' && <WaterCare bn={bn} onGo={go} />}
         {view === 'field' && <Field bn={bn} onGo={go} session={session} />}

@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Brief } from './brief.jsx';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { count } from './shared.jsx';
@@ -169,7 +168,12 @@ function ModelMap({ m, layers, ways, onPick }) {
 
 function Detail({ pick, m }) {
   if (!pick)
-    return <p className="hub-hint">Tap a tank, a tested site or a coloured patch to learn more.</p>;
+    return (
+      <p className="hub-hint">
+        Select a hub, a measured site, a served area, a cleanup zone or a coloured patch of river on
+        the map.
+      </p>
+    );
   const { type, v } = pick;
   if (type === 'hub')
     return (
@@ -227,39 +231,6 @@ function Detail({ pick, m }) {
   );
 }
 
-const mainLayers = [
-  ['severity', 'River pollution'],
-  ['sites', 'Tested sites'],
-  ['hubs', 'Rain tanks'],
-];
-const moreLayers = [
-  ['blocks', 'Areas served'],
-  ['rivers', 'Rivers & canals'],
-  ['cleanup', 'Cleanup zones'],
-];
-
-function LayerToggles({ layers, setLayers }) {
-  const box = ([k, label]) => (
-    <label key={k} className="water-checkbox hub-toggle">
-      <input
-        type="checkbox"
-        checked={layers[k]}
-        onChange={(e) => setLayers((l) => ({ ...l, [k]: e.target.checked }))}
-      />
-      {label}
-    </label>
-  );
-  return (
-    <div className="hub-layers" role="group" aria-label="Map layers">
-      {mainLayers.map(box)}
-      <details className="hub-more-layers">
-        <summary>More map layers</summary>
-        <div>{moreLayers.map(box)}</div>
-      </details>
-    </div>
-  );
-}
-
 export function HubPlanner({ bn }) {
   const { data: m, error } = useModel();
   const [layers, setLayers] = useState({
@@ -296,24 +267,23 @@ export function HubPlanner({ bn }) {
   const total = m ? m.meta.population : 0;
   const gainPeople = (now - base) * total;
   const chosen = [
-    hubsOn && 'add ' + (m ? m.hubs.length : '') + ' shared rain tanks',
-    cleanOn && 'clean the ' + (m ? m.cleanup_zones.length : '') + ' dirtiest river spots',
+    hubsOn && 'test ' + (m ? m.hubs.length : '') + ' proposed rain tanks',
+    cleanOn && 'test cleanup in ' + (m ? m.cleanup_zones.length : '') + ' modelled zones',
   ].filter(Boolean);
+  const rel = m && m.meta.hubs_reliability;
+  const relText = rel ? pct(rel[0]) + '–' + pct(rel[1]) : '';
   const hubPeople = m ? m.hubs.reduce((a, h) => a + h.served, 0) : 0;
   return (
     <div className="water-workspace hub-planner">
       <div className="water-task-heading">
         <div>
           <h1 id="water-content" tabIndex={-1}>
-            {bn ? 'যৌথ বৃষ্টির ট্যাংক' : 'Shared rain tanks'}
+            {bn ? 'রেইন হাব পরিকল্পনা' : 'Plan rain hubs'}
           </h1>
-          <Brief
-            problem={['Millions in Dhaka live beside rivers too polluted to use.']}
-            purpose={['Shared rain tanks can give a whole neighbourhood rainwater instead.']}
-            result={[
-              '15 tanks give about 75,000 people water through the dry season in about 9 of 10 years.',
-            ]}
-          />
+          <p>
+            Explore proposed sites for shared rain tanks in the Dhaka study area and estimate how
+            often each tank could meet its dry-season target.
+          </p>
         </div>
       </div>
       {error && (
@@ -326,22 +296,40 @@ export function HubPlanner({ bn }) {
         <>
           <section className="hub-step">
             <h2>
-              <span className="hub-num">1</span> Where the river is unsafe
+              <span className="hub-num">1</span> Explore the Dhaka model
             </h2>
             <p className="hub-small">
-              Red means the river is likely too polluted to use. Blue dots are the proposed tanks.
-              Tap anything on the map.
+              Colours show estimates from historical samples and the model’s river score. The sites
+              and results need field checks before a building decision.
             </p>
             <div className="hub-layout">
               <div>
-                <LayerToggles layers={layers} setLayers={setLayers} />
+                <div className="hub-layers" role="group" aria-label="Map layers">
+                  {[
+                    ['severity', 'River pollution'],
+                    ['sites', 'Measured sites'],
+                    ['rivers', 'Rivers & canals'],
+                    ['hubs', 'Rain tanks'],
+                    ['blocks', 'Modelled service areas'],
+                    ['cleanup', 'Cleanup zones'],
+                  ].map(([k, label]) => (
+                    <label key={k} className="water-checkbox">
+                      <input
+                        type="checkbox"
+                        checked={layers[k]}
+                        onChange={(e) => setLayers((l) => ({ ...l, [k]: e.target.checked }))}
+                      />
+                      {label}
+                    </label>
+                  ))}
+                </div>
                 <ModelMap m={m} layers={layers} ways={ways} onPick={setPick} />
                 <p className="hub-key">
                   <span style={{ background: ramp(0.2) }} /> unlikely{' '}
                   <span style={{ background: ramp(0.45) }} /> possible{' '}
                   <span style={{ background: ramp(0.6) }} /> likely{' '}
-                  <span style={{ background: ramp(0.8) }} /> very likely polluted · ringed dots:
-                  where water was tested · blue dots: tanks
+                  <span style={{ background: ramp(0.8) }} /> very likely severely polluted · dots
+                  with a dark ring are measured sites · blue dots are rain tanks
                 </p>
               </div>
               <aside className="water-inspector" aria-live="polite">
@@ -362,10 +350,11 @@ export function HubPlanner({ bn }) {
                   onChange={(e) => setHubsOn(e.target.checked)}
                 />
                 <span>
-                  <strong>Add {m.hubs.length} shared rain tanks</strong>
+                  <strong>Model {m.hubs.length} shared rain tanks</strong>
                   <small>
-                    Each serves {count(m.meta.hub_capacity_people)} people and lasts the dry season
-                    in about 9 of 10 years.
+                    Each proposed tank holds {count(m.meta.hub_tank_m3)} m³, with a target of{' '}
+                    {count(m.meta.hub_capacity_people)} people. The model met the dry-season target
+                    in {relText} of simulated years.
                   </small>
                 </span>
               </label>
@@ -376,13 +365,15 @@ export function HubPlanner({ bn }) {
                   onChange={(e) => setCleanOn(e.target.checked)}
                 />
                 <span>
-                  <strong>Also clean the {m.cleanup_zones.length} dirtiest river spots</strong>
-                  <small>Shown as dashed circles on the map.</small>
+                  <strong>Test cleanup in {m.cleanup_zones.length} priority zones</strong>
+                  <small>
+                    Dashed circles show where a cleanup scenario changes the model most.
+                  </small>
                 </span>
               </label>
               <label className={'hub-slider' + (cleanOn ? '' : ' off')}>
                 <span>
-                  Cleanup cuts pollution by <strong>{pct(effect)}</strong>
+                  How much does cleanup help? <strong>{pct(effect)}</strong> less severe pollution
                 </span>
                 <input
                   type="range"
@@ -393,7 +384,7 @@ export function HubPlanner({ bn }) {
                   disabled={!cleanOn}
                   onChange={(e) => setEffect(Number(e.target.value))}
                 />
-                <small>An estimate. Move it to compare.</small>
+                <small>This is an estimate. Move it to see a cautious or a hopeful case.</small>
               </label>
             </section>
 
@@ -405,38 +396,44 @@ export function HubPlanner({ bn }) {
                 <>
                   <strong className="hub-big">{count(hubPeople)}</strong>
                   <p className="hub-result-line">
-                    people get water from {m.hubs.length} shared tanks, in about 9 of 10 dry
-                    seasons.
+                    people assigned to {m.hubs.length} proposed tanks. Individual tanks met their
+                    daily target throughout the dry season in {relText} of simulated years.
                   </p>
                 </>
               )}
               <p className={hubsOn ? 'hub-small' : 'hub-result-line'}>
                 {!hubsOn && <strong className="hub-big">{pct(now)}</strong>}
-                {hubsOn ? pct(now) : ''} of people don’t have to rely on polluted river water.
+                {hubsOn ? pct(now) : ''} on the model’s water access measure for the study area.
               </p>
               {chosen.length ? (
                 <DoneNote
                   did={'chose to ' + chosen.join(' and ') + '.'}
                   means={
                     cleanOn
-                      ? 'Cleanup lifts this from ' +
+                      ? 'The selected scenario moves the modelled water access measure from ' +
                         pct(base) +
                         ' to ' +
                         pct(now) +
-                        ', about ' +
-                        (gainPeople / 1e6).toFixed(1) +
-                        ' million more people.'
-                      : 'Each tank serves up to ' + count(m.meta.hub_capacity_people) + ' people.'
+                        '. This represents a probability-weighted change equivalent to ' +
+                        count(gainPeople) +
+                        ' people within the model.'
+                      : 'Each proposed tank is sized for up to ' +
+                        count(m.meta.hub_capacity_people) +
+                        ' people under the model inputs.'
                   }
                   next={
                     cleanOn
-                      ? 'Move the slider to compare.'
-                      : 'Ask local teams to check each site before building.'
+                      ? 'Move the cleanup estimate to test a cautious and a hopeful case.'
+                      : 'Check roof area, demand and other sources with local teams before choosing a site.'
                   }
                 />
               ) : (
-                <p className="hub-small">Tick an action to see what changes.</p>
+                <p className="hub-small">
+                  The starting case uses the historical inputs. Select a proposed action to compare
+                  the estimates.
+                </p>
               )}
+              <p className="hub-small">Water Access Index: {now.toFixed(3)}</p>
             </section>
           </div>
 

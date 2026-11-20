@@ -1,5 +1,4 @@
 import React, { lazy, Suspense, useEffect, useId, useRef, useState } from 'react';
-import { Brief } from './brief.jsx';
 import { ArrowLeft, ArrowRight, ClipboardCheck, LocateFixed, MapPin, Search } from 'lucide-react';
 import { useWaterQuery } from './use-water-query.mjs';
 import { Export, Source, State, statusName } from './shared.jsx';
@@ -208,6 +207,7 @@ export function SourceFinder({
   const [locationError, setLocationError] = useState(false);
   const [drafts, setDrafts] = useState({});
   const inspector = useRef(null);
+  const locationAttempt = useRef(0);
   const offset = search?.offset || 0;
   const near = search?.kind === 'nearby' ? search : null;
   const path = near
@@ -238,6 +238,8 @@ export function SourceFinder({
   }, [selected]);
   function submit(event) {
     event.preventDefault();
+    locationAttempt.current++;
+    setLocating(false);
     setLocationError(false);
     setSelected(null);
     setSearch({ area, name, offset: 0 });
@@ -247,8 +249,10 @@ export function SourceFinder({
     if (!navigator.geolocation) return setLocationError(true);
     setLocationError(false);
     setLocating(true);
+    const attempt = ++locationAttempt.current;
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => {
+        if (attempt !== locationAttempt.current) return;
         setSearch({
           kind: 'nearby',
           latitude: Number(coords.latitude.toFixed(4)),
@@ -262,6 +266,7 @@ export function SourceFinder({
         results.reload();
       },
       () => {
+        if (attempt !== locationAttempt.current) return;
         setLocating(false);
         setLocationError(true);
       },
@@ -279,26 +284,12 @@ export function SourceFinder({
           <h1 id="water-content" tabIndex={-1}>
             {t('Find a water source', 'পানির উৎস খুঁজুন')}
           </h1>
-          <Brief
-            bn={bn}
-            problem={[
-              'In the dry months, your usual source may run out.',
-              'শুষ্ক মাসে আপনার নিয়মিত উৎস শুকিয়ে যেতে পারে।',
-            ]}
-            purpose={[
-              'Find a backup well or tap before you need it.',
-              'দরকারের আগেই বিকল্প নলকূপ বা কল খুঁজে রাখুন।',
-            ]}
-            steps={[
-              ['Choose your area', 'আপনার এলাকা বেছে নিন'],
-              ['Tap a water point', 'একটি পানির উৎসে চাপুন'],
-              ['Call or visit to check it works', 'ফোন করে বা গিয়ে দেখুন সচল কি না'],
-            ]}
-            result={[
-              'You get a short list of nearby sources from 20,084 records.',
-              '২০,০৮৪টি নথি থেকে কাছের উৎসের ছোট তালিকা পাবেন।',
-            ]}
-          />
+          <p>
+            {t(
+              'Choose an area to see recorded wells and other water points.',
+              'নথিভুক্ত নলকূপ ও অন্য পানির উৎস দেখতে এলাকা বেছে নিন।',
+            )}
+          </p>
         </div>
       </div>
       <div className="aq-finder-notice">
@@ -308,7 +299,7 @@ export function SourceFinder({
               meta.source.dates.min.slice(0, 4) +
               '–' +
               meta.source.dates.max.slice(0, 4) +
-              '. Check that a source still works and ask for a recent test before drinking.',
+              '. Ask locally whether a source still works and request a recent water test before drinking.',
             'এগুলো ২০১৪–২০১৯ সালের জরিপের তথ্য। উৎসটি এখন সচল কি না জেনে নিন এবং পান করার আগে সাম্প্রতিক পরীক্ষার ফল চান।',
           )}
         </p>

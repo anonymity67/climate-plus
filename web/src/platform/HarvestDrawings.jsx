@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowDownToLine, ArrowRight, ArrowUpRight, BookOpen } from 'lucide-react';
 import { TaskLink } from './Home.jsx';
 
@@ -85,15 +85,22 @@ export function HarvestDrawings({ bn }) {
   const [failed, setFailed] = useState(false);
   const t = (en, bangla) => (bn ? bangla : en);
   const [name, title, titleBn, description, descBn, height] = sheets[selected];
+  const section = useRef(null);
+  useEffect(() => {
+    if (location.hash !== '#harvest-drawings') return;
+    const drawing = section.current;
+    drawing?.scrollIntoView();
+    drawing?.focus({ preventScroll: true });
+  }, []);
   const asset = root + 'drawings/' + name;
   return (
-    <section id="harvest-drawings" className="harvest-drawings">
+    <section ref={section} id="harvest-drawings" className="harvest-drawings" tabIndex={-1}>
       <div className="harvest-section-heading">
         <h2>{t('System drawings', 'ব্যবস্থার নকশা')}</h2>
         <p>
           {t(
-            'How to build it. Show these to a local engineer before building.',
-            'কীভাবে বানাবেন। বানানোর আগে স্থানীয় প্রকৌশলীকে দেখান।',
+            'Original Borsha-Bandhu drawings for discussion and local engineering review.',
+            'আলোচনা ও স্থানীয় প্রকৌশল পর্যালোচনার জন্য বর্ষাবন্ধুর মূল নকশা।',
           )}
         </p>
       </div>

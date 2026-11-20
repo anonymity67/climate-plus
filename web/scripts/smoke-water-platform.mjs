@@ -31,8 +31,7 @@ function check(label, value) {
 const page = await call('/');
 check(
   'Built HTML served',
-  page.response.status === 200 &&
-    String(page.data).includes('Store the rain. Have water all year.'),
+  page.response.status === 200 && String(page.data).includes('Find water. Know what to check.'),
 );
 const meta = (await call('/api/water/meta')).data;
 check(

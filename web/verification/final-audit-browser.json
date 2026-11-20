@@ -1,0 +1,158 @@
+{
+  "browser": "Microsoft Edge",
+  "samples": [
+    {
+      "view": "home",
+      "language": "en",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "water",
+      "language": "en",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "care",
+      "language": "en",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "rivers",
+      "language": "en",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "samples",
+      "language": "en",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "supply",
+      "language": "en",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "hubs",
+      "language": "en",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "field",
+      "language": "en",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "drill",
+      "language": "en",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "records",
+      "language": "en",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "evidence",
+      "language": "en",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "response",
+      "language": "en",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "home",
+      "language": "bn",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "water",
+      "language": "bn",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "care",
+      "language": "bn",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "rivers",
+      "language": "bn",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "samples",
+      "language": "bn",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "supply",
+      "language": "bn",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "hubs",
+      "language": "bn",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "field",
+      "language": "bn",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "drill",
+      "language": "bn",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "records",
+      "language": "bn",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "evidence",
+      "language": "bn",
+      "overflow": false,
+      "issues": []
+    },
+    {
+      "view": "response",
+      "language": "bn",
+      "overflow": false,
+      "issues": []
+    }
+  ],
+  "journeys": [
+    "Drawing permalink scrolls and sets focus after the planner loads",
+    "Seasonal and daily calculations complete with the connection disabled and move focus to the result",
+    "Keyboard focus returns to the same RiverWatch result after closing",
+    "A superseded location request sends no coordinates; a fresh request still works",
+    "River trace remains visible above detailed waterways and renders without a marker image"
+  ],
+  "runtimeErrors": [],
+  "ok": true
+}

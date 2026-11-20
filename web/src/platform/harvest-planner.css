@@ -366,3 +366,10 @@
   margin-bottom: 12px;
   color: var(--water-muted);
 }
+
+.harvest-results h2:focus-visible,
+.aq-rain h2:focus-visible,
+.harvest-drawings:focus-visible {
+  outline: 2px solid var(--water-green);
+  outline-offset: 4px;
+}

@@ -430,3 +430,8 @@
   outline: 2px solid var(--water-green);
   outline-offset: -2px;
 }
+
+.rw-link-key {
+  border-top-color: #814a2f;
+  border-top-style: dotted;
+}

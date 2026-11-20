@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Calculator, Droplets, Wrench } from 'lucide-react';
-import { api } from '../operations/api-client.mjs';
-import { leakageEstimate } from './water-model.mjs';
+import { leakageEstimate, rainwaterPlan } from './water-model.mjs';
 import { harvestReference, parseHarvestNumber } from './harvest-model.mjs';
 import { count, Export, Source } from './shared.jsx';
 import { useSessionDraft } from './session-draft.mjs';
@@ -38,7 +37,7 @@ export function SupplyPlanner({ bn }) {
     lossMm: '1',
     rainfall: dryMonth,
   });
-  const [state, setState] = useState({ busy: false, error: '', data: null }),
+  const [state, setState] = useState({ error: '', data: null }),
     [leak, setLeak] = useState({ ml: '100', seconds: '60' }),
     [leakResult, setLeakResult] = useState(null),
     [leakError, setLeakError] = useState('');
@@ -46,9 +45,8 @@ export function SupplyPlanner({ bn }) {
     setForm((f) => ({ ...f, [key]: value }));
     setState((s) => ({ ...s, data: null, error: '', field: null }));
   };
-  async function calculate(e) {
+  function calculate(e) {
     e.preventDefault();
-    if (state.busy) return;
     const input = Object.fromEntries(
       Object.keys(inputLimits).map((key) => [key, parseHarvestNumber(form[key])]),
     );
@@ -99,20 +97,15 @@ export function SupplyPlanner({ bn }) {
       control?.focus();
       return;
     }
-    setState({ busy: true, error: '', data: null });
-    try {
-      const data = await api('/water/rainwater', { method: 'POST', body: input });
-      setState({ busy: false, error: '', data });
-    } catch {
-      setState({
-        error: t(
-          'The calculation could not finish. Try again.',
-          'হিসাব শেষ হয়নি। আবার চেষ্টা করুন।',
-        ),
-      });
-    }
+    setState({
+      data: { input, result: rainwaterPlan(input), calculatedAt: new Date().toISOString() },
+    });
   }
   const result = state.data?.result;
+  const resultHeading = useRef(null);
+  useEffect(() => {
+    if (result) resultHeading.current?.focus();
+  }, [result]);
   return (
     <div className="aq-rain" lang={bn ? 'bn' : 'en'}>
       <div className="water-planner-layout">
@@ -129,7 +122,7 @@ export function SupplyPlanner({ bn }) {
               <button
                 key={en}
                 type="button"
-                disabled={state.busy}
+
                 onClick={() => {
                   setForm({
                     roofM2,
@@ -140,7 +133,7 @@ export function SupplyPlanner({ bn }) {
                     lossMm: '1',
                     rainfall: dryMonth,
                   });
-                  setState({ busy: false, data: null, error: '' });
+                  setState({ data: null, error: '' });
                 }}
               >
                 {t(en, bangla)}
@@ -174,7 +167,7 @@ export function SupplyPlanner({ bn }) {
                     inputMode="decimal"
                     maxLength={14}
                     required
-                    disabled={state.busy}
+
                     value={form[key]}
                     onChange={(e) => change(key, e.target.value)}
                   />
@@ -208,7 +201,7 @@ export function SupplyPlanner({ bn }) {
                       inputMode="decimal"
                       maxLength={14}
                       required
-                      disabled={state.busy}
+
                       value={form[key]}
                       onChange={(e) => change(key, e.target.value)}
                     />
@@ -226,7 +219,7 @@ export function SupplyPlanner({ bn }) {
                   required
                   rows={3}
                   maxLength={4000}
-                  disabled={state.busy}
+
                   value={form.rainfall}
                   onChange={(e) => change('rainfall', e.target.value)}
                   aria-invalid={state.field === 'rainfall' || undefined}
@@ -242,11 +235,9 @@ export function SupplyPlanner({ bn }) {
                 )}
               </p>
             </details>
-            <button type="submit" className="water-primary" disabled={state.busy}>
+            <button type="submit" className="water-primary">
               <Calculator size={18} />
-              {state.busy
-                ? t('Calculating…', 'হিসাব হচ্ছে…')
-                : t('Calculate water balance', 'পানির হিসাব করুন')}
+              {t('Calculate water balance', 'পানির হিসাব করুন')}
             </button>
           </form>
           {state.error && (
@@ -271,7 +262,7 @@ export function SupplyPlanner({ bn }) {
         <section className="water-plan-result" aria-live="polite">
           {result ? (
             <>
-              <h2>
+              <h2 ref={resultHeading} tabIndex={-1}>
                 {qty(result.coveragePercent)}% {t('of the entered need met', 'চাহিদা পূরণ হয়')}
               </h2>
               <p>

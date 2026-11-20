@@ -339,15 +339,12 @@ export function MapMVP({ signInPath }) {
   return (
     <div className="mvp">
       <header className="mvp-header">
-        <a className="mvp-brand" href="/" aria-label="Aquavelle response map">
-          <Waves size={25} />
-          <span>
-            climate<span>++</span>
-          </span>
+        <a className="mvp-brand" href="/" aria-label="Aquavelle home">
+          <Waves size={25} aria-hidden="true" />
+          <span>Aquavelle</span>
         </a>
         <div className="mvp-header-title">
           <h1>Water response map</h1>
-          <span>V3</span>
         </div>
         <button
           className="mvp-secondary"

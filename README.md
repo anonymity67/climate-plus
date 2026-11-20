@@ -1,15 +1,6 @@
 # Aquavelle
 
-**Watch:** [20-second overview](media/Aquavelle-20s.mp4) · **Deploy:** `web/docs/DEPLOY-AQUAVELLE.md`, or push to `main` after adding the three Cloudflare secrets listed in `.github/workflows/aquavelle.yml`.
-
-**Store the rain. Have water all year.** Aquavelle is a rainwater-harvesting planner for Bangladesh, in Bangla and English. Many rivers are too polluted to rely on, and only 134 of 2,301 mm of yearly rain falls in the five driest months (Dhaka area, CHIRPS 2017–2021). Aquavelle helps households, schools, NGOs and local government plan rain tanks, choose shared tank sites and keep a backup water source.
-
-- **Rainwater:** size a tank for a home, shared site or school, see which months need backup water, and use the Borsha-Bandhu construction drawings.
-- **Shared tanks:** 15 proposed shared tanks in the Dhaka study area, chosen by a Bayesian model of rainfall and river pollution, for about 75,000 people; each met its dry-season target in 90–93% of simulated years. Model estimates; sites need field checks.
-- **Find water / Check before you drink:** recorded backup sources and what to ask before using any source, including stored rain.
-- **Field teams:** river pollution atlas, river measurements, outage drill and private field records.
-
-`gis/DEMO.md` is a 4-minute demo script that walks through the same data in QGIS and in the app.
+Aquavelle helps residents in Bangladesh look up past water-source records, find out what to check before drinking, and estimate how much rainwater they can store. Field teams can explore river measurements, model shared tanks, rehearse supply disruptions and save private visit records.
 
 ## Run locally
 
@@ -24,6 +15,10 @@ npm.cmd run serve:local -- --port 5198
 ```
 
 Open http://127.0.0.1:5198/. Use `npm` on macOS or Linux. See [deployment and verification](web/docs/DEPLOY-AQUAVELLE.md) for Cloudflare Workers, D1 and optional operator sign-in.
+
+## Quick walkthrough
+
+The [three-minute demo](web/docs/DEMO.md) links to a recorded water source search, a RiverWatch trace, and a school rainwater example.
 
 ## Data and methods
 

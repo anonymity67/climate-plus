@@ -132,6 +132,7 @@
   font-weight: 650;
 }
 .water-platform thead th {
+  color: var(--water-ink);
   background: #eef2e8;
 }
 .water-platform caption {

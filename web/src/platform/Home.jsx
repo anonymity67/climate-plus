@@ -11,10 +11,7 @@ import {
   ShieldCheck,
   Siren,
   Waves,
-  Users,
 } from 'lucide-react';
-import { homeFacts as F, bnNum, fmt } from './home-facts.mjs';
-import { Brief } from './brief.jsx';
 
 export function taskLink(view, bn) {
   const query = new URLSearchParams();
@@ -42,36 +39,28 @@ export function TaskLink({ view, bn, className, current, onGo, children }) {
 
 const residentTools = [
   [
-    'supply',
-    CloudRain,
-    'Plan a rain tank',
-    'বৃষ্টির পানির ট্যাংকের পরিকল্পনা করুন',
-    'How much water your roof can give, month by month.',
-    'আপনার ছাদ মাসে মাসে কত পানি দিতে পারে।',
-  ],
-  [
-    'hubs',
-    Users,
-    'Plan shared rain tanks',
-    'যৌথ পানির ট্যাংকের পরিকল্পনা করুন',
-    'Where shared tanks go and who they serve.',
-    'যৌথ ট্যাংক কোথায় হবে, কারা পানি পাবেন।',
-  ],
-  [
     'water',
     MapPin,
-    'Find a backup source',
-    'বিকল্প পানির উৎস খুঁজুন',
-    'Wells and taps near you for dry spells.',
-    'শুষ্ক সময়ের জন্য কাছের নলকূপ ও কল।',
+    'Find a water source',
+    'পানির উৎস খুঁজুন',
+    'Look up recorded wells and rainwater points by area.',
+    'এলাকা বেছে নথিভুক্ত নলকূপ ও বৃষ্টির পানির উৎস খুঁজুন।',
   ],
   [
     'care',
     ShieldCheck,
     'Check before you drink',
     'পান করার আগে যাচাই করুন',
-    'What to ask before you drink any water.',
-    'যেকোনো পানি পানের আগে কী জানবেন।',
+    'Know what to ask before using a source.',
+    'পানির উৎস ব্যবহারের আগে কী জেনে নেবেন, দেখুন।',
+  ],
+  [
+    'supply',
+    CloudRain,
+    'Plan a rain tank',
+    'বৃষ্টির পানির ট্যাংকের পরিকল্পনা করুন',
+    'See how much water your roof and tank could supply.',
+    'ছাদ ও ট্যাংক থেকে কতটা পানি পাওয়া যেতে পারে, হিসাব করুন।',
   ],
 ];
 
@@ -126,9 +115,9 @@ const fieldTools = [
   ],
 ];
 
-function ToolLinks({ tools, bn, onGo, className = 'aq-tool-list' }) {
+function ToolLinks({ tools, bn, onGo }) {
   return (
-    <ul className={className}>
+    <ul className="aq-tool-list">
       {tools.map(([view, Icon, en, bangla, enDetail, bnDetail]) => (
         <li key={view}>
           <TaskLink view={view} bn={bn} onGo={onGo} className="aq-tool">
@@ -147,49 +136,6 @@ function ToolLinks({ tools, bn, onGo, className = 'aq-tool-list' }) {
   );
 }
 
-const monthsEn = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
-const monthsBn = ['জা', 'ফে', 'মা', 'এ', 'মে', 'জু', 'জু', 'আ', 'সে', 'অ', 'ন', 'ডি'];
-
-// Twelve bars of average monthly rain; the five driest months are amber.
-function RainChart({ bn }) {
-  const max = Math.max(...F.monthlyMm);
-  const dry = [...F.monthlyMm].sort((a, b) => a - b)[4];
-  const names = bn ? monthsBn : monthsEn;
-  return (
-    <figure
-      className="aq-rain"
-      aria-label={
-        bn ? 'ঢাকা এলাকায় মাসিক গড় বৃষ্টিপাত' : 'Average rain per month in the Dhaka area'
-      }
-    >
-      <figcaption className="aq-rain-top">
-        <span>
-          <CloudRain size={18} aria-hidden="true" />
-          {bn ? 'ঢাকা এলাকায় মাসিক বৃষ্টি (মিমি)' : 'Rain in the Dhaka area, mm per month'}
-        </span>
-      </figcaption>
-      <div className="aq-rain-plot">
-        {F.monthlyMm.map((v, i) => (
-          <div key={i} className="aq-rain-bar">
-            <span className="aq-rain-value">{bn ? bnNum(v) : v}</span>
-            <span
-              className={'aq-rain-fill' + (v <= dry ? ' dry' : '')}
-              style={{ height: (100 * v) / max + '%' }}
-            />
-            <span className="aq-rain-month">{names[i]}</span>
-          </div>
-        ))}
-      </div>
-      <p className="aq-rain-note">
-        <span className="aq-rain-key" aria-hidden="true" />
-        {bn
-          ? `বছরে ${fmt(F.yearMm, true)} মিমি · সবচেয়ে শুষ্ক পাঁচ মাসে মাত্র ${fmt(F.dryFiveMm, true)} মিমি · CHIRPS ২০১৭–২০২১`
-          : `${fmt(F.yearMm)} mm a year · only ${F.dryFiveMm} mm in the five driest months · CHIRPS 2017–2021`}
-      </p>
-    </figure>
-  );
-}
-
 export function Home({ bn, onGo }) {
   return (
     <>
@@ -202,65 +148,56 @@ export function Home({ bn, onGo }) {
         <div className="aq-cover-copy" data-enter>
           <p className="aq-location">
             <MapPin size={16} aria-hidden="true" />
-            {bn ? 'বাংলাদেশ · বৃষ্টির পানি সংগ্রহ' : 'Bangladesh · Rainwater harvesting'}
+            {bn ? 'বাংলাদেশ' : 'Bangladesh'}
           </p>
-          <h1>
-            {bn ? 'বৃষ্টির পানি জমান, সারা বছর পানি পান।' : 'Store the rain. Have water all year.'}
-          </h1>
-          <Brief
-            bn={bn}
-            problem={[
-              'Rivers here are too dirty to drink, and almost no rain falls from November to March.',
-              'এখানে নদীর পানি পান করার মতো পরিষ্কার নয়, আর নভেম্বর থেকে মার্চ প্রায় বৃষ্টি হয় না।',
-            ]}
-            purpose={[
-              'Aquavelle helps you catch monsoon rain and keep it for the dry months.',
-              'অ্যাকোয়াভেল বর্ষার বৃষ্টি ধরে শুষ্ক মাসের জন্য জমিয়ে রাখতে সাহায্য করে।',
-            ]}
-            steps={[
-              ['Enter your roof and tank', 'ছাদ ও ট্যাংকের মাপ দিন'],
-              ['See which months run short', 'কোন মাসে পানি কম পড়বে দেখুন'],
-              ['Get a tank design and a backup source', 'ট্যাংকের নকশা ও বিকল্প উৎস পান'],
-            ]}
-            result={[
-              `In the Dhaka plan, ${F.hubs} shared tanks give about ${fmt(F.hubPeople)} people water through the dry season in about 9 of 10 years.`,
-              `ঢাকার পরিকল্পনায় ${bnNum(F.hubs)}টি যৌথ ট্যাংক প্রায় ${fmt(F.hubPeople, true)} মানুষকে প্রায় ১০ বছরের ৯ বছরই শুষ্ক মৌসুমজুড়ে পানি দেয়।`,
-            ]}
-          />
+          <h1>{bn ? 'পানি কোথায় পাবেন, কীভাবে যাচাই করবেন' : 'Find water. Know what to check.'}</h1>
+          <p className="aq-intro">
+            {bn
+              ? 'কাছের নথিভুক্ত পানির উৎস খুঁজুন, ব্যবহারের আগে কী জেনে নেবেন দেখুন, আর শুষ্ক মৌসুমের জন্য বৃষ্টির পানি জমাতে পরিকল্পনা করুন।'
+              : 'Look up water sources, find out what to ask before using one, and plan to store rain for the dry months.'}
+          </p>
           <div className="aq-actions">
-            <TaskLink view="supply" bn={bn} onGo={onGo} className="aq-action">
-              {bn ? 'বৃষ্টির পানির ট্যাংক' : 'Plan a rain tank'}{' '}
-              <ArrowRight size={19} aria-hidden="true" />
+            <TaskLink view="water" bn={bn} onGo={onGo} className="aq-action">
+              {bn ? 'পানির উৎস খুঁজুন' : 'Find water'} <ArrowRight size={19} aria-hidden="true" />
             </TaskLink>
-            <TaskLink view="hubs" bn={bn} onGo={onGo} className="aq-inline">
-              {bn ? 'যৌথ ট্যাংকের পরিকল্পনা দেখুন' : 'See shared rain tanks'}
+            <TaskLink view="care" bn={bn} onGo={onGo} className="aq-inline">
+              {bn ? 'পানি যাচাইয়ের উপায়' : 'How to check a source'}
             </TaskLink>
           </div>
         </div>
-        <RainChart bn={bn} />
+        <TaskLink view="rivers" bn={bn} onGo={onGo} className="aq-atlas">
+          <img
+            src="/images/bangladesh-river-atlas.webp"
+            width="1000"
+            height="780"
+            alt=""
+            fetchPriority="high"
+          />
+          <span className="aq-atlas-top">
+            <span>
+              <Waves size={18} aria-hidden="true" />
+              {bn ? 'বাংলাদেশের নদী ও খাল' : 'Bangladesh river atlas'}
+            </span>
+            <ArrowUpRight size={21} aria-hidden="true" />
+          </span>
+          <span className="aq-atlas-bottom">
+            <span className="aq-atlas-dot" aria-hidden="true" />
+            {bn
+              ? 'রিভারওয়াচের অগ্রাধিকার স্থান · নভেম্বর ২০২৬'
+              : 'RiverWatch priority leads · Nov 2026'}
+          </span>
+        </TaskLink>
       </section>
-
       <section className="aq-home-tools" lang={bn ? 'bn' : 'en'}>
         <div className="aq-shell">
           <div className="aq-section-heading">
-            <h2>{bn ? 'বৃষ্টির পানির সরঞ্জাম' : 'Rainwater tools'}</h2>
+            <h2>{bn ? 'আজ কী করতে চান?' : 'Water tools for everyday use'}</h2>
             <TaskLink view="field" bn={bn} onGo={onGo} className="aq-inline">
               {bn ? 'মাঠকর্মীদের সরঞ্জাম' : 'Field team tools'}{' '}
               <ArrowRight size={17} aria-hidden="true" />
             </TaskLink>
           </div>
-          <ToolLinks
-            tools={residentTools}
-            bn={bn}
-            onGo={onGo}
-            className="aq-tool-list aq-tool-list-4"
-          />
-          <p className="aq-field-caption">
-            <TaskLink view="rivers" bn={bn} onGo={onGo} className="aq-inline">
-              <Waves size={17} aria-hidden="true" />
-              {bn ? 'বাংলাদেশের নদী ও দূষণের মানচিত্র' : 'Bangladesh river and pollution atlas'}
-            </TaskLink>
-          </p>
+          <ToolLinks tools={residentTools} bn={bn} onGo={onGo} />
         </div>
       </section>
     </>
@@ -276,26 +213,11 @@ export function Field({ bn, onGo, session }) {
       lang={bn ? 'bn' : 'en'}
     >
       <h1>{bn ? 'মাঠকর্মীদের সরঞ্জাম' : 'Field team tools'}</h1>
-      <Brief
-        bn={bn}
-        problem={[
-          'Rain tanks only help if they are built in the right place and kept running.',
-          'বৃষ্টির ট্যাংক তখনই কাজে আসে যখন সঠিক জায়গায় বানানো হয় এবং চালু রাখা হয়।',
-        ]}
-        purpose={[
-          'Tools for NGO and local government teams who plan and run them.',
-          'এনজিও ও স্থানীয় সরকারের দলের জন্য পরিকল্পনা ও পরিচালনার সরঞ্জাম।',
-        ]}
-        steps={[
-          ['Find polluted rivers and who lives nearby', 'দূষিত নদী ও কাছের মানুষ খুঁজুন'],
-          ['Plan shared tanks', 'যৌথ ট্যাংকের পরিকল্পনা করুন'],
-          ['Practise a breakdown', 'বিকল হলে কী করবেন অনুশীলন করুন'],
-        ]}
-        result={[
-          'A plan you can check in the field before anything is built.',
-          'বানানোর আগেই মাঠে যাচাই করা যায় এমন পরিকল্পনা।',
-        ]}
-      />
+      <p className="aq-intro">
+        {bn
+          ? 'নমুনা সংগ্রহ, বৃষ্টির পানি সংরক্ষণ ও সরবরাহ বন্ধের মহড়ার পরিকল্পনা করুন।'
+          : 'Plan sampling, rainwater storage and outage exercises.'}
+      </p>
       {session?.signIn && !session.signedIn && (
         <p>
           <a className="aq-inline" href={session.signIn}>
@@ -349,23 +271,11 @@ export function WaterCare({ bn, onGo }) {
         <Droplet size={24} aria-hidden="true" />
       </div>
       <h1>{bn ? 'পান করার আগে যাচাই করুন' : 'Check before you drink'}</h1>
-      <Brief
-        bn={bn}
-        problem={[
-          'Clear water can still carry arsenic or germs.',
-          'স্বচ্ছ পানিতেও আর্সেনিক বা জীবাণু থাকতে পারে।',
-        ]}
-        purpose={[
-          'Know what to ask before anyone drinks from a well, tap or rain tank.',
-          'নলকূপ, কল বা বৃষ্টির ট্যাংকের পানি পানের আগে কী জানতে হবে, জেনে নিন।',
-        ]}
-        steps={[
-          ['Is it working?', 'উৎসটি সচল কি?'],
-          ['Is there a recent test?', 'সাম্প্রতিক পরীক্ষার ফল আছে কি?'],
-          ['Is there a tested backup?', 'পরীক্ষিত বিকল্প আছে কি?'],
-        ]}
-        result={['Ask these three questions every time.', 'প্রতিবার এই তিনটি প্রশ্ন করুন।']}
-      />
+      <p className="aq-intro">
+        {bn
+          ? 'মানচিত্রের তথ্য আগের জরিপ থেকে এসেছে। পান করার সিদ্ধান্ত নিতে উৎসটির বর্তমান অবস্থা ও সাম্প্রতিক পরীক্ষার ফল দেখুন।'
+          : 'The map shows records from past surveys. Check the source today and ask for recent test results before you use it for drinking.'}
+      </p>
       <ol className="aq-care-list">
         {care.map(([title, text, bnTitle, bnText]) => (
           <li key={title}>

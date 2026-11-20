@@ -113,6 +113,7 @@ export function RiverWatchMap({
       preferCanvas: true,
       attributionControl: false,
     }).fitBounds(bounds, { padding: [16, 14] });
+    map.createPane('riverwatch-base').style.zIndex = '350';
     L.control.zoom({ position: 'topright' }).addTo(map);
     L.control.scale({ imperial: false, position: 'bottomleft' }).addTo(map);
     const layers = {
@@ -152,7 +153,7 @@ export function RiverWatchMap({
       for (const [layer, style] of Object.entries(mapStyles)) {
         L.geoJSON(
           features.filter((feature) => feature.properties.layer === layer),
-          { style, interactive: false },
+          { style, interactive: false, pane: 'riverwatch-base' },
         ).addTo(layers.base);
       }
     }
@@ -202,8 +203,20 @@ export function RiverWatchMap({
       L.geoJSON(segment.geometry, { style: styles.trace, interactive: false }).addTo(
         layers.selected,
       );
-    if (detail.link)
-      L.geoJSON(detail.link, { style: styles.link, interactive: false }).addTo(layers.selected);
+    if (detail.link?.type === 'Point' && selection) {
+      const snap = latLng(detail.link.coordinates);
+      L.polyline([latLng(selection.point), snap], { ...styles.link, interactive: false }).addTo(
+        layers.selected,
+      );
+      L.circleMarker(snap, {
+        radius: 4,
+        color: styles.link.color,
+        weight: 2,
+        fillColor: '#fff',
+        fillOpacity: 1,
+        interactive: false,
+      }).addTo(layers.selected);
+    }
     for (const sample of detail.sampling) {
       const label = sample.side === 'up' ? (bn ? 'উজান' : 'Upstream') : bn ? 'ভাটি' : 'Downstream';
       L.circleMarker(latLng(sample.point), {
@@ -215,12 +228,12 @@ export function RiverWatchMap({
       })
         .bindTooltip(tooltip(label), {
           permanent: true,
-          direction: 'right',
+          direction: sample.side === 'up' ? 'left' : 'right',
           className: 'rw-sample-label',
         })
         .addTo(layers.selected);
     }
-  }, [detail, showZone, bn]);
+  }, [detail, selection, showZone, bn]);
 
   useEffect(() => {
     if (!detail?.trace.length || !selection) return;

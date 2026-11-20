@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import { Brief } from './brief.jsx';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowDown, Calculator, CloudRain } from 'lucide-react';
-import { api } from '../operations/api-client.mjs';
 import { SupplyPlanner } from './SupplyPlanner.jsx';
 import { HarvestDrawings } from './HarvestDrawings.jsx';
-import { harvestReference, parseHarvestNumber } from './harvest-model.mjs';
+import { harvestReference, parseHarvestNumber, seasonalHarvest } from './harvest-model.mjs';
 import { useSessionDraft } from './session-draft.mjs';
 import { Export } from './shared.jsx';
 import './harvest-planner.css';
@@ -37,6 +35,10 @@ function YearResult({ data, bn }) {
   const n = (v, digits = 0) =>
     v.toLocaleString(bn ? 'bn-BD' : 'en', { maximumFractionDigits: digits });
   const result = data?.result;
+  const resultHeading = useRef(null);
+  useEffect(() => {
+    if (result) resultHeading.current?.focus();
+  }, [result]);
   if (!result)
     return (
       <div className="harvest-result-empty">
@@ -53,7 +55,9 @@ function YearResult({ data, bn }) {
   return (
     <>
       <div className="harvest-outcome" aria-live="polite">
-        <h2>{t('Dry-season supply', 'শুষ্ক মৌসুমের সরবরাহ')}</h2>
+        <h2 tabIndex={-1} ref={resultHeading}>
+          {t('Dry-season supply', 'শুষ্ক মৌসুমের সরবরাহ')}
+        </h2>
         <strong>{n(result.dryCoveragePct, 1)}%</strong>
         <p>
           {t(
@@ -167,7 +171,7 @@ function SeasonalPlanner({ bn }) {
     setForm((current) => ({ ...current, ...values }));
     setState({});
   }
-  async function calculate(event) {
+  function calculate(event) {
     event.preventDefault();
     const input = { profile: form.profile, rainfall: form.rainfall };
     for (const [key, en, bangla, min, max] of fields) {
@@ -188,9 +192,8 @@ function SeasonalPlanner({ bn }) {
       }
       input[key] = value;
     }
-    setState({ busy: true });
     try {
-      setState({ data: await api('/water/rainwater/seasonal', { method: 'POST', body: input }) });
+      setState({ data: { input, result: seasonalHarvest(input) } });
     } catch {
       setState({
         error: t(
@@ -216,7 +219,7 @@ function SeasonalPlanner({ bn }) {
                 key={id}
                 type="button"
                 aria-pressed={active}
-                disabled={state.busy}
+
                 onClick={() =>
                   change({
                     roofM2: String(roofM2),
@@ -232,8 +235,8 @@ function SeasonalPlanner({ bn }) {
         </fieldset>
         <p className="harvest-caption">
           {t(
-            'Examples use 5 litres per person a day for drinking and cooking.',
-            'উদাহরণে জনপ্রতি দিনে ৫ লিটার (পান ও রান্না)।',
+            'The examples allow 5 litres per person per day for drinking and cooking. Adjust for your site.',
+            'উদাহরণে পান ও রান্নার জন্য প্রতিদিন জনপ্রতি ৫ লিটার ধরা হয়েছে। আপনার স্থানের জন্য পরিমাণ বদলান।',
           )}
         </p>
         <form onSubmit={calculate} noValidate>
@@ -245,7 +248,7 @@ function SeasonalPlanner({ bn }) {
               <select
                 id="harvest-region"
                 value={form.profile}
-                disabled={state.busy}
+
                 onChange={(e) => change({ profile: e.target.value })}
                 aria-describedby="harvest-region-note"
               >
@@ -266,7 +269,7 @@ function SeasonalPlanner({ bn }) {
               <select
                 id="harvest-rainfall"
                 value={form.rainfall}
-                disabled={state.busy}
+
                 onChange={(e) => change({ rainfall: e.target.value })}
               >
                 <option value="lower">
@@ -287,7 +290,7 @@ function SeasonalPlanner({ bn }) {
                   inputMode="decimal"
                   maxLength={14}
                   value={form[key]}
-                  disabled={state.busy}
+
                   onChange={(e) => change({ [key]: e.target.value })}
                   aria-invalid={state.field === key || undefined}
                   aria-describedby={state.field === key ? 'harvest-error' : undefined}
@@ -300,11 +303,8 @@ function SeasonalPlanner({ bn }) {
               {state.error}
             </p>
           )}
-          <button type="submit" className="water-primary" disabled={state.busy}>
-            <Calculator size={17} aria-hidden="true" />{' '}
-            {state.busy
-              ? t('Calculating…', 'হিসাব হচ্ছে…')
-              : t('Check the year', 'বছরের হিসাব করুন')}
+          <button type="submit" className="water-primary">
+            <Calculator size={17} aria-hidden="true" /> {t('Check the year', 'বছরের হিসাব করুন')}
           </button>
         </form>
         <details>
@@ -343,29 +343,12 @@ export function HarvestPlanner({ bn }) {
           <h1 id="water-content" tabIndex={-1}>
             {t('Plan rainwater harvesting', 'বৃষ্টির পানি সংরক্ষণের পরিকল্পনা')}
           </h1>
-          <Brief
-            bn={bn}
-            problem={[
-              'A tank that is too small runs dry before the rains come back.',
-              'ট্যাংক ছোট হলে বৃষ্টি ফেরার আগেই পানি ফুরিয়ে যায়।',
-            ]}
-            purpose={[
-              'Find the right tank for your home, school or shared site.',
-              'আপনার বাড়ি, স্কুল বা যৌথ স্থানের জন্য ঠিক মাপের ট্যাংক বেছে নিন।',
-            ]}
-            steps={[
-              [
-                'Pick an example or enter your roof and tank',
-                'উদাহরণ বাছুন বা ছাদ ও ট্যাংকের মাপ দিন',
-              ],
-              ['Press “Check the year”', '“বছরের হিসাব করুন” চাপুন'],
-              ['See which months need backup water', 'কোন মাসে বিকল্প পানি লাগবে দেখুন'],
-            ]}
-            result={[
-              'You get a month-by-month plan and drawings to build it.',
-              'মাসভিত্তিক হিসাব আর তৈরির নকশা পাবেন।',
-            ]}
-          />
+          <p>
+            {t(
+              'Find the months that need backup water, then review the drawings for your site.',
+              'কোন মাসে বিকল্প উৎস দরকার দেখুন, তারপর নকশা পর্যালোচনা করুন।',
+            )}
+          </p>
         </div>
         <a className="aq-inline" href="#harvest-drawings">
           {t('System drawings', 'ব্যবস্থার নকশা')} <ArrowDown size={17} aria-hidden="true" />

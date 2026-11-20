@@ -80,8 +80,8 @@
     },
     {
       "path": "public/data/gis-source-audit.json",
-      "bytes": 1834,
-      "sha256": "f79013295ae6e29d26917ddc0cbb75770d79b1e039384ce2b08c562024b1fa3a"
+      "bytes": 1823,
+      "sha256": "c2fa78f6878b68e6b3f9c9dac137828dfc15ecdc04461f4226290035e128939c"
     },
     {
       "path": "public/data/regions/chattogram-graph.json",
@@ -140,8 +140,8 @@
     },
     {
       "path": "public/data/river-pollution-context.json",
-      "bytes": 580461,
-      "sha256": "470bd538a0b1c41c0d591ba307c6d94dfc3430b93ac661d8988efd65bf24398e"
+      "bytes": 580460,
+      "sha256": "e9508fd090af3b0592cd1a74ce0228b727d70c4db1d05b4f174ce22e006796b9"
     },
     {
       "path": "public/data/source-register.json",
@@ -170,8 +170,8 @@
     },
     {
       "path": "public/data/water-access-candidates.json",
-      "bytes": 3377095,
-      "sha256": "5187f9d7ce21d2cc4235f5ca2e3ca44ff416c3fcd0e7663c177c7602ff8e59bf"
+      "bytes": 3377084,
+      "sha256": "f6625764c9c0ab4e855473ea4b7c96a3f807559323e868c5997ab02423cc291f"
     },
     {
       "path": "public/data/water-evidence.json",

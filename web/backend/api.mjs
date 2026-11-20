@@ -443,7 +443,7 @@ export function createApi({
             speed = input.assumedSpeedKmh ?? 25,
             profile = input.profile ?? 'road';
           if (!number(speed, 1, 80) || profile !== 'road')
-            fail(400, 'invalid_profile', 'Road profile with assumed speed 1â€“80 km/h required.');
+            fail(400, 'invalid_profile', 'Road profile with assumed speed 1–80 km/h required.');
           const tripId = uuid();
           await store.batch([
             statement(
@@ -654,7 +654,7 @@ export function createApi({
           const reason = text(input.reason, 'Closure reason', 1000),
             minutes = input.expiresInMinutes;
           if (!Number.isInteger(minutes) || minutes < 1 || minutes > 1440)
-            fail(400, 'invalid_expiry', 'Closure expiry must be 1â€“1440 minutes.');
+            fail(400, 'invalid_expiry', 'Closure expiry must be 1–1440 minutes.');
           const edges = input.edgeIds ?? [],
             knownEdgeIds = new Set(engineFor(trip.region_id).metadata.edgeIds ?? []);
           if (
@@ -669,7 +669,7 @@ export function createApi({
             fail(400, 'invalid_closure', 'Choose mapped edges or a point and radius.');
           const radius = coords ? (input.radiusM ?? 30) : null;
           if (coords && !number(radius, 1, 2000))
-            fail(400, 'invalid_radius', 'Closure radius must be 1â€“2000 metres.');
+            fail(400, 'invalid_radius', 'Closure radius must be 1–2000 metres.');
           const closureId = uuid(),
             sourceKind = trip.mode === 'replay' ? 'representational' : 'user-report',
             sourceLabel =
@@ -775,7 +775,7 @@ export function createApi({
             input.expiresInMinutes < 1 ||
             input.expiresInMinutes > 10080
           )
-            fail(400, 'invalid_expiry', 'Invite expiry must be 1â€“10080 minutes.');
+            fail(400, 'invalid_expiry', 'Invite expiry must be 1–10080 minutes.');
           const token = uuid() + uuid(),
             inviteId = uuid(),
             expiresAt = new Date(+now + input.expiresInMinutes * 60000).toISOString();
@@ -793,7 +793,7 @@ export function createApi({
           if (trip.mode !== 'replay')
             fail(409, 'operational_trip', 'Replay advancement is available only on replay trips.');
           if (!Number.isInteger(input.advanceSeconds) || !number(input.advanceSeconds, 1, 60))
-            fail(400, 'invalid_advance', 'Advance 1â€“60 whole seconds.');
+            fail(400, 'invalid_advance', 'Advance 1–60 whole seconds.');
           const route = await calculate(trip, now),
             selected = route.routes.find((r) => r.id === route.selectedRouteId);
           if (!selected) fail(409, 'no_route', 'No road path is available for this replay.');

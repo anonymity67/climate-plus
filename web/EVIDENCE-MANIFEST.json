@@ -101,8 +101,8 @@
     },
     {
       "path": "backend/api.mjs",
-      "bytes": 46219,
-      "sha256": "e16f5f86930132ea768d30f7d0f7665f713e01a300df75dc6b9d49285413c2ee"
+      "bytes": 46194,
+      "sha256": "31bdc3ce91da7f852b5a7d190335699cad1b870ccb19bb42ef3ce4041c5f1526"
     },
     {
       "path": "backend/data/dacope-road-graph.json",
@@ -202,7 +202,7 @@
     {
       "path": "DATA-MANIFEST.json",
       "bytes": 17354,
-      "sha256": "e13303792969873725209c10fcebf1a0b937409c9aa8697e152d6cb2b3dbfa0e"
+      "sha256": "ede2f96a3ffe9f9f429246a7286f0f749fb5d26cff06d8bddf47fa17aece4da3"
     },
     {
       "path": "DATASETS.json",
@@ -636,8 +636,8 @@
     },
     {
       "path": "public/data/gis-source-audit.json",
-      "bytes": 1834,
-      "sha256": "f79013295ae6e29d26917ddc0cbb75770d79b1e039384ce2b08c562024b1fa3a"
+      "bytes": 1823,
+      "sha256": "c2fa78f6878b68e6b3f9c9dac137828dfc15ecdc04461f4226290035e128939c"
     },
     {
       "path": "public/data/rainhub-model.json",
@@ -701,8 +701,8 @@
     },
     {
       "path": "public/data/river-pollution-context.json",
-      "bytes": 580461,
-      "sha256": "470bd538a0b1c41c0d591ba307c6d94dfc3430b93ac661d8988efd65bf24398e"
+      "bytes": 580460,
+      "sha256": "e9508fd090af3b0592cd1a74ce0228b727d70c4db1d05b4f174ce22e006796b9"
     },
     {
       "path": "public/data/riverwatch/bangladesh.json",
@@ -2041,8 +2041,8 @@
     },
     {
       "path": "public/data/water-access-candidates.json",
-      "bytes": 3377095,
-      "sha256": "5187f9d7ce21d2cc4235f5ca2e3ca44ff416c3fcd0e7663c177c7602ff8e59bf"
+      "bytes": 3377084,
+      "sha256": "f6625764c9c0ab4e855473ea4b7c96a3f807559323e868c5997ab02423cc291f"
     },
     {
       "path": "public/data/water-evidence.json",
@@ -2561,8 +2561,8 @@
     },
     {
       "path": "scripts/build-gis-resources.py",
-      "bytes": 8929,
-      "sha256": "3759e82de819c6f629799e0cbe43ea82a4788e74e8a33ebf388ec31f56ca93de"
+      "bytes": 8977,
+      "sha256": "a859b2c07a62a8ce7f2e17518ff509528bd3db2e70980515817ffb66f66e69fb"
     },
     {
       "path": "scripts/build-regions.py",

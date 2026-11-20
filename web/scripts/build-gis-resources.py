@@ -31,7 +31,7 @@ def encode(path, data):
 
 
 def route_geometry_audit():
-    geo = json.loads((ROOT / "public/data/gis-network.geojson").read_text())
+    geo = json.loads((ROOT / "public/data/gis-network.geojson").read_text(encoding="utf-8"))
     reports, lengths = [], []
     for feature in geo["features"]:
         if feature["properties"]["kind"] != "route":
@@ -105,7 +105,7 @@ def build(out):
 
     counts = dict(sorted(Counter(r[4] for r in rows).items()))
     metadata = json.loads(
-        (ROOT / "research/gis/kaggle-v2/dataset-metadata.json").read_text()
+        (ROOT / "research/gis/kaggle-v2/dataset-metadata.json").read_text(encoding="utf-8")
     )
     context = {
         "schema": "climate-plus/publisher-pollution-context-v1",
@@ -174,7 +174,7 @@ def build(out):
         }
         water_rows.append([values.get(k, "") for k in fields])
     dates = [r[3] for r in water_rows]
-    result = json.loads((ROOT / "research/gis/wpdx-2026-10-24/RESULT.json").read_text())
+    result = json.loads((ROOT / "research/gis/wpdx-2026-10-24/RESULT.json").read_text(encoding="utf-8"))
     inventory = {
         "schema_version": 1,
         "kind": "historical-confirmation-required-inventory",

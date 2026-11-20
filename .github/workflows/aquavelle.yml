@@ -49,6 +49,7 @@ jobs:
     steps:
       - name: Skip until Cloudflare secrets are set
         id: gate
+        working-directory: .
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ] || [ -z "$AQUAVELLE_D1_ID" ]; then
             echo "Cloudflare secrets are not set yet; skipping deploy."

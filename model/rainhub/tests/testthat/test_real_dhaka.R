@@ -1,0 +1,30 @@
+f <- "../../data/real/dhaka_water_quality.csv"
+test_that("Dhaka file maps to the shared tables", {
+  skip_if_not(file.exists(f))
+  skip_if_not_installed("sf")
+  d <- prepare_dhaka_data(f)
+  expect_named(d$quality_obs, c("site_id", "x", "y", "tests", "passes"))
+  expect_named(d$rain_obs, c("station_id", "x", "y", "month", "rain_mm", "wet_days", "days"))
+  expect_true(all(d$quality_obs$passes <= d$quality_obs$tests))
+  expect_equal(sum(d$quality_obs$tests), 1495)
+  expect_true(all(d$rain_obs$wet_days <= d$rain_obs$days))
+  expect_true(all(d$quality_obs$x >= 0 & d$quality_obs$y >= 0))
+})
+test_that("demo settlements stay inside the region", {
+  cfg <- list(region = list(xmin = 0, xmax = 50, ymin = 0, ymax = 60))
+  s <- make_demo_settlements(cfg)
+  expect_true(all(s$x >= 0 & s$x <= 50 & s$y >= 0 & s$y <= 60))
+})
+test_that("prepare_dhaka_data returns sample-level data that sample_severity accepts", {
+  skip_if_not(file.exists(f))
+  skip_if_not_installed("sf")
+  d <- prepare_dhaka_data(f)
+  expect_true(is.data.frame(d$samples))
+  expect_true(all(c("x", "y", "site") %in% names(d$samples)))
+  expect_equal(nrow(d$samples), sum(d$quality_obs$tests))
+  expect_false(any(grepl("\n", names(d$samples), fixed = TRUE)))   # headers normalised
+  cfg <- load_config("../../config.yml")
+  s <- sample_severity(d$samples, cfg)
+  expect_true(all(s$severity[!is.na(s$severity)] >= 0 & s$severity[!is.na(s$severity)] <= 1))
+  expect_equal(length(unique(d$samples$site)), nrow(d$quality_obs))
+})

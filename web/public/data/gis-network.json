@@ -1,0 +1,356 @@
+{
+  "access": {
+    "baseline": {
+      "crew": {
+        "detourFactor": 1.0,
+        "distanceM": 500.2,
+        "minutes": 1.2,
+        "reachable": true,
+        "status": "open"
+      },
+      "pond": {
+        "detourFactor": 1.0,
+        "distanceM": 8374.4,
+        "minutes": 20.1,
+        "reachable": true,
+        "status": "open"
+      },
+      "pump": {
+        "detourFactor": 1.0,
+        "distanceM": 7078.6,
+        "minutes": 17.0,
+        "reachable": true,
+        "status": "open"
+      },
+      "reserve": {
+        "detourFactor": 1.0,
+        "distanceM": 7881.0,
+        "minutes": 18.9,
+        "reachable": true,
+        "status": "open"
+      },
+      "school": {
+        "detourFactor": 1.0,
+        "distanceM": 8111.4,
+        "minutes": 19.5,
+        "reachable": true,
+        "status": "open"
+      }
+    },
+    "storm_moderate": {
+      "crew": {
+        "detourFactor": 1.0,
+        "distanceM": 500.2,
+        "minutes": 1.2,
+        "reachable": true,
+        "status": "open"
+      },
+      "pond": {
+        "detourFactor": 1.397,
+        "distanceM": 11696.9,
+        "minutes": 28.1,
+        "reachable": true,
+        "status": "delayed"
+      },
+      "pump": {
+        "detourFactor": 1.47,
+        "distanceM": 10408.3,
+        "minutes": 25.0,
+        "reachable": true,
+        "status": "delayed"
+      },
+      "reserve": {
+        "detourFactor": 1.42,
+        "distanceM": 11189.2,
+        "minutes": 26.9,
+        "reachable": true,
+        "status": "delayed"
+      },
+      "school": {
+        "detourFactor": 1.408,
+        "distanceM": 11419.6,
+        "minutes": 27.4,
+        "reachable": true,
+        "status": "delayed"
+      }
+    },
+    "storm_severe": {
+      "crew": {
+        "detourFactor": 1.054,
+        "distanceM": 527.2,
+        "minutes": 1.3,
+        "reachable": true,
+        "status": "open"
+      },
+      "pond": {
+        "detourFactor": 1.833,
+        "distanceM": 15352.1,
+        "minutes": 36.8,
+        "reachable": true,
+        "status": "blocked"
+      },
+      "pump": {
+        "detourFactor": 2.351,
+        "distanceM": 16640.7,
+        "minutes": 39.9,
+        "reachable": true,
+        "status": "blocked"
+      },
+      "reserve": {
+        "detourFactor": 2.012,
+        "distanceM": 15859.8,
+        "minutes": 38.1,
+        "reachable": true,
+        "status": "blocked"
+      },
+      "school": {
+        "detourFactor": 1.927,
+        "distanceM": 15629.4,
+        "minutes": 37.5,
+        "reachable": true,
+        "status": "blocked"
+      }
+    }
+  },
+  "assumptions": {
+    "blockedFactor": 1.75,
+    "crs": "EPSG:4326 (distances measured on the road network, metres)",
+    "delayedFactor": 1.2,
+    "origin": "supplier",
+    "rule": "A day is blocked when the reserve cannot be reached or the trip is at least 1.75 times the clear-day distance; delayed from 1.2 times.",
+    "speedKmh": 25.0,
+    "stormSchedule": [
+      "clear",
+      "severe",
+      "moderate",
+      "clear",
+      "clear",
+      "clear",
+      "clear"
+    ],
+    "stormSeverity": {
+      "1": "moderate",
+      "3": "severe"
+    },
+    "target": "reserve"
+  },
+  "attribution": "Road geometry derived from OpenStreetMap, (c) OpenStreetMap contributors, ODbL 1.0 (HOT export). Network points, catchments and hazard polygons are fictional.",
+  "catchments": [
+    {
+      "demandLDay": 1200,
+      "exposedSalinity": 0,
+      "exposedStorm": 0,
+      "households": 120,
+      "id": "east_catchment",
+      "name": "east_catchment",
+      "status": "synthetic"
+    },
+    {
+      "demandLDay": 800,
+      "exposedSalinity": 0,
+      "exposedStorm": 0,
+      "households": 85,
+      "id": "west_catchment",
+      "name": "west_catchment",
+      "status": "synthetic"
+    }
+  ],
+  "derived": {
+    "dry": {
+      "blockedDays": [],
+      "restrictedSourcesFromGeography": []
+    },
+    "salinity": {
+      "blockedDays": [],
+      "restrictedSourcesFromGeography": [
+        "pond"
+      ]
+    },
+    "storm": {
+      "blockedDays": [
+        1
+      ],
+      "restrictedSourcesFromGeography": []
+    }
+  },
+  "hazards": [
+    {
+      "id": "salinity-1",
+      "issuedAt": null,
+      "issuer": "scenario assumption",
+      "label": "held source",
+      "scenario": "salinity",
+      "severity": 1,
+      "status": "synthetic",
+      "validUntil": null
+    },
+    {
+      "id": "storm-1",
+      "issuedAt": "2026-10-23",
+      "issuer": "scenario assumption",
+      "label": "moderate",
+      "scenario": "storm",
+      "severity": 1,
+      "status": "synthetic",
+      "validUntil": null
+    },
+    {
+      "id": "storm-3",
+      "issuedAt": null,
+      "issuer": "scenario assumption",
+      "label": "severe",
+      "scenario": "storm",
+      "severity": 3,
+      "status": "synthetic",
+      "validUntil": null
+    }
+  ],
+  "meaning": "Fictional water-continuity network placed on real Dacope roads. Distances come from the OpenStreetMap road geometry; minutes, thresholds and the storm schedule are stated scenario assumptions, not measurements or forecasts.",
+  "nodes": [
+    {
+      "capacityL": null,
+      "exposedSalinity": 0,
+      "exposedStorm": 0,
+      "id": "crew",
+      "inflowLDay": null,
+      "lat": 22.525774,
+      "lon": 89.544057,
+      "name": "Crew base",
+      "priority": null,
+      "status": "synthetic",
+      "type": "crew"
+    },
+    {
+      "capacityL": null,
+      "exposedSalinity": 1,
+      "exposedStorm": 0,
+      "id": "pond",
+      "inflowLDay": null,
+      "lat": 22.55958,
+      "lon": 89.50329,
+      "name": "Pond",
+      "priority": null,
+      "status": "synthetic",
+      "type": "pond"
+    },
+    {
+      "capacityL": null,
+      "exposedSalinity": 0,
+      "exposedStorm": 0,
+      "id": "pump",
+      "inflowLDay": null,
+      "lat": 22.548718,
+      "lon": 89.507297,
+      "name": "Pump",
+      "priority": null,
+      "status": "synthetic",
+      "type": "pump"
+    },
+    {
+      "capacityL": 10000,
+      "exposedSalinity": 0,
+      "exposedStorm": 0,
+      "id": "reserve",
+      "inflowLDay": null,
+      "lat": 22.555446,
+      "lon": 89.505385,
+      "name": "Dacope reserve",
+      "priority": null,
+      "status": "synthetic",
+      "type": "reserve"
+    },
+    {
+      "capacityL": null,
+      "exposedSalinity": 0,
+      "exposedStorm": 0,
+      "id": "school",
+      "inflowLDay": null,
+      "lat": 22.557373,
+      "lon": 89.504543,
+      "name": "School",
+      "priority": 1,
+      "status": "synthetic",
+      "type": "school"
+    },
+    {
+      "capacityL": null,
+      "exposedSalinity": 0,
+      "exposedStorm": 0,
+      "id": "supplier",
+      "inflowLDay": null,
+      "lat": 22.523947,
+      "lon": 89.548391,
+      "name": "Supplier",
+      "priority": null,
+      "status": "synthetic",
+      "type": "supplier"
+    }
+  ],
+  "notes": [
+    "The storm polygons cut roads but the supplier still reaches the reserve by a longer route, so blocking comes from the detour-factor rule, not from disconnection.",
+    "No storm polygon covers the pump, so restrictedSourcesFromGeography for the storm is empty; the engine's pump outage in the storm scenario remains a scenario assumption.",
+    "The planner only understands blocked or open days; a delayed day is informative."
+  ],
+  "schema": "climate-plus/gis-network-v1",
+  "source": {
+    "file": "research/gis/v1/climate_gis.gpkg",
+    "layers": [
+      "access_matrix",
+      "catchments",
+      "hazard_zones",
+      "network_nodes"
+    ],
+    "sha256": "033646cae59e23c55655668323a72bca7219e257d21050b05fa2ca96de2ced65"
+  },
+  "stormDays": [
+    {
+      "condition": "clear",
+      "dayIndex": 0,
+      "minutesToReserve": 18.9,
+      "scenario": "baseline",
+      "status": "open"
+    },
+    {
+      "condition": "severe",
+      "dayIndex": 1,
+      "minutesToReserve": 38.1,
+      "scenario": "storm_severe",
+      "status": "blocked"
+    },
+    {
+      "condition": "moderate",
+      "dayIndex": 2,
+      "minutesToReserve": 26.9,
+      "scenario": "storm_moderate",
+      "status": "delayed"
+    },
+    {
+      "condition": "clear",
+      "dayIndex": 3,
+      "minutesToReserve": 18.9,
+      "scenario": "baseline",
+      "status": "open"
+    },
+    {
+      "condition": "clear",
+      "dayIndex": 4,
+      "minutesToReserve": 18.9,
+      "scenario": "baseline",
+      "status": "open"
+    },
+    {
+      "condition": "clear",
+      "dayIndex": 5,
+      "minutesToReserve": 18.9,
+      "scenario": "baseline",
+      "status": "open"
+    },
+    {
+      "condition": "clear",
+      "dayIndex": 6,
+      "minutesToReserve": 18.9,
+      "scenario": "baseline",
+      "status": "open"
+    }
+  ]
+}

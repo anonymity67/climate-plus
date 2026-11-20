@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "sites",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "site_id": "DEMO-01", "name": "Synthetic DEMO-01", "industry_type": "demo", "role": "site", "severity": 0.85, "severity_source": "Synthetic exercise", "outfall_confirmed": true, "outfall_source": "Synthetic exercise", "flow_reviewed": true }, "geometry": { "type": "Point", "coordinates": [ 90.457944023496168, 23.805517305443214 ] } },
+{ "type": "Feature", "properties": { "site_id": "DEMO-02", "name": "Synthetic DEMO-02", "industry_type": "demo", "role": "site", "severity": 0.55, "severity_source": "Synthetic exercise", "outfall_confirmed": true, "outfall_source": "Synthetic exercise", "flow_reviewed": true }, "geometry": { "type": "Point", "coordinates": [ 90.469713452509893, 23.80568382980249 ] } },
+{ "type": "Feature", "properties": { "site_id": "DEMO-03", "name": "Synthetic DEMO-03", "industry_type": "demo", "role": "site", "severity": null, "severity_source": "", "outfall_confirmed": false, "outfall_source": "", "flow_reviewed": false }, "geometry": { "type": "Point", "coordinates": [ 90.511458100829387, 23.828821760988806 ] } },
+{ "type": "Feature", "properties": { "site_id": "DEMO-REF", "name": "Synthetic DEMO-REF", "industry_type": "demo", "role": "reference", "severity": null, "severity_source": "", "outfall_confirmed": false, "outfall_source": "", "flow_reviewed": false }, "geometry": { "type": "Point", "coordinates": [ 90.502078919224488, 23.806193546796923 ] } }
+]
+}

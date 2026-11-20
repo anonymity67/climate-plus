@@ -1,0 +1,23 @@
+{
+  "crs": "EPSG:32646",
+  "snap_m": 1500,
+  "ambiguity_m": 25,
+  "junction_m": 75,
+  "offset_m": 500,
+  "sample_radius_m": 25,
+  "corridor_km": 10,
+  "buffer_m": 500,
+  "decay_km": 10,
+  "min_water_pixels": 3,
+  "min_pairs": 6,
+  "delta_scale": 0.10,
+  "population_scale": 50000,
+  "poi_scale": 10,
+  "population_label": "User-supplied people-per-pixel raster; record product and year here.",
+  "weights": {
+    "optical": 0.35,
+    "severity": 0.30,
+    "population": 0.25,
+    "poi": 0.10
+  }
+}

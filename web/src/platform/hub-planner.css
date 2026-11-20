@@ -1,0 +1,261 @@
+.hub-planner .hub-score {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 24px;
+  background: #fff;
+  border: 1px solid var(--water-line);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.hub-score-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hub-score-label {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--water-muted);
+}
+.hub-score-main strong {
+  font-size: clamp(44px, 6vw, 64px);
+  line-height: 1;
+  color: var(--water-green);
+  letter-spacing: -0.03em;
+}
+.hub-score-sub {
+  color: var(--water-muted);
+}
+.hub-controls {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+.hub-slider {
+  display: grid;
+  gap: 6px;
+}
+.hub-slider.off {
+  opacity: 0.5;
+}
+.hub-slider input {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+}
+.hub-slider small,
+.hub-small {
+  color: var(--water-muted);
+  font-size: 13px;
+}
+.hub-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.hub-layers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-bottom: 8px;
+}
+.hub-hint {
+  color: var(--water-muted);
+}
+.hub-key {
+  font-size: 13px;
+  color: var(--water-muted);
+}
+.hub-key span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 4px 0 10px;
+  vertical-align: -1px;
+}
+.hub-planner .water-atlas {
+  height: 460px;
+}
+@media (max-width: 800px) {
+  .hub-planner .hub-score,
+  .hub-layout {
+    grid-template-columns: 1fr;
+  }
+  .hub-planner .water-atlas {
+    height: 360px;
+  }
+}
+
+.hub-step {
+  margin-bottom: 28px;
+}
+.hub-step h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+}
+.hub-num {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--water-green);
+  color: #fff;
+  font-size: 16px;
+  flex: none;
+}
+.hub-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+}
+.hub-choice {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid var(--water-line);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.hub-choice.on {
+  border-color: var(--water-green);
+  box-shadow: inset 0 0 0 1px var(--water-green);
+}
+.hub-choice input {
+  width: 22px;
+  min-height: 22px;
+  height: 22px;
+  flex: none;
+  margin-top: 2px;
+  padding: 0;
+}
+.hub-choice span {
+  display: grid;
+  gap: 4px;
+}
+.hub-choice small {
+  color: var(--water-muted);
+  font-size: 14px;
+}
+.hub-result {
+  background: #fff;
+  border: 1px solid var(--water-line);
+  border-radius: 10px;
+  padding: 20px;
+}
+.hub-big {
+  display: block;
+  font-size: clamp(52px, 7vw, 76px);
+  line-height: 1;
+  color: var(--water-green);
+  letter-spacing: -0.03em;
+}
+.hub-result-line {
+  font-size: 17px;
+}
+.hub-more {
+  margin-bottom: 32px;
+  border-top: 1px solid var(--water-line);
+  padding-top: 14px;
+}
+.hub-more summary {
+  cursor: pointer;
+  font-weight: 700;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 800px) {
+  .hub-pair {
+    grid-template-columns: 1fr;
+  }
+}
+.water-platform .hub-choice {
+  display: flex;
+  flex-direction: row;
+}
+.water-platform .hub-choice input {
+  width: 22px;
+  height: 22px;
+  min-height: 22px;
+  padding: 0;
+  flex: none;
+}
+.water-platform .hub-slider {
+  display: block;
+}
+.water-platform .hub-slider input {
+  display: block;
+  width: 100%;
+  margin: 8px 0 4px;
+}
+.water-platform .hub-slider small {
+  display: block;
+}
+
+/* Touch-friendly map controls */
+.hub-layers {
+  align-items: center;
+}
+.water-platform .hub-toggle,
+.aquavelle .hub-toggle {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.hub-more-layers {
+  display: inline-block;
+}
+.hub-more-layers summary {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--water-green);
+}
+.hub-more-layers[open] > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 18px;
+}
+.hub-planner .leaflet-bar a {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+}
+.hub-choice {
+  transition:
+    border-color 150ms,
+    transform 150ms;
+}
+.hub-choice:hover {
+  border-color: #77958a;
+  transform: translateY(-2px);
+}
+.hub-planner .hub-more-layers {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  flex-basis: 100%;
+}
+.hub-planner .water-map-note {
+  display: none;
+}
+.hub-planner .hub-layers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0 22px;
+}

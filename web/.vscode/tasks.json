@@ -1,0 +1,42 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Apply local database migrations",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "setup:local"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Install app dependencies",
+      "type": "shell",
+      "command": "npm",
+      "args": ["ci"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Run development server",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Check source, tests, build and data",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "check"],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Verify original handoff files",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "verify:handoff"],
+      "problemMatcher": []
+    }
+  ]
+}

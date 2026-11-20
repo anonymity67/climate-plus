@@ -1,0 +1,1 @@
+﻿event_id,ward_id,incident_id,edge_id,from_node_id,to_node_id,path_geometry_ref,travel_mode,direction,step_free,status,travel_minutes,observed_at_utc,received_at_utc,verified_by_role,evidence_ref,valid_until_utc

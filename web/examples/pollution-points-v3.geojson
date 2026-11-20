@@ -1,0 +1,34 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [89.5135, 22.5738] },
+      "properties": {
+        "date": "2025-10-01",
+        "ph": 7.2,
+        "do": 4.5,
+        "cod": 55,
+        "units": { "do": "mg/L", "cod": "mg/L" },
+        "location": "Representational workflow point, Dacope",
+        "sourceKind": "representational",
+        "sourceLabel": "REPRESENTATIONAL example only, no actual sample claim",
+        "method": "Invented values for demonstrating file import"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [90.402, 23.896] },
+      "properties": {
+        "date": "2025-10-02",
+        "ph": 7.5,
+        "cod": 40,
+        "units": { "cod": "mg/L" },
+        "location": "Representational workflow point, Tongi",
+        "sourceKind": "representational",
+        "sourceLabel": "REPRESENTATIONAL example only, no actual sample claim",
+        "method": "Invented values for demonstrating file import"
+      }
+    }
+  ]
+}

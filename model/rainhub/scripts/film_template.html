@@ -1,0 +1,292 @@
+<title>Safe Water for Dhaka</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap">
+<style>
+/* A five-part data film on a fixed 1280 x 720 canvas that scales to the page.
+   Dark by choice. Teal = water and rain. Amber to red = pollution. */
+:root{
+  --ink:#08121a; --panel:#0d1c27; --line:#1f3646; --fg:#e8f1f5; --muted:#8fa7b5;
+  --water:#4fd1c5; --warn:#f2b441; --bad:#ef5b4c;
+  --display:"Space Grotesk","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--ink);color:var(--fg);font-family:var(--display);margin:0;
+  padding-block:16px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.stage{position:relative;aspect-ratio:16/9;width:100%;max-width:100%;background:var(--ink);border:1px solid var(--line);border-radius:6px;overflow:hidden;user-select:none}
+.stage:fullscreen{border:0;border-radius:0;background:#000}
+.film{position:absolute;left:0;top:0;width:1280px;height:720px;transform-origin:0 0;
+  background:radial-gradient(120% 90% at 20% 10%,#0f2331 0%,var(--ink) 70%)}
+.abs{position:absolute}
+.sc{position:absolute;inset:0;opacity:0}
+.fx{opacity:0}
+.steps{position:absolute;left:64px;right:64px;top:34px;display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.steps ol{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.steps li{padding-bottom:6px;border-bottom:2px solid transparent}
+.steps li.on{color:var(--water);border-color:var(--water)}
+.label{font-family:var(--mono);font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--water)}
+.h{font-weight:700;font-size:50px;line-height:1.06;letter-spacing:-.02em;text-wrap:balance;margin-top:16px}
+.p{font-size:22px;line-height:1.4;text-wrap:pretty}
+.mut{color:var(--muted)}
+.num{font-weight:700;font-size:76px;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.small{font-family:var(--mono);font-size:14px;color:var(--muted);line-height:1.5}
+.teal{color:var(--water)} .amber{color:var(--warn)} .red{color:var(--bad)}
+svg{display:block}
+.cap{position:absolute;left:0;right:0;bottom:0;padding:22px 90px 24px;min-height:96px;display:flex;align-items:flex-end;justify-content:center;
+  text-align:center;font-size:23px;line-height:1.35;color:#fff;text-wrap:balance;background:linear-gradient(to top,rgba(5,10,14,.94),rgba(5,10,14,0))}
+.step{display:grid;grid-template-columns:54px 1fr;gap:18px;align-items:start}
+.step b{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;border:2px solid var(--water);color:var(--water);font-family:var(--mono);font-weight:500;font-size:22px}
+.step h3{margin:0;font-size:25px;font-weight:700;letter-spacing:-.01em}
+.step p{margin:3px 0 0;font-size:18px;line-height:1.3;color:var(--muted)}
+.bar{height:34px;background:#11242f;border-radius:4px;position:relative}
+.bar i{position:absolute;left:0;top:0;bottom:0;border-radius:4px;display:block;width:0}
+.controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.controls button{font-family:var(--mono);font-size:12px;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:7px 12px;cursor:pointer}
+.controls button:hover{border-color:var(--water)}
+.controls button:focus-visible,.chips button:focus-visible,input[type=range]:focus-visible{outline:2px solid var(--water);outline-offset:2px}
+.controls button[aria-pressed=true]{border-color:var(--water);color:var(--water)}
+input[type=range]{flex:1 1 220px;min-width:140px;accent-color:var(--water)}
+.time{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips button{font-family:var(--mono);font-size:11px;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:999px;padding:5px 10px;cursor:pointer}
+.chips button.on{color:var(--ink);background:var(--water);border-color:var(--water)}
+#capBelow{display:none;font-size:15px;line-height:1.45;min-height:3em;text-wrap:balance}
+details{border:1px solid var(--line);border-radius:6px;background:var(--panel);padding:10px 14px}
+summary{cursor:pointer;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.script{margin:10px 0 0;display:grid;gap:8px;font-size:14px;line-height:1.5;max-width:75ch}
+.script b{font-family:var(--mono);font-weight:500;color:var(--water);font-size:12px;margin-right:8px}
+.note{font-size:12px;color:var(--muted);line-height:1.5;max-width:90ch;margin:0}
+@media (max-width:720px){.cap{display:none}#capBelow{display:block}}
+</style>
+
+<div class="wrap">
+  <div class="stage" id="stage" aria-label="Animated film: Safe Water for Dhaka"><div class="film" id="film">
+
+    <div class="steps"><span>Safe water for Dhaka &middot; Climate++</span><ol id="steps"></ol></div>
+
+    <!-- shared map: used by Problem and Solution -->
+    <div class="abs" id="mapbox" style="left:84px;top:92px;width:390px;height:520px;opacity:0">
+      <svg id="map" width="390" height="478" role="img" aria-label="Map of river pollution severity across the study area">
+        <g id="gCells"></g><g id="gTop"></g><g id="gHubs"></g>
+      </svg>
+      <div style="height:8px;margin-top:8px;border-radius:2px;background:linear-gradient(90deg,#2a7fa0,#e0a030 50%,#ef5b4c)"></div>
+      <div class="small" style="display:flex;justify-content:space-between;font-size:12px"><span>less polluted</span><span>river pollution severity</span><span>more polluted</span></div>
+    </div>
+
+    <!-- 1 PROBLEM -->
+    <div class="sc" data-sc="0">
+      <div class="abs" style="left:560px;right:64px;top:110px">
+        <div class="label amber">Problem</div>
+        <div class="h">Dhaka's rivers are too polluted to rely on.</div>
+        <div class="fx" data-at="3.5" style="display:flex;gap:44px;margin-top:44px">
+          <div style="flex:1"><div class="num amber"><span data-n="pass_pct" data-at="3.5">0</span>%</div>
+            <div class="p mut" style="margin-top:10px;font-size:19px">of <span data-t="samples"></span> river samples pass the oxygen check</div></div>
+          <div style="flex:1.25"><div class="num red"><span data-n="need_m" data-dec="1" data-at="6">0</span><span style="font-size:36px"> million</span></div>
+            <div class="p mut" style="margin-top:10px;font-size:19px">of <span data-t="pop_m"></span> million people live where the river is probably severely polluted</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 PURPOSE -->
+    <div class="sc" data-sc="1">
+      <div class="abs" style="left:150px;right:150px;top:150px">
+        <div class="label">Purpose</div>
+        <div class="h" style="font-size:58px">Keep safe water flowing now, and show where to clean first.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:54px">
+          <div class="fx" data-at="3.5" style="border-top:2px solid var(--water);padding-top:16px"><div class="label">Now</div><div class="p" style="margin-top:8px">Store rain where it is reliable, and deliver it to the people most exposed.</div></div>
+          <div class="fx" data-at="5.5" style="border-top:2px solid var(--warn);padding-top:16px"><div class="label amber">Next</div><div class="p" style="margin-top:8px">Clean the river where that helps the most people.</div></div>
+        </div>
+        <div class="fx p mut" data-at="7.5" style="margin-top:34px;font-size:19px">Built for NGOs and local governments. The same steps run on any region's data.</div>
+      </div>
+    </div>
+
+    <!-- 3 METHOD -->
+    <div class="sc" data-sc="2">
+      <div class="abs" style="left:64px;right:64px;top:88px">
+        <div class="label">Method</div>
+        <div class="h" style="font-size:40px;margin-top:10px">Four steps, from water tests to a ranked plan.</div>
+      </div>
+      <div class="abs" style="left:64px;top:208px;width:600px;display:grid;gap:16px">
+        <div class="step fx" data-at="2.5"><b>1</b><div><h3>Measure</h3><p>Seven water tests become one severity score from 0 to 1.</p></div></div>
+        <div class="step fx" data-at="5.5"><b>2</b><div><h3>Map</h3><p>A Bayesian map fills the gaps between test sites and says how sure it is.</p></div></div>
+        <div class="step fx" data-at="8.5"><b>3</b><div><h3>Store</h3><p>A rain cistern is simulated day by day through the dry season, thousands of times.</p></div></div>
+        <div class="step fx" data-at="13"><b>4</b><div><h3>Rank</h3><p>Where to build, where to clean, and where to test next.</p></div></div>
+      </div>
+      <div class="abs fx" data-at="8.5" id="rainbox" style="left:730px;top:214px;width:486px">
+        <div class="small">Rain per month, mm</div>
+        <svg id="rain" width="486" height="250" role="img" aria-label="Average rain per month"></svg>
+        <div class="small amber fx" data-at="10.5" id="dryNote"></div>
+      </div>
+    </div>
+
+    <!-- 4 SOLUTION -->
+    <div class="sc" data-sc="3">
+      <div class="abs" style="left:560px;right:64px;top:110px">
+        <div class="label">Solution</div>
+        <div class="h">Two actions, side by side.</div>
+        <div class="fx" data-at="3" style="display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center;margin-top:40px">
+          <div class="num teal"><span data-n="hubs_n" data-at="3">0</span></div>
+          <div><div class="p"><b>rain cisterns</b>, each for <span data-t="hub_people"></span> people</div>
+            <div class="p mut" style="font-size:18px;margin-top:4px">Sized to last the dry season in <span data-t="rel_pct"></span> of simulated years. Together they reach <span data-t="served"></span> people.</div></div>
+        </div>
+        <div class="fx" data-at="7.5" style="display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center;margin-top:30px">
+          <div class="num amber"><span data-n="top_n" data-at="7.5">0</span></div>
+          <div><div class="p"><b>cleanup zones</b>, ranked first</div>
+            <div class="p mut" style="font-size:18px;margin-top:4px">Where severe pollution meets the most people who have no rain cover.</div></div>
+        </div>
+        <div class="small fx" data-at="10" style="margin-top:26px"><span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--water);vertical-align:-1px"></span> cistern site &nbsp;&nbsp;&nbsp; <span style="display:inline-block;width:11px;height:11px;border-radius:50%;border:1.5px solid #fff;vertical-align:-1px"></span> cleanup zone</div>
+      </div>
+    </div>
+
+    <!-- 5 CONCLUSION -->
+    <div class="sc" data-sc="4">
+      <div class="abs" style="left:64px;right:64px;top:96px">
+        <div class="label">Conclusion</div>
+        <div class="h">Rain bridges the gap. Cleanup closes it.</div>
+        <div class="p mut" style="margin-top:14px;font-size:19px">Water Access Index: the expected share of people not left depending on a severely polluted river.</div>
+        <div id="wai" style="margin-top:34px;display:grid;gap:20px"></div>
+        <div class="fx p" data-at="11" id="matchLine" style="margin-top:28px;font-size:20px"></div>
+        <div class="fx small" data-at="12.5" style="margin-top:14px;max-width:1050px" id="assume"></div>
+      </div>
+    </div>
+
+    <div class="cap"><span id="capText"></span></div>
+  </div></div>
+  <div id="capBelow"></div>
+
+  <div class="controls">
+    <button id="bPlay">Pause</button>
+    <button id="bRestart">Restart</button>
+    <input id="seek" type="range" min="0" max="72" step="0.05" value="0" aria-label="Timeline">
+    <span class="time" id="tlabel">0:00</span>
+    <button id="bCC" aria-pressed="true">Captions</button>
+    <button id="bFull">Fullscreen</button>
+  </div>
+  <div class="chips" id="chips"></div>
+  <details><summary>Narration script</summary><div class="script" id="script"></div></details>
+  <p class="note" id="note"></p>
+</div>
+
+<script>
+const D = /*__DATA__*/null;
+const S = D.stats;
+const SCENES = [['Problem',0,13],['Purpose',13,24],['Method',24,42],['Solution',42,56],['Conclusion',56,72]];
+const TOTAL = 72;
+const f1 = x => (+x).toFixed(1), f2 = x => (+x).toFixed(2), n0 = x => Math.round(x).toLocaleString('en-US');
+S.need_m = S.need / 1e6; S.pop_m = S.pop / 1e6;
+const TXT = { samples: n0(S.samples), pop_m: f1(S.pop_m), hub_people: n0(S.hub_people), served: n0(Math.round(S.served / 1000) * 1000),
+  rel_pct: Math.round(S.rel_min * 100) + (S.rel_max > S.rel_min + 0.005 ? ' to ' + Math.round(S.rel_max * 100) : '') + '%' };
+const dryTxt = D.rain.length === 12 ? `Rain is plentiful, about ${n0(S.annual_mm)} millimetres a year, but only ${n0(S.dry_mm)} fall in the five driest months.` : '';
+const CAPS = [
+ [0.5, 6, `Dhaka's rivers are heavily polluted. Only ${Math.round(S.pass_pct)} percent of river samples pass a basic oxygen check.`],
+ [6, 12.6, `An estimated ${f1(S.need_m)} million of the area's ${f1(S.pop_m)} million people live where the river is probably severely polluted.`],
+ [13.3, 23.6, `Cleaning a river takes years. The purpose is to keep safe water flowing now, and to show where cleanup should start.`],
+ [24.3, 32, `The method has four steps. Seven water tests become one severity score, and a Bayesian map fills the gaps between test sites.`],
+ [32, 41.6, `${dryTxt} So each rain cistern is simulated through the dry season, and every site is ranked.`],
+ [42.3, 49, `The solution is two actions. ${S.hubs_n} rain cisterns, each for ${n0(S.hub_people)} people, placed where rain is reliable and need is close.`],
+ [49, 55.6, `And ${S.top_n} cleanup zones, ranked first because severe pollution there meets the most people.`],
+ [56.3, 64, `The index is ${f2(S.wai_base)} today. The cisterns keep ${n0(Math.round(S.served / 1000) * 1000)} people supplied. Cleanup lifts the index to ${f2(S.wai_both)}.`],
+ [64, 71.6, `Rain bridges the gap. Cleanup closes it. The system shows where to do both.`]
+];
+
+// ---------- helpers ----------
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const ease = p => p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+const prog = (t, a, d) => ease(clamp((t - a) / d));
+const NS = 'http://www.w3.org/2000/svg';
+const el = (tag, at, parent) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); if (parent) parent.appendChild(e); return e; };
+const fmtT = s => Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0');
+const mix = (a, b, p) => a.map((v, i) => Math.round(v + (b[i] - v) * p));
+const ramp = p => { p = clamp(p); const c = [[42,127,160],[224,160,48],[239,91,76]]; return 'rgb(' + (p < .5 ? mix(c[0], c[1], p * 2) : mix(c[1], c[2], (p - .5) * 2)).join(',') + ')'; };
+
+// ---------- static text from data ----------
+document.querySelectorAll('[data-t]').forEach(e => e.textContent = TXT[e.dataset.t]);
+document.getElementById('steps').innerHTML = SCENES.map(s => `<li>${s[0]}</li>`).join('');
+document.getElementById('note').textContent = (S.real ? 'Numbers come from the project\'s real run: Dhaka river samples (2017 to 2021), CHIRPS rainfall, WorldPop 2020 population and the model\'s outputs. ' : 'SYNTHETIC or placeholder inputs: numbers are illustrations, not findings. ') +
+  'Cistern size, the severe cut-off and the cleanup effect are assumptions. The index does not count piped or groundwater supply.';
+document.getElementById('assume').textContent = `Assumptions: cleanup cuts the chance of severe pollution by ${Math.round(S.cleanup_effect * 100)}% within ${S.exposure_km} km of each zone; cistern size and catchment; severe cut-off ${S.tau}. The index does not count piped or groundwater supply.`;
+document.getElementById('matchLine').innerHTML = S.hubs_to_match ? `Matching cleanup's gain with rain alone would take about <b class="teal">${n0(S.hubs_to_match)}</b> cisterns.` : '';
+
+// ---------- map ----------
+const MW = 390, MH = 478, X = D.ext;
+const sx = MW / (X.xmax - X.xmin), sy = MH / (X.ymax - X.ymin), k = Math.min(sx, sy);
+const ox = (MW - k * (X.xmax - X.xmin)) / 2, oy = (MH - k * (X.ymax - X.ymin)) / 2;
+const px = x => ox + (x - X.xmin) * k, py = y => MH - oy - (y - X.ymin) * k;
+const cw = X.dx * k + .6, ch = X.dy * k + .6;
+const gC = document.getElementById('gCells');
+const cells = D.cells.map(c => el('rect', { x: px(c[0]) - cw / 2, y: py(c[1]) - ch / 2, width: cw, height: ch, fill: ramp((c[2] - S.smin) / (S.smax - S.smin)), opacity: 0 }, gC));
+const sweep = D.cells.map(c => (c[0] - X.xmin) / (X.xmax - X.xmin) * .6 + (c[1] - X.ymin) / (X.ymax - X.ymin) * .4);
+const tops = D.top.map(t => el('circle', { cx: px(t[0]), cy: py(t[1]), r: 0, fill: 'rgba(255,255,255,.07)', stroke: '#fff', 'stroke-width': 1.1, opacity: 0 }, document.getElementById('gTop')));
+const hubs = D.hubs.map(h => el('circle', { cx: px(h[0]), cy: py(h[1]), r: 0, fill: '#4fd1c5', stroke: '#08121a', 'stroke-width': 2 }, document.getElementById('gHubs')));
+
+// ---------- rain bars ----------
+const MON = ['J','F','M','A','M','J','J','A','S','O','N','D'];
+const rainSvg = document.getElementById('rain'); let rb = [];
+if (D.rain.length === 12) {
+  const mx = Math.max(...D.rain), sorted = [...D.rain].sort((a, b) => a - b), dryCut = sorted[4];
+  rb = D.rain.map((v, i) => { const x = 6 + i * 40, h = v / mx * 190, dry = v <= dryCut;
+    el('text', { x: x + 15, y: 244, 'text-anchor': 'middle', 'font-family': 'IBM Plex Mono,monospace', 'font-size': 13, fill: '#8fa7b5' }, rainSvg).textContent = MON[i];
+    return { h, r: el('rect', { x, y: 222, width: 30, height: 0, rx: 2, fill: dry ? '#f2b441' : '#4fd1c5' }, rainSvg),
+      t: el('text', { x: x + 15, y: 216, 'text-anchor': 'middle', 'font-family': 'IBM Plex Mono,monospace', 'font-size': 12, fill: '#e8f1f5', opacity: 0 }, rainSvg), v }; });
+  rb.forEach(b => b.t.textContent = Math.round(b.v));
+  document.getElementById('dryNote').textContent = `Five driest months: ${n0(S.dry_mm)} mm of ${n0(S.annual_mm)} mm a year. Storage has to bridge them.`;
+} else document.getElementById('rainbox').hidden = true;
+
+// ---------- index bars ----------
+const WAI = [['Today', S.wai_base, '#8fa7b5'], [`With ${S.hubs_n} rain cisterns`, S.wai_hubs, '#4fd1c5'], ['With cisterns and cleanup', S.wai_both, '#f2b441']];
+document.getElementById('wai').innerHTML = WAI.map((w, i) => `<div style="display:grid;grid-template-columns:330px 1fr 110px;gap:22px;align-items:center">
+  <div class="p">${w[0]}</div><div class="bar"><i id="wf${i}" style="background:${w[2]}"></i></div><div class="num" style="font-size:38px" id="wv${i}">0.000</div></div>`).join('');
+
+// ---------- chips and script ----------
+const chips = document.getElementById('chips');
+SCENES.forEach(s => { const b = document.createElement('button'); b.textContent = s[0]; b.onclick = () => seek(s[1] + 1.5); chips.appendChild(b); });
+document.getElementById('script').innerHTML = CAPS.map(c => `<div><b>${fmtT(c[0])}</b>${c[2]}</div>`).join('');
+
+// ---------- timeline ----------
+let T = 1.6, playing = true, last = null;
+const stage = document.getElementById('stage'), film = document.getElementById('film'), seekEl = document.getElementById('seek');
+const capEl = document.getElementById('capText'), capBelow = document.getElementById('capBelow'), mapbox = document.getElementById('mapbox');
+const scEls = [...document.querySelectorAll('.sc')], stepEls = [...document.querySelectorAll('#steps li')];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, FD = reduce ? .01 : .8;
+function fit() { const w = stage.clientWidth, h = stage.clientHeight, s = Math.min(w / 1280, h / 720); film.style.transform = `translate(${(w - 1280 * s) / 2}px,${(h - 720 * s) / 2}px) scale(${s})`; }
+new ResizeObserver(fit).observe(stage); fit();
+
+function render() {
+  const si = Math.max(0, SCENES.findIndex(s => T >= s[1] && T < s[2]));
+  scEls.forEach((e, i) => { const [, a, b] = SCENES[i]; const o = prog(T, a, FD) * (1 - (i < 4 ? prog(T, b - .6, .6) : 0)); e.style.opacity = o; e.style.visibility = o > 0 ? 'visible' : 'hidden';
+    const lt = T - a;   // local time inside the scene
+    e.querySelectorAll('[data-at]').forEach(x => { if (x.dataset.n !== undefined) return; const p = prog(lt, +x.dataset.at, FD); x.style.opacity = p; x.style.transform = `translateY(${(1 - p) * 10}px)`; });
+    e.querySelectorAll('[data-n]').forEach(x => { const v = S[x.dataset.n] * prog(lt, +x.dataset.at, 2.2); x.textContent = x.dataset.dec ? v.toFixed(+x.dataset.dec) : Math.round(v); }); });
+  stepEls.forEach((e, i) => e.classList.toggle('on', i === si));
+  // map: Problem and Solution
+  const mo = prog(T, 0, FD) * (1 - prog(T, 12.4, .6)) + prog(T, 42, FD) * (1 - prog(T, 55.4, .6));
+  mapbox.style.opacity = clamp(mo);
+  const rev = clamp((T - .4) / 4.5);
+  for (let i = 0; i < cells.length; i++) cells[i].setAttribute('opacity', (T >= 42 ? .8 : clamp((rev * 1.3 - sweep[i]) / .3)).toFixed(2));
+  hubs.forEach((h, i) => h.setAttribute('r', (7 * prog(T, 45 + i * .22, .9)).toFixed(2)));
+  tops.forEach((t, i) => { const p = prog(T, 49.5 + i * .15, .9); t.setAttribute('r', (S.exposure_km * k * p).toFixed(2)); t.setAttribute('opacity', (.75 * p).toFixed(2)); });
+  // rain bars (Method)
+  rb.forEach((b, i) => { const p = prog(T, 32.6 + i * .12, 1); b.r.setAttribute('height', (b.h * p).toFixed(1)); b.r.setAttribute('y', (222 - b.h * p).toFixed(1)); b.t.setAttribute('y', (216 - b.h * p).toFixed(1)); b.t.setAttribute('opacity', p.toFixed(2)); });
+  // index bars (Conclusion)
+  WAI.forEach((w, i) => { const p = prog(T, 59 + i * 2.6, 2); document.getElementById('wf' + i).style.width = (w[1] * 100 * p).toFixed(1) + '%'; document.getElementById('wv' + i).textContent = (w[1] * p).toFixed(3); });
+  const c = CAPS.find(c => T >= c[0] && T < c[1]); capEl.textContent = c ? c[2] : ''; capBelow.textContent = c ? c[2] : '';
+  seekEl.value = T; document.getElementById('tlabel').textContent = fmtT(T) + ' / ' + fmtT(TOTAL);
+  [...chips.children].forEach((b, i) => b.classList.toggle('on', i === si));
+}
+function setPlaying(v) { playing = v; last = null; document.getElementById('bPlay').textContent = v ? 'Pause' : (T >= TOTAL - .05 ? 'Replay' : 'Play'); }
+function seek(t) { T = clamp(t, 0, TOTAL); render(); }
+function tick(now) { if (last === null) last = now; const dt = Math.min(.1, (now - last) / 1000); last = now;
+  if (playing) { T += dt; if (T >= TOTAL) { T = TOTAL - .01; setPlaying(false); } render(); } requestAnimationFrame(tick); }
+document.getElementById('bPlay').onclick = () => { if (!playing && T >= TOTAL - .05) T = 0; setPlaying(!playing); };
+document.getElementById('bRestart').onclick = () => { T = 0; setPlaying(true); render(); };
+seekEl.oninput = () => seek(+seekEl.value);
+document.getElementById('bCC').onclick = e => { const on = e.currentTarget.getAttribute('aria-pressed') !== 'true'; e.currentTarget.setAttribute('aria-pressed', on); document.querySelector('.cap').hidden = !on; capBelow.hidden = !on; };
+document.getElementById('bFull').onclick = () => { try { const p = document.fullscreenElement ? document.exitFullscreen() : stage.requestFullscreen(); if (p && p.catch) p.catch(() => {}); } catch (e) {} };
+addEventListener('keydown', e => { if (e.target.tagName === 'BUTTON') return; if (e.code === 'Space') { e.preventDefault(); document.getElementById('bPlay').click(); } if (e.key === 'ArrowRight') seek(T + 5); if (e.key === 'ArrowLeft') seek(T - 5); });
+if (reduce) { T = 10; playing = false; }
+setPlaying(playing); render(); requestAnimationFrame(tick);
+</script>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RiverWatch BD: waste sources and river screening map</title>
+<meta name="description" content="GIS screening of industrial, landfill and wastewater sources near Bangladesh rivers using OpenStreetMap, HydroRIVERS, WorldPop and Sentinel-2.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b3b5c'/%3E%3Cpath d='M4 20c4-4 8 4 12 0s8 4 12 0' stroke='%2338bdf8' stroke-width='3' fill='none'/%3E%3Ccircle cx='22' cy='10' r='4' fill='%23ef4444'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/static/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="/static/vendor/leaflet/MarkerCluster.css">
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f4c75"/><path d="M4 20c4-4 8 4 12 0s8 4 12 0" stroke="#38bdf8" stroke-width="3" fill="none"/><circle cx="22" cy="10" r="4" fill="#ef4444"/></svg>
+    <div>
+      <div class="brand-title">RiverWatch <span>BD</span></div>
+      <div class="brand-sub">Industrial, landfill and wastewater sources near rivers: screening map</div>
+    </div>
+  </div>
+  <div class="top-controls">
+    <label class="sr" for="runSel">Analysis run</label>
+    <select id="runSel" title="Analysis run"></select>
+    <div class="search">
+      <input id="search" type="search" placeholder="Search a site, river or district…" autocomplete="off">
+      <div id="searchResults" class="search-results"></div>
+    </div>
+    <button class="btn ghost" id="btnMethods">Methods &amp; sources</button>
+    <button class="btn ghost" id="btnDownloads">Downloads</button>
+    <button class="btn ghost" id="btnToken" title="Analyst sign-in for reviews">🔑 Analyst</button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="panel" id="panel">
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="overview">Overview</button>
+      <button class="tab" data-tab="queue">Review queue</button>
+      <button class="tab" data-tab="rivers">Rivers</button>
+      <button class="tab" data-tab="layers">Layers</button>
+    </nav>
+    <div class="tab-body" id="tab-overview"></div>
+    <div class="tab-body hidden" id="tab-queue">
+      <div class="filters">
+        <select id="fCat"><option value="">All categories</option><option value="industrial">Industrial</option><option value="landfill">Landfill / dump / transfer</option><option value="wastewater">Wastewater plant</option><option value="reference">Reference points</option></select>
+        <select id="fTier"><option value="">All hazard tiers</option><option value="T1">Red (T1)</option><option value="T2">Orange-B (T2)</option><option value="T3">Orange-A (T3)</option><option value="T4">Green (T4)</option><option value="none">Unclassified</option></select>
+        <select id="fDiv"><option value="">All divisions</option></select>
+        <select id="fSort">
+          <option value="crit">Sort: critical first, then upper score</option>
+          <option value="hi">Sort: upper score (possible)</option>
+          <option value="lo">Sort: lower score (known)</option>
+          <option value="pop">Sort: residents near corridor</option>
+          <option value="snap">Sort: distance to river</option>
+          <option value="optical">Sort: optical median contrast</option>
+          <option value="name">Sort: name</option>
+        </select>
+        <label class="chk"><input type="checkbox" id="fCrit"> Critical to rivers only</label>
+        <label class="chk"><input type="checkbox" id="fLinked"> Linked to a river reach</label>
+        <label class="chk"><input type="checkbox" id="fHideBrick"> Hide brick kilns</label>
+        <input id="fRiver" type="text" placeholder="Receiving river contains…">
+      </div>
+      <div class="queue-meta" id="queueMeta"></div>
+      <div id="queueList" class="queue-list"></div>
+    </div>
+    <div class="tab-body hidden" id="tab-rivers"></div>
+    <div class="tab-body hidden" id="tab-layers"></div>
+    <div class="disclaimer">
+      <strong>Desk screening only.</strong> Proximity to a river and optical contrast do not show that a facility discharges or pollutes. Population figures describe proximity, not measured exposure. Check locations in the field before you act on them.
+    </div>
+  </aside>
+
+  <main class="map-wrap">
+    <div id="map"></div>
+    <div class="legend" id="legend"></div>
+    <div class="map-status" id="mapStatus">Loading…</div>
+    <div class="pick-hint hidden" id="pickHint">Click the map at the documented outfall location. Press Esc to cancel.</div>
+  </main>
+
+  <aside class="drawer hidden" id="drawer">
+    <button class="drawer-close" id="drawerClose" aria-label="Close">×</button>
+    <div id="drawerBody"></div>
+  </aside>
+</div>
+
+<div class="modal hidden" id="modal"><div class="modal-card"><button class="modal-close" id="modalClose">×</button><div id="modalBody"></div></div></div>
+<div class="toast hidden" id="toast"></div>
+
+<script src="/static/vendor/leaflet/leaflet.js"></script>
+<script src="/static/vendor/leaflet/leaflet.markercluster.js"></script>
+<script src="/static/vendor/leaflet/leaflet-heat.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

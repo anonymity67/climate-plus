@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An integrated implementation playbook and interactive tabletop exercise for ServiceRelay, FloodRoute and WASH Continuity.">
+  <title>District WASH Operations Playbook</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="wash-operations.css">
+  <script defer src="models.js"></script>
+  <script defer src="projects.js"></script>
+  <script defer src="wash-operations.js"></script>
+</head>
+<body class="operations">
+  <a class="skip" href="#operations-main">Skip to content</a>
+  <header class="masthead"><div class="wrap topbar">
+    <a class="brand" href="#operations-main"><span class="mark" aria-hidden="true"></span>District WASH Playbook</a>
+    <nav aria-label="Playbook shortcuts"><a href="#field-kit">Field templates</a><a href="#exercise">Run exercise ↗</a></nav>
+  </div></header>
+
+  <main id="operations-main">
+    <section class="ops-hero" aria-labelledby="ops-title">
+      <div class="wrap">
+        <h1 id="ops-title">Coordinating a district water outage</h1>
+        <p>ServiceRelay manages the repair. FloodRoute plans household pickup and fallback. WASH Continuity protects school services. Run them through one duty board, one verified map, and one stock ledger.</p>
+        <div class="hero-actions"><a class="button primary" href="#exercise">Run the tabletop →</a><a href="#process" class="ops-hero-link">Read the operating procedure</a></div>
+      </div>
+    </section>
+
+    <div class="wrap operations-content">
+      <nav class="jump" aria-label="Sections">
+        <a href="#exercise">Tabletop exercise</a><a href="#process">Operating procedure</a><a href="#mapping">Map and field survey</a>
+        <a href="#governance">Roles and escalation</a><a href="#build">Build sequence and data</a><a href="#pilot">Pilot and scale</a><a href="#field-kit">Field templates</a><a href="#sources">References</a>
+      </nav>
+
+      <section class="ops-section" id="exercise" aria-labelledby="exercise-title">
+        <h2 id="exercise-title">Run one flood incident from report to handover</h2>
+        <p>A pump fails, a bridge link closes, and three schools have limited water. In this drill, the mapped ward has 66 households in the response area, including 32 served by the failed pump. Click a map point, or tab to it and press Enter, for details. Use the action button to advance through the roles. The map, approval references, stock, and populations are synthetic. The exercise runs locally and starts fresh when the page reloads.</p>
+        <noscript><p class="callout">The tabletop requires JavaScript. You can read or print the procedures and use the field templates without it.</p></noscript>
+        <div class="exercise-layout">
+          <div>
+            <section class="exercise-panel" aria-labelledby="map-title">
+              <h3 id="map-title">Ward map</h3>
+              <p class="map-note">Schematic map for the drill. Open a point to see its ID and role.</p>
+              <div class="exercise-map" id="exercise-map" role="group" aria-label="Ward features"><canvas aria-hidden="true"></canvas></div>
+              <ul class="map-key" aria-label="Map legend"><li><i></i>Step-free link</li><li><i></i>Link with steps</li><li><i></i>Closed link</li></ul>
+              <div class="map-details" id="map-feature" role="status"></div>
+              <details class="route-text"><summary>Read map links as text</summary>
+                <ul><li>E1 North Bank to Bridge, 4 min, step-free</li><li>E2 Bridge to Clinic, 5 min, step-free when open</li>
+                  <li>E3 North Bank to Embankment, 6 min, step-free</li><li>E4 Embankment to Clinic, 9 min, step-free</li>
+                  <li>E5 South Lane to Bridge, 3 min, steps</li><li>E6 South Lane to School, 6 min, step-free</li>
+                  <li>E7 Market to School, 4 min, step-free</li><li>E8 Market to Embankment, 4 min, step-free</li>
+                  <li>E9 South Lane to Temporary Stand, 2 min, step-free. Stand is unapproved.</li></ul>
+              </details>
+            </section>
+            <section class="exercise-panel" aria-label="Incident card" id="exercise-results"></section>
+          </div>
+          <div>
+            <form class="exercise-panel drill-controls" id="exercise-form" aria-labelledby="exercise-stage">
+              <h3 id="exercise-stage">Report outage</h3>
+              <p id="exercise-instruction"></p>
+              <div id="exercise-evidence" hidden>
+                <label for="drill-evidence-id">Simulated authority approval reference</label><input id="drill-evidence-id" name="evidence" maxlength="50" placeholder="DEMO-APPROVAL-01" type="text">
+              </div>
+              <p class="drill-error" id="exercise-error" role="alert" tabindex="-1"></p>
+              <button type="submit" class="button dark" id="exercise-next">Report outage</button>
+              <p class="drill-status" role="status" id="exercise-status"></p>
+              <details class="drill-settings"><summary>Edit scenario controls</summary>
+              <fieldset>
+                <legend class="visually-hidden">Scenario inputs</legend>
+                <label for="drill-load">Tanker load (L)</label><input id="drill-load" name="load" type="number" min="0" max="10000" value="2400" required>
+                <label for="drill-reserve">Protected contingency stock (L)</label><input id="drill-reserve" name="reserve" type="number" min="0" max="10000" value="300" required>
+                <label for="drill-floor">School planning floor, if needed (L)</label><input id="drill-floor" name="school-floor" type="number" min="0" max="10000" value="900" required>
+                <label for="drill-walk">Maximum one-way walk (min)</label><input id="drill-walk" name="walk" type="number" min="1" max="60" value="16" required>
+                <label class="drill-check"><input type="checkbox" name="bridge" checked> Bridge to Clinic link closed</label>
+                <label class="drill-check"><input type="checkbox" name="mobile" checked> Market mobile site approved</label>
+                <label class="drill-check"><input type="checkbox" name="released" checked> Tanker source and load released</label>
+                <label class="drill-check"><input type="checkbox" name="vehicle" checked> Tanker access verified</label>
+                <label class="drill-check"><input type="checkbox" name="short" checked> Simulate a receipt up to 100 L short</label>
+              </fieldset>
+              </details>
+              <ol class="stage-list" id="exercise-steps" aria-label="Exercise stages"></ol>
+            </form>
+            <section class="exercise-panel" aria-labelledby="log-title">
+              <h3 id="log-title">Incident log</h3>
+              <ol id="exercise-log" class="event-list"></ol>
+              <div class="log-actions"><button class="ops-button" type="button" id="exercise-export" disabled>Export drill log</button><button class="ops-button" type="button" id="exercise-reset">Reset exercise</button></div>
+            </section>
+          </div>
+        </div>
+        <details class="debrief"><summary>Facilitator script and expected outcomes</summary>
+          <ol>
+            <li>Run the default case. Before authorization, ask who can release the cargo and who signs a route check. Have the team calculate available stock from the 2,400 L load less the 300 L protected reserve.</li>
+            <li>Compare the existing pickup points with the Market option. Expected default calculation: 52 of 66 initial pickup slots, 280 L for 14 additional households, and 1,820 L allocated to schools. The simulated shortage leaves 100 L unreconciled.</li>
+            <li>Reset. Remove the tanker verification check and try to authorize. The plan must stop at authorization. Restore the check before continuing, or discuss the manual escalation route.</li>
+            <li>Reset. Set tanker load to 600 L with 300 L protected. Review the effect of the school planning floor. Identify how the household fallback is communicated, and who can approve a change to the shared allocation policy.</li>
+            <li>At restoration, try advancing with no approval reference. Then enter <code>DEMO-APPROVAL-01</code> and complete the handover. Compare the open school forecast gaps with the mechanical repair status.</li>
+          </ol>
+        </details>
+      </section>
+
+      <section class="ops-section" id="process" aria-labelledby="process-title">
+        <h2 id="process-title">Field process from normal service to recovery</h2>
+        <p>Use one ward and one duty coordination point for the first pilot. A named incident lead owns a single operational record. Each module adds linked work orders with its own owner, status, evidence, and due time. Keep the existing local incident command, public messaging, and water release authority in charge.</p>
+        <div class="process-rail" aria-label="Eight phases of the process">
+          <a href="#sop-1">1. Prepare</a><a href="#sop-2">2. Verify disruption</a><a href="#sop-3">3. Assign repair</a><a href="#sop-4">4. Plan backup</a>
+          <a href="#sop-5">5. Authorize dispatch</a><a href="#sop-6">6. Reconcile receipts</a><a href="#sop-7">7. Restore service</a><a href="#sop-8">8. Handover</a>
+        </div>
+        <div class="sop">
+          <article id="sop-1"><h3>1. Prepare the ward</h3><p>The incident lead coordinates with mapping staff, school staff, and the water authority.</p>
+            <p>Approve the ward boundary, contact roster, backup teams, available vehicles, source approval process, operating hours, accessible pickup criteria, incident categories, loss-of-connectivity procedure, and local supply assumptions. Register each asset, school tank, source and pickup point. Walk the most important backup links with field staff and an accessibility representative. Print a dated ward map and prepare numbered blank forms.</p>
+            <p>Hand over the signed pilot charter, verified map, opening stock for each source and store, role assignments, and approved service and escalation policy.</p></article>
+          <article id="sop-2"><h3>2. Capture, deduplicate, and verify the disruption</h3><p>The caretaker reports the problem, and the duty dispatcher verifies and logs it.</p>
+            <p>Capture asset ID or nearest verified landmark, observation time, type and severity of outage, estimated households and critical facilities affected, reported alternatives, road reports, and a callback or staff role reference if needed. Accept paper, phone or offline forms. Search open cases by asset ID and event window. Attach a second observation to the active case unless the dispatcher confirms a distinct event. Corroborate reports via an authorized field observer without sending anyone into unsafe conditions. A shared incident ID ties the outage, closures, school stock checks, and supply actions together.</p>
+            <p>Record the verified incident ID, independent observation or named verifier, affected zones, linked assets, and a review deadline for provisional or contested reports.</p></article>
+          <article id="sop-3"><h3>3. Send the ServiceRelay repair order</h3><p>The repair coordinator assigns the order and the technician confirms receipt.</p>
+            <p>Rank confirmed outages using affected households, severity, lack of alternate service, critical users, and time down. Use priority weights agreed with local operators. Escalate isolated groups or critical facilities using local procedures. Record crew acceptance, tools or parts needed, estimated arrival, and next review. Keep one active repair order per distinct asset incident. Record waiting states for blocked access, unsafe conditions, parts or crew. Feed the expected service restoration time back into the backup-supply horizon.</p>
+            <p>Record the assigned crew, acknowledgement time, estimated arrival, any blockers, and the next contact.</p></article>
+          <article id="sop-4"><h3>4. Build a joint household and school supply proposal</h3><p>The dispatcher prepares the proposal with the school coordinator, route verifier, and stock custodian.</p>
+            <p><strong>FloodRoute.</strong> Load approved pickup sites and road segments with time, travel mode, and accessibility status. Compute the number of eligible slots as the lower of released volume divided by the approved allotment and verified staffing/throughput within the window. Assign households to eligible sites, protect access for those requiring assistance, then use travel cost to break ties. Report unmet households by group and request assisted delivery, a staffed mobile point, or another authorized option.</p>
+            <p><strong>WASH Continuity.</strong> Ask schools to report usable water by approved purpose and tank, attendance and shelter occupancy, anticipated usage, tank headroom, operating schedule, and time until the next reliable supply. Estimate a shortfall per service and time window. Record drinking water availability, water and soap for handwashing, usable toilets, and accessibility separately. Escalate consumables or facility failures to the education/WASH lead.</p>
+            <p><strong>Shared ledger.</strong> Custodian confirms released stock by lot, destination use, and window. Apply the policy approved for this incident. The drill first protects an explicit contingency reserve and a capped school planning floor, then tries to cover household fallback and allocates remaining eligible volume to schools. In the field, the incident lead agrees protection for essential demand across both groups and records any tradeoffs or override. Never count the same school courtyard stock as institutional storage.</p>
+            <p>Submit a versioned proposal with group assignments by time window, school orders by tank and use, inventory checks by lot, and owners for any unmet demand. Local authorities set actual water service levels and emergency allocation criteria. The tabletop uses illustrative volumes and allotments. <a href="https://www.unicef.org/media/61556/file">Sphere Handbook</a> · <a href="https://washdata.org/topics/wash-schools/methods-wash-schools">JMP school WASH definitions</a></p></article>
+          <article id="sop-5"><h3>5. Authorize, reserve, and dispatch the exact plan</h3><p>Once the incident lead authorizes the plan, the custodian reserves stock and the dispatcher issues orders.</p>
+            <p>Before approval, confirm source or lot release for the intended use, current vehicle and walking routes, receiver availability, tank headroom, and stock/version validity. Reserve the specific lot and litres against the plan version. Record loading and transfer custody. Send pickup staff their location, assignment volume, time window and verification contact. Give each school its order, expected arrival, volume and intended tank. Share a locally appropriate public notice with accessible directions, opening hours and a feedback contact. Publish only verified details through authorized channels. Use a cancellation/replacement notice when a closure or stock hold changes the plan.</p>
+            <p>Retain the authorized plan version, reservations ledger, manifest or pickup instructions, recipient list, and acknowledgement deadline.</p></article>
+          <article id="sop-6"><h3>6. Confirm delivery and recalculate service coverage</h3><p>Receivers confirm deliveries, the stock custodian reconciles volumes, and the dispatcher recalculates coverage.</p>
+            <p>Record each tanker delivery at destination with order ID, lot, approved use, actually received litres, receiving tank, receiver reference, time, and variance reason. Increase usable destination stock only after receipt and any required acceptance. Track pickup allocations separately from actual handovers or collections. Keep unconfirmed volume in transit or under review until the custodian signs a reconciliation. Update site capacity and school runway from accepted stock and updated demand. Adjust the deadline and owner of each remaining fallback case.</p>
+            <p>Save the receipts and applicable collection counts alongside the reconciliation status, updated gaps, and follow-up delivery decisions.</p></article>
+          <article id="sop-7"><h3>7. Restore the repaired water point</h3><p>The technician submits evidence for the authorized water officer to review and sign.</p>
+            <p>Log the completed repair and functional check with the asset and work order IDs. A pending status remains until the authorized officer records the locally applicable return-to-service decision, supporting references, permissible use, and validity. Keep closures or water holds in force where evidence is missing or expired. After release, notify caretakers, pickup staff, schools and other affected users through the original channels. Cancel only the backup orders already reviewed against new service availability and commitments.</p>
+            <p>Keep the repair record, return-to-service reference, verification time, public notice, and documentation of any cancelled orders or released stock reservations. <a href="https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/humanitarian-emergencies">WHO emergency WASH guidance</a></p></article>
+          <article id="sop-8"><h3>8. Hand over exceptions and learn from the incident</h3><p>The incident lead coordinates the handover with the incoming duty officer, school lead, and water authority.</p>
+            <p>Review open household assistance, short school deliveries, water holds, complaints, missed collections and ledger discrepancies. For each unresolved row, record the next owner, action, due time, escalation route, and evidence required. Close the repair order independently when verified. Close the shared incident after all needs are resolved or accepted into named follow-up cases under local policy. Run a short debrief, compare outcomes with the agreed baseline, and correct maps and alert rules.</p>
+            <p>Sign the shift handover, record who will handle remaining needs and feedback, and retain the final stock reconciliation.</p></article>
+        </div>
+      </section>
+
+      <section class="ops-section" id="mapping" aria-labelledby="map-guide-title">
+        <h2 id="map-guide-title">Create the ward map and verify it on the ground</h2>
+        <ol class="long-list">
+          <li><strong>Start with a boundary and asset owners.</strong> Agree on the ward polygon, adjacent providers, source permissions, school catchments, and the authoritative registry. Import licensed road and boundary data. Log the source and date and preserve attribution. Assign stable local IDs even where the original map has no feature.</li>
+          <li><strong>Survey the service points.</strong> Capture GPS and accuracy, access and customary use, operator role, dependency area, service hours, and status. At pickup points record safe access, capacity per time window, opening hours, queuing space, and accessibility. At schools split public pickup storage, school drinking water, hygiene and sanitation reserves into separately identified stores. Record mixed school/shelter use and check for overlapping beneficiary counts.</li>
+          <li><strong>Build a routable graph.</strong> Split lines at real junctions. Record edge ID, from/to junctions, direction, travel mode, minutes, accessibility, restrictions, responsible verifier, last verified time, and expiry. Separate walking and tanker layers. A road can be open to foot travel and closed to a loaded vehicle. Check bridges, temporary crossings, ramps, steps, and turning or unloading space.</li>
+          <li><strong>Map need at group level.</strong> Give each settlement block or group a stable ID, approximate population, household count and timing of the count. Use approximate grouping inland from hazards, no household pins on public maps, and private referrals for individual assisted delivery where necessary. Record reported alternative access and assisted travel needs as group counts.</li>
+          <li><strong>Join assets and demand.</strong> Link water point to backup pickup options and affected groups, and school to its tanks and delivery route. Cross-check IDs, bounds, capacities, duplicate locations, and unreachable nodes. Simulate a closure and verify the detour with a community representative and the responsible field authority.</li>
+          <li><strong>Publish and refresh two views.</strong> Staff get restricted operational layers with verification timestamps. Public notices show approved pickup points, opening windows, locally verified directions, and a feedback contact. A route flagged closed, unknown or expired is excluded from automated public assignments until verified again. Confirm the update cadence at each incident briefing.</li>
+        </ol>
+        <p>For a Bangladesh pilot, identify the local Department of Public Health Engineering (DPHE), education, and disaster management counterparts and confirm the actual authority chain for that ward. The national emergency guidance provides a starting point. <a href="https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-dphe/2024/12/1bd18242bfe9470aa85f9dfca30255c9.pdf">Bangladesh WASH Emergency Guidelines</a> · <a href="https://centre.humdata.org/guidance-note-responsible-approaches-to-data-sharing/">OCHA responsible data sharing</a></p>
+      </section>
+
+      <section class="ops-section" id="governance" aria-labelledby="roles-title">
+        <h2 id="roles-title">Duty roles and escalation</h2>
+        <div class="table-scroll" tabindex="0" role="region" aria-labelledby="roles-caption"><table><caption id="roles-caption">Duty roles and decisions</caption>
+          <thead><tr><th scope="col">Role</th><th scope="col">Owns</th><th scope="col">Required handoff</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Incident lead</th><td>Incident activation, urgent escalation, rationing policy, plan authorization and closure</td><td>Decision, named owners, due times and signed shift handoff</td></tr>
+            <tr><th scope="row">Caretaker and field verifier</th><td>Asset outage and first site observations</td><td>Timestamped report and verifier reference</td></tr>
+            <tr><th scope="row">Dispatcher</th><td>Record reconciliation, work orders, public draft and updates</td><td>Current plan version, recipients and acknowledgements</td></tr>
+            <tr><th scope="row">Repair coordinator and technician</th><td>Response, parts, visit, mechanical repair and supporting evidence</td><td>Repair record to authorized water officer</td></tr>
+            <tr><th scope="row">Water release authority</th><td>Intended-use release, holds, return-to-service authorization</td><td>Decision reference, validity, limits and notification</td></tr>
+            <tr><th scope="row">Route verifier</th><td>Mode-specific link and site access checks</td><td>Route update, evidence, expiry and a replacement option where known</td></tr>
+            <tr><th scope="row">Stock custodian and receivers</th><td>Lot inventory, commitments, dispatch, receipts and variance closure</td><td>Manifest and signed volume at each handoff</td></tr>
+            <tr><th scope="row">School coordinator and caretakers</th><td>School status, demand forecast, tank acceptance and impact follow-up</td><td>School gap report and service observations after receipt</td></tr>
+            <tr><th scope="row">Community and inclusion liaison</th><td>Accessible communication, feedback and assisted delivery referrals</td><td>Unserved counts, unresolved complaints and assigned follow-up</td></tr>
+          </tbody></table></div>
+        <div class="callout"><strong>Use one escalation queue.</strong> Every exception has a severity, evidence status, owner, next action, due time, and fallback. Agree the exact deadlines locally. During a drill, test immediate verbal escalation and acknowledgement for a water hold, a hazardous route, or a critical facility at risk. Test review each shift for unserved groups and unreconciled stock.</div>
+        <ul class="long-list">
+          <li><strong>Source issue or expired approval.</strong> Block new allocations, notify the water authority and sites using the lot, isolate stock under the local SOP, and find an authorized replacement. Publish changes through the incident lead.</li>
+          <li><strong>New closure or security/access issue.</strong> Suspend affected assignments and manifests, verify alternate paths and update the graph. Reissue the revised plan and confirm affected groups and drivers heard the update.</li>
+          <li><strong>No eligible pickup.</strong> Record a named assisted-delivery or mobile-point case, reason and callback window. Have the community liaison check whether the proposed fallback is accessible and affordable.</li>
+          <li><strong>School forecast shows imminent stockout.</strong> Call the education/WASH lead to agree alternative supply or service arrangements. Log the decision and separately track end-use service status.</li>
+          <li><strong>Mobile data fails.</strong> Use numbered paper/phone logs and a single custodian for reservations. Accept verifiable receipts on paper. Synchronize chronologically when devices reconnect, flag conflicts, and check against the last reconciled stock. Continue using authorized offline public channels.</li>
+        </ul>
+      </section>
+
+      <section class="ops-section" id="build" aria-labelledby="build-title">
+        <h2 id="build-title">Shared records and software build order</h2>
+        <p>The existing three prototypes demonstrate the repair queue, routing model, and school volume allocation. The tabletop reuses those models on a common case and a fixed schematic. A field pilot needs a verified registry, approved operating procedures, and auditable records. Multi-device synchronization, production permissions and live dispatch are implementation work for the pilot.</p>
+        <h3>Recommended build order</h3>
+        <ol class="long-list">
+          <li><strong>Digitize the registry.</strong> Create the asset, population-group, road link, site and tank layers. Use QGIS with a GeoPackage as a portable editing and map export format. Start a restricted incident register and stock ledger. Review identifiers, units and expected forms with duty staff.</li>
+          <li><strong>Make reporting offline-capable first.</strong> Configure Android ODK Collect and a partner-managed ODK Central instance where available. Give operators their own scoped access. Prepare simple, local-language forms for outages, road observations, school stock, pickup counts, and receipts. Preload known IDs and offline map layers. Test offline finalization, sent status, retries and reconciliation with numbered paper forms. Keep the duty board authoritative for operational decisions and reservations. <a href="https://docs.getodk.org/collect-forms/">ODK managing forms</a> · <a href="https://docs.getodk.org/collect-offline-maps/">ODK offline maps</a></li>
+          <li><strong>Connect the modules in shadow mode.</strong> Create import adapters that translate approved form submissions into common records and stable IDs. Run route eligibility and dependency checks. Write one consolidated proposal with its input snapshot, versions, constraints, model outputs and exceptions. Compare it with the dispatcher’s actual choices. Record why a recommendation was accepted or overridden.</li>
+          <li><strong>Add authenticated approvals and a transaction ledger.</strong> Use a partner-managed application service and PostgreSQL. Add PostGIS when spatial queries and mapped records need a common server. Expose role-limited actions for verification, plan approval, reservations, dispatch, receipts and return-to-service. Enforce those actions on the server. Secure evidence and contact details separately. <a href="https://postgis.net/docs/en/using_postgis_query.html">PostGIS spatial queries</a></li>
+          <li><strong>Publish a separate read-only public view.</strong> Emit a dated notice from a verified plan revision. Include site, service window, access restrictions, update contact and an approved alternative where applicable. Use the locally appropriate channels and languages, including paper notices, calls, SMS or community announcements. Revoke superseded notices and log recipients and acknowledgement.</li>
+          <li><strong>Harden for multi-ward operations.</strong> Partition access by jurisdiction and keep ward policies configurable. Monitor stale map data, pending sync, expiring approval, unreconciled balances and notice delivery. Maintain protected backups, test restoration, and rehearse a rollback to paper and verbal dispatch. Hand the system and documentation to a named district owner and backup.</li>
+        </ol>
+
+        <h3>Minimum data contract</h3>
+        <p>Use stable IDs, litres for water volume, one-way minutes by travel mode, UTC timestamps, and local display time. Store the reported-at, observed-at, and received-at times separately. Capture verifier and evidence reference for any status used in dispatch. Use explicit unknown and hold states instead of blank fields for safety-critical decisions.</p>
+        <div class="table-scroll" tabindex="0" role="region" aria-labelledby="records-caption"><table><caption id="records-caption">Records and module joins</caption>
+          <thead><tr><th scope="col">Record</th><th scope="col">Minimum fields and joins</th><th scope="col">Authority</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Asset and service area</th><td><code>asset_id</code>, kind, geometry, locality, operator role, offered uses, service area/group links, verification and current status</td><td>Registry owner</td></tr>
+            <tr><th scope="row">Incident and work order</th><td><code>incident_id</code>, <code>asset_id</code>, severity, affected groups and facilities, verified times. Repair order adds assignee, due time and clearance reference.</td><td>Dispatcher and repair coordinator</td></tr>
+            <tr><th scope="row">Edge observation</th><td><code>edge_id</code>, endpoints, mode, status, direction, accessibility, travel minutes, evidence, observation time, expiry and verifier</td><td>Route verifier</td></tr>
+            <tr><th scope="row">Household group and pickup site</th><td><code>group_id</code>, rounded counts or restricted exact counts, mobility needs, demand window. <code>site_id</code>, approved source/stock, opening window, staffing limit and accessible path links.</td><td>Community liaison and site supervisor</td></tr>
+            <tr><th scope="row">School and store</th><td><code>school_id</code>, <code>store_id</code>, attendance/shelter counts, approved use, usable stock, storage capacity, demand window, access status and service observations</td><td>School coordinator</td></tr>
+            <tr><th scope="row">Water lot and movement</th><td><code>lot_id</code>, <code>movement_id</code>, origin, use, released volume, status and validity, source/receiver references, order ID and confirmed quantity</td><td>Water authority, stock custodian and receiver</td></tr>
+            <tr><th scope="row">Plan and order</th><td><code>plan_id</code>, version, <code>incident_id</code>, calculation and approval times, map snapshot, demand window, policy version, order IDs, reserved lot litres, destination and status</td><td>Dispatcher proposes, incident lead authorizes</td></tr>
+            <tr><th scope="row">Exception and notice</th><td><code>exception_id</code>, affected scope, linked order or group, owner, next action, deadline and resolution. <code>notice_id</code>, linked approved plan version, channels, issue time and expiry.</td><td>Duty lead and authorized communicator</td></tr>
+          </tbody></table></div>
+
+        <h3>State transitions and consistency rules</h3>
+        <ul class="long-list">
+          <li><strong>Repair order.</strong> Reported → verified → assigned → on site → repair complete pending clearance → authorized return to service → closed. Blocked, hold and reopen events preserve history and trigger review.</li>
+          <li><strong>Dispatch order.</strong> Proposed → authorized and reserved → loaded / in transit → received or exception → reconciled. Cancellation releases only unused reservation. A new approved variant supersedes old orders and alerts the affected operators.</li>
+          <li><strong>Detection and dispatch are separate.</strong> Any low-stock observation or route closure can open a review. Only authorized actors can change approved site status, release stock, reserve shared volume, publish a notice or close the repair.</li>
+          <li><strong>Ledger balance.</strong> Track available, reserved, in transit, confirmed at destination and held or unreconciled. A movement shifts volume between buckets or posts a signed correction. Physical lot balance, each store’s capacity and active reservations are checked together. A published plan never decrements stock twice, and a repeat receipt cannot create water.</li>
+          <li><strong>Server conflicts.</strong> Each event has a client-generated unique ID, an incident/target ID, actor, observed time, and expected version. The server deduplicates event IDs, stamps the accepted time, validates permissions and rejects stale writes for review. Put plan authorization and per-lot reservations in one database transaction with version checks/locking. Treat closure, hold and expired release as blocking states until an authorized review resolves them.</li>
+          <li><strong>Data responsibility.</strong> Use minimum personal data, restricted contact and evidence storage, log retention agreed with the partner, and separate public datasets. Keep names and precise household coordinates out of exports used for demos or public maps. Keep role-scoped logs of approvals, overrides and exports. <a href="https://centre.humdata.org/guidance-note-responsible-approaches-to-data-sharing/">OCHA data sharing guidance</a></li>
+        </ul>
+        <details class="debrief"><summary>Example event and service boundaries</summary>
+          <p>Use one append-only event envelope. Store sensitive evidence in a separately permissioned record and link by reference. This example is synthetic.</p>
+          <pre><code>{
+  "event_id": "8fb7f7c8-3ab7-4480-9e3d-802aa0d9435f",
+  "event_type": "ROUTE_VERIFIED",
+  "incident_id": "WARD-01-INC-001",
+  "target_id": "EDGE-002",
+  "actor_role": "route_verifier",
+  "expected_version": 3,
+  "observed_at_utc": "2026-11-20T05:00:00Z",
+  "received_at_utc": "2026-11-20T05:13:00Z",
+  "payload": { "mode": "walking", "state": "closed",
+    "valid_until_utc": "2026-11-20T07:00:00Z", "evidence_ref": "DEMO-OBS-002" }
+}</code></pre>
+          <p><strong>Application boundaries.</strong> Intake writes observations. Verification changes authoritative status. Planning reads a snapshot and creates proposals. Authorization binds the plan to its snapshot version and reserves ledger volume. Receipts reconcile movements. Publishing emits an approved public projection. Each service action can be a server endpoint in one application during the pilot.</p>
+        </details>
+      </section>
+
+      <section class="ops-section" id="pilot" aria-labelledby="pilot-title">
+        <h2 id="pilot-title">Six-week ward pilot</h2>
+        <p>Start with an illustrative scope of 8–12 water points, two approved pickup locations plus one potential backup, 3–5 schools, and one transport provider. Use a trusted local implementing partner, an incident duty lead and backup, at least one technician, a route verifier, a school coordinator, two field staff, and a community inclusion liaison. People can hold multiple roles where local policy allows, with independent signoff for release and stock reconciliation.</p>
+        <div class="table-scroll" tabindex="0" role="region" aria-labelledby="pilot-caption"><table><caption id="pilot-caption">Six-week example plan and readiness gates</caption>
+          <thead><tr><th scope="col">When</th><th scope="col">Work and owner</th><th scope="col">Evidence to proceed</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Week 1 · Charter</th><td>Partner and duty lead set the boundary, authority chain, roles, backup channels, policy and cost ceiling. Gather recent outage, replenishment and incident records as a baseline.</td><td>Signed scope, named decision-makers, data handling agreement and paper fallback</td></tr>
+            <tr><th scope="row">Week 2 · Verify the map</th><td>Field team walks routes, checks pickup points, records households by zone and baseline school stock. Reconcile initial lot and store balances.</td><td>100% of mapped pilot pickup and delivery options have owner, verification date, expiry and approved capacity for the test</td></tr>
+            <tr><th scope="row">Week 3 · Prototype integration</th><td>Developer and duty staff connect shared IDs, scenario snapshots, imports, candidate plans and exports. Keep decisions in shadow mode.</td><td>Offline report reaches duty board once. Ledger has no negative balance. A closure and a stock hold remove ineligible orders.</td></tr>
+            <tr><th scope="row">Week 4 · Tabletop and field walk</th><td>Run default, low supply, access denial, partial delivery and failed clearance cases with all roles. Walk one approved backup route and rehearse a paper handoff.</td><td>No invalid proposals pass authorization. Every unmet group and school has an owner. Every shift can continue without mobile data.</td></tr>
+            <tr><th scope="row">Week 5 · Supervised pilot</th><td>Run scheduled drills or routine operations under the existing local dispatch and release authorities. Compare with the usual process and log overrides.</td><td>Verified receipts reconcile to dispatch documents. Site feedback confirms notices were understandable and accessible.</td></tr>
+            <tr><th scope="row">Week 6 · Review</th><td>Partner reviews service and equity measures, costs, errors, staffing and recurring work. Decide whether to revise, extend or move to the next ward.</td><td>Named operating owner, updated map, measured results with denominators, recurring budget, and an agreed improvement backlog</td></tr>
+          </tbody></table></div>
+
+        <h3>Acceptance drills before live use</h3>
+        <ol class="long-list">
+          <li><strong>Duplicate report and reconnect.</strong> Send one offline event twice and two observations of the same outage. Expect one event application and a single verified repair order with both observations.</li>
+          <li><strong>Bridge closure and stale update.</strong> Close a link after a draft plan and bring an older open report. No approved assignment or public route uses the stale link. The old plan is held or superseded and the fallback is assigned.</li>
+          <li><strong>Scarce stock and concurrence.</strong> Two dispatchers try to reserve the same lot for different plans. At most one conflicting reservation succeeds. Remaining group-level and school gaps stay visible. No role bypass is accepted.</li>
+          <li><strong>Unreleased source, closed tanker route, or inaccessible point.</strong> Exercise each case separately. The system blocks the affected allocation or order and displays who can correct it. A manual dispatch still requires the local authority’s decision and a signed record.</li>
+          <li><strong>Partial delivery and delayed receipt.</strong> Dispatch a simulated load and receive less. Confirm only accepted litres increase destination stock. Unreconciled volume remains visible. Repeat the same receipt ID and check that stock remains unchanged.</li>
+          <li><strong>Mechanical repair with pending clearance.</strong> Record the repair but omit authorized release. The point remains unavailable for public service. On release, update notices while tracking any unreconciled distribution and open school needs.</li>
+          <li><strong>Accessibility and affordability.</strong> Take a route with a mobility user or representative, test the preferred public announcement channel in the local language, and check that fallback access and user charges follow the approved policy. Document alternatives for people unable to collect.</li>
+        </ol>
+
+        <h3>Measure outcomes with a denominator</h3>
+        <div class="table-scroll" tabindex="0" role="region" aria-labelledby="measure-caption"><table><caption id="measure-caption">Suggested measures and comparison</caption>
+          <thead><tr><th scope="col">Outcome</th><th scope="col">Measure</th><th scope="col">Compare against</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Repair speed</th><td>Median hours from verified outage to acknowledged assignment and authorized restoration. Track active unresolved cases and time so far separately.</td><td>Usual dispatch or past incidents with similar severity, crew and access</td></tr>
+            <tr><th scope="row">Pickup access</th><td>Assigned households ÷ eligible households. Count actual collections or assisted deliveries separately. Report by relevant aggregate access group and compare travel plus queue time.</td><td>Nearest eligible point or current locally approved allocation using the same stock and closures</td></tr>
+            <tr><th scope="row">School continuity</th><td>School-service days with the agreed water supply at point of use ÷ monitored school-service days. Track stockouts and litres received by use. Measure soap and usable toilets independently.</td><td>Usual reorder thresholds over comparable periods and demand</td></tr>
+            <tr><th scope="row">Ledger integrity</th><td>Received litres ÷ dispatched litres per completed lot and interval. Record outstanding, rejected and approved adjustment volumes separately.</td><td>Dispatch and signed receipts reconciled before shift close or at the locally agreed review time</td></tr>
+            <tr><th scope="row">Equity and quality</th><td>Gap in verified collection/receipt rates across identified groups, count of blocked or stale assignments, overrides, and time to respond to feedback</td><td>Baseline case review, disaggregated with privacy safeguards</td></tr>
+          </tbody></table></div>
+        <p>Agree thresholds before the pilot. Suggested operational gates are zero unauthorized dispatches and negative inventory, every high-risk exception with a named owner and deadline, and all approved orders traceable to a current plan and receipt or recorded disposition. For outcome claims record the number of observations, baseline method, weather/access differences and unresolved cases. Label drill outcomes separately from field results.</p>
+
+        <h3>Costs, handover, and the scale decision</h3>
+        <p>Build a line-item budget from staff time, translation and accessibility review, map work, devices/data, transport standby, pickup staffing, water safety checks, printing, hosting and maintenance. For practice budgeting only, 12 field person-days × BDT 1,500, 8 coordination days × BDT 2,000, 12 operator shifts × BDT 1,000, 4 vehicle trips × BDT 4,000, 6 verification checks × BDT 1,500, and BDT 5,000 for printing/data total BDT 76,000. A 15% buffer makes BDT 87,400. Replace all rates and quantities with partner-approved figures. Budget water procurement, major repairs, lab work, equipment and ongoing hosting separately where applicable.</p>
+        <p>Before adding a ward, transfer the verified registry, local approval policy, user list, backup procedure, stock ledger, issue log, source code, and operating calendar to the designated owner. Train a second duty dispatcher and confirm the next ward’s source owners, demand assumptions and road verifier. Re-run the acceptance drills against that ward’s inventory and accessibility needs. Scale the common records and audit controls, with ward-specific data and policy.</p>
+      </section>
+
+      <section class="ops-section" id="field-kit" aria-labelledby="templates-title">
+        <h2 id="templates-title">Download the field templates</h2>
+        <p>These CSVs contain column headers ready to import into a spreadsheet or your intake system. Assign a maintainer for each file. Keep the incident ID across all records and save dated copies at shift handover. Use restricted storage for operational records. In a paper pilot, print the relevant forms and assign the same record IDs.</p>
+        <div class="template-grid">
+          <a href="wash-field-templates/01-asset-registry.csv" download>01 · Asset registry</a><a href="wash-field-templates/02-route-survey.csv" download>02 · Route survey</a>
+          <a href="wash-field-templates/03-zone-demand.csv" download>03 · Household-group demand</a><a href="wash-field-templates/04-school-stock.csv" download>04 · School service and stock</a>
+          <a href="wash-field-templates/05-incident-and-repair.csv" download>05 · Incident and repair log</a><a href="wash-field-templates/06-lot-and-movements.csv" download>06 · Lot and movement ledger</a>
+          <a href="wash-field-templates/07-dispatch-and-receipt.csv" download>07 · Dispatch and receipt</a><a href="wash-field-templates/08-fallback-and-handover.csv" download>08 · Fallback and shift handover</a>
+          <a href="wash-field-templates/09-indicators.csv" download>09 · Pilot indicators</a><a href="wash-field-templates/10-pickup-sites.csv" download>10 · Pickup sites and windows</a>
+          <a href="wash-field-templates/11-group-pickup-allocations.csv" download>11 · Group pickup allocations</a><a href="wash-field-templates/12-public-notices.csv" download>12 · Public notice record</a>
+        </div>
+        <div class="callout"><strong>Shift briefing order.</strong> Confirm incident lead and current map version. Read new holds and closures. Review repairs due, released stock, school shortfalls, pickup windows and outstanding receipts. Assign and acknowledge each exception. Record the next duty briefing time.</div>
+      </section>
+
+      <section class="ops-section" id="sources" aria-labelledby="ref-title">
+        <h2 id="ref-title">Operational and technical references</h2>
+        <ul class="long-list">
+          <li><a href="https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-dphe/2024/12/1bd18242bfe9470aa85f9dfca30255c9.pdf">Bangladesh WASH Emergency Guidelines</a> for coordination, assessment and operational reporting.</li>
+          <li><a href="https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/humanitarian-emergencies">WHO environmental health in emergencies</a> and the <a href="https://www.unicef.org/media/61556/file">Sphere Handbook</a> for emergency WASH and equitable access.</li>
+          <li><a href="https://washdata.org/topics/wash-schools/methods-wash-schools">WHO/UNICEF JMP school WASH methods</a> for the distinction between drinking water, sanitation and handwashing services.</li>
+          <li><a href="https://docs.getodk.org/collect-forms/">ODK offline form handling</a>, <a href="https://docs.getodk.org/collect-offline-maps/">ODK offline basemaps</a>, and <a href="https://postgis.net/docs/en/using_postgis_query.html">PostGIS spatial data</a> for the suggested software stack.</li>
+          <li><a href="https://centre.humdata.org/guidance-note-responsible-approaches-to-data-sharing/">UN OCHA guidance on responsible data sharing</a> for operational data handling.</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="footer"><div class="wrap foot-inner"><span>District WASH Operations Playbook</span><a href="#operations-main">Back to top ↑</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,839 @@
+{
+  "id" : "eqje-vguj",
+  "name" : "Water Point Data Exchange - Plus (WPdx+)",
+  "assetType" : "dataset",
+  "averageRating" : 0,
+  "createdAt" : 1620740823,
+  "description" : "WPdx+ is an enhanced version of the WPdx-Basic dataset. For a full comparison between the two datasets, please visit our blog at https://www.waterpointdata.org/2021/10/07/introducing-wpdx-plus/.\n\nThe Water Point Data Exchange (WPdx) is the global platform for sharing water point data. The WPdx Data Standard was designed by a wide range of stakeholders from across sectors and around the world. The core attributes included in the standard are already being collected by governments, researchers, and organizations around the world. To read more about the standard or to contribute water point data visit www.waterpointdata.org.",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 1699,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 39621173,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1685049024,
+  "publicationGroup" : 18303285,
+  "publicationStage" : "published",
+  "rowsUpdatedAt" : 1792737260,
+  "rowsUpdatedBy" : "4xiv-nd9u",
+  "tableId" : 19162805,
+  "totalTimesRated" : 0,
+  "viewCount" : 13872,
+  "viewLastModified" : 1792821948,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1620753024,
+    "reviewedAutomatically" : true,
+    "state" : "approved",
+    "submissionId" : 5532516,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1620753024,
+    "targetAudience" : "public",
+    "workflowId" : 2099,
+    "submissionDetails" : {
+      "permissionType" : "READ"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1620753024,
+      "failureCount" : 0,
+      "startedAt" : 1620753024,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "4xiv-nd9u",
+      "displayName" : "katy"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 576185323,
+    "name" : "row_id",
+    "dataTypeName" : "number",
+    "description" : "Row number",
+    "fieldName" : "row_id",
+    "position" : 1,
+    "renderTypeName" : "number",
+    "tableColumnId" : 137941115,
+    "width" : 172,
+    "format" : { }
+  }, {
+    "id" : 576185324,
+    "name" : "#source",
+    "dataTypeName" : "text",
+    "description" : "Provide the name of the organization collecting the data record.",
+    "fieldName" : "source",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941131,
+    "format" : { }
+  }, {
+    "id" : 576185325,
+    "name" : "#lat_deg",
+    "dataTypeName" : "number",
+    "description" : "Provide the decimal value of the latitude in WGS 1984. At least four decimals (but more are encouraged) should be included. North and East should be noted as positive numbers.",
+    "fieldName" : "lat_deg",
+    "position" : 3,
+    "renderTypeName" : "number",
+    "tableColumnId" : 137941124,
+    "width" : 159,
+    "format" : { }
+  }, {
+    "id" : 576185326,
+    "name" : "#lon_deg",
+    "dataTypeName" : "number",
+    "description" : "Provide the decimal value of the longitude in WGS 1984. At least four decimals (but more are encouraged) should be included. North and East should be noted as positive numbers.",
+    "fieldName" : "lon_deg",
+    "position" : 4,
+    "renderTypeName" : "number",
+    "tableColumnId" : 137941132,
+    "width" : 181,
+    "format" : { }
+  }, {
+    "id" : 576185327,
+    "name" : "#report_date",
+    "dataTypeName" : "calendar_date",
+    "description" : "Provide the date that the data was collected on using ISO 8601. Time and time zone designator are optional.",
+    "fieldName" : "report_date",
+    "position" : 5,
+    "renderTypeName" : "calendar_date",
+    "tableColumnId" : 137941089,
+    "width" : 122,
+    "format" : { }
+  }, {
+    "id" : 576185328,
+    "name" : "#status_id",
+    "dataTypeName" : "text",
+    "description" : "Identify if any water is available on the day of the visit, recognizing that it may be a limited flow.",
+    "fieldName" : "status_id",
+    "position" : 6,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941128,
+    "width" : 92,
+    "format" : { }
+  }, {
+    "id" : 576185329,
+    "name" : "#water_source_clean",
+    "dataTypeName" : "text",
+    "description" : "Cleaned version of the water source data. Includes cleaned and detailed data (Protected vs. unprotected wells, etc)",
+    "fieldName" : "water_source_clean",
+    "position" : 7,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941135,
+    "format" : { }
+  }, {
+    "id" : 576185330,
+    "name" : "#water_source_category",
+    "dataTypeName" : "text",
+    "description" : "Categorized version of the water source data. Categories include Well, Spring, Rainwater Harvesting, Piped, Sand/subsurface dam, Delivered Water",
+    "fieldName" : "water_source_category",
+    "position" : 8,
+    "renderTypeName" : "text",
+    "tableColumnId" : 138016718,
+    "format" : { }
+  }, {
+    "id" : 576185331,
+    "name" : "#water_tech_clean",
+    "dataTypeName" : "text",
+    "description" : "Cleaned version of the water point technology data. Includes cleaned and detailed data (type of handpump, etc.)",
+    "fieldName" : "water_tech_clean",
+    "position" : 9,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941114,
+    "format" : { }
+  }, {
+    "id" : 576185332,
+    "name" : "#water_tech_category",
+    "dataTypeName" : "text",
+    "description" : "Categorized version of the water point technology data. Categories include: Hand pump, Mechanized pump, Tapstand, Rope and Bucket",
+    "fieldName" : "_water_tech_category",
+    "position" : 10,
+    "renderTypeName" : "text",
+    "tableColumnId" : 138016720,
+    "format" : { }
+  }, {
+    "id" : 576185333,
+    "name" : "#facility_type",
+    "dataTypeName" : "text",
+    "description" : "Categorized facility type based on JMP definitions: https://washdata.org/monitoring/methods/facility-types",
+    "fieldName" : "facility_type",
+    "position" : 11,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941087,
+    "format" : { }
+  }, {
+    "id" : 576185334,
+    "name" : "#clean_country_name",
+    "dataTypeName" : "text",
+    "description" : "Cleaned version of the country name based on provided GPS coordinates.",
+    "fieldName" : "clean_country_name",
+    "position" : 12,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941133,
+    "format" : { }
+  }, {
+    "id" : 576185378,
+    "name" : "#clean_country_id",
+    "dataTypeName" : "text",
+    "description" : "Cleaned version of the country ID data.",
+    "fieldName" : "clean_country_id",
+    "position" : 13,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941130,
+    "format" : { }
+  }, {
+    "id" : 576185335,
+    "name" : "#clean_adm1",
+    "dataTypeName" : "text",
+    "description" : "Cleaned version of the Primary Administrative Division data based on provided GPS coordinates and GADM boundaries.",
+    "fieldName" : "clean_adm1",
+    "position" : 14,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941106,
+    "format" : { }
+  }, {
+    "id" : 576185336,
+    "name" : "#clean_adm2",
+    "dataTypeName" : "text",
+    "description" : "Cleaned version of the Secondary Administrative Division data  based on provided GPS coordinates and GADM boundaries.",
+    "fieldName" : "clean_adm2",
+    "position" : 15,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941102,
+    "format" : { }
+  }, {
+    "id" : 576185337,
+    "name" : "#clean_adm3",
+    "dataTypeName" : "text",
+    "description" : "Cleaned version of the Tertiary Administrative Division data  based on provided GPS coordinates and GADM boundaries.",
+    "fieldName" : "clean_adm3",
+    "position" : 16,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941093,
+    "format" : { }
+  }, {
+    "id" : 576185338,
+    "name" : "#clean_adm4",
+    "dataTypeName" : "text",
+    "description" : "Adm4 based on provided GPS coordinates and GADM or HDX/OCHA boundaries",
+    "fieldName" : "clean_adm4",
+    "position" : 17,
+    "renderTypeName" : "text",
+    "tableColumnId" : 140915483,
+    "format" : { }
+  }, {
+    "id" : 576185339,
+    "name" : "#install_year",
+    "dataTypeName" : "number",
+    "description" : "Provide the 4-digit installation year (e.g. 1994).",
+    "fieldName" : "install_year",
+    "position" : 18,
+    "renderTypeName" : "number",
+    "tableColumnId" : 138586525,
+    "format" : { }
+  }, {
+    "id" : 576185340,
+    "name" : "#installer",
+    "dataTypeName" : "text",
+    "description" : "Name of the entity or entities that installed the water system. This should be the entities that completed or were directly responsible for the construction, rather than a donor or other involved stakeholder.",
+    "fieldName" : "installer",
+    "position" : 19,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941110,
+    "format" : { }
+  }, {
+    "id" : 576185341,
+    "name" : "#rehab_year",
+    "dataTypeName" : "number",
+    "description" : "4-digit year when the most recent major rehabilitation (not just regular maintenance) occurred (e.g. 1994).",
+    "fieldName" : "rehab_year",
+    "position" : 20,
+    "renderTypeName" : "number",
+    "tableColumnId" : 138586526,
+    "format" : { }
+  }, {
+    "id" : 576185342,
+    "name" : "#rehabilitator",
+    "dataTypeName" : "text",
+    "description" : "Name of the entity or entities that completed the most recent rehabilitation of the water system. This should be the entities that complete or were directly responsible for the construction, rather than a donor or other involved stakeholder.",
+    "fieldName" : "rehabilitator",
+    "position" : 21,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941095,
+    "format" : { }
+  }, {
+    "id" : 576185343,
+    "name" : "#management_clean",
+    "dataTypeName" : "text",
+    "description" : "Cleaned and categorized version of the management structure data. Categories include: Community management, Direct government operation, School Management, Private Person, Health Care Facility, Other Institutional Management, Private Operator",
+    "fieldName" : "management_clean",
+    "position" : 22,
+    "renderTypeName" : "text",
+    "tableColumnId" : 138016719,
+    "format" : { }
+  }, {
+    "id" : 576185344,
+    "name" : "#status_clean",
+    "dataTypeName" : "text",
+    "description" : "Categorized version of the #status parameter. Based on terms from the #status entry, status_clean includes 5 categories: Fully functional, Functional but needs repair, Non functional and needs repair, Non functional due to dry season, Abandoned and Other. These categories will continue to evolve and will be refined in future updates. ",
+    "fieldName" : "status_clean",
+    "position" : 23,
+    "renderTypeName" : "text",
+    "tableColumnId" : 140915482,
+    "format" : { }
+  }, {
+    "id" : 576185397,
+    "name" : "#pay_clean",
+    "dataTypeName" : "text",
+    "description" : "Cleaned version of #pay parameter, focusing only on basis and not amount. Options include: No payment, Fees collected – basis unknown, Fees collected – point of collection, Fees collected – metered, Fees collected – monthly, Fees collected – seasonally, Fees collected – upon breakdown",
+    "fieldName" : "pay_clean",
+    "position" : 24,
+    "renderTypeName" : "text",
+    "tableColumnId" : 145343004,
+    "format" : { }
+  }, {
+    "id" : 576185346,
+    "name" : "#fecal_coliform_presence",
+    "dataTypeName" : "text",
+    "description" : "Results of e. coli or thermotolerant coliform water quality test from a 100ml water sample collected directly from water point. Total coliform should not be included. If thermotolerant, must be noted in the metadata. Value should represent presence or absence.",
+    "fieldName" : "fecal_coliform_presence",
+    "position" : 25,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941117,
+    "format" : { }
+  }, {
+    "id" : 576185347,
+    "name" : "#fecal_coliform_value",
+    "dataTypeName" : "text",
+    "description" : "Results of e. coli or thermotolerant coliform water quality test from a 100ml water sample collected directly from water point. Total coliform should not be included. If thermotolerant, must be noted in the metadata. Value should represent the most probable number or colony forming units in 100ml.",
+    "fieldName" : "fecal_coliform_value",
+    "position" : 26,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941085,
+    "format" : { }
+  }, {
+    "id" : 576185398,
+    "name" : "#subjective_quality_clean",
+    "dataTypeName" : "text",
+    "description" : "Cleaned version of the #subjective_quality parameter. Options include: Acceptable quality, Unacceptable quality, Bad taste, Bad color, Bad smell",
+    "fieldName" : "subjective_quality_clean",
+    "position" : 27,
+    "renderTypeName" : "text",
+    "tableColumnId" : 145343003,
+    "format" : { }
+  }, {
+    "id" : 576185349,
+    "name" : "#activity_id",
+    "dataTypeName" : "text",
+    "description" : "Unique ID for the specific water point infrastructure, as reported by data collector. This could be a physical ID on the water point or an internal system ID.",
+    "fieldName" : "activity_id",
+    "position" : 28,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941088,
+    "format" : { }
+  }, {
+    "id" : 576185350,
+    "name" : "#scheme_id",
+    "dataTypeName" : "text",
+    "description" : "The unique ID for a small piped scheme that connects multiple individual water points.",
+    "fieldName" : "scheme_id",
+    "position" : 29,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941109,
+    "format" : { }
+  }, {
+    "id" : 576185351,
+    "name" : "#wpdx_id",
+    "dataTypeName" : "text",
+    "description" : "The Water Point Data Exchange ID. Assigned based on location and used to match records from water points over from different organizations and report dates.",
+    "fieldName" : "wpdx_id",
+    "position" : 30,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941099,
+    "format" : { }
+  }, {
+    "id" : 576185352,
+    "name" : "#notes",
+    "dataTypeName" : "text",
+    "description" : "This field can be used to incorporate any additional information not already part of the WPDx standard that is useful to the data provider. Exact data included is unique per data set and can be found in the WPDx Catalog: https://catalog.waterpointdata.org/datasets/ ",
+    "fieldName" : "notes",
+    "position" : 31,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941096,
+    "format" : { }
+  }, {
+    "id" : 576185353,
+    "name" : "#orig_lnk",
+    "dataTypeName" : "text",
+    "description" : "Public link to the data record for a specific water point or full data set, including any non-standard compliant data.",
+    "fieldName" : "orig_lnk",
+    "position" : 32,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941104,
+    "format" : { }
+  }, {
+    "id" : 576185354,
+    "name" : "#photo_lnk",
+    "dataTypeName" : "text",
+    "description" : "URL of a photograph of the water system. Multiple URLs may be included, with each URL separated by a semi-colon (;).",
+    "fieldName" : "photo_lnk",
+    "position" : 33,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941097,
+    "format" : { }
+  }, {
+    "id" : 576185355,
+    "name" : "#country_id",
+    "dataTypeName" : "text",
+    "description" : "The ISO two letter country classification code, selected from a list of all ISO country codes.",
+    "fieldName" : "country_id",
+    "position" : 34,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941118,
+    "format" : { }
+  }, {
+    "id" : 576185356,
+    "name" : "#data_lnk",
+    "dataTypeName" : "url",
+    "description" : "The Water Point Data Exchange catalog link for relevant dataset.",
+    "fieldName" : "data_lnk",
+    "position" : 35,
+    "renderTypeName" : "url",
+    "tableColumnId" : 137941098,
+    "format" : { },
+    "subColumnTypes" : [ "url", "description" ]
+  }, {
+    "id" : 576185357,
+    "name" : "#distance_to_primary_road",
+    "dataTypeName" : "number",
+    "description" : "Distance in kilometers to the nearest road based on calculations with OpenStreetMap data.",
+    "fieldName" : "distance_to_primary",
+    "position" : 36,
+    "renderTypeName" : "number",
+    "tableColumnId" : 137941136,
+    "format" : { }
+  }, {
+    "id" : 576185358,
+    "name" : "#distance_to_secondary_road",
+    "dataTypeName" : "number",
+    "description" : "Distance in kilometers to the second-closest road based on calculations with OpenStreetMap data.",
+    "fieldName" : "distance_to_secondary",
+    "position" : 37,
+    "renderTypeName" : "number",
+    "tableColumnId" : 137941129,
+    "format" : { }
+  }, {
+    "id" : 576185359,
+    "name" : "#distance_to_tertiary_road",
+    "dataTypeName" : "number",
+    "description" : "Distance in kilometers to the third-closest road based on calculations with OpenStreetMap data.",
+    "fieldName" : "distance_to_tertiary",
+    "position" : 38,
+    "renderTypeName" : "number",
+    "tableColumnId" : 137941134,
+    "format" : { }
+  }, {
+    "id" : 576185360,
+    "name" : "#distance_to_city",
+    "dataTypeName" : "number",
+    "description" : "Distance in kilometers to the nearest city based on calculations with OpenStreetMap data.",
+    "fieldName" : "distance_to_city",
+    "position" : 39,
+    "renderTypeName" : "number",
+    "tableColumnId" : 137941126,
+    "format" : { }
+  }, {
+    "id" : 576185361,
+    "name" : "#distance_to_town",
+    "dataTypeName" : "number",
+    "description" : "Distance in kilometers to the nearest town based on calculations with OpenStreetMap data.",
+    "fieldName" : "distance_to_town",
+    "position" : 40,
+    "renderTypeName" : "number",
+    "tableColumnId" : 137941125,
+    "format" : { }
+  }, {
+    "id" : 576185362,
+    "name" : "water_point_history",
+    "dataTypeName" : "text",
+    "description" : "Summary of previous water point records with same WPdx_id. Only the most recent water point record is displayed in the row. ",
+    "fieldName" : "water_point_history",
+    "position" : 41,
+    "renderTypeName" : "text",
+    "tableColumnId" : 143372784,
+    "format" : { }
+  }, {
+    "id" : 576185365,
+    "name" : "local_population_1km",
+    "dataTypeName" : "number",
+    "description" : "The number of people living within a 1km radius of the water point.",
+    "fieldName" : "local_population",
+    "position" : 42,
+    "renderTypeName" : "number",
+    "tableColumnId" : 139704617,
+    "format" : { }
+  }, {
+    "id" : 576185364,
+    "name" : "water_point_population",
+    "dataTypeName" : "number",
+    "description" : "Number of people currently or potentially served by a specific water point. For working water points, this number represents likely current users. For non-functional water points, this number represents users who would gain access if the point was functional. ",
+    "fieldName" : "served_population",
+    "position" : 43,
+    "renderTypeName" : "number",
+    "tableColumnId" : 139704620,
+    "format" : { }
+  }, {
+    "id" : 576185363,
+    "name" : "rehab_priority",
+    "dataTypeName" : "number",
+    "description" : "Ranked priority for rehabilitation based on the number of users who would gain access if the water point was returned to a functional state. ",
+    "fieldName" : "rehab_priority",
+    "position" : 44,
+    "renderTypeName" : "number",
+    "tableColumnId" : 139704618,
+    "format" : { }
+  }, {
+    "id" : 576185408,
+    "name" : "#pop_who_would_gain_access",
+    "dataTypeName" : "number",
+    "description" : "Number of people who would gain new access to a functional point if a specific point was made functional again. This number may be the same or less that the \"Rehab Priority\" population, as some people living within 1km of a broken point may have already had access to a different functional point. Rehab priority calculates all potential people who could use the repaired point, while pop who would gain access is focused only on the population that did not have access to any functional point. ",
+    "fieldName" : "_pop_who_would_gain_access",
+    "position" : 45,
+    "renderTypeName" : "number",
+    "tableColumnId" : 147043475,
+    "format" : { }
+  }, {
+    "id" : 576185366,
+    "name" : "crucialness_score",
+    "dataTypeName" : "number",
+    "description" : "The crucialness score (0-100%) is the ratio of likely current users to the total local population within a 1km radius of the water point. Crucialness provides a measure of water system redundancy. For non-functional water points, the crucialness score shows how important the water point would be if it were to be rehabilitated. ",
+    "fieldName" : "crucialness",
+    "position" : 46,
+    "renderTypeName" : "number",
+    "tableColumnId" : 139704615,
+    "format" : { }
+  }, {
+    "id" : 576185367,
+    "name" : "pressure_score",
+    "dataTypeName" : "number",
+    "description" : "The pressure score (0-100%) is calculated based on the ratio of the number of people assigned to that water point over the theoretical maximum population which can be served based on the technology. If a point is serving less than the recommended maximum, the pressure score will be less than 100% (i.e., 250/500 = 0.5). If a point is serving more than the recommended maximum, the pressure score will be over 100% (i.e., 750/500 = 150%). ",
+    "fieldName" : "pressure",
+    "position" : 47,
+    "renderTypeName" : "number",
+    "tableColumnId" : 139704621,
+    "format" : { }
+  }, {
+    "id" : 576185368,
+    "name" : "usage_capacity",
+    "dataTypeName" : "number",
+    "description" : "Recommended maximum users per water point, extended from Sphere Guidelines (https://spherestandards.org/wp-content/uploads/Sphere-Handbook-2018-EN.pdf) including:\n\n    250 people per tap [tapstand, kiosk, rainwater catchment]\n    500 people per hand pump [all hand pumps]\n    400 people per open hand well [rope and bucket]\n    1000 people per mechanized well\n",
+    "fieldName" : "usage_cap",
+    "position" : 48,
+    "renderTypeName" : "number",
+    "tableColumnId" : 139704616,
+    "format" : { }
+  }, {
+    "id" : 576185370,
+    "name" : "days_since_report",
+    "dataTypeName" : "number",
+    "description" : "Number of days which have passed since the report date. Updated on approx a weekly basis when the analyses are re-run to incorporate new data uploads.",
+    "fieldName" : "days_since_report",
+    "position" : 49,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140915481,
+    "format" : { }
+  }, {
+    "id" : 576185371,
+    "name" : "staleness_score",
+    "dataTypeName" : "number",
+    "description" : "The staleness score represents the depreciation of the point's relevance - older updates are less valuable than fresh data. The main parameter that controls this score is the 'target value' - for example, in the current state we define that a 20-year-old report is worth only 10% in comparison to a 'day-old' report. All other reports are then given values based on their report age using a geometric decay model.\nThese value assignments are very qualitative and are only meant to give a rough estimate of data 'freshness’. \n",
+    "fieldName" : "staleness_score",
+    "position" : 50,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140915480,
+    "format" : { }
+  }, {
+    "id" : 576185372,
+    "name" : "latest_record",
+    "dataTypeName" : "checkbox",
+    "description" : "True/False value indicating if this data is the latest for each water point.",
+    "fieldName" : "is_latest",
+    "position" : 51,
+    "renderTypeName" : "checkbox",
+    "tableColumnId" : 138016721,
+    "format" : { }
+  }, {
+    "id" : 576185376,
+    "name" : "location_id",
+    "dataTypeName" : "number",
+    "description" : "A counting tool for each new location that appears in a dataset",
+    "fieldName" : "location_id",
+    "position" : 52,
+    "renderTypeName" : "number",
+    "tableColumnId" : 137941086,
+    "format" : { }
+  }, {
+    "id" : 576185369,
+    "name" : "is_urban",
+    "dataTypeName" : "text",
+    "description" : "Is in an urban area as defined by EU Global Human Settlement Database (https://ghsl.jrc.ec.europa.eu/ghs_stat_ucdb2015mt_r2019a.php)",
+    "fieldName" : "is_urban",
+    "position" : 53,
+    "renderTypeName" : "text",
+    "tableColumnId" : 139704619,
+    "format" : { }
+  }, {
+    "id" : 576185377,
+    "name" : "cluster_size",
+    "dataTypeName" : "number",
+    "description" : "The number of times a location appears in the dataset.",
+    "fieldName" : "cluster_size",
+    "position" : 54,
+    "renderTypeName" : "number",
+    "tableColumnId" : 137941100,
+    "format" : { }
+  }, {
+    "id" : 576185379,
+    "name" : "#country_name",
+    "dataTypeName" : "text",
+    "description" : "Provide the name of the country where water point is located.",
+    "fieldName" : "country_name",
+    "position" : 55,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941091,
+    "format" : { }
+  }, {
+    "id" : 576185380,
+    "name" : "#water_source",
+    "dataTypeName" : "text",
+    "description" : "Describe the water source (e.g. shallow well, spring, borehole, river, pond, etc.).",
+    "fieldName" : "water_source",
+    "position" : 56,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941111,
+    "format" : { }
+  }, {
+    "id" : 576185381,
+    "name" : "#water_tech",
+    "dataTypeName" : "text",
+    "description" : "Describe the system being used to transport the water from the source to the point of collection (e.g. Handpump (include manufacturer, i.e. Afridev, India Mark II, Malda, etc.), Kiosk, Tapstand, etc.).",
+    "fieldName" : "water_tech",
+    "position" : 57,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941120,
+    "format" : { }
+  }, {
+    "id" : 576185382,
+    "name" : "#status",
+    "dataTypeName" : "text",
+    "description" : "Status of the physical/mechanical condition of the water point.",
+    "fieldName" : "status",
+    "position" : 58,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941090,
+    "format" : { }
+  }, {
+    "id" : 576185386,
+    "name" : "#adm1",
+    "dataTypeName" : "text",
+    "description" : "Provide the name of the primary administrative division. The correct unit can be found at http://www.statoids.com. This corresponds to “First Order” and “First Level” administrative units at http://Geonames.org and http://www.gadm.org respectively.",
+    "fieldName" : "adm1",
+    "position" : 59,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941112,
+    "format" : { }
+  }, {
+    "id" : 576185383,
+    "name" : "#adm2",
+    "dataTypeName" : "text",
+    "description" : "Provide the name of the secondary administrative division. The correct unit can be found at http://www.statoids.com. This corresponds to “Second Order” and “Second Level” administrative units at http://Geonames.org and http://www.gadm.org respectively.",
+    "fieldName" : "adm2",
+    "position" : 60,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941127,
+    "format" : { }
+  }, {
+    "id" : 576185384,
+    "name" : "#adm3",
+    "dataTypeName" : "text",
+    "description" : "Provide the name of the tertiary administrative division. The correct unit can be found at http://www.statoids.com. This corresponds to “Third Order” and “Third Level” administrative units at http://Geonames.org and http://www.gadm.org respectively.",
+    "fieldName" : "adm3",
+    "position" : 61,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941122,
+    "format" : { }
+  }, {
+    "id" : 576185385,
+    "name" : "#management",
+    "dataTypeName" : "text",
+    "description" : "Select the classification of the entity that directly manages the water point. Category suggestions include: “Direct Government Operation”, “Private Operator/Delegated Management”, “Community Management”, “School”, “Health Care Facility”, “Religious Institution”, “Other Institutional Management”, “Other.”",
+    "fieldName" : "management",
+    "position" : 62,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941116,
+    "format" : { }
+  }, {
+    "id" : 576185345,
+    "name" : "#pay",
+    "dataTypeName" : "text",
+    "description" : "Payment amount and basis (e.g. monthly, per jerry can, when broken, etc.). If no amount is provided, the basis can be provided alone. An amount without a payment basis cannot be included.",
+    "fieldName" : "pay",
+    "position" : 63,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941121,
+    "format" : { }
+  }, {
+    "id" : 576185348,
+    "name" : "#subjective_quality",
+    "dataTypeName" : "text",
+    "description" : "Information regarding the perceived quality of the water including taste, appearance, and/or odor.",
+    "fieldName" : "subjective_quality",
+    "position" : 64,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941119,
+    "format" : { }
+  }, {
+    "id" : 576185388,
+    "name" : "New Georeferenced Column ",
+    "dataTypeName" : "point",
+    "description" : "For spatial visualizations in socrata",
+    "fieldName" : "new_georeferenced_column_",
+    "position" : 65,
+    "renderTypeName" : "point",
+    "tableColumnId" : 138816797,
+    "format" : { }
+  }, {
+    "id" : 576185390,
+    "name" : "lat_lon_deg",
+    "dataTypeName" : "text",
+    "description" : "The geographic coordinates where the water point is located.",
+    "fieldName" : "lat_lon_deg",
+    "position" : 66,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941103,
+    "format" : { }
+  }, {
+    "id" : 576185392,
+    "name" : "public_data_source",
+    "dataTypeName" : "url",
+    "description" : "Public link to the source file.",
+    "fieldName" : "public_data_source",
+    "position" : 67,
+    "renderTypeName" : "url",
+    "tableColumnId" : 137941107,
+    "format" : { },
+    "subColumnTypes" : [ "url", "description" ]
+  }, {
+    "id" : 576185393,
+    "name" : "converted",
+    "dataTypeName" : "text",
+    "description" : "List of all fields converted by WPDx from original data source.",
+    "fieldName" : "converted",
+    "position" : 68,
+    "renderTypeName" : "text",
+    "tableColumnId" : 137941094,
+    "format" : { }
+  }, {
+    "id" : 576185394,
+    "name" : "count",
+    "dataTypeName" : "number",
+    "description" : "The number of records of this type.",
+    "fieldName" : "count",
+    "position" : 69,
+    "renderTypeName" : "number",
+    "tableColumnId" : 137941101,
+    "format" : { }
+  }, {
+    "id" : 576185395,
+    "name" : "created_timestamp",
+    "dataTypeName" : "calendar_date",
+    "description" : "Timestamp of the date when the data was created",
+    "fieldName" : "created_timestamp",
+    "position" : 70,
+    "renderTypeName" : "calendar_date",
+    "tableColumnId" : 137941105,
+    "format" : { }
+  }, {
+    "id" : 576185396,
+    "name" : "updated_timestamp",
+    "dataTypeName" : "calendar_date",
+    "description" : "Date updated.",
+    "fieldName" : "updated",
+    "position" : 71,
+    "renderTypeName" : "calendar_date",
+    "tableColumnId" : 137941092,
+    "format" : { }
+  }, {
+    "id" : 576185399,
+    "name" : "is_duplicate",
+    "dataTypeName" : "checkbox",
+    "description" : "A check for exact duplicates. All columns must have the same entries to be marked as a duplicate here. ",
+    "fieldName" : "is_duplicate",
+    "position" : 72,
+    "renderTypeName" : "checkbox",
+    "tableColumnId" : 145343006,
+    "format" : { }
+  }, {
+    "id" : 576185400,
+    "name" : "dataset_title",
+    "dataTypeName" : "text",
+    "description" : "Name of dataset associated with the WPdx upload",
+    "fieldName" : "dataset_title",
+    "position" : 73,
+    "renderTypeName" : "text",
+    "tableColumnId" : 145343005,
+    "format" : { }
+  }, {
+    "id" : 576185401,
+    "name" : "Countries",
+    "dataTypeName" : "number",
+    "description" : "This column was automatically created in order to record in what polygon from the dataset 'Countries' (7zzf-xi3x) the point in column 'new_georeferenced_column_' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+    "fieldName" : ":@computed_region_7zzf_xi3x",
+    "position" : 79,
+    "renderTypeName" : "number",
+    "tableColumnId" : 138816798,
+    "computationStrategy" : {
+      "source_columns" : [ "new_georeferenced_column_" ],
+      "type" : "georegion_match_on_point",
+      "parameters" : {
+        "region" : "_7zzf-xi3x",
+        "primary_key" : "_feature_id"
+      }
+    },
+    "format" : { }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "metadata" : {
+    "rowLabel" : "Each row contains a unique water point record for a specific date.",
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "4xiv-nd9u",
+    "displayName" : "katy",
+    "screenName" : "katy",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "4xiv-nd9u",
+    "displayName" : "katy",
+    "screenName" : "katy",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

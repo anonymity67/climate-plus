@@ -1,0 +1,13 @@
+# Core pipeline (from the RiverWatch BD package)
+numpy>=1.26,<3
+pandas>=2.1,<3
+geopandas>=1.0,<2
+shapely>=2.0,<3
+rasterio>=1.4,<2
+pyogrio>=0.9,<1
+pyproj>=3.6,<4
+# Analyst Streamlit dashboard (app.py, optional)
+streamlit>=1.36,<2
+folium>=0.18,<1
+# Web GIS server + data preparation
+-r requirements-web.txt

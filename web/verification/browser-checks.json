@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-24",
+  "application": "http://127.0.0.1:5184/",
+  "method": "Interactive checks through the supported in-app browser, using rendered accessibility state, screenshots and read-only DOM dimensions.",
+  "checks": [
+    "Invalid or empty latitude rejected visibly; no false zero-coordinate search",
+    "Real Koyra preset returned 20 historical candidates within 5 km, with date/provider/unknown clearance",
+    "No-match search explains missing inventory coverage rather than absence of local water",
+    "Kaggle layer remains publisher context; High/Very High filter returns 4154 records",
+    "Measured river layer displays sample date and partial fisheries-objective exceedances",
+    "Dacope clear/moderate/severe scenarios show 7.88/11.19/15.86 km and 18.9/26.9/38.1 estimated minutes",
+    "Severe scenario reports connected graph but operational exclusion by assumed detour",
+    "Open water plan consumes GIS assumptions; banner no longer falsely asserts physical road closure",
+    "Chemical/salinity concern shows boiling/disinfection limitation",
+    "Default arithmetic produces 180 L storage and 144 L/day illustrative leak estimate",
+    "Zero-duration leak measurement displays validation message",
+    "Bangla key actions and chemical warning render legibly at 390 by 844",
+    "Mobile document width equals viewport width: 382 CSS pixels with scrollbar, no horizontal overflow",
+    "Desktop/sidebar and two-column GIS layout inspected at 1280 by 900",
+    "No browser warning/error entries captured in the checked workflows"
+  ],
+  "notClaimed": ["Physical water-point inspection", "Current drinking-water certification", "Flood-safe navigation", "Laboratory validation of Kaggle classes", "Physical printer output"],
+  "screenshots": ["water-locator-desktop.png", "dacope-gis-desktop.png", "water-care-mobile-bangla.png"]
+}

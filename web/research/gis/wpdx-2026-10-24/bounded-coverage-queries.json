@@ -1,0 +1,53 @@
+{
+  "basic-country": {
+    "url": "https://data.waterpointdata.org/resource/jfkt-jmqa.json?%24select=count%28%2A%29%2Cmin%28report_date%29%2Cmax%28report_date%29&%24where=clean_country_id%3D%27BGD%27",
+    "response": [
+      {
+        "count_1": "70894",
+        "min_report_date": "2014-01-01T00:00:00.000",
+        "max_report_date": "2019-11-21T00:00:00.000"
+      }
+    ],
+    "sha256": "07212b160f0eb7f4a2fa45727434033f3e13ba0a01669cca96eb3fa79f5d98ef"
+  },
+  "basic-dacope": {
+    "url": "https://data.waterpointdata.org/resource/jfkt-jmqa.json?%24select=count%28%2A%29%2Cmin%28report_date%29%2Cmax%28report_date%29&%24where=clean_country_id%3D%27BGD%27+AND+lower%28clean_adm3%29%3D%27dacope%27",
+    "response": [
+      {
+        "count_1": "0"
+      }
+    ],
+    "sha256": "966ea222943e005297e08f367c90a7b722371d3cda81c231493431c8cab8d495"
+  },
+  "plus-dacope": {
+    "url": "https://data.waterpointdata.org/resource/eqje-vguj.json?%24select=count%28%2A%29%2Cmin%28report_date%29%2Cmax%28report_date%29&%24where=clean_country_id%3D%27BGD%27+AND+lower%28clean_adm3%29%3D%27dacope%27",
+    "response": [
+      {
+        "count_1": "0"
+      }
+    ],
+    "sha256": "966ea222943e005297e08f367c90a7b722371d3cda81c231493431c8cab8d495"
+  },
+  "basic-near-dacope": {
+    "url": "https://data.waterpointdata.org/resource/jfkt-jmqa.json?%24select=count%28%2A%29%2Cmin%28report_date%29%2Cmax%28report_date%29&%24where=clean_country_id%3D%27BGD%27+AND+lat_deg+BETWEEN+22.35+AND+22.7+AND+lon_deg+BETWEEN+89.3+AND+89.7",
+    "response": [
+      {
+        "count_1": "55",
+        "min_report_date": "2014-01-12T00:00:00.000",
+        "max_report_date": "2014-11-30T00:00:00.000"
+      }
+    ],
+    "sha256": "da76d4005032a567cdf98b9b57668802985fa1d3acc04074ed97104c7366774d"
+  },
+  "plus-near-dacope": {
+    "url": "https://data.waterpointdata.org/resource/eqje-vguj.json?%24select=count%28%2A%29%2Cmin%28report_date%29%2Cmax%28report_date%29&%24where=clean_country_id%3D%27BGD%27+AND+lat_deg+BETWEEN+22.35+AND+22.7+AND+lon_deg+BETWEEN+89.3+AND+89.7",
+    "response": [
+      {
+        "count_1": "39",
+        "min_report_date": "2014-01-12T00:00:00.000",
+        "max_report_date": "2014-11-30T00:00:00.000"
+      }
+    ],
+    "sha256": "b7113d54e88255c8b4eebd252a76314e0eab8e25258611864916c4517ee5fec7"
+  }
+}

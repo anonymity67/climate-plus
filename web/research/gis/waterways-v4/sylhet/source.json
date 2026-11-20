@@ -1,0 +1,20 @@
+{
+  "area": "sylhet",
+  "bounds": [
+    91.8,
+    24.85,
+    91.94,
+    24.96
+  ],
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "acquiredAt": "2026-11-17T07:35:18.901119+00:00",
+  "osmBaseTimestamp": "2026-11-17T07:33:36Z",
+  "sha256": "6985ebaf0265c6a8d3f1b8fac29181b22655da6378f1bd473e9ae839567e731b",
+  "bytes": 701169,
+  "ways": 293,
+  "attribution": "\u00a9 OpenStreetMap contributors",
+  "license": "ODbL 1.0",
+  "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "sourceUrl": "https://www.openstreetmap.org/copyright",
+  "meaning": "Mapped channel geometry and shared-node connectivity only; flow, contamination transport and present conditions are unverified."
+}

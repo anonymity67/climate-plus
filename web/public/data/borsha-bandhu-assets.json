@@ -1,0 +1,46 @@
+{
+  "drawings/D-01_system_schematic.svg": {
+    "bytes": 17750,
+    "sha256": "fedddc7ed9c55675e2be7ec7b145711a8030cf2cc317ea4d3b9a9f3d72820a83"
+  },
+  "drawings/D-02_T1_household_tank.svg": {
+    "bytes": 32770,
+    "sha256": "36a6fbc35fd0dd07d21429283c5b339cb62a555ea66d9886690ca81b0c3984a1"
+  },
+  "drawings/D-03_catchment_firstflush_filter.svg": {
+    "bytes": 30910,
+    "sha256": "eadee525031f897c0bd963033798ad13012db9cd6b9fd3a507081aa160750ec1"
+  },
+  "drawings/D-04_T2_cluster_unit.svg": {
+    "bytes": 21766,
+    "sha256": "0825c0acd3f64a4fc68ac108ce3cd933884480d867290792a8344030788d198e"
+  },
+  "drawings/D-05_T3_institutional_unit.svg": {
+    "bytes": 26146,
+    "sha256": "71b2729251f393f12c509a24faf7fa81e7454bc2fa5d76e4e409d9e431d989f6"
+  },
+  "drawings/D-06_zone_adaptations.svg": {
+    "bytes": 25105,
+    "sha256": "2fca1577755f8f81ea7560693cdea465aa4f1e836e24e2f75bcd53d04465d416"
+  },
+  "drawings/D-07_overflow_mar_access.svg": {
+    "bytes": 26383,
+    "sha256": "b9581f0ae96885d06f6aa38f114d932c7eefe7980933ab952eaf8f7905df6c66"
+  },
+  "01_Technical_Design_Manual.docx": {
+    "bytes": 59736,
+    "sha256": "0da55561b6cffc829221017a59b7f0a5e1508b7b6240b47be64865b56e239c5c"
+  },
+  "02_Construction_OM_and_Water_Safety_Plan.docx": {
+    "bytes": 53521,
+    "sha256": "bb9f3c8de2facc43a07491df317754d25634faa8f111cd3ad2d76bb6b8e49f83"
+  },
+  "03_Programme_Implementation_and_DRR_Guide.docx": {
+    "bytes": 50119,
+    "sha256": "64745988e8077644494e8e32d95498b1da128b5b714d6523a69bc5c60ed9b8d1"
+  },
+  "BorshaBandhu_Costing_and_Sizing_Model.xlsx": {
+    "bytes": 48137,
+    "sha256": "613f58f04c5501a2b30ad08f50c9d01581ac2297c2c107034272c3fc7c84504d"
+  }
+}

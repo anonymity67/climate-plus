@@ -1,0 +1,24 @@
+node_modules
+dist
+reproductions
+research
+public/data
+public/examples
+backend/data
+.wrangler
+.sites-runtime
+.vinext
+.next
+public/fonts
+provenance
+verification
+EVIDENCE-MANIFEST.json
+documentation
+*.py
+*.sol
+package-lock.json
+next-env.d.ts
+tools/local-chain/package-lock.json
+.taste-skill
+# Preserve the supplied playbook byte for byte.
+public/playbook

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "national",
+    "default": true,
+    "title": "National screening — all mapped waste sources",
+    "description": "Every OpenStreetMap-mapped industrial works, industrial zone, landfill/dumpsite, waste transfer station and wastewater plant in Bangladesh, linked to the HydroRIVERS network with 10 km downstream corridors and WorldPop 2020 residents within 500 m. No satellite observations are used in this run.",
+    "period": "OSM extract 2026-11-19 · WorldPop 2020 · HydroRIVERS v1.0",
+    "out": "runs/national",
+    "sites": "data/inputs/sites.geojson",
+    "rivers": "data/inputs/rivers.gpkg",
+    "population": ".cache/population_bgd_2020_ppp.tif",
+    "pois": "data/inputs/pois.geojson",
+    "config": "configs/national.json",
+    "observations": []
+  },
+  {
+    "id": "dhaka_pilot",
+    "title": "Greater Dhaka–Narayanganj river pilot — with Sentinel-2",
+    "description": "README pilot: 29 high-hazard sources on comparatively wide reaches (≥ 50 m³/s modelled mean discharge) around Dhaka, Narayanganj, Gazipur and Munshiganj, plus 2 reference reaches. Same-scene upstream/downstream Sentinel-2 NDTI contrasts for the 2025–26 dry season.",
+    "period": "Sentinel-2 L2A 2025-11-01 → 2026-05-01 (dry season)",
+    "out": "runs/dhaka_pilot",
+    "sites": "data/inputs/pilot_dhaka_sites.geojson",
+    "rivers": "data/inputs/rivers.gpkg",
+    "population": ".cache/population_bgd_2020_ppp.tif",
+    "pois": "data/inputs/pois.geojson",
+    "config": "configs/dhaka_pilot.json",
+    "observations": ["data/observations/dhaka_dry_2025_26.csv"],
+    "s2_period": ["2025-11-01", "2026-05-01"]
+  }
+]

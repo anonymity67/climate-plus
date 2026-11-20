@@ -1,0 +1,1 @@
+﻿notice_id,incident_id,plan_id,plan_version,site_id,notice_type,public_directions_or_restrictions,service_window_start_utc,service_window_end_utc,public_feedback_channel,locale,publish_channel,issued_at_utc,expires_at_utc,authorized_by_role,replaces_notice_id,acknowledgement_ref

@@ -1,0 +1,27 @@
+{
+  "origin": "http://127.0.0.1:5198",
+  "at": "2026-11-17T11:48:00.148Z",
+  "checks": [
+    "Built HTML served",
+    "20,084 original inventory records and 3 channel areas",
+    "Unauthenticated private checks rejected",
+    "User-supplied identity headers stripped",
+    "Public bounded search is paginated",
+    "Encoded original plus-code resolves",
+    "Original dated sample and partial fishery screen",
+    "dhaka channel snapshot served",
+    "sylhet channel snapshot served",
+    "dacope channel snapshot served",
+    "Server water balance conserves volume",
+    "Cross-origin mutation rejected",
+    "Private check save and retry return one row",
+    "Saved check re-read through HTTP",
+    "Conflicting check retry rejected",
+    "Measurement retry is idempotent",
+    "Case retry is idempotent",
+    "Creation audit matches saved rows",
+    "Local sign-out clears the test cookie"
+  ],
+  "ok": true,
+  "count": 19
+}

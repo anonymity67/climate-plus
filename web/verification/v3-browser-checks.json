@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-25",
+  "release": "3.0.0",
+  "scope": "Local V3 browser and built API verification; no physical field validation",
+  "checks": [
+    {
+      "task": "Five regions",
+      "result": "Dacope/Ukhia/Chattogram/Khulna/Tongi each changed local geometry and reset scenario/playback; regional backend plans and detours passed actualHTTP smoke"
+    },
+    {
+      "task": "Storm and motion",
+      "result": "Dacope7.89\u21929.74km; progress increased on labelled playback; vehicle follows route and never becomesGPS"
+    },
+    {
+      "task": "Keyboard road closure",
+      "result": "Selected e-407172-0-12 through native dropdown; additional closure changed storm route9.74\u219214.69km; clear restored scenario"
+    },
+    {
+      "task": "Tongi evidence",
+      "result": "3 original historical measured sites +25 separate undated publisher-context points; no coordinates moved"
+    },
+    {
+      "task": "Point save",
+      "result": "Explicitly representational Tongi demo point saved to D1, server acknowledged1/1"
+    },
+    {
+      "task": "Draft preservation",
+      "result": "After closing/reopening and changingTongi\u2192Ukhia, original date,coordinates,values and source label remained"
+    },
+    {
+      "task": "CSV import",
+      "result": "Real filechooser imported two-point CSV with one Dacope and one Tongi point; only one plotted inDacope, both remained unchanged; per-row representational kind overrode field-entry dropdown"
+    },
+    {
+      "task": "Full entered export",
+      "result": "DownloadedGeoJSON had all3 entered points and original coordinates despite selected Dacope/layer filtering; deviceGPS excluded"
+    },
+    {
+      "task": "Responsive",
+      "result": "Desktop and390px phone layout reviewed; fixed header overlap; document width382 atviewport390 (no horizontal page overflow)"
+    }
+  ],
+  "limits": [
+    "HardwareGPS accuracy and background mobile behavior not field-tested",
+    "Safe drinking water,current calamities,traffic,verified emitter attribution and impact are not established",
+    "Hosted access requires normal Site sign-in; local test identity headers only onloopback"
+  ]
+}

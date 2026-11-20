@@ -1,0 +1,337 @@
+
+> climateplus-operational-mvp@0.4.0 check
+> npm run format:check && npm run typecheck && npm test && npm run build && npm run verify:data
+
+
+> climateplus-operational-mvp@0.4.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> climateplus-operational-mvp@0.4.0 typecheck
+> node node_modules/vinext/dist/cli.js typegen && tsc --noEmit
+
+
+  Generated route types at .next/types/routes.d.ts
+  next-env.d.ts is up to date
+
+
+> climateplus-operational-mvp@0.4.0 test
+> node --test tests/*.test.mjs
+
+✔ persistent trips isolate unknown users and reject client owner IDs and cross-origin writes (56.965ms)
+✔ a stale client case revision cannot overwrite a newer operator decision (17.1849ms)
+✔ single-use expiring hashed invites restrict role and expose updates across clients (14.8578ms)
+✔ GPS rejects stale, future, malformed and nonmonotonic input; retries are idempotent (24.2612ms)
+✔ closures change the selected route, expire and can be revoked only in their trip (20.917ms)
+✔ replay persists labelled positions and cannot write device telemetry (15.0966ms)
+✔ immutable observations preserve provenance, case links and private exports (12.1228ms)
+✔ fix retention is bounded per role and hides positions after 24 hours (134.411ms)
+✔ stopping GPS rejects delayed older uploads and permits a newly captured fix (3.8913ms)
+✔ concurrent invite consumption gives membership to exactly one actor (4.5449ms)
+✔ body limits, strict timestamps and unknown closure edges produce bounded errors (2.9789ms)
+✔ concurrent identical device uploads remain idempotent (2.6304ms)
+✔ concurrent replay advancement never inserts a position for a failed revision update (3.0306ms)
+✔ SQLite transactions roll back mutation and audit together and survive reopen (60.04ms)
+✔ test schema and deployable Drizzle migration define the same database (2.109ms)
+✔ concurrent case edits preserve accurate audit history and require refresh on a conflict (4.2756ms)
+✔ real local D1 persists API records across runtime restart and rolls back failed batches (2634.2996ms)
+✔ real Dacope API closure reports reroute geometry, expire, and withhold off-graph GPS ETA (160.6983ms)
+✔ browser model reproduces every supported held-out Python prediction (3.7683ms)
+✔ dataset transformation retains real coordinates, exclusions and separate surveys (1.1926ms)
+✔ all published source scenarios retain finite mass-balance diagnostics (0.5135ms)
+✔ device fix preserves actual capture time, precision and explicit source (3.0138ms)
+✔ replayed, stale and imprecise telemetry is never displayed as fresh live GPS (0.4951ms)
+✔ tracker starts only when called, throttles updates and clears the actual watch on stop (1.7393ms)
+✔ scenario config is seven days with an explicit synthetic provenance (1.84ms)
+✔ planner conserves water and respects budget and storage (4.7222ms)
+✔ no money and no water returns all unmet demand without NaN (1.5107ms)
+✔ balanced allocation meets school floor when feasible and avoids household starvation (0.4637ms)
+✔ zero demand produces defined full coverage (0.8897ms)
+✔ optimizer is no worse than every feasible schedule in its catalogue (3.1445ms)
+✔ invalid demand and budgets are rejected (0.9799ms)
+✔ inspections respect access and available hours (1.4225ms)
+✔ receipt verifies and detects tampering; canonical keys are order independent (21.2626ms)
+✔ documented observation example imports and produces the documented partial index (4.6021ms)
+✔ documented paired example has closed flow and finite conditional predictions (1.2768ms)
+✔ water inventory decodes column contracts without claiming current clearance (168.3634ms)
+✔ Kaggle context retains every source coordinate and the one unclassified point (7.334ms)
+✔ distance uses kilometres and rejects invalid or numeric-string coordinates (1.3129ms)
+✔ public functional status and recent assessment never become a drinking-water clearance (2.3102ms)
+✔ water search excludes synthetic and invalid points, filters and sorts on real distance (3.3365ms)
+✔ pollution priority uses measured partial objectives without declaring potability (0.705ms)
+✔ Kaggle high classes are publisher context and missing classes stay unknown (0.2312ms)
+✔ nearby context is a distance filter, not an exposure footprint or safe zone (0.3742ms)
+✔ conservation uses explicit measured volume and elapsed time with no invented savings (0.3007ms)
+✔ GIS node and catchment ids match the planner network (3.4059ms)
+✔ GIS capacities and demands equal the planner configuration (0.6799ms)
+✔ derived blocked days and held sources reproduce the planner scenarios (0.4405ms)
+✔ travel results are consistent and get slower with storm severity (0.2234ms)
+✔ every GIS feature is synthetic, located in the Dacope window and attributed (2.8738ms)
+✔ the committed GIS files are exactly what the build script produces (264.5935ms)
+✔ public Kaggle and water inventory outputs reproduce byte for byte from retained raw inputs (529.2705ms)
+✔ GIS-derived blocked days change planning feasibility and carry snapshot lineage (5.5391ms)
+✔ GIS adapter rejects missing source hash and out-of-horizon blocked days (1.2161ms)
+✔ mixing rejects non-finite, negative or greater-than-one closure tolerances (1.98ms)
+✔ mixing rejects numerical overflow instead of exporting infinite results (0.4782ms)
+✔ CCME rejects reversed objective bounds explicitly (3.4432ms)
+✔ planner rejects missing arrays and invalid delivery quantities with a domain error (1.3353ms)
+✔ inspection jobs cannot buy capacity using negative hours or NaN priorities (0.5591ms)
+✔ an invitation survives sign-in in tab storage and is consumed once without a query token (1.6928ms)
+✔ pending invitation rejects expiry, malformed payloads and blocked storage (0.6071ms)
+✔ a map sample with no valid tested parameter uses a missing-data color (1.7198ms)
+✔ survey markers use their hydraulic-layer color independently of quality (0.3198ms)
+✔ notices expire at 24 hours and invalid or future confirmations are withheld (1.1018ms)
+✔ shortest route and a distinct connected alternative retain real ordered geometry (12.9071ms)
+✔ closures exclude both directions, and a blocked network never returns a straight line (1.1656ms)
+✔ snap to an edge interior clips road geometry and excludes access gaps from ETA (0.6174ms)
+✔ point-radius and polygon closures catch edge interiors, not only stored vertices (1.803ms)
+✔ unsupported roads are excluded from the vehicle road profile (0.3716ms)
+✔ invalid coordinates, speeds, profiles and malformed closures are rejected (0.5322ms)
+✔ parallel edges remain independently routable and alternatives are stable (0.4373ms)
+✔ road-type speed caps change ETA without changing the distance objective (0.3125ms)
+✔ unverified snap gaps above 50m warn and blocked nearest edges never snap to a farther road (0.4841ms)
+✔ a long distinct alternative is found when a fourfold primary penalty is insufficient (0.4276ms)
+✔ one-way arcs and malformed graphs never become bidirectional fallback paths (0.3277ms)
+✔ malformed polygon, graph snap bounds and interpolation lengths are rejected (0.2932ms)
+✔ combined polygon complexity is bounded before spatial intersection work (6.6954ms)
+✔ position interpolation follows bends, clamps to endpoints and rejects malformed route shapes (1.1955ms)
+✔ builder joins shared vertices and retains full intervening road shape (130.4444ms)
+✔ builder preserves grade separation at interior shared vertices and un-noded crossings (91.6109ms)
+✔ bridge endpoints connect to explicit adjoining road endpoints despite a layer transition (80.4728ms)
+✔ a bridge endpoint can join a shared ground-road shape vertex, while bridge interiors stay separated (92.5081ms)
+✔ actual Dacope export is reproducible and routes supplier to reserve with a real blockage detour (308.1603ms)
+✔ screening reports failed tests and limited coverage without calling water safe (1.5279ms)
+✔ missing and negative measurements never become passing tests (1.0839ms)
+✔ CCME uses scope frequency and amplitude and refuses underspecified panels (2.0828ms)
+✔ zero lower-bound measurement is handled explicitly without epsilon (0.3531ms)
+✔ replicates on one date do not satisfy the sampling gate (0.1719ms)
+✔ mixing conserves incoming loads and shows a conditional reduction (0.2281ms)
+✔ unmeasured water or load prevents source-attribution conclusions (0.4962ms)
+✔ observation validation rejects impossible dates, coordinates and units (0.4944ms)
+✔ model abstains on out-of-range inputs and never receives target as predictor (0.5177ms)
+✔ observation display labels must be strings and future measurements are rejected (0.4272ms)
+✔ CCME cannot pool unrelated sites or count impossible dates (0.3367ms)
+ℹ tests 93
+ℹ suites 0
+ℹ pass 93
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5677.9909
+
+> climateplus-operational-mvp@0.4.0 build
+> node scripts/run-framework.mjs build
+
+[vinext] Tip: migrate from `vinext build` to `vite build`.
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - JSON import "./.openai/hosting.json" without import attributes (vite.config.ts:3:27). Add `with { type: 'json' }`
+  - import "./scripts/vite/sites-vite-plugin" without a file extension (vite.config.ts:6:23). Add the file extension
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+[1/5] analyze client references...
+vite v8.3.5 building rsc environment for production...
+transforming...
+✓ 315 modules transformed.
+rendering chunks...
+[plugin rsc:virtual:vite-rsc/assets-manifest] [SOURCEMAP_BROKEN] Sourcemap is likely to be incorrect: a plugin (rsc:virtual:vite-rsc/assets-manifest) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help: https://rolldown.rs/guide/troubleshooting#warning-sourcemap-is-likely-to-be-incorrect
+
+[plugin vinext:action-owner-manifest] [SOURCEMAP_BROKEN] Sourcemap is likely to be incorrect: a plugin (vinext:action-owner-manifest) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help: https://rolldown.rs/guide/troubleshooting#warning-sourcemap-is-likely-to-be-incorrect
+
+✓ built in 2.72s
+[2/5] analyze server references...
+vite v8.3.5 building ssr environment for production...
+transforming...
+✓ 212 modules transformed.
+rendering chunks...
+[plugin rsc:virtual:vite-rsc/assets-manifest] [SOURCEMAP_BROKEN] Sourcemap is likely to be incorrect: a plugin (rsc:virtual:vite-rsc/assets-manifest) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help: https://rolldown.rs/guide/troubleshooting#warning-sourcemap-is-likely-to-be-incorrect
+
+✓ built in 1.93s
+[3/5] build rsc environment...
+vite v8.3.5 building rsc environment for production...
+transforming...
+✓ 301 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/server/__vinext_cacheability_manifest.js                                                                                                0.02 kB
+dist/server/__vinext_cacheability_request_projection.js                                                                                      0.02 kB
+dist/server/__vinext_pregenerated_concrete_paths.js                                                                                          0.05 kB
+dist/server/wrangler.json                                                                                                                    1.38 kB │ gzip:   0.71 kB
+dist/server/.vite/manifest.json                                                                                                             20.26 kB │ gzip:   2.31 kB
+dist/server/_next/static/css/DS1Fxmem.css                                                                                                   15.55 kB │ gzip:   4.13 kB
+dist/server/_next/static/navigation.react-server-BwT578Og.js                                                                                 0.04 kB │ gzip:   0.06 kB
+dist/server/_next/static/cacheability-limits-BTpP4ZoO.js                                                                                     0.11 kB │ gzip:   0.13 kB │ map:     0.96 kB
+dist/server/_next/static/cache-headers-BIgvnIjp.js                                                                                           0.19 kB │ gzip:   0.18 kB │ map:     1.09 kB
+dist/server/_next/static/work-unit-async-storage-Ci9D6p_d.js                                                                                 0.20 kB │ gzip:   0.18 kB │ map:     1.21 kB
+dist/server/_next/static/base-path-Cmiu3HvG.js                                                                                               0.36 kB │ gzip:   0.26 kB │ map:     2.57 kB
+dist/server/_next/static/isolate-shared-promise-CGHEva37.js                                                                                  0.36 kB │ gzip:   0.28 kB │ map:     2.40 kB
+dist/server/_next/static/page-Bf72beY1.js                                                                                                    0.38 kB │ gzip:   0.30 kB │ map:     1.52 kB
+dist/server/_next/static/client-trace-metadata-DUR2PiYt.js                                                                                   0.40 kB │ gzip:   0.25 kB │ map:     5.83 kB
+dist/server/_next/static/asset-prefix-DG5zdfn4.js                                                                                            0.44 kB │ gzip:   0.29 kB │ map:     7.44 kB
+dist/server/_next/static/request-context-BThF-RdR.js                                                                                         0.61 kB │ gzip:   0.39 kB │ map:     3.73 kB
+dist/server/_next/static/rolldown-runtime-XKyaHtl9.js                                                                                        0.72 kB │ gzip:   0.42 kB
+dist/server/_next/static/server-DMgfUqQC.js                                                                                                  0.75 kB │ gzip:   0.48 kB │ map:     7.48 kB
+dist/server/_next/static/implicit-tags-Bartch8r.js                                                                                           0.76 kB │ gzip:   0.46 kB │ map:     3.79 kB
+dist/server/_next/static/root-params-LKNbadxv.js                                                                                             0.77 kB │ gzip:   0.46 kB │ map:     5.31 kB
+dist/server/_next/static/isr-decision-BRUsE8vn.js                                                                                            0.82 kB │ gzip:   0.42 kB │ map:     4.63 kB
+dist/server/_next/static/worker-prerender-discovery-DLql9EfP.js                                                                              0.89 kB │ gzip:   0.52 kB │ map:     4.44 kB
+dist/server/_next/static/framework~index~layout~page~app-route-handler-dispatch~app-page-cache~app-page-cache-render-BeUUQZdO.js             0.95 kB │ gzip:   0.61 kB │ map:     2.72 kB
+dist/server/_next/static/app-static-generation-BX8cz43B.js                                                                                   0.97 kB │ gzip:   0.55 kB │ map:     2.21 kB
+dist/server/_next/static/navigation-context-state-BYJK3ZxS.js                                                                                0.99 kB │ gzip:   0.51 kB │ map:     6.75 kB
+dist/server/_next/static/http-error-responses-B2gV-Vqb.js                                                                                    1.01 kB │ gzip:   0.47 kB │ map:     6.05 kB
+dist/server/_next/static/cdn-cache-CC1cBNp7.js                                                                                               1.34 kB │ gzip:   0.74 kB │ map:     8.16 kB
+dist/server/_next/static/worker-image-optimization-ByGMcbVE.js                                                                               1.57 kB │ gzip:   0.86 kB │ map:     8.09 kB
+dist/server/_next/static/app-prerender-static-params-D9q3Iser.js                                                                             1.72 kB │ gzip:   0.76 kB │ map:     7.93 kB
+dist/server/_next/static/app-prerender-endpoints-CD2_m-FG.js                                                                                 2.62 kB │ gzip:   1.06 kB │ map:     8.78 kB
+dist/server/_next/static/headers-BUAhKXqP.js                                                                                                 2.69 kB │ gzip:   1.14 kB │ map:    21.54 kB
+dist/server/_next/static/app-page-cache-render-CMwdgvZK.js                                                                                   2.72 kB │ gzip:   1.25 kB │ map:     9.84 kB
+dist/server/_next/static/isr-cache-B9mUE-Fr.js                                                                                               3.55 kB │ gzip:   1.78 kB │ map:    24.60 kB
+dist/server/_next/static/unified-request-context-j9pueOfY.js                                                                                 3.77 kB │ gzip:   1.50 kB │ map:    14.88 kB
+dist/server/_next/static/app-page-tracing-Bg9dtZQ3.js                                                                                        3.90 kB │ gzip:   1.94 kB │ map:    14.88 kB
+dist/server/_next/static/cache-handler-Dc39X6I9.js                                                                                           4.09 kB │ gzip:   1.56 kB │ map:    17.44 kB
+dist/server/_next/static/request-pipeline-DvRa2crm.js                                                                                        5.03 kB │ gzip:   2.02 kB │ map:    44.96 kB
+dist/server/_next/static/middleware-response-headers-Drly5KMQ.js                                                                             5.62 kB │ gzip:   2.27 kB │ map:    30.99 kB
+dist/server/_next/static/framework~index~route~layout~page~app-rsc-response-stage~app-route-handler-dispatch~app-pag~ezjpe12m-CcOTYhCj.js    5.85 kB │ gzip:   2.45 kB │ map:    23.94 kB
+dist/server/_next/static/client-build-files-8quKCVIN.js                                                                                      6.34 kB │ gzip:   2.65 kB │ map:    35.49 kB
+dist/server/_next/static/response-stage-policy-DGeWxlCK.js                                                                                   7.01 kB │ gzip:   2.44 kB │ map:    32.30 kB
+dist/server/_next/static/app-page-cache-finalizer-QbXk6z0Q.js                                                                                7.19 kB │ gzip:   2.57 kB │ map:    26.17 kB
+dist/server/_next/static/app-page-cache-1lw7_7bp.js                                                                                          7.64 kB │ gzip:   2.60 kB │ map:    52.51 kB
+dist/server/_next/static/app-rsc-response-stage-RlZidkeJ.js                                                                                  7.69 kB │ gzip:   2.67 kB │ map:    23.40 kB
+dist/server/_next/static/config-headers-B9T79R78.js                                                                                          8.58 kB │ gzip:   3.50 kB │ map:    81.42 kB
+dist/server/_next/static/artifact-compatibility-sbHznz0T.js                                                                                 10.25 kB │ gzip:   3.58 kB │ map:    63.28 kB
+dist/server/_next/static/cacheability-request-BAMb6JV4.js                                                                                   10.75 kB │ gzip:   3.72 kB │ map:    43.41 kB
+dist/server/_next/static/app-elements-C1tYJtkh.js                                                                                           12.06 kB │ gzip:   4.13 kB │ map:    47.30 kB
+dist/server/_next/static/app-page-execution-B5hz5ks1.js                                                                                     12.16 kB │ gzip:   4.41 kB │ map:    59.98 kB
+dist/server/_next/static/headers-BE_FSstC.js                                                                                                12.20 kB │ gzip:   4.15 kB │ map:    74.08 kB
+dist/server/_next/static/prerender-work-unit-setup-Bnlkm2S9.js                                                                              12.52 kB │ gzip:   4.73 kB │ map:    75.24 kB
+dist/server/_next/static/rsc-completion-metadata-BediRNLd.js                                                                                13.41 kB │ gzip:   4.84 kB │ map:    72.51 kB
+dist/server/_next/static/framework~index-DKrUpR0X.js                                                                                        18.96 kB │ gzip:   6.27 kB │ map:   106.74 kB
+dist/server/_next/static/text-stream-CZ5_lEEK.js                                                                                            19.63 kB │ gzip:   6.00 kB │ map:    71.04 kB
+dist/server/_next/static/fetch-cache-BUdD_6Dq.js                                                                                            24.30 kB │ gzip:   8.46 kB │ map:   112.48 kB
+dist/server/_next/static/app-route-handler-dispatch-DT1KYfJH.js                                                                             55.69 kB │ gzip:  19.59 kB │ map:   322.66 kB
+dist/server/_next/static/framework~index~page~app-route-handler-dispatch-a-VszRBD.js                                                        56.48 kB │ gzip:  17.26 kB │ map:    16.62 kB
+dist/server/index.js                                                                                                                       223.01 kB │ gzip:  64.71 kB │ map:   975.65 kB
+dist/server/_next/static/route-OZPjyiq3.js                                                                                                 900.63 kB │ gzip: 231.41 kB │ map: 1,108.71 kB
+
+[INEFFECTIVE_DYNAMIC_IMPORT] app/layout.tsx is dynamically imported by \0virtual:vinext-rsc-entry but also statically imported by \0virtual:vinext-rsc-entry, dynamic import will not move module into another chunk.
+
+[plugin rsc:inject-async-local-storage] [SOURCEMAP_BROKEN] Sourcemap is likely to be incorrect: a plugin (rsc:inject-async-local-storage) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help: https://rolldown.rs/guide/troubleshooting#warning-sourcemap-is-likely-to-be-incorrect
+
+[plugin rsc:inject-async-local-storage] [SOURCEMAP_BROKEN] Sourcemap is likely to be incorrect: a plugin (rsc:inject-async-local-storage) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help: https://rolldown.rs/guide/troubleshooting#warning-sourcemap-is-likely-to-be-incorrect
+
+[plugin rsc:virtual:vite-rsc/assets-manifest] [SOURCEMAP_BROKEN] Sourcemap is likely to be incorrect: a plugin (rsc:virtual:vite-rsc/assets-manifest) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help: https://rolldown.rs/guide/troubleshooting#warning-sourcemap-is-likely-to-be-incorrect
+
+[plugin vinext:action-owner-manifest] [SOURCEMAP_BROKEN] Sourcemap is likely to be incorrect: a plugin (vinext:action-owner-manifest) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help: https://rolldown.rs/guide/troubleshooting#warning-sourcemap-is-likely-to-be-incorrect
+
+✓ built in 3.93s
+[PLUGIN_TIMINGS] JavaScript callbacks ran for 3.0s of this 3.9s build (76%).
+The slowest callbacks, timed inside each callback (the wait before a callback starts is excluded, the time it awaits is included):
+  - plugin vite:css transform (40%, 1.6s, 1 call)
+Additional callback time came from the callbacks below and from callbacks under 1s.
+5 callbacks are listed without a time. Their calls overlapped, so the time inside one call includes work from other calls. To find their cost, profile the build with `node --cpu-prof`:
+  - plugin rsc:virtual-client-package resolveId (1005 calls)
+  - plugin vinext:og-inline-fetch-assets resolveId (1016 calls)
+  - plugin alias resolveId (1112 calls)
+  … and 2 more
+See https://rolldown.rs/reference/InputOptions.checks#bundlertimings for more details.
+
+[4/5] build client environment...
+vite v8.3.5 building client environment for production...
+`output.codeSplitting.groups[0].name` is a function. Set `output.codeSplitting.groups[0].debugName` so the bundler timing report can identify this group.
+transforming...
+✓ 1729 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/client/.assetsignore                                  0.02 kB
+dist/client/vinext-client-entry-manifest.json              0.05 kB │ gzip:  0.07 kB
+dist/client/_next/static/media/layers.BWBAp2CZ.png         0.69 kB
+dist/client/_next/static/media/layers-2x.Bpkbi35X.png      1.25 kB
+dist/client/_next/static/media/marker-icon.hN30_KVU.png    1.46 kB
+dist/client/.vite/manifest.json                            5.24 kB │ gzip:  0.90 kB
+dist/client/_next/static/css/D8AYyG4o.css                  6.17 kB │ gzip:  1.73 kB
+dist/client/_next/static/css/CvSRdraM.css                 10.59 kB │ gzip:  2.64 kB
+dist/client/_next/static/css/DS1Fxmem.css                 15.55 kB │ gzip:  4.13 kB
+dist/client/_next/static/css/-00i6alm.css                 20.90 kB │ gzip:  4.75 kB
+dist/client/_next/static/chunks/AAim-s-n.js                0.33 kB │ gzip:  0.24 kB
+dist/client/_next/static/chunks/DFqxsIZv.js                0.46 kB │ gzip:  0.31 kB
+dist/client/_next/static/chunks/flGE8WZw.js                0.49 kB │ gzip:  0.30 kB
+dist/client/_next/static/chunks/XKyaHtl9.js                0.72 kB │ gzip:  0.42 kB
+dist/client/_next/static/chunks/x58PNvAn.js                1.14 kB │ gzip:  0.63 kB
+dist/client/_next/static/chunks/B_ZQLBhH.js                4.96 kB │ gzip:  2.30 kB
+dist/client/_next/static/chunks/DKtThsHs.js                5.29 kB │ gzip:  2.77 kB
+dist/client/_next/static/chunks/CoG-EjRx.js                9.33 kB │ gzip:  3.40 kB
+dist/client/_next/static/chunks/D7bUCKyz.js                9.83 kB │ gzip:  3.57 kB
+dist/client/_next/static/chunks/CdMX8S20.js               13.16 kB │ gzip:  4.57 kB
+dist/client/_next/static/chunks/B--e_ezg.js               28.56 kB │ gzip:  9.57 kB
+dist/client/_next/static/chunks/41A9zFdX.js              107.86 kB │ gzip: 33.52 kB
+dist/client/_next/static/chunks/DNf3izyD.js              111.22 kB │ gzip: 33.28 kB
+dist/client/_next/static/chunks/C--se8fB.js              119.91 kB │ gzip: 35.96 kB
+dist/client/_next/static/chunks/BZyiYmFb.js              148.82 kB │ gzip: 43.48 kB
+dist/client/_next/static/chunks/CLvDmS2G.js              219.24 kB │ gzip: 68.39 kB
+
+✓ built in 15.40s
+[PLUGIN_TIMINGS] JavaScript callbacks ran for 2.7s of this 15.4s build (17%).
+2 callbacks are listed without a time. Their calls overlapped, so the time inside one call includes work from other calls. To find their cost, profile the build with `node --cpu-prof`:
+  - plugin vinext:og-inline-fetch-assets resolveId (5098 calls)
+  - plugin alias resolveId (5183 calls)
+See https://rolldown.rs/reference/InputOptions.checks#bundlertimings for more details.
+
+[5/5] build ssr environment...
+vite v8.3.5 building ssr environment for production...
+transforming...
+✓ 216 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/server/ssr/_next/static/css/D8AYyG4o.css                        6.17 kB │ gzip:  1.73 kB
+dist/server/ssr/_next/static/css/vh-t_kPv.css                       15.09 kB │ gzip:  6.36 kB
+dist/server/ssr/_next/static/css/-00i6alm.css                       20.90 kB │ gzip:  4.75 kB
+dist/server/ssr/_next/static/app-prefetch-fetch-queue-CopZIb6O.js    0.12 kB │ gzip:  0.13 kB │ map:   4.96 kB
+dist/server/ssr/_next/static/static.edge-Ecj_PjJ1.js                 0.25 kB │ gzip:  0.19 kB │ map:   0.68 kB
+dist/server/ssr/_next/static/shield-alert-DfGiVXPc.js                0.39 kB │ gzip:  0.30 kB │ map:   1.13 kB
+dist/server/ssr/_next/static/layout-segment-context-ByvUVady.js      0.46 kB │ gzip:  0.33 kB │ map:   3.41 kB
+dist/server/ssr/_next/static/streamed-icons-BtBaR2ok.js              0.74 kB │ gzip:  0.48 kB │ map:   2.78 kB
+dist/server/ssr/_next/static/client-application-C_eRazZT.js          0.75 kB │ gzip:  0.50 kB │ map:   2.04 kB
+dist/server/ssr/_next/static/client-page-root-DobDlFcK.js            1.37 kB │ gzip:  0.83 kB │ map: 115.84 kB
+dist/server/ssr/_next/static/app-router-scroll-cb3Z1c_b.js           2.86 kB │ gzip:  1.28 kB │ map:  15.61 kB
+dist/server/ssr/_next/static/shared-DBQc59-q.js                      5.02 kB │ gzip:  2.35 kB │ map:  15.27 kB
+dist/server/ssr/_next/static/water-engine-CJorMjVQ.js                5.32 kB │ gzip:  2.80 kB │ map:  19.99 kB
+dist/server/ssr/_next/static/error-boundary-II6ZEgDJ.js              5.95 kB │ gzip:  1.82 kB │ map:  27.56 kB
+dist/server/ssr/_next/static/react-1cso1KEy.js                       8.30 kB │ gzip:  3.23 kB │ map:  30.68 kB
+dist/server/ssr/_next/static/DisasterPlanning-C5WOwq0l.js            9.43 kB │ gzip:  3.46 kB │ map:  20.21 kB
+dist/server/ssr/_next/static/WaterCare-Cwrj5euo.js                   9.91 kB │ gzip:  3.63 kB │ map:  19.20 kB
+dist/server/ssr/_next/static/PollutionExplorer-DxV4JC6C.js          13.26 kB │ gzip:  4.63 kB │ map:  33.66 kB
+dist/server/ssr/_next/static/PollutionPanel-CqxYoPaA.js             28.64 kB │ gzip:  9.62 kB │ map:  73.58 kB
+dist/server/ssr/_next/static/App-1IdMmPCy.js                       107.24 kB │ gzip: 33.37 kB │ map: 298.80 kB
+dist/server/ssr/_next/static/leaflet-ZAwU8uNc.js                   148.88 kB │ gzip: 43.53 kB │ map: 676.87 kB
+dist/server/ssr/index.js                                           302.21 kB │ gzip: 94.49 kB │ map: 908.04 kB
+
+[INEFFECTIVE_DYNAMIC_IMPORT] node_modules/vinext/dist/shims/default-global-error.js is dynamically imported by \0virtual:vite-rsc/client-references but also statically imported by node_modules/vinext/dist/server/app-ssr-entry.js, node_modules/vinext/dist/shims/error-boundary.js, dynamic import will not move module into another chunk.
+
+[INEFFECTIVE_DYNAMIC_IMPORT] node_modules/vinext/dist/shims/slot.js is dynamically imported by \0virtual:vite-rsc/client-references but also statically imported by node_modules/vinext/dist/server/app-route-tree.js, node_modules/vinext/dist/server/app-ssr-entry.js, node_modules/vinext/dist/shims/client-page-root.js, dynamic import will not move module into another chunk.
+
+[plugin rsc:inject-async-local-storage] [SOURCEMAP_BROKEN] Sourcemap is likely to be incorrect: a plugin (rsc:inject-async-local-storage) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help: https://rolldown.rs/guide/troubleshooting#warning-sourcemap-is-likely-to-be-incorrect
+
+[plugin rsc:inject-async-local-storage] [SOURCEMAP_BROKEN] Sourcemap is likely to be incorrect: a plugin (rsc:inject-async-local-storage) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help: https://rolldown.rs/guide/troubleshooting#warning-sourcemap-is-likely-to-be-incorrect
+
+[plugin rsc:virtual:vite-rsc/assets-manifest] [SOURCEMAP_BROKEN] Sourcemap is likely to be incorrect: a plugin (rsc:virtual:vite-rsc/assets-manifest) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help: https://rolldown.rs/guide/troubleshooting#warning-sourcemap-is-likely-to-be-incorrect
+
+✓ built in 1.45s
+
+  Route (app)
+  ┌ ? /          
+  └ λ /api/:path*
+
+  λ API  ? Unknown
+
+  ? Some routes could not be classified. vinext currently uses static analysis
+    and cannot detect dynamic API usage (headers(), cookies(), etc.) at build time.
+    Automatic classification will be improved in a future release.
+
+  Build complete.
+
+
+> climateplus-operational-mvp@0.4.0 verify:data
+> node scripts/verify-data.mjs
+
+42 frozen data/reference assets checked; 0 failures.

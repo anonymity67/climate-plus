@@ -1,0 +1,18 @@
+services:
+  riverwatch:
+    build: .
+    image: riverwatch-bd:latest
+    ports:
+      - "8000:8000"
+    environment:
+      # Set a long random value to enable analyst reviews and re-runs; leave empty for read-only.
+      RIVERWATCH_ADMIN_TOKEN: ${RIVERWATCH_ADMIN_TOKEN:-}
+      RIVERWATCH_CRITICAL_SNAP_M: "500"
+    volumes:
+      # Persist analyst reviews and re-run outputs across container restarts.
+      - riverwatch-reviews:/app/data/reviews
+      - riverwatch-runs:/app/runs
+    restart: unless-stopped
+volumes:
+  riverwatch-reviews:
+  riverwatch-runs:

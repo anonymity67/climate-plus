@@ -1,0 +1,1 @@
+﻿exception_id,incident_id,related_record_id,affected_area_or_facility_id,exception_type,severity,evidence_status,estimated_households,uncovered_need_l,next_owner_role,next_action,fallback_action,due_at_utc,escalated_to_role,status,resolution_ref,outgoing_duty_role,incoming_duty_role,accepted_at_utc

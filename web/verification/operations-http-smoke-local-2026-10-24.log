@@ -1,0 +1,17 @@
+
+> climateplus-operational-mvp@0.4.0 smoke:local
+> node scripts/smoke-local.mjs http://127.0.0.1:5191
+
+{
+  "status": "passed",
+  "checkedAt": "2026-10-24T11:59:04.445Z",
+  "baseOrigin": "http://127.0.0.1:5191",
+  "checks": [
+    "actual HTTP adapter reaches D1; private API rejects unauthenticated caller",
+    "real graph routes, distinct alternative, persisted closure exclusion and preference",
+    "two independent HTTP actors join a scoped trip with single-use invitation",
+    "fixture device telemetry crosses HTTP; off-graph ETA withheld; role deletion acknowledged",
+    "replay stays labelled; immutable observation screening/hash, revision-safe cases and ownership export"
+  ],
+  "limits": "Local identity-header fixtures are not production authentication or real hardware GPS validation."
+}

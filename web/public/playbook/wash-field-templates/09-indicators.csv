@@ -1,0 +1,1 @@
+﻿observation_id,ward_id,incident_id,indicator,reporting_window_start_utc,reporting_window_end_utc,population_group_id,numerator,denominator,unit,baseline_or_pilot,method,source_record_refs,unresolved_count,uncertainty_notes,reviewer_role,reviewed_at_utc

@@ -1,0 +1,74 @@
+{
+  "name": "aquavelle",
+  "version": "4.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "install:ci": "node scripts/install-ci.mjs",
+    "dev": "node scripts/run-framework.mjs dev",
+    "build": "node scripts/run-framework.mjs build",
+    "start": "node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js dev --config dist/server/wrangler.json --local --persist-to .wrangler/state --ip 127.0.0.1 --inspector-port 0",
+    "db:generate": "drizzle-kit generate",
+    "setup:local": "node scripts/setup-local.mjs",
+    "smoke:local": "node scripts/smoke-local.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm run typecheck && npm test && npm run build && npm run verify:data",
+    "verify:data": "node scripts/verify-data.mjs",
+    "verify:handoff": "node scripts/verify-manifest.mjs",
+    "benchmark": "node scripts/benchmark.mjs",
+    "chain:install": "npm ci --prefix tools/local-chain",
+    "chain": "node tools/local-chain/server.mjs",
+    "test:chain": "npm test --prefix tools/local-chain",
+    "preview": "node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js dev --config dist/server/wrangler.json --local --persist-to .wrangler/state --ip 127.0.0.1 --inspector-port 0",
+    "typecheck": "node node_modules/vinext/dist/cli.js typegen && tsc --noEmit",
+    "rebuild:streams": "node scripts/build-waterways.mjs",
+    "verify:streams": "node --test tests/channel-topology.test.mjs",
+    "serve:local": "node scripts/serve-local.mjs",
+    "deploy:cloudflare": "node scripts/deploy-cloudflare.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/noto-sans-bengali": "5.3.0",
+    "clsx": "2.1.1",
+    "drizzle-orm": "0.45.2",
+    "jose": "6.2.18",
+    "leaflet": "1.9.4",
+    "lucide-react": "0.468.0",
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "tailwind-merge": "3.6.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.65.0",
+    "@cloudflare/workers-types": "5.20261024.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.1.2",
+    "@vitejs/plugin-rsc": "0.5.38",
+    "drizzle-kit": "0.31.11",
+    "json-rpc-2.0": "1.7.1",
+    "prettier": "3.9.10",
+    "raw-body": "3.0.2",
+    "react-server-dom-webpack": "19.3.1",
+    "typescript": "5.9.3",
+    "vinext": "1.3.0",
+    "vite": "8.3.5",
+    "wrangler": "4.152.0"
+  },
+  "type": "module",
+  "overrides": {
+    "sharp": "0.35.5",
+    "@esbuild-kit/core-utils": {
+      "esbuild": "0.25.12"
+    },
+    "undici": "7.30.1",
+    "fflate": "0.7.5"
+  },
+  "description": "Sourced water-point search, historical pollution evidence linked to mapped channels, private field checks and rainwater supply planning"
+}

@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "outputDirectory": "Regenerate locally with scripts/reproduce.py; scratch folder excluded from the handoff.",
+  "numericalTolerance": 1e-09,
+  "dataManifestSha256": "90ed6c492021f87d8bae508388df1a825c4496325ccd3a55d980add0cd488aa1",
+  "frozenDataManifestPreserved": true,
+  "checks": [
+    "water normalized records",
+    "survey and hydraulics",
+    "frozen model",
+    "held-out predictions and metrics",
+    "144 operational policy runs",
+    "climate metrics thresholds and test rows"
+  ]
+}

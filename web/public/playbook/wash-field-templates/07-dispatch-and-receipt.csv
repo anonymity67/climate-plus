@@ -1,0 +1,1 @@
+﻿event_id,incident_id,plan_id,plan_version,order_id,lot_id,dispatch_type,approved_use,destination_site_id,destination_store_id,verified_route_ref,driver_role,planned_l,dispatched_l,actually_received_l,receipt_id,receiver_role,acceptance_status,dispatch_at_utc,scheduled_arrival_utc,received_at_utc,variance_reason,reconciled_at_utc,custodian_ref

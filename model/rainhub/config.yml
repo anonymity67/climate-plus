@@ -1,0 +1,81 @@
+# Region box is in projected km units; change it to move the pipeline to a new region.
+region:
+  xmin: 0
+  xmax: 60
+  ymin: 0
+  ymax: 60
+grid:
+  cells_x: 30
+  cells_y: 30
+rain:
+  n_stations: 30
+quality:
+  n_sites: 60
+settlements:
+  "n": 25
+thresholds:
+  clean_p: 0.80
+  max_interval: 0.30
+reliability_target: 0.90
+runoff_coef: 0.8
+# Hub assumptions (Task 6; labelled assumptions, change per region).
+hub_roof_m2: 3000          # community roofs collected at each hub, m2
+hub_demand_l_day: 1500   # water the hub must supply every day, litres
+hub_tank_l: 20000        # tank size used to score candidate hubs, litres
+seed: 1
+hub_capacity_people: 100   # people one hub can serve (about 15 litres per person per day)
+hub_min_sep_km: 10   # minimum distance between two hubs, km (spreads hubs out)
+hub_min_reliability: 0.80   # a hub must meet demand at least this often
+max_km: 25   # farthest a hub can supply by tanker or pipe, km
+
+# Pollution severity index (R/10_severity.R). s_k = clamp((x_k - ref)/(bad - ref), 0, 1); S = weighted mean.
+# SOURCE = value read from a published standard; ASSUMPTION = our own choice, review before reporting.
+severity:
+  tau: 0.35   # ASSUMPTION: "severe" cut-off; 0.5 flagged no Dhaka site (max site mean 0.435), 0.35 is about the upper quartile
+  min_sites_for_spde: 10    # fewer sites than this -> nearest-site fallback
+  params:
+    DO:
+      column: "DO (mg/L)"
+      direction: low_is_bad
+      ref: 5                # SOURCE: ECR 2023 Schedule 2, inland surface water, source for drinking supply with conventional treatment: DO >= 5 mg/L (read from the gazette page image, TO BE VERIFIED)
+      bad: 0
+      weight: 0.142857142857143
+    pH:
+      column: "pH"
+      direction: outside_range
+      ref_low: 6            # SOURCE: same ECR 2023 row, pH 6-9 (TO BE VERIFIED)
+      ref_high: 9
+      bad: 3                # ASSUMPTION: 3 pH units outside the range = worst
+      weight: 0.142857142857143
+    COD:
+      column: "COD (mg/L)"
+      direction: high_is_bad
+      ref: 25               # SOURCE: same ECR 2023 row
+      bad: 100              # SOURCE: industrial-use limit in the same table
+      weight: 0.142857142857143
+    nitrate:
+      column: "Nitrate (mg/L)"
+      direction: high_is_bad
+      ref: 7.0              # SOURCE: same ECR row as NO3-N. ASSUMPTION: the dataset does not say whether nitrate is reported as N
+      bad: 28               # ASSUMPTION: 4 x ref
+      weight: 0.142857142857143
+    phosphate:
+      column: "Phosphate (mg/L)"
+      direction: high_is_bad
+      ref: 0.5              # SOURCE: same ECR row, PO4-P
+      bad: 2.0              # ASSUMPTION: 4 x ref
+      weight: 0.142857142857143
+    turbidity:
+      column: "Turbidity (NTU)"
+      direction: high_is_bad
+      ref: 10               # ASSUMPTION: drinking-water guidance, not from the ECR table
+      bad: 100              # ASSUMPTION
+      weight: 0.142857142857143
+    temp:
+      column: "Temp (\u00b0C)"   # YAML escape for the degree sign
+      direction: high_is_bad
+      ref: 30               # ASSUMPTION: no standard in the ECR table
+      bad: 38               # ASSUMPTION
+      weight: 0.142857142857143
+hub_require_clean: false   # false: hubs are rain-harvest sites, any cell with reliable rain qualifies (river quality ignored); true: only clean cells
+exposure_km: 5   # a settlement within this distance of a cell centre is exposed to that cell's river pollution (cleanup priority)

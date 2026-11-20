@@ -1,0 +1,113 @@
+{
+  "status": "usable-as-historical-inventory-only",
+  "retrieval_date": "2026-10-24",
+  "raw_snapshot": "wpdx-plus-bangladesh.csv",
+  "raw_sha256": "ee1463b90e43a6ef8380f63ddb5f46eddbeedf3960e2c140f434b432b7d3cda3",
+  "raw_bytes": 8267368,
+  "raw_records": 20084,
+  "compact_browser_subset": "water-access-candidates.json",
+  "compact_bytes": 3375205,
+  "compact_sha256": "f4273f820cedef47290d5b03f4778e00bb1ba9bdcb6f87a4a30cf863cc9807e5",
+  "summary_file": "snapshot-summary.json",
+  "exact_request_url": "https://data.waterpointdata.org/resource/eqje-vguj.csv?%24select=row_id%2Cwpdx_id%2Clat_deg%2Clon_deg%2Creport_date%2Cstatus_id%2Cstatus_clean%2Csource%2Cdataset_title%2Cwater_source_clean%2Cwater_tech_clean%2Cfacility_type%2Cclean_adm1%2Cclean_adm2%2Cclean_adm3%2Cclean_adm4%2Csubjective_quality_clean%2Cfecal_coliform_presence%2Cfecal_coliform_value%2Cwater_source%2Cwater_tech%2Cstatus%2Cis_latest%2Cis_duplicate%2Cpublic_data_source%2Cdata_lnk&%24where=clean_country_id%3D%27BGD%27&%24order=row_id&%24limit=50000",
+  "provider": "Water Point Data Exchange (WPdx+) / Global Water Challenge",
+  "underlying_providers": [
+    "UNHCR",
+    "Reach Initiative",
+    "WaterAid"
+  ],
+  "licence": "CC BY 4.0 per WPdx Provider Agreement; API metadata does not itself populate a licence field",
+  "licence_url": "https://www.waterpointdata.org/share-data/",
+  "licence_terms_url": "https://creativecommons.org/licenses/by/4.0/",
+  "data_standard_url": "https://www.waterpointdata.org/wp-content/uploads/2021/04/WPDx_Data_Standard.pdf",
+  "public_dataset_url": "https://data.waterpointdata.org/dataset/Water-Point-Data-Exchange-Plus-WPdx-/eqje-vguj",
+  "api_metadata_url": "https://data.waterpointdata.org/api/views/eqje-vguj.json",
+  "checks": {
+    "unique_wpdx_ids": 20084,
+    "unique_coordinate_pairs": 20084,
+    "invalid_wgs84_coordinates": 0,
+    "cross_field_review_flags": 14399,
+    "no_personal_contact_columns_requested": true,
+    "point_assessment_min": "2014-01-01",
+    "point_assessment_max": "2019-11-21",
+    "point_assessments_in_future": 0
+  },
+  "coverage_presets": [
+    {
+      "label": "Cox's Bazar / Ukhia",
+      "lat": 21.19233711,
+      "lon": 92.1489277,
+      "example_wpdx_id": "7MHJ54RX+WHM",
+      "records_in_adm3": 16812,
+      "note": "Map centre is an actual historical record, not an endorsed destination."
+    },
+    {
+      "label": "Khulna / Koyra",
+      "lat": 22.41538,
+      "lon": 89.3249833333333,
+      "example_wpdx_id": "7MJFC88F+5X5",
+      "records_in_adm3": 34,
+      "note": "Map centre is an actual historical record, not an endorsed destination."
+    },
+    {
+      "label": "Khulna / Paikgachha",
+      "lat": 22.5860766666667,
+      "lon": 89.3110583333333,
+      "example_wpdx_id": "7MJFH8P6+CCM",
+      "records_in_adm3": 24,
+      "note": "Map centre is an actual historical record, not an endorsed destination."
+    },
+    {
+      "label": "Dhaka / Turag",
+      "lat": 23.8356983333333,
+      "lon": 90.3714683333333,
+      "example_wpdx_id": "7MMGR9PC+7HG",
+      "records_in_adm3": 2,
+      "note": "Map centre is an actual historical record, not an endorsed destination."
+    },
+    {
+      "label": "Rangpur / Pirganj",
+      "lat": 25.4221416666667,
+      "lon": 89.2529266666667,
+      "example_wpdx_id": "7MQFC7C3+V53",
+      "records_in_adm3": 355,
+      "note": "Map centre is an actual historical record, not an endorsed destination."
+    }
+  ],
+  "coverage_warning": "18,233 / 20,084 records (90.8%) are Cox's Bazar. Dhaka district only 3; Khulna district 66; not national completeness. No records have clean_adm3 Dacope. Basic has 70,894 country rows but same latest assessment (2019-11-21), zero Dacope-labelled rows. The bounded Dacope-nearby box (22.35–22.7 N, 89.3–89.7 E) contains 55 Basic vs 39 Plus rows, but Basic box records are labelled Koyra/Paikgachha, not Dacope.",
+  "ui_rules": [
+    "Label layer Historical water-point candidates (2014–2019); every point Current availability unknown / Drinking-water safety unknown.",
+    "Show exact assessment date, provider, administrative labels, source/technology, WPdx ID and inventory link for each point.",
+    "Default must not label status_id Yes, improved technology, old subjective quality or old coliform absence as safe or currently open.",
+    "Keep inventory map colours neutral (blue/grey), separate from polluted river screen colours.",
+    "Do not rank distant inventory points as practical sources: show straight-line distance, limited coverage, radius filter, and no verified nearby source if none.",
+    "External navigation is only to coordinates and cannot assure flood-safe, accessible or operating route.",
+    "Do not use status_clean as an up-to-date availability rule; retain raw for audit with source presence/status caveat.",
+    "Do not infer exposure from simple circular distance or infer that nearby groundwater is chemically polluted from river proximity.",
+    "Require current operator/local-authority confirmation and fit-for-purpose water tests before any safe label."
+  ],
+  "privacy": "Browser subset has no contact names, phone numbers, emails, photo links or free-text notes. Named providers are organisations. Public inventory coordinates retained; no private datasets used.",
+  "official_fallbacks": [
+    {
+      "title": "DPHE Water Resources Potential Map",
+      "url": "https://picmac.dphe.online/en/",
+      "role": "Official potential/planning map; not current safe point certification."
+    },
+    {
+      "title": "DPHE software links",
+      "url": "https://dphe.gov.bd/pages/static-pages/6922dd01933eb65569e13226",
+      "role": "Official directory of water testing and source systems."
+    },
+    {
+      "title": "DPHE Water Point Management System",
+      "url": "https://wpms.dphe.online/",
+      "role": "Redirects to login; no public export or licence assumed."
+    },
+    {
+      "title": "DPHE groundwater monitoring database page",
+      "url": "https://dphe.gov.bd/pages/static-pages/6922df45933eb65569e20fbd",
+      "role": "Links to AQUAWATCH login, not an openly downloadable certified inventory."
+    }
+  ],
+  "download_caveat": "Direct urllib downloads of waterpointdata.org website/PDF returned HTML JavaScript challenges. Those responses were labelled blocked-*.html and are not valid source PDF snapshots. Official licence and data standard content were verified through the web tool. Socrata API responses are real parsed CSV/JSON."
+}

@@ -1,0 +1,45 @@
+{
+  "sourceLabel": "Supplied Antar GIS handoff v2; fictional assets and hazards on real Dacope OSM roads",
+  "sourceDirectory": "D:\\Climate ++\\climateplus Antar\\climateplus-gis-handoff-v2",
+  "preservedAt": "2026-10-24T17:17:28.428222+00:00",
+  "provenance": "representational",
+  "roadLicence": "OpenStreetMap contributors, ODbL 1.0",
+  "licenceUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "boundaryNotice": "V3 derives no HDX boundary layer; the supplied GeoPackage remains existing canonical source evidence with unresolved boundary licence noted by its author",
+  "scope": "Asset coordinates and hazard geometry retained exactly; issuedAt remains source scenario metadata, not an official alert",
+  "files": [
+    {
+      "originalPath": "HANDOFF-GIS.md",
+      "file": "HANDOFF-GIS.md",
+      "sha256": "5d38806fa8548e7fffb1ca61760fb48f8f1c39b07c1692fb49e545bd42cb4673"
+    },
+    {
+      "originalPath": "repo/public/data/gis-network.json",
+      "file": "gis-network.json",
+      "sha256": "96550624c5192e9058c4c41b4ff887f61e77b4bd00392ee445a1a72218e71797"
+    },
+    {
+      "originalPath": "repo/public/data/gis-network.geojson",
+      "file": "gis-network.geojson",
+      "sha256": "586b439d930a69b3ac35bc698e8df5c7d62314a523eb11ce2f1e9a469adc7775"
+    },
+    {
+      "originalPath": "repo/research/gis/v1/climate_gis.gpkg",
+      "file": "../v1/climate_gis.gpkg",
+      "sha256": "033646cae59e23c55655668323a72bca7219e257d21050b05fa2ca96de2ced65",
+      "retention": "Existing canonical file; identical supplied bytes, not duplicated"
+    },
+    {
+      "originalPath": "repo/src/CalamityPanel.jsx",
+      "file": "CalamityPanel.jsx",
+      "sha256": "3c8e6ac41833b684767f8dfbaf8264784557120586edd1f0db58e45c7737666f"
+    },
+    {
+      "originalPath": "repo/src/components/ContinuityMap.jsx",
+      "file": "ContinuityMap.jsx",
+      "sha256": "e1688bfcbb3facb523122309688e0914455766556c14ea00d83ab2757a80ae7e"
+    }
+  ],
+  "sourceSha256": "033646cae59e23c55655668323a72bca7219e257d21050b05fa2ca96de2ced65",
+  "attribution": "Road geometry © OpenStreetMap contributors, ODbL 1.0; separately authored fictional scenario assets from supplied Antar handoff"
+}

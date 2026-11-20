@@ -1,0 +1,7 @@
+test_bounded_segments_never_interpolate_or_connect_across_external_vertex (__main__.RegionBuildTests.test_bounded_segments_never_interpolate_or_connect_across_external_vertex) ... ok
+test_offline_rebuild_matches_checked_in_bytes (__main__.RegionBuildTests.test_offline_rebuild_matches_checked_in_bytes) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.630s
+
+OK

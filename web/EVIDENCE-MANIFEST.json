@@ -1,0 +1,3618 @@
+{
+  "schema": "climate-plus/source-data-handoff-v4-water",
+  "version": "4.0.0",
+  "createdAt": "2026-11-20T11:53:20.587801+00:00",
+  "scope": "Editable frontend, API, schema/migrations, original datasets, derived graph, documentation and verification. Excludes dependencies, builds, Git metadata, runtime databases, credentials and private GPS/invitation exports. Site identity is configuration, not a credential; publishing requires owner authorization.",
+  "files": [
+    {
+      "path": ".editorconfig",
+      "bytes": 140,
+      "sha256": "d4fe8bdd59c2114be8505db9446e9c53fbc81e7c99902eb185da740ec7f3a9eb"
+    },
+    {
+      "path": ".env.example",
+      "bytes": 368,
+      "sha256": "a941920b1c71976d80daf764eda5ec2e13c7d3ab3c81024262d4e29e18b65189"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 263,
+      "sha256": "8c9d5658309ede69e533168ec4b14f38ef256f3d925e65af3a8131eb9d1388c3"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 297,
+      "sha256": "784354424957cb0f7f6cba80179adcea0cb956dd2262e95d7acff619955f6744"
+    },
+    {
+      "path": ".npmrc",
+      "bytes": 45,
+      "sha256": "a3909ac0447c469fda12c57374993be70f47ce73e49fd3124678c7c047f2214d"
+    },
+    {
+      "path": ".nvmrc",
+      "bytes": 8,
+      "sha256": "b911698dc3cf3227d34d0ad6727f1c4408791203c9665de99ab959331a1fb07d"
+    },
+    {
+      "path": ".openai/hosting.json",
+      "bytes": 91,
+      "sha256": "f23ef7f6a46efe89c5e94672c6b03e05c24dc91827f367fba9e904d1f4fa0515"
+    },
+    {
+      "path": ".prettierignore",
+      "bytes": 351,
+      "sha256": "984a01169ae967d99f09543fafb200cd2848cb0e1760efd9e6cacce57fcd39f5"
+    },
+    {
+      "path": ".prettierrc.json",
+      "bytes": 94,
+      "sha256": "628852799bcfc3165a0795f9c409946f78c4dac3e6be219d6f096070439112f9"
+    },
+    {
+      "path": ".vscode/extensions.json",
+      "bytes": 72,
+      "sha256": "94fa32df068edf69db7ca8127f7b7c044c39b34183b8ad5af27264aa1b4fe182"
+    },
+    {
+      "path": ".vscode/launch.json",
+      "bytes": 258,
+      "sha256": "9890b306e59ba65113126d5dc29267220ac141cf235c925f7a9e98b2c5756af8"
+    },
+    {
+      "path": ".vscode/settings.json",
+      "bytes": 544,
+      "sha256": "9332e37158d33fcdc2789d0929ffac38c70abc2a2686d681366661cd3bc8311c"
+    },
+    {
+      "path": ".vscode/tasks.json",
+      "bytes": 959,
+      "sha256": "98ea91893c2288bd1151c2452d463f9e08d27ea639e1d73934d09a7f909175ba"
+    },
+    {
+      "path": "ATTRIBUTIONS.md",
+      "bytes": 5947,
+      "sha256": "bb4634a7d028fb4d2a71ad8efcec4ffd4bef956014dc1fbd6c8cc227c6b4a0ad"
+    },
+    {
+      "path": "DATA-MANIFEST.json",
+      "bytes": 17354,
+      "sha256": "ede2f96a3ffe9f9f429246a7286f0f749fb5d26cff06d8bddf47fa17aece4da3"
+    },
+    {
+      "path": "DATASETS.json",
+      "bytes": 21166,
+      "sha256": "3cc9a7289153a26e37f3b5632f0e56f811910e82c8c6ffef88b258818a8a7631"
+    },
+    {
+      "path": "DESIGN.md",
+      "bytes": 3687,
+      "sha256": "defc44a16639b5a62f86e578dad0b562d8f54b170918bf9276ccee17987011a1"
+    },
+    {
+      "path": "GLOSSARY.md",
+      "bytes": 1663,
+      "sha256": "2dd78945162f302643c7052a21dbdad75f53e10afb514e8dd9dc37163156f233"
+    },
+    {
+      "path": "LICENSE-NOTICE.md",
+      "bytes": 1054,
+      "sha256": "ec338cd67cf1a6b3ab3cb258beb8eafc2c1a45f166a671b9ff3d41ac8c9359f0"
+    },
+    {
+      "path": "PRODUCT.md",
+      "bytes": 4666,
+      "sha256": "eba3e8a1eb0c04b2a3ffbf231a70f98432a208e946458825cfbc973201ce3051"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11695,
+      "sha256": "d271c8a413814fd257118f5e5dd93529966c3d8c6bf2f4edfddd9353c9e9df06"
+    },
+    {
+      "path": "app/api/[[...path]]/route.ts",
+      "bytes": 1999,
+      "sha256": "770c52b3ada58d98daf9f7b183e6f44ed81b06aea7ea1400bad632c75cb87559"
+    },
+    {
+      "path": "app/chatgpt-auth.ts",
+      "bytes": 2521,
+      "sha256": "b1b3df53c5fc7a46e9bb95884baa32fb2e52063e60350e7efdeb85e4100fcf0f"
+    },
+    {
+      "path": "app/client-application.tsx",
+      "bytes": 901,
+      "sha256": "9cb42ad8a7aa322a60a79592c23c224e7c97e020dca2b78d3799c6fb70024b90"
+    },
+    {
+      "path": "app/layout.tsx",
+      "bytes": 591,
+      "sha256": "1e0c8735bd50026d63b2da81c314e44d562987cb8cb04117fc7d776a48f57979"
+    },
+    {
+      "path": "app/page.tsx",
+      "bytes": 432,
+      "sha256": "bdaba985444084d37b65b762e5e397de821fee63c8932e10c8af27342f4c7b57"
+    },
+    {
+      "path": "backend/api.mjs",
+      "bytes": 46194,
+      "sha256": "31bdc3ce91da7f852b5a7d190335699cad1b870ccb19bb42ef3ce4041c5f1526"
+    },
+    {
+      "path": "backend/data/dacope-road-graph.json",
+      "bytes": 905352,
+      "sha256": "22d5a896ad278b01570748fe9589e205f4f4e3de4b75d54a356fca4908826d0f"
+    },
+    {
+      "path": "backend/data/regions/chattogram-graph.json",
+      "bytes": 1152453,
+      "sha256": "ed0096ed0fad33debef343c5a3a465e7f460006b68af4757636f552f1a793b3b"
+    },
+    {
+      "path": "backend/data/regions/dacope-graph.json",
+      "bytes": 905352,
+      "sha256": "22d5a896ad278b01570748fe9589e205f4f4e3de4b75d54a356fca4908826d0f"
+    },
+    {
+      "path": "backend/data/regions/khulna-graph.json",
+      "bytes": 443452,
+      "sha256": "2750fc1145d892eaaef9ed7e6d103c29e292f8c94169180bcd378e6acaf74e19"
+    },
+    {
+      "path": "backend/data/regions/tongi-graph.json",
+      "bytes": 689499,
+      "sha256": "e668ace4e2228065ed74c23b3cadcbfd70047bb878567fa742abd4ff80c780e5"
+    },
+    {
+      "path": "backend/data/regions/ukhia-graph.json",
+      "bytes": 234049,
+      "sha256": "b099e0e65a72b3e7fd8a1776d131f20def9cb9cd541cafb8fefe95c0e27322d9"
+    },
+    {
+      "path": "backend/data/streams/dacope.json",
+      "bytes": 2112761,
+      "sha256": "41fcaf675ec49d38539448aa6418f19b6d57be7a14758ca20699cf4b157fb038"
+    },
+    {
+      "path": "backend/data/streams/dhaka.json",
+      "bytes": 1816208,
+      "sha256": "c4cc5b330434af2d5d80f217e48c74d0446cf8ec2ec8ca96c0bc4e49076c7f26"
+    },
+    {
+      "path": "backend/data/streams/sylhet.json",
+      "bytes": 430521,
+      "sha256": "d3c4704639916c2069382382082f72354ca98a646c8e597d1f3e3861f72ca1e6"
+    },
+    {
+      "path": "backend/operator-session.ts",
+      "bytes": 3129,
+      "sha256": "c1c0ac450bfa935eb4837f181488fb0c04e377e11e7178d5a2249f22e6ea0e1c"
+    },
+    {
+      "path": "backend/schema.sql",
+      "bytes": 4867,
+      "sha256": "93e1f35ec3aa5a9f7d8148e68e908aae4616265e20dacc837095306680ad2f2f"
+    },
+    {
+      "path": "backend/sqlite-store.mjs",
+      "bytes": 794,
+      "sha256": "cee6f655eebe6336a113c5bb9b2d79d09f5dab62f97b15e1e577d78a75e6efc1"
+    },
+    {
+      "path": "backend/store.mjs",
+      "bytes": 747,
+      "sha256": "a4324fa201596691cbbdda76348819e8b0080c95b811665881b5f21d9653e33f"
+    },
+    {
+      "path": "backend/water-api.mjs",
+      "bytes": 11936,
+      "sha256": "4d39511b197967c073561163652188737000ac04a62127549944f5a13364e93f"
+    },
+    {
+      "path": "backend/water-catalogue.mjs",
+      "bytes": 8163,
+      "sha256": "5d8995cfbc5c9f2dfbb7cc5e679d81a3d259643d9a28e4189bb7ac8bb7443750"
+    },
+    {
+      "path": "backend/water-registry.mjs",
+      "bytes": 412,
+      "sha256": "7a0638564a4a36d61ad7bf02afce03c73f9980886fb41f249971e1d3e25c8b26"
+    },
+    {
+      "path": "climateplus.code-workspace",
+      "bytes": 105,
+      "sha256": "f609951a169d9882febeac023b83fdbc5aa2f7260c171deb846a6bca6937679c"
+    },
+    {
+      "path": "cloudflare-env.d.ts",
+      "bytes": 251,
+      "sha256": "d0861ce73212139a4b957291c30b8f0275ec31e8e13e6960d857fa305816ae49"
+    },
+    {
+      "path": "contracts/EvidenceRegistry.sol",
+      "bytes": 809,
+      "sha256": "5442908182d702cd652041c68e0fa8eb42cb4a662c0f01572c634fcfdcf9bc77"
+    },
+    {
+      "path": "db/index.ts",
+      "bytes": 424,
+      "sha256": "991de9c107b00a37ad6540bf3540e2efe1eb2c30a04203daf4bd36f83f62d230"
+    },
+    {
+      "path": "db/schema.ts",
+      "bytes": 5404,
+      "sha256": "dc08a91a60ae05f3a5411575c7852c5538dd3838c58418c46ecb01ba349d5946"
+    },
+    {
+      "path": "docs/API.md",
+      "bytes": 15355,
+      "sha256": "7ee9f51d6919be88c8a8add93c125b3cbc595f6b5d22081402c385219a459b5c"
+    },
+    {
+      "path": "docs/AQUAVELLE-RELEASE-PLAN.md",
+      "bytes": 5068,
+      "sha256": "895d3e2c2291ce664bef9520d923d77d5aae7e973e296bb446106b548b2c4a3a"
+    },
+    {
+      "path": "docs/DEPLOY-AQUAVELLE.md",
+      "bytes": 4760,
+      "sha256": "ede06abc30b33685e7efa010564241e6ca915ec42ef00534bed12178beb521c2"
+    },
+    {
+      "path": "docs/DEVELOPMENT.md",
+      "bytes": 6592,
+      "sha256": "69d7035c5d0e91989653f7d7846f380087fb74760cdf4269097b19196f8a33ad"
+    },
+    {
+      "path": "docs/GIS-MVP-VALIDATION.md",
+      "bytes": 8547,
+      "sha256": "89502711b22e36bbd0d15c24dc763ec023ac2aaf7a64c50ab29380e188a12fd5"
+    },
+    {
+      "path": "docs/POLLUTION-POINTS-V3.md",
+      "bytes": 9140,
+      "sha256": "e53815ff533867ea40f63deaf61ae95bede47226d021e1128a0bffcc5143d118"
+    },
+    {
+      "path": "docs/REGIONS-V3.md",
+      "bytes": 8597,
+      "sha256": "4c56b46715aaca5f96042a13fa8d8434e4e9ba4ca5bbb301da098dee3ff87673"
+    },
+    {
+      "path": "docs/RELEASE-0.4.md",
+      "bytes": 7373,
+      "sha256": "9b69fbf994226d52d0fefc57e9c89d50806b0d41fe5d50a60bd6b5fd68be253e"
+    },
+    {
+      "path": "docs/RIVERWATCH-AND-HARVEST.md",
+      "bytes": 5444,
+      "sha256": "8852962d1cd211ea23eeded482b18a9fa1358c43dc5af9d8fd39abd8eb1a83b3"
+    },
+    {
+      "path": "docs/ROAD-GRAPH.md",
+      "bytes": 12576,
+      "sha256": "fde5c488fe0b901d9037a58d33fa6aab80a8f8dd31eb475f0403c731fabf6a50"
+    },
+    {
+      "path": "docs/V3-VALIDATION.md",
+      "bytes": 6551,
+      "sha256": "cb365fbe3455c05efa632210786f2259737e612c415b39405845434156fed244"
+    },
+    {
+      "path": "docs/WATER-PLATFORM-V4-API.md",
+      "bytes": 5822,
+      "sha256": "c798e8b36318ccf2a5023c37b3d06386e9220288223e3a3e0566880dc21a113d"
+    },
+    {
+      "path": "docs/WATER-PLATFORM-V4-COMPLETION-AUDIT.md",
+      "bytes": 4439,
+      "sha256": "bf48635be961f5a612ad84c8cb75b46cfa78bf8a12c6196fd9f23b295cc3ae1e"
+    },
+    {
+      "path": "docs/WATER-PLATFORM-V4-METHODS.md",
+      "bytes": 11852,
+      "sha256": "07ed7e0d04644d7fd5123cdd7f8edce92cd00a377fa6c45e33f8fc1fed32a8bf"
+    },
+    {
+      "path": "docs/WATER-PLATFORM-V4-PLAN.md",
+      "bytes": 4196,
+      "sha256": "fb333fb145052d85feccee236b158b5511186b0877fd493ae01d1c8bc13334fe"
+    },
+    {
+      "path": "docs/WATER-PLATFORM-V4-START.md",
+      "bytes": 11357,
+      "sha256": "03f24af84e8919aa07dd9c1aad7b1c13051c09bbbc325f21d083504ea9757dcd"
+    },
+    {
+      "path": "docs/WATER-PLATFORM-V4-VALIDATION.md",
+      "bytes": 8787,
+      "sha256": "42902f5ffe4b04c7e35ed1fa05cc96fa1f07137fcceca03e6f23d7ed22df3f11"
+    },
+    {
+      "path": "docs/legacy-spa-index.html",
+      "bytes": 593,
+      "sha256": "053f7711a6a37939faa87f5166a96dedde5cc1b577e24b6ca1119fc745e1107a"
+    },
+    {
+      "path": "docs/legacy-vite.config.js",
+      "bytes": 224,
+      "sha256": "6649c0c54138e74698278765fffebfff70a58088fb359aaae83e6b7600258396"
+    },
+    {
+      "path": "docs/research/2026-11-17-water-platform-benchmarks.md",
+      "bytes": 17974,
+      "sha256": "c605334d7d99483a4c4c65c7f5d06f7a38d2f7713e22feed2008dc43e641afdb"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-24-fullstack-operations.md",
+      "bytes": 4086,
+      "sha256": "e46d6a4ceda9bcfa5c8cb3696d0cebbbd1a143d90a583f849a6ea0466691abde"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-24-operations-ledger.md",
+      "bytes": 3607,
+      "sha256": "680d70d7191ea79ccfc05f1278cdca4828e01798ddb8695c935cf4fc85bd1083"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-24-v3-map-first.md",
+      "bytes": 4055,
+      "sha256": "dcc6c34136c836c416b7add8c7713ca8e0a3249d98df4cd217819553609187aa"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-24-water-gis-ledger.md",
+      "bytes": 3222,
+      "sha256": "044145968454817a77f9401b5f4fec32e435a85027ce60ddb32bcb4836eb5b5c"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-24-water-gis.md",
+      "bytes": 3696,
+      "sha256": "16ff9af238576e70fc2a47f2851b41d6afb8a93957c9ea282c0873985abac7f5"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-25-v3-release-ledger.md",
+      "bytes": 3292,
+      "sha256": "c723d5409318d67ed822239303a6f9a70ece5a4e927b4c201d2536a2f443a4da"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-10-24-live-operations.md",
+      "bytes": 13624,
+      "sha256": "64569b235be9a70ed6b8d4c6746e49d5ca85fd67f08aa32a989e47f92c8c3f34"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-10-24-v3-map-first.md",
+      "bytes": 6007,
+      "sha256": "0d9ecfebb94b51a8eb2be935974cc2b8754d663ab3abbc3fa8838e9fd238e52b"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-10-24-water-gis-design.md",
+      "bytes": 4326,
+      "sha256": "9751daa82a275ec1df464056955bdf39a6f6682cf74fb7f6e8cc6bfd283830ee"
+    },
+    {
+      "path": "documentation/AUDIT-AND-ENHANCED-PLAN.md",
+      "bytes": 15439,
+      "sha256": "1defbd9d05ad24431a26cf63928b189c969639b70709f260353415035e6f97a4"
+    },
+    {
+      "path": "documentation/BUILD-LEDGER.md",
+      "bytes": 2512,
+      "sha256": "b270f75cd965c23e4fd01d15554fd7383b83e9f65ffcee1f2c915418c5ed3a1e"
+    },
+    {
+      "path": "documentation/CLAIM-LEDGER.md",
+      "bytes": 3681,
+      "sha256": "11ed42bfc9f4912e85acf2894dff7934a990cbb0209c6168bc0285d2a2539be7"
+    },
+    {
+      "path": "documentation/DATASETS.md",
+      "bytes": 7065,
+      "sha256": "f0be6edf51d5e7d5b2c9335455dd001769b0a158c566294775fb5a42a61b912a"
+    },
+    {
+      "path": "documentation/METHODS-AND-VALIDATION.md",
+      "bytes": 12361,
+      "sha256": "0e0e8d8caaf2e5f812abeb864efdee7b5aed5918372b9aa5e99258bb06fa2c27"
+    },
+    {
+      "path": "documentation/OPERATOR-GUIDE.md",
+      "bytes": 5146,
+      "sha256": "fcc5674d00b6a7ee55b726ee92118a139ad30787c5714336f47347929f112599"
+    },
+    {
+      "path": "documentation/PILOT-AND-VENTURE.md",
+      "bytes": 7263,
+      "sha256": "d35d23dea40c622b676a2cf6edc44158ee766f2ce87cae609969178dd99b4a5e"
+    },
+    {
+      "path": "documentation/POLLUTION-IMPLEMENTATION.md",
+      "bytes": 4904,
+      "sha256": "8a69cfe56ea6c76d2c4603f662b6c7543e3fd8187180bc2bfaa8b836d04e4bbc"
+    },
+    {
+      "path": "documentation/SUBMISSION-PACK.md",
+      "bytes": 6454,
+      "sha256": "845d3bfc7c812b8750077749b51d753e2d7f41754a0821d10e2ca414f31ddcf0"
+    },
+    {
+      "path": "documentation/VALIDATION-REPORT.md",
+      "bytes": 3873,
+      "sha256": "cd5ed5bb35dc96e8cb7c2156af6ec7303962eacb0289670c82ba54da04221c8c"
+    },
+    {
+      "path": "drizzle.config.ts",
+      "bytes": 148,
+      "sha256": "9a41cce699b66a99925d6cf0d0e8a50802a420138a71b41959bb823e0402ff86"
+    },
+    {
+      "path": "drizzle/0000_nice_secret_warriors.sql",
+      "bytes": 3994,
+      "sha256": "3157b58bd07a0215570212fd064b936173755ae983151d62e25e25900767b1ff"
+    },
+    {
+      "path": "drizzle/0001_regional_trips.sql",
+      "bytes": 67,
+      "sha256": "72dd2c31c7ff319889ab511bc3fc3ea9a3ec0cf2ed5902d2ecd7a5d5f6f0f445"
+    },
+    {
+      "path": "drizzle/0002_water_checks.sql",
+      "bytes": 485,
+      "sha256": "ee82cad139e150cf66117d04f04056c718aa57cd4dd04dc046248a1fb1f5bcfc"
+    },
+    {
+      "path": "drizzle/0003_observation_retries.sql",
+      "bytes": 318,
+      "sha256": "9b3dd55a401fc43057388309b73e9397456b91edcc3306a85b51b1c102671f97"
+    },
+    {
+      "path": "drizzle/meta/0000_snapshot.json",
+      "bytes": 19888,
+      "sha256": "67a0c93fe80fdbb2533649d247c51777a333a35e0310c4baa40fa6379ada026a"
+    },
+    {
+      "path": "drizzle/meta/0001_snapshot.json",
+      "bytes": 20103,
+      "sha256": "9ae86b6f5f7e92f9824ecbd16e5baa46aa3c5cb6903746d639b4f4a6a9933019"
+    },
+    {
+      "path": "drizzle/meta/0002_snapshot.json",
+      "bytes": 22107,
+      "sha256": "3349b82a1b9df6e5c76a068f5ce6790acced805caf9eee48b3758d78fe764b9b"
+    },
+    {
+      "path": "drizzle/meta/0003_snapshot.json",
+      "bytes": 22775,
+      "sha256": "1b5bf324b2e1188569ab84f013bcaf6f81364e40a7f20dbdb0b5ec1572c963b1"
+    },
+    {
+      "path": "drizzle/meta/_journal.json",
+      "bytes": 640,
+      "sha256": "26c10e51a8137f0d133c49e63e3fed01efce876453378f8cd820dea2c34ca492"
+    },
+    {
+      "path": "examples/observation.json",
+      "bytes": 318,
+      "sha256": "c15b9ec2497a6ac046280f84f42148259fc684c85ab2821d2a61564463a58c1a"
+    },
+    {
+      "path": "examples/paired-measurements.json",
+      "bytes": 234,
+      "sha256": "b22c078aa01a78a247148542f4774a9b9de0e061a2d10968b0ec7ed42db19906"
+    },
+    {
+      "path": "examples/pollution-points-v3.csv",
+      "bytes": 279,
+      "sha256": "a49b3e29a047fe65724abfb3ee448fd65667e4171478db8cf62e5025d34f09f5"
+    },
+    {
+      "path": "examples/pollution-points-v3.geojson",
+      "bytes": 1078,
+      "sha256": "a8a5b6b252439cc401956ba8ce70f75691dac1692eb1f9f2666e05529881db8b"
+    },
+    {
+      "path": "lib/connector-context.ts",
+      "bytes": 605,
+      "sha256": "12e1170228e616ad5a383ac1115b23c0e6c44402d09ff9de8132aa66e1bad105"
+    },
+    {
+      "path": "lib/connector-contract.mts",
+      "bytes": 5166,
+      "sha256": "80fe886e5778bbf70386ed0ab0da0fcfa5e7bc3c99245a44a7fb4ab70d83a137"
+    },
+    {
+      "path": "lib/connector-errors.mts",
+      "bytes": 2717,
+      "sha256": "3bcd46200f9de0b01589a74913752722a0802a48ad10fc15b12f21e464a36131"
+    },
+    {
+      "path": "lib/connector-preview.d.ts",
+      "bytes": 433,
+      "sha256": "a021e91fc41a28fa6e4c06335775eb1ddb7038c639466d82bdb02f720ff9236c"
+    },
+    {
+      "path": "lib/connectors.ts",
+      "bytes": 416,
+      "sha256": "a57de74c7fb8d1997e5bbf2cea6645f57ed3613d79ac90864e66cca4adb307a9"
+    },
+    {
+      "path": "lib/utils.ts",
+      "bytes": 177,
+      "sha256": "d6cf1d2c25e92eba18c73f11c9676f0a7099020f1010396b94fa4c0356e7fc9a"
+    },
+    {
+      "path": "next-env.d.ts",
+      "bytes": 284,
+      "sha256": "217ce9348b523c3e6954fb50bb93364b58781d86742c995f3a5b03ba88b9ba72"
+    },
+    {
+      "path": "next.config.ts",
+      "bytes": 129,
+      "sha256": "f50f765e38dae889550f1c9422c03402f07707f94c86b5f0db5bcb868f9af309"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 197239,
+      "sha256": "f3dd9e30a3521133252b7be3e33862ef22699d8d5e095dc048f1788616f5d5f5"
+    },
+    {
+      "path": "package.json",
+      "bytes": 2910,
+      "sha256": "1ee181c6bfb33f2b1d74d64813ff7e4773939521210d2676eb3b80db7a7c5ea0"
+    },
+    {
+      "path": "provenance/README-v0.3.md",
+      "bytes": 8421,
+      "sha256": "c4635d5ebee2a0325232376233ff17984b22e10fbdd3760748bbea0b3e1999ca"
+    },
+    {
+      "path": "provenance/README-v0.4.md",
+      "bytes": 9642,
+      "sha256": "ce0fb28b8f799cf4afd199f3c114a819e41644c91b28d755eaa5ef3d8797b4bd"
+    },
+    {
+      "path": "provenance/README-v3.md",
+      "bytes": 11380,
+      "sha256": "6e7f7ca01a6cfcfc05b5dedf28f225ee7cf3d1c8fff0044138e152c54b7445df"
+    },
+    {
+      "path": "provenance/README.md",
+      "bytes": 1099,
+      "sha256": "a25b0dfa28a071b35f8453738b9cb6a3959bb18597be5da3e6db92570efb70eb"
+    },
+    {
+      "path": "provenance/original-release-manifest.json",
+      "bytes": 10025,
+      "sha256": "bc6049a33f149c92efafe2e2080312be994df8841d54303b547ce4b16e7881e2"
+    },
+    {
+      "path": "public/_headers",
+      "bytes": 185,
+      "sha256": "478f3b8fdcc5430caa970c8de603283484c902ffdb9beaf6ef30f4eda4d9065a"
+    },
+    {
+      "path": "public/data/benchmark.json",
+      "bytes": 54755,
+      "sha256": "7917e4b423acdcf73000c39dcdf062170c77d30d44433e0823d6f21ac1d37279"
+    },
+    {
+      "path": "public/data/borsha-bandhu-assets.json",
+      "bytes": 1724,
+      "sha256": "f1045965ea330e676cd68fbb3309453787c2ea28d53b1ca4dcaac051fcb7476d"
+    },
+    {
+      "path": "public/data/borsha-bandhu-profiles.json",
+      "bytes": 2443,
+      "sha256": "d95c3bec8f85a9a2ddc9f9838ea9771e5248394f23a1b30119f1f434187ac4ea"
+    },
+    {
+      "path": "public/data/climate-analysis.json",
+      "bytes": 26901,
+      "sha256": "e208cc2ba065c82e0566db551d1f248c5149aada1197c5b42479fc875ebcac8a"
+    },
+    {
+      "path": "public/data/credibility-audit.json",
+      "bytes": 2635,
+      "sha256": "012d57d4076cfaec3247bf5f06b65b1c1e9ee0f322cdc588e55cf5b8ae835a51"
+    },
+    {
+      "path": "public/data/dacope-road-graph.json",
+      "bytes": 905352,
+      "sha256": "22d5a896ad278b01570748fe9589e205f4f4e3de4b75d54a356fca4908826d0f"
+    },
+    {
+      "path": "public/data/gis-network.geojson",
+      "bytes": 17363,
+      "sha256": "586b439d930a69b3ac35bc698e8df5c7d62314a523eb11ce2f1e9a469adc7775"
+    },
+    {
+      "path": "public/data/gis-network.json",
+      "bytes": 8603,
+      "sha256": "bc12caa42fcae0f941e41237598351ad728735f348f4c91c5ffb3249a72ecf08"
+    },
+    {
+      "path": "public/data/gis-source-audit.json",
+      "bytes": 1823,
+      "sha256": "c2fa78f6878b68e6b3f9c9dac137828dfc15ecdc04461f4226290035e128939c"
+    },
+    {
+      "path": "public/data/rainhub-model.json",
+      "bytes": 189593,
+      "sha256": "17bb0c1d08cc954a9f6619940066b0ca935c8729427ea34da13c2f015e275acf"
+    },
+    {
+      "path": "public/data/regions/chattogram-graph.json",
+      "bytes": 1152453,
+      "sha256": "ed0096ed0fad33debef343c5a3a465e7f460006b68af4757636f552f1a793b3b"
+    },
+    {
+      "path": "public/data/regions/chattogram-scenario.json",
+      "bytes": 4278,
+      "sha256": "7c6b42d55aad3481bdcd33ab7cd5073dffceccf280576bd446c90b3fbcd39e04"
+    },
+    {
+      "path": "public/data/regions/dacope-graph.json",
+      "bytes": 905352,
+      "sha256": "22d5a896ad278b01570748fe9589e205f4f4e3de4b75d54a356fca4908826d0f"
+    },
+    {
+      "path": "public/data/regions/dacope-scenario.json",
+      "bytes": 5502,
+      "sha256": "0c87eb6ab1cfca53de7b2a7f4d5aa83f200467f4480399802e8206a34f4a0af2"
+    },
+    {
+      "path": "public/data/regions/index.json",
+      "bytes": 5184,
+      "sha256": "e3e5b29899dfe996ec7a826617bc8915dfebcdb0e0ea92439c4a9a84d7daa3f3"
+    },
+    {
+      "path": "public/data/regions/khulna-graph.json",
+      "bytes": 443452,
+      "sha256": "2750fc1145d892eaaef9ed7e6d103c29e292f8c94169180bcd378e6acaf74e19"
+    },
+    {
+      "path": "public/data/regions/khulna-scenario.json",
+      "bytes": 4063,
+      "sha256": "1197b378526c6b7b0d9f44ae7f8d231db90b0580d2553cd08fa5a46ae38875ea"
+    },
+    {
+      "path": "public/data/regions/tongi-graph.json",
+      "bytes": 689499,
+      "sha256": "e668ace4e2228065ed74c23b3cadcbfd70047bb878567fa742abd4ff80c780e5"
+    },
+    {
+      "path": "public/data/regions/tongi-scenario.json",
+      "bytes": 4069,
+      "sha256": "846ff9dc0d6f16d5cc2f5a452d57f32813a3151c47ce5ca925d3d43c5e46aaef"
+    },
+    {
+      "path": "public/data/regions/ukhia-graph.json",
+      "bytes": 234049,
+      "sha256": "b099e0e65a72b3e7fd8a1776d131f20def9cb9cd541cafb8fefe95c0e27322d9"
+    },
+    {
+      "path": "public/data/regions/ukhia-scenario.json",
+      "bytes": 4118,
+      "sha256": "049986c5400ccd4c93111fa3b40ed3ce3d871f8a2a385b53949101fec9ee9442"
+    },
+    {
+      "path": "public/data/river-pollution-context.json",
+      "bytes": 580460,
+      "sha256": "e9508fd090af3b0592cd1a74ce0228b727d70c4db1d05b4f174ce22e006796b9"
+    },
+    {
+      "path": "public/data/riverwatch-sources.json",
+      "bytes": 943606,
+      "sha256": "3b7c21878260814c29e734ca414d0ddf040ecebaf67ed76bab2e5329593e85f3"
+    },
+    {
+      "path": "public/data/riverwatch/bangladesh.json",
+      "bytes": 734824,
+      "sha256": "affdf14524a85b6e0111ff158ac893a716201cd05f849348a2d3db396a36d755"
+    },
+    {
+      "path": "public/data/riverwatch/dhaka_pilot.json",
+      "bytes": 8738,
+      "sha256": "60958f2153d8ed5dd5962bcc5d7b6eb4ad0b27af96a5395e10e41ce7d7d5d903"
+    },
+    {
+      "path": "public/data/riverwatch/dhaka_pilot/pilot.json",
+      "bytes": 95550,
+      "sha256": "e7e020e585079e76d494e7b144570718e2b7e3044f8c19c78df0b85b2a973d92"
+    },
+    {
+      "path": "public/data/riverwatch/national.json",
+      "bytes": 1260950,
+      "sha256": "9f51cef3ac4e29b881c627292472a858469daafd940948524bf7389d2681316d"
+    },
+    {
+      "path": "public/data/riverwatch/national/00.json",
+      "bytes": 33760,
+      "sha256": "72f6124523ae41ff0df7a089c48c6fa36d8fb9aa3e66d063a91cf8194f1a6e1e"
+    },
+    {
+      "path": "public/data/riverwatch/national/01.json",
+      "bytes": 29413,
+      "sha256": "e5e16d2b9bf23215fba5355746abeeab58cf997a0bf991690828106d47832d9f"
+    },
+    {
+      "path": "public/data/riverwatch/national/02.json",
+      "bytes": 29268,
+      "sha256": "0485d3361f6304e5afea78a41657d46e4fc9d2bd72ffe6f3351ed292f85af3f4"
+    },
+    {
+      "path": "public/data/riverwatch/national/03.json",
+      "bytes": 39594,
+      "sha256": "5e447fc86722c66f295a5691e5d40c7690a6ea03e0e679b674507e2a8c947ed7"
+    },
+    {
+      "path": "public/data/riverwatch/national/04.json",
+      "bytes": 46107,
+      "sha256": "80f93781d3c0e204900ce8b20ba68a3afc8609a5fce03dff3019af022cf76f35"
+    },
+    {
+      "path": "public/data/riverwatch/national/05.json",
+      "bytes": 23660,
+      "sha256": "bf5078419ecea7db53f8ffb53e8e4632cce80b9bb3c2533e79208025ace721f2"
+    },
+    {
+      "path": "public/data/riverwatch/national/06.json",
+      "bytes": 45806,
+      "sha256": "ee44ff35864792f2e9078143b9c3307d7e75b708329aca5eab9a2d66dbbc1d9f"
+    },
+    {
+      "path": "public/data/riverwatch/national/07.json",
+      "bytes": 39131,
+      "sha256": "f7ab7a4b6af42f3b6e761c25319b6413c709c550894646906e26ab9877ffed0e"
+    },
+    {
+      "path": "public/data/riverwatch/national/08.json",
+      "bytes": 44648,
+      "sha256": "a5f9cb715989d90c8af916434e7ec207c652c4cbb4c14ba0381b257a5b330bb3"
+    },
+    {
+      "path": "public/data/riverwatch/national/09.json",
+      "bytes": 43243,
+      "sha256": "ee3aaef14aca42e6dfaed7aeed36316ba93f4f09a63f9c64d296419a01e611b7"
+    },
+    {
+      "path": "public/data/riverwatch/national/0a.json",
+      "bytes": 33993,
+      "sha256": "8438f6f1925277518b435729bf6f57b82a79c7631811e3cd1a275d0ec4e3b098"
+    },
+    {
+      "path": "public/data/riverwatch/national/0b.json",
+      "bytes": 35573,
+      "sha256": "c52d6bf7cc4a5aa0a29b7af402dead40364ea525a3561592c38fd35e721ae97f"
+    },
+    {
+      "path": "public/data/riverwatch/national/0c.json",
+      "bytes": 40493,
+      "sha256": "9e0ea073106f245ea1eedbcda5db735e62b43678e641177a94946599a410e25c"
+    },
+    {
+      "path": "public/data/riverwatch/national/0d.json",
+      "bytes": 42054,
+      "sha256": "376f5a19fe097bd54af043e17ba5ccc6acafd676a8ae032ec6a3f6099bc4d158"
+    },
+    {
+      "path": "public/data/riverwatch/national/0e.json",
+      "bytes": 45642,
+      "sha256": "ad5987e64413139e4e51a658518eea3c7d73499c0e8ca3d8364bece95d7ec600"
+    },
+    {
+      "path": "public/data/riverwatch/national/0f.json",
+      "bytes": 39444,
+      "sha256": "1c3d2c2e9d251d92c70b1e658920cb314d44acf252b22437c58e507ba501b942"
+    },
+    {
+      "path": "public/data/riverwatch/national/10.json",
+      "bytes": 48106,
+      "sha256": "3f8ac4b113490eeee335dcf5f9023f755c85c3cba5be818e8e2160d886b4bc08"
+    },
+    {
+      "path": "public/data/riverwatch/national/11.json",
+      "bytes": 44724,
+      "sha256": "3aabc8ce0318a6fdf5a2142c90e4091f0586f5ab8bb29a77af38270997073b2b"
+    },
+    {
+      "path": "public/data/riverwatch/national/12.json",
+      "bytes": 45182,
+      "sha256": "0eaf6203c44173d22de96874f11728a4c8c21281fe39812383f7d88154f81d62"
+    },
+    {
+      "path": "public/data/riverwatch/national/13.json",
+      "bytes": 40857,
+      "sha256": "9914527d027ec703dcefd1af54ce9576a59344d221a17f74f3c509e16fdf3125"
+    },
+    {
+      "path": "public/data/riverwatch/national/14.json",
+      "bytes": 35416,
+      "sha256": "18640edc476d75f7d1bf895bb64434678a0ba646c509e2fce1eab702a3b207b1"
+    },
+    {
+      "path": "public/data/riverwatch/national/15.json",
+      "bytes": 24465,
+      "sha256": "5c39afbd4c038fe7c3c00320235bc67baa17bf6e02856e38fb62dbd71d37653a"
+    },
+    {
+      "path": "public/data/riverwatch/national/16.json",
+      "bytes": 27144,
+      "sha256": "52b9e8d126281fbf90bb6aa541edc0ceadc1f423851d269e60207937e7ece2cb"
+    },
+    {
+      "path": "public/data/riverwatch/national/17.json",
+      "bytes": 47584,
+      "sha256": "3212adb23812858ec440e4f4bdeb3cc114ad00a3a0590e030c8249da320e36f7"
+    },
+    {
+      "path": "public/data/riverwatch/national/18.json",
+      "bytes": 43861,
+      "sha256": "6f0ad656b688388ef141c925b464a10be36e3a1c33c85009203b4e0083255700"
+    },
+    {
+      "path": "public/data/riverwatch/national/19.json",
+      "bytes": 44462,
+      "sha256": "25d047e23288fc3adab7c91cd713b2166312dd771bda87bb602f0a66475a6e15"
+    },
+    {
+      "path": "public/data/riverwatch/national/1a.json",
+      "bytes": 40522,
+      "sha256": "90fa2a019447d9139a291cfa6169e43c8a15d92f31e4ab8b3518524fe07ac113"
+    },
+    {
+      "path": "public/data/riverwatch/national/1b.json",
+      "bytes": 36313,
+      "sha256": "21bf24a48a042a2320c036119218712683a8cb26298651e5cfc02db1477b42c1"
+    },
+    {
+      "path": "public/data/riverwatch/national/1c.json",
+      "bytes": 36292,
+      "sha256": "987c044ddb34b257cc2f7ea8808982c241e61cdbc4ea4fb8a077848653e39f2b"
+    },
+    {
+      "path": "public/data/riverwatch/national/1d.json",
+      "bytes": 36218,
+      "sha256": "87284783bf92223bd6e5b8dc89782b6329853f4825514da0076114c1db2de224"
+    },
+    {
+      "path": "public/data/riverwatch/national/1e.json",
+      "bytes": 48560,
+      "sha256": "a7d61d929fd0c475214cfc4d5d5f4e3a8c461b8cef41387db76e286957bf6492"
+    },
+    {
+      "path": "public/data/riverwatch/national/1f.json",
+      "bytes": 46623,
+      "sha256": "14cac72206e59cdb30dac68d895345e74ec390890107df46950c9d5610c19030"
+    },
+    {
+      "path": "public/data/riverwatch/national/20.json",
+      "bytes": 28507,
+      "sha256": "3dba4b4a70f7ab84c0a0ebbe1f0f784487f4d93725dfa93409a17ea17ba2f5f7"
+    },
+    {
+      "path": "public/data/riverwatch/national/21.json",
+      "bytes": 27986,
+      "sha256": "3f3f95940569c688c884d7c6c15297835b51b6dec17564be01c529ffc5242eac"
+    },
+    {
+      "path": "public/data/riverwatch/national/22.json",
+      "bytes": 29732,
+      "sha256": "ae43d5cf4214eebd95b0caf42e44d576c60ed5293b808f9ec84b107b8a3a9246"
+    },
+    {
+      "path": "public/data/riverwatch/national/23.json",
+      "bytes": 32748,
+      "sha256": "b13eb148704947cfbdfd7198e65fc9519bd3238e15a139b72bd2d82a187ff0ab"
+    },
+    {
+      "path": "public/data/riverwatch/national/24.json",
+      "bytes": 31611,
+      "sha256": "e24b0e32f1509e3f39caabe0463a8d1ab2a0cc96ac47a0cc1363ab7341449b64"
+    },
+    {
+      "path": "public/data/riverwatch/national/25.json",
+      "bytes": 51119,
+      "sha256": "32a5375456a3871fea3bd24137b73f60231bab45ca8d81c12da4a4fb19226f62"
+    },
+    {
+      "path": "public/data/riverwatch/national/26.json",
+      "bytes": 31228,
+      "sha256": "b617d678ee51ff912082e51e5086c07839aa945352b409462962c48f10ef39b2"
+    },
+    {
+      "path": "public/data/riverwatch/national/27.json",
+      "bytes": 38137,
+      "sha256": "e3c31d30c1e432f94bf9bc5c0b84dcea23e6d3b365725a3c2403ea1d941ba6a2"
+    },
+    {
+      "path": "public/data/riverwatch/national/28.json",
+      "bytes": 45015,
+      "sha256": "94de567eae8beeec1185c11a9025bac642bc22cfe889a48feedfc3c100b7b356"
+    },
+    {
+      "path": "public/data/riverwatch/national/29.json",
+      "bytes": 27264,
+      "sha256": "df44f623534e6418d075f97edda72634583cd8f6402846122c556738eab5f775"
+    },
+    {
+      "path": "public/data/riverwatch/national/2a.json",
+      "bytes": 49745,
+      "sha256": "a84e1c8afd5a45faed346e3fab05e2c095d845a500d734c3da9a171d6158d485"
+    },
+    {
+      "path": "public/data/riverwatch/national/2b.json",
+      "bytes": 42293,
+      "sha256": "92e921a911b7f4f700e54b1c6a11a822cac319df841beca8e87108d85c51a81e"
+    },
+    {
+      "path": "public/data/riverwatch/national/2c.json",
+      "bytes": 42254,
+      "sha256": "cbd637cacbd53ecc3f7b48c388e17c3287bf324560cfccd801bf0d109d508f1a"
+    },
+    {
+      "path": "public/data/riverwatch/national/2d.json",
+      "bytes": 36359,
+      "sha256": "aa24d96532980a231ab4aac4f0c0bb4564e04b37873df0e656211b276fe0ce27"
+    },
+    {
+      "path": "public/data/riverwatch/national/2e.json",
+      "bytes": 24571,
+      "sha256": "5923dd7eba43eb83a66aa60f5aaa690ff5ad840639e33869b53bde7b8deaaf6e"
+    },
+    {
+      "path": "public/data/riverwatch/national/2f.json",
+      "bytes": 37564,
+      "sha256": "d2a509b899350e7fc0064fe007eee03ca4fbc12db7f840276cc8387318fa443f"
+    },
+    {
+      "path": "public/data/riverwatch/national/30.json",
+      "bytes": 36153,
+      "sha256": "36fa6535042395240ffd4dba350371261f1e547b22e78db81743f79caadae7d8"
+    },
+    {
+      "path": "public/data/riverwatch/national/31.json",
+      "bytes": 49568,
+      "sha256": "ffe1b20ce01dac2cb95c3edd59a1813996f20d1871e7333257e3af48fa57ad92"
+    },
+    {
+      "path": "public/data/riverwatch/national/32.json",
+      "bytes": 50985,
+      "sha256": "7172d94961f1d01933befb775118562ff7f5307dc604180bf85e7cc09b1ccd71"
+    },
+    {
+      "path": "public/data/riverwatch/national/33.json",
+      "bytes": 33893,
+      "sha256": "694270469ea832ceb2816d4b2e5dcbdd107b7ac3d5ddc5f575c864ec0d5835ef"
+    },
+    {
+      "path": "public/data/riverwatch/national/34.json",
+      "bytes": 29922,
+      "sha256": "fe5517562b57a362fe13d23ea6a80b8f39f14f451ccf44773a476c78cd954b73"
+    },
+    {
+      "path": "public/data/riverwatch/national/35.json",
+      "bytes": 45450,
+      "sha256": "35011b7253b3456dedcbcf9e2dd76f3413d1c2b306bc920270346df1d6c9e3db"
+    },
+    {
+      "path": "public/data/riverwatch/national/36.json",
+      "bytes": 35459,
+      "sha256": "5e9bb40fd12f27e98d6083a59850b353c1801185c5123220d711f31362e2c47c"
+    },
+    {
+      "path": "public/data/riverwatch/national/37.json",
+      "bytes": 47114,
+      "sha256": "5a2d234ab53a35920d334c2cf7d7398e08f1a7d9ab10f829d8def3c42fb99548"
+    },
+    {
+      "path": "public/data/riverwatch/national/38.json",
+      "bytes": 39355,
+      "sha256": "b0e2033e419f761f5440d814ae4bfd8617b4e3f19084e5c5804196f84725a7c8"
+    },
+    {
+      "path": "public/data/riverwatch/national/39.json",
+      "bytes": 41430,
+      "sha256": "c24539479850c22892825b4fea2ce7a47dde25692a0b345cee26f18fbed916b2"
+    },
+    {
+      "path": "public/data/riverwatch/national/3a.json",
+      "bytes": 15002,
+      "sha256": "f9666474345e04b9c51d149db32ae99da6aaf312e118142296de6842bcf13047"
+    },
+    {
+      "path": "public/data/riverwatch/national/3b.json",
+      "bytes": 41715,
+      "sha256": "edc462283d377f9be067cc1785ef42ca6ee40be699bf3f7d7abe38d2d1635905"
+    },
+    {
+      "path": "public/data/riverwatch/national/3c.json",
+      "bytes": 39863,
+      "sha256": "b6bb5aa57950103af0e55c5168959f23ce0186d91db607b52b6adb40c7e67023"
+    },
+    {
+      "path": "public/data/riverwatch/national/3d.json",
+      "bytes": 37786,
+      "sha256": "fb36196596c622daa4f1253d03dbd24a20bb5426cbb868b61a344714f4e22a06"
+    },
+    {
+      "path": "public/data/riverwatch/national/3e.json",
+      "bytes": 39346,
+      "sha256": "ea204226fc68d2aac2fd80aa3546d0f3a9ac905fae04c05f44bc54610a34faea"
+    },
+    {
+      "path": "public/data/riverwatch/national/3f.json",
+      "bytes": 35462,
+      "sha256": "7667f476c7abf7c5e895cd66324e097d1dc8300fc091476422ecfa13d1dce5cd"
+    },
+    {
+      "path": "public/data/riverwatch/national/40.json",
+      "bytes": 34643,
+      "sha256": "e5d2be9a272175948c2d5718e99485d6273eaf0a3ae96929843b2d750cd3bfc9"
+    },
+    {
+      "path": "public/data/riverwatch/national/41.json",
+      "bytes": 27780,
+      "sha256": "9af17e7974a76c9af06aecea3c5524f4c343957161b003f57ecc0c1c4c560d9d"
+    },
+    {
+      "path": "public/data/riverwatch/national/42.json",
+      "bytes": 30189,
+      "sha256": "f13303637d2c17aa32eb70abc4dfee516ee26f5fff8c3391f7177dd98043203c"
+    },
+    {
+      "path": "public/data/riverwatch/national/43.json",
+      "bytes": 43222,
+      "sha256": "8ebe02b841c4f4c4fe5edd6fc79dc41b780c534777c4181b7aec7897805ce7a1"
+    },
+    {
+      "path": "public/data/riverwatch/national/44.json",
+      "bytes": 51434,
+      "sha256": "5162fcaae9e8d249decbd9fc182e58553ad5ebf69d5090d370a2a78252462cdf"
+    },
+    {
+      "path": "public/data/riverwatch/national/45.json",
+      "bytes": 25268,
+      "sha256": "47745b568150614bee337c1b4be229096218f1f5d9de18ae98eb290849050501"
+    },
+    {
+      "path": "public/data/riverwatch/national/46.json",
+      "bytes": 39232,
+      "sha256": "2915b16b589912970501e639bf4d3d41eac45668683ef2f16e6b31a823541e8c"
+    },
+    {
+      "path": "public/data/riverwatch/national/47.json",
+      "bytes": 41808,
+      "sha256": "87af65f6ec1d0cc3a69651bcd3a7338dffa72fa9178369b9a4be4d23c2cde3ff"
+    },
+    {
+      "path": "public/data/riverwatch/national/48.json",
+      "bytes": 39239,
+      "sha256": "0c33cb95d5a2d7cc74626c79fa4addda9c6f35c8e212520da42b828521f40909"
+    },
+    {
+      "path": "public/data/riverwatch/national/49.json",
+      "bytes": 37666,
+      "sha256": "d3c1a3aa78598eed4be52a34b61a7dfb5788654d48fe065fb0776b5cc6b939c8"
+    },
+    {
+      "path": "public/data/riverwatch/national/4a.json",
+      "bytes": 34182,
+      "sha256": "ebc8a18904f4b179889a6e7569e89904fa4e6753b10c78de41890211426c306e"
+    },
+    {
+      "path": "public/data/riverwatch/national/4b.json",
+      "bytes": 36097,
+      "sha256": "699e5e3b557ec6bca7e2a35c5010a70e8a65d33a1a12c64f763bf0d1c1a908a4"
+    },
+    {
+      "path": "public/data/riverwatch/national/4c.json",
+      "bytes": 70784,
+      "sha256": "e5682eb8213b2bad5fe76df2ac6880f56a0c346bd7f72ef73e79d8f615a2c027"
+    },
+    {
+      "path": "public/data/riverwatch/national/4d.json",
+      "bytes": 33868,
+      "sha256": "e09d9981006486969378de0672198645815ec7663c0fb2de2c271689b1b0cf0a"
+    },
+    {
+      "path": "public/data/riverwatch/national/4e.json",
+      "bytes": 45128,
+      "sha256": "e83c0309f9a744ae7cbc126df8c6abea9bb75c455c85fbf4dc4dfb716dda2209"
+    },
+    {
+      "path": "public/data/riverwatch/national/4f.json",
+      "bytes": 41539,
+      "sha256": "66319b95b4494b331905f227891cd86731e6c01e8fe4b4463b2e03553e97d54f"
+    },
+    {
+      "path": "public/data/riverwatch/national/50.json",
+      "bytes": 40691,
+      "sha256": "a2b3999bf5593d5c98bcddc6527d48dcf1bd76a0a61dbd38b5073cf19733082c"
+    },
+    {
+      "path": "public/data/riverwatch/national/51.json",
+      "bytes": 35062,
+      "sha256": "011712c65805a269b1a039f55928a7556d23dbbbc76e089948727cf0849c8fc1"
+    },
+    {
+      "path": "public/data/riverwatch/national/52.json",
+      "bytes": 34910,
+      "sha256": "b6c95f5f516bafa89e447f63ca240c603c63ad108b35837ee71cb5f61f7fc45c"
+    },
+    {
+      "path": "public/data/riverwatch/national/53.json",
+      "bytes": 45204,
+      "sha256": "c6b1ccd33e0f6244fd8ccbdfef2265fdc68886f4ff17321f8ab94c81cd04c142"
+    },
+    {
+      "path": "public/data/riverwatch/national/54.json",
+      "bytes": 38595,
+      "sha256": "edd6b39fdf925a0de84c5600292ae5ed95cfe4cd5de1839415940b3d7a9ad963"
+    },
+    {
+      "path": "public/data/riverwatch/national/55.json",
+      "bytes": 40879,
+      "sha256": "df0e63dbbd93bf48e6b6f0c1e0fdc88320373ba127686efddcd8894564b4a333"
+    },
+    {
+      "path": "public/data/riverwatch/national/56.json",
+      "bytes": 18759,
+      "sha256": "050715d6e2e1472f6f1bcab3e1a1b74666a88819702d1fee6eb689e519d67a89"
+    },
+    {
+      "path": "public/data/riverwatch/national/57.json",
+      "bytes": 49090,
+      "sha256": "f8dc4d82740f8f4b3d56a24a50d1022921e102eca2a4564ba62f334b325a5124"
+    },
+    {
+      "path": "public/data/riverwatch/national/58.json",
+      "bytes": 34620,
+      "sha256": "adf38d4e9e5f784a4772345b049fe32aac22a0d42309fc78ead5729298399217"
+    },
+    {
+      "path": "public/data/riverwatch/national/59.json",
+      "bytes": 49046,
+      "sha256": "3e211e5edd5e22260f81da79a06a05203e0fd6f516b4d170beff80f68cdd4608"
+    },
+    {
+      "path": "public/data/riverwatch/national/5a.json",
+      "bytes": 39416,
+      "sha256": "f947167722b6291574e2023b0ff168a4bef4babb24a6a22efa7fa21274ca01b2"
+    },
+    {
+      "path": "public/data/riverwatch/national/5b.json",
+      "bytes": 42043,
+      "sha256": "e61d88ec98aeefef2cb8f6b24d7179acc1eee45bfdf63478240c8e0c2d8f75ef"
+    },
+    {
+      "path": "public/data/riverwatch/national/5c.json",
+      "bytes": 45714,
+      "sha256": "73049fd323a85729f04f5dc919d3d2ee4e479a26925af589a9f482b9cb08068b"
+    },
+    {
+      "path": "public/data/riverwatch/national/5d.json",
+      "bytes": 44823,
+      "sha256": "0427479859b05170950387e19aa40576fec36bf41ae4b0471bae3ec4724962a4"
+    },
+    {
+      "path": "public/data/riverwatch/national/5e.json",
+      "bytes": 47314,
+      "sha256": "225a429ae45517e4ed66fb17c43ef1d646decaa6e09b57d571b09768f9876621"
+    },
+    {
+      "path": "public/data/riverwatch/national/5f.json",
+      "bytes": 32837,
+      "sha256": "c509aef1c384bd50e96415510833c08f1cc8a3af41d88d9a0f02fb4d3502f3b3"
+    },
+    {
+      "path": "public/data/riverwatch/national/60.json",
+      "bytes": 37955,
+      "sha256": "33d11070a9191faeb585f497a69e376ea628f5c49db8e3f3a2c4c367776c37c6"
+    },
+    {
+      "path": "public/data/riverwatch/national/61.json",
+      "bytes": 37750,
+      "sha256": "9b3f2837a39c207efd036cf38c4de98250962ad561bdb3cb6b65c7e24dda4d74"
+    },
+    {
+      "path": "public/data/riverwatch/national/62.json",
+      "bytes": 58556,
+      "sha256": "68572b747c5d844fd382642dc2024a8c8e248b76a6aa6776bfcf4ca776cf4c4c"
+    },
+    {
+      "path": "public/data/riverwatch/national/63.json",
+      "bytes": 35244,
+      "sha256": "1c9e643f2d72cbae611690697b96c22de318c5bd5255628c10514cb37748b390"
+    },
+    {
+      "path": "public/data/riverwatch/national/64.json",
+      "bytes": 35926,
+      "sha256": "eeed4baad3f64c5e8001bbcfd167adc09488d2b6efaf863116ddc08a103e954b"
+    },
+    {
+      "path": "public/data/riverwatch/national/65.json",
+      "bytes": 46056,
+      "sha256": "5fd245b553aaad2e358cb2f81ee49fb3ea5dcfa0e4a01aea8359e6e76ade9dd0"
+    },
+    {
+      "path": "public/data/riverwatch/national/66.json",
+      "bytes": 31174,
+      "sha256": "84b1453624e55c5ee669565bbae2e7fc2e93208b6c9ffd40535224db4af371ce"
+    },
+    {
+      "path": "public/data/riverwatch/national/67.json",
+      "bytes": 37368,
+      "sha256": "7bbdfd0429350bfb1d5730a174d024c566926fb8b435ddbf71ff8922d4ceda91"
+    },
+    {
+      "path": "public/data/riverwatch/national/68.json",
+      "bytes": 28756,
+      "sha256": "9e08962b0747edcc892b2cb740014aea684683c60992ead139f1aa4be51af5db"
+    },
+    {
+      "path": "public/data/riverwatch/national/69.json",
+      "bytes": 43475,
+      "sha256": "7befb1f84d09f21c53e47b9f825f57656c9136a4b66962f4052f24df25c96f79"
+    },
+    {
+      "path": "public/data/riverwatch/national/6a.json",
+      "bytes": 50330,
+      "sha256": "9a74b3a2cb0c5a90f8604975f6e7b5edb670ff0a2498581c045333e86b5a1b9f"
+    },
+    {
+      "path": "public/data/riverwatch/national/6b.json",
+      "bytes": 34687,
+      "sha256": "4b9a88795266406648ddc3d7f4705a83584d4a94bdf21f7f500e0dd55cf14a9b"
+    },
+    {
+      "path": "public/data/riverwatch/national/6c.json",
+      "bytes": 47414,
+      "sha256": "51c28a54199275caac1cf8926e13fe65e8340368e3e24e6477e559582011e9b9"
+    },
+    {
+      "path": "public/data/riverwatch/national/6d.json",
+      "bytes": 37399,
+      "sha256": "c2799a2a64464042f35d6871d3343b0ca8b318c02b376ccc0ba054eddf3aedd3"
+    },
+    {
+      "path": "public/data/riverwatch/national/6e.json",
+      "bytes": 26991,
+      "sha256": "437cbcb8f2145456e5871cbe8ea8207d5a80058b2abcdcc1053e184ccac10c2f"
+    },
+    {
+      "path": "public/data/riverwatch/national/6f.json",
+      "bytes": 36271,
+      "sha256": "777ac7b3ead9e70253b7b109813fb03d1a16077d86a101001038f8596ed64eda"
+    },
+    {
+      "path": "public/data/riverwatch/national/70.json",
+      "bytes": 21645,
+      "sha256": "80ae94d1d308660dbecf8bab5889ee58f79aa96a94507d6888a164d4ff78a6b2"
+    },
+    {
+      "path": "public/data/riverwatch/national/71.json",
+      "bytes": 49683,
+      "sha256": "3141031182b8e9d0eec619a8066474aa71512d31626cf896776810537352d9f2"
+    },
+    {
+      "path": "public/data/riverwatch/national/72.json",
+      "bytes": 31529,
+      "sha256": "3030fa6e378ddeba254405b896dc06be5a9dd28599777e9acafd8b2f46f24370"
+    },
+    {
+      "path": "public/data/riverwatch/national/73.json",
+      "bytes": 24696,
+      "sha256": "2710c9e30ea2e5ed79d9b4e0f4c45b06548305f4fb016b42ee71f1db2ad4fa0f"
+    },
+    {
+      "path": "public/data/riverwatch/national/74.json",
+      "bytes": 60255,
+      "sha256": "62fe2461b793d992aa35e3c9c065dd03063b21f3e77100219b612a77ab98229e"
+    },
+    {
+      "path": "public/data/riverwatch/national/75.json",
+      "bytes": 40370,
+      "sha256": "7214673028219066a6b5a3a21ccb9ef1b8be4da76ce416e941f3423e1bad7680"
+    },
+    {
+      "path": "public/data/riverwatch/national/76.json",
+      "bytes": 51177,
+      "sha256": "e729b49ea44a99af6bd1d63db2578020753ce9ea61882633df32882cfa1143cb"
+    },
+    {
+      "path": "public/data/riverwatch/national/77.json",
+      "bytes": 56396,
+      "sha256": "c301c951959c813c7dccab842ae27d620dd8404e58ae47bb9f9bbe3beb4de2d6"
+    },
+    {
+      "path": "public/data/riverwatch/national/78.json",
+      "bytes": 44481,
+      "sha256": "1c4a082439cc7106d00a1c804c754b257a273249358bd62f4fe9add9646e85d3"
+    },
+    {
+      "path": "public/data/riverwatch/national/79.json",
+      "bytes": 51686,
+      "sha256": "c50316ad5edc68886019afa55293c2d869856ee4228cfcddc46685464385369a"
+    },
+    {
+      "path": "public/data/riverwatch/national/7a.json",
+      "bytes": 39684,
+      "sha256": "c7632ceb47e64389656dd42c6cfb1d487dee4fee44a74ba20d01d5a31bdbc9d0"
+    },
+    {
+      "path": "public/data/riverwatch/national/7b.json",
+      "bytes": 41659,
+      "sha256": "92393fefe501967f7cb25788987d52de7c88f9214ee9ff37522d2aa1c2fb128c"
+    },
+    {
+      "path": "public/data/riverwatch/national/7c.json",
+      "bytes": 28536,
+      "sha256": "18f3d2a7b78bb2cdb71974b8c0584eff43c2e4df6028449c87eafb0a00692dc9"
+    },
+    {
+      "path": "public/data/riverwatch/national/7d.json",
+      "bytes": 52201,
+      "sha256": "ea670e4ac255c824b0a83a6d6306730125e941d2089ca966eee071b639320444"
+    },
+    {
+      "path": "public/data/riverwatch/national/7e.json",
+      "bytes": 37509,
+      "sha256": "763252996a5df555fbc38ddcb24ac43f5975a6dbe8d1e61dbd3e358fde2a326b"
+    },
+    {
+      "path": "public/data/riverwatch/national/7f.json",
+      "bytes": 29211,
+      "sha256": "5f2073d358d232df8be9b6d36e5ecb4d0be6d8e4f60f0577cf3f509d46d6b141"
+    },
+    {
+      "path": "public/data/riverwatch/national/80.json",
+      "bytes": 15601,
+      "sha256": "ddebe7e651e7bc0ab1224cbec0592cc7a7467c1f8229a23941f7698dceb3204f"
+    },
+    {
+      "path": "public/data/riverwatch/national/81.json",
+      "bytes": 35909,
+      "sha256": "e28810ae71c11fd12e00f65b53d2f8edf07c74cc6d8517a85fd1f1eb8c1e361a"
+    },
+    {
+      "path": "public/data/riverwatch/national/82.json",
+      "bytes": 56366,
+      "sha256": "ad0648b335e9e8971b56a531b21a8ef29c6067156dd6ef0fa4b783ce5e8db07e"
+    },
+    {
+      "path": "public/data/riverwatch/national/83.json",
+      "bytes": 40495,
+      "sha256": "3c3e07821307eba58087d181bfa87c2aceb62af4242109d3e051270e3fba2be4"
+    },
+    {
+      "path": "public/data/riverwatch/national/84.json",
+      "bytes": 26982,
+      "sha256": "84a561bffad66724efb8d56618dccd20069b91f1e8b220884a9a952faab40611"
+    },
+    {
+      "path": "public/data/riverwatch/national/85.json",
+      "bytes": 44538,
+      "sha256": "c484768dc9b54682a17bbad379367cf7137702723a2dd4dae47bffc7282b9913"
+    },
+    {
+      "path": "public/data/riverwatch/national/86.json",
+      "bytes": 40438,
+      "sha256": "3b6bd309ac9537181ed9b8f7e077b5348e4ae01e7086bc4a2057fd854f77b163"
+    },
+    {
+      "path": "public/data/riverwatch/national/87.json",
+      "bytes": 41209,
+      "sha256": "7e26de819d5e6d9473460da93551dbcf01363118b37e1ad508d3ff99414c1770"
+    },
+    {
+      "path": "public/data/riverwatch/national/88.json",
+      "bytes": 35039,
+      "sha256": "bfdd22f4c68654eee417417998854139cf6718cbd256e5261a1c34ccfcf9d4ee"
+    },
+    {
+      "path": "public/data/riverwatch/national/89.json",
+      "bytes": 49403,
+      "sha256": "7b1b88b4988b2604d1fdebeb0c54f1da88ec0bd9dd08740c7b1ac8a5f20ea76f"
+    },
+    {
+      "path": "public/data/riverwatch/national/8a.json",
+      "bytes": 41460,
+      "sha256": "273413bf28fd92e1ce8e6be93f9c6bd5445281fca60592746d9b8b0b74635942"
+    },
+    {
+      "path": "public/data/riverwatch/national/8b.json",
+      "bytes": 36833,
+      "sha256": "7567ffb1ab4d54434e0e6fa39c64ce63b9f936c01d66f8d93108b7c287641892"
+    },
+    {
+      "path": "public/data/riverwatch/national/8c.json",
+      "bytes": 22801,
+      "sha256": "2098741d8f9e555b00194754b7ca0294785b1fcbba4d2188589e5c25311aad4b"
+    },
+    {
+      "path": "public/data/riverwatch/national/8d.json",
+      "bytes": 21242,
+      "sha256": "0271292c1647247a46716655f90eb003dcede80b8385dfabb7e700c2ee189e73"
+    },
+    {
+      "path": "public/data/riverwatch/national/8e.json",
+      "bytes": 54105,
+      "sha256": "7b61274b102ddb674dcf0c7c16a52aa90a4143e5a354f0413a05a8ccb5babd7f"
+    },
+    {
+      "path": "public/data/riverwatch/national/8f.json",
+      "bytes": 47686,
+      "sha256": "74c805dad1ddaf50121747642daacf191df21c08005136a51e8672a59c644143"
+    },
+    {
+      "path": "public/data/riverwatch/national/90.json",
+      "bytes": 35249,
+      "sha256": "6062ef70eab3e0103bbc100061da18f0fa21c0629706f196bbc96eb3e772f1a8"
+    },
+    {
+      "path": "public/data/riverwatch/national/91.json",
+      "bytes": 54133,
+      "sha256": "bc67cd92cd1ac089191c32aea3a2e56298732ee52e61407da0d8bc87d87d3e38"
+    },
+    {
+      "path": "public/data/riverwatch/national/92.json",
+      "bytes": 45354,
+      "sha256": "eeae54a73d6d1fa4ec022032cd3a25986dc26a3798e758df8ff1dc09109bc8e6"
+    },
+    {
+      "path": "public/data/riverwatch/national/93.json",
+      "bytes": 34713,
+      "sha256": "10a3b986ec8b10ce4eccda62c03ff7d103296834dc0e24a8428cca3e2a4f3770"
+    },
+    {
+      "path": "public/data/riverwatch/national/94.json",
+      "bytes": 43086,
+      "sha256": "121be407eaab0c7c3355d0a558e8f35631ee3cd00a0c90f21b7378cce574af4a"
+    },
+    {
+      "path": "public/data/riverwatch/national/95.json",
+      "bytes": 46414,
+      "sha256": "7250e53480e135a6788ede22c43a367bfc18c559e8cedf98fc040fda92845a21"
+    },
+    {
+      "path": "public/data/riverwatch/national/96.json",
+      "bytes": 32652,
+      "sha256": "880fdc4c6c3007c919951179888a4c431acdd7a72c1958c317b341340bf76cca"
+    },
+    {
+      "path": "public/data/riverwatch/national/97.json",
+      "bytes": 31660,
+      "sha256": "87feb09878ded0e4782f12aa65cc324844e4f47855dee462e5e8a02e47657815"
+    },
+    {
+      "path": "public/data/riverwatch/national/98.json",
+      "bytes": 31231,
+      "sha256": "69e9720b3116164743108d4692ec69178b3131c0e9ddef84b9e0b03223c9a528"
+    },
+    {
+      "path": "public/data/riverwatch/national/99.json",
+      "bytes": 54281,
+      "sha256": "49e0f61b16303b66c2522474b9925aa4c78e3f74ec1786d330a954e47fa09e3b"
+    },
+    {
+      "path": "public/data/riverwatch/national/9a.json",
+      "bytes": 38983,
+      "sha256": "fe0552bb6ec8564632fd1313769c9c5308dde299da65f1761ca23d682d8960cd"
+    },
+    {
+      "path": "public/data/riverwatch/national/9b.json",
+      "bytes": 34371,
+      "sha256": "a1792cfc69b0f86b8fc41898c2214669ed03f7370cb8a001be51825879898237"
+    },
+    {
+      "path": "public/data/riverwatch/national/9c.json",
+      "bytes": 28441,
+      "sha256": "2a5dc3370ce5919c601aa7af542cb8dae336c3fe1c492bea042e2629e96958a9"
+    },
+    {
+      "path": "public/data/riverwatch/national/9d.json",
+      "bytes": 27239,
+      "sha256": "5576eae88b8d30e7b82ddabea67e7b14635140b9d749c2ba3d26966569cf679d"
+    },
+    {
+      "path": "public/data/riverwatch/national/9e.json",
+      "bytes": 32318,
+      "sha256": "6d3ff77ab8ac288b36606ec407607db8bff849ad6b12db6c3d0fa15ebfbd7b66"
+    },
+    {
+      "path": "public/data/riverwatch/national/9f.json",
+      "bytes": 53628,
+      "sha256": "800c6a35d80eb5998c2aa1816d957f3afad76b86fd5bb6f55516b1e27acbe67a"
+    },
+    {
+      "path": "public/data/riverwatch/national/a0.json",
+      "bytes": 33691,
+      "sha256": "6737215a5f00b6afe0562ce6534e1f9780115687981f8fd058686a3ecd75f971"
+    },
+    {
+      "path": "public/data/riverwatch/national/a1.json",
+      "bytes": 44047,
+      "sha256": "535ab5d9df25f77aed2dbbdaa68d9cd5e3183f963a04f4cdd46402c8f3be2c07"
+    },
+    {
+      "path": "public/data/riverwatch/national/a2.json",
+      "bytes": 37132,
+      "sha256": "ab356bffd089412044a5631b44dbba24931e8b270e3d6ab21cf455d74785e1f7"
+    },
+    {
+      "path": "public/data/riverwatch/national/a3.json",
+      "bytes": 45291,
+      "sha256": "0fce9fbe05eed7617abe7b75437af38dbc86e2b8c198ed3b7c7b4ef5a85a16cf"
+    },
+    {
+      "path": "public/data/riverwatch/national/a4.json",
+      "bytes": 28132,
+      "sha256": "ee965a9d155eabab4eba5b0ed44a5a3566bcac60fd81a70b5b1d0358d5267b0d"
+    },
+    {
+      "path": "public/data/riverwatch/national/a5.json",
+      "bytes": 30391,
+      "sha256": "92a66b855f402c9f85060155a502a728664c11ecad80d92bc5fe9affce692cf5"
+    },
+    {
+      "path": "public/data/riverwatch/national/a6.json",
+      "bytes": 42427,
+      "sha256": "9aab7efee0f1174dfb98d6a1f9da99927c7b84ff17b94f93b60a58aeba87eee0"
+    },
+    {
+      "path": "public/data/riverwatch/national/a7.json",
+      "bytes": 38313,
+      "sha256": "7bb2f7a02ccd26ff8aced67a8bf04b1e075f97e38bf4135e606b9f5acf6626b1"
+    },
+    {
+      "path": "public/data/riverwatch/national/a8.json",
+      "bytes": 24768,
+      "sha256": "b28133b768ae7319e4e60d1e73209517223a8baacfe73390811bfcb3682df709"
+    },
+    {
+      "path": "public/data/riverwatch/national/a9.json",
+      "bytes": 22757,
+      "sha256": "c157d308fba379f89bfe60d3e590be8e988ac73545dedf2e60f68bdeb4c5e580"
+    },
+    {
+      "path": "public/data/riverwatch/national/aa.json",
+      "bytes": 57488,
+      "sha256": "522fb98dce3c6254b50fcda0f69e5a696c9ed7fbebe090cf98ce8e957510b6a0"
+    },
+    {
+      "path": "public/data/riverwatch/national/ab.json",
+      "bytes": 43184,
+      "sha256": "94424126679a28975e8496a574dafd8bac6f8cb3a3fa1a23a7673d7f4ef92abe"
+    },
+    {
+      "path": "public/data/riverwatch/national/ac.json",
+      "bytes": 30307,
+      "sha256": "e2e68b484c9d5658bb9e34104583f7c9670f85cbc5fb86d14382d1884a9bded7"
+    },
+    {
+      "path": "public/data/riverwatch/national/ad.json",
+      "bytes": 37868,
+      "sha256": "069d14e1591ee324b0fdbd90be407c2f72e3ec17d5bd5ac064ebb8a47667a2d2"
+    },
+    {
+      "path": "public/data/riverwatch/national/ae.json",
+      "bytes": 63479,
+      "sha256": "21fc4c4ee2cf3fb9aeae36ec2b9a212c68547ae0b0f3e498d1467a66bec7936f"
+    },
+    {
+      "path": "public/data/riverwatch/national/af.json",
+      "bytes": 33851,
+      "sha256": "8298c2ffb8bea7f8a678f8e55f36c2e96fabfa2dfcb1851d5bb1d550bbdcd878"
+    },
+    {
+      "path": "public/data/riverwatch/national/b0.json",
+      "bytes": 40537,
+      "sha256": "dccdac3c0cfc3d691b06c6ccf5b2a7f8ee79793973f5d15a7b2e3ee27fc16c7c"
+    },
+    {
+      "path": "public/data/riverwatch/national/b1.json",
+      "bytes": 43588,
+      "sha256": "9f64c8f080a765b01abf5e45fe1f46290d4b36588bb71fdddc100b1085f56b95"
+    },
+    {
+      "path": "public/data/riverwatch/national/b2.json",
+      "bytes": 34272,
+      "sha256": "d6071ab7cdd672380c29745ddd2d0ebe9c6048da769e6233ce1759fb3c81e1a8"
+    },
+    {
+      "path": "public/data/riverwatch/national/b3.json",
+      "bytes": 30534,
+      "sha256": "901a6ac559a48b1403350c94116943fd5bfbc4098b1a2aaa38a1850a9b18cbfb"
+    },
+    {
+      "path": "public/data/riverwatch/national/b4.json",
+      "bytes": 60689,
+      "sha256": "9beacbb3bd96cdcc7d4295b4b23eec58b1e752b0b02e3355dd34a755832a205c"
+    },
+    {
+      "path": "public/data/riverwatch/national/b5.json",
+      "bytes": 40308,
+      "sha256": "030a062c728fa232766dc7ded6790709f3bedd3d89fcebc5c5e33190990dc97f"
+    },
+    {
+      "path": "public/data/riverwatch/national/b6.json",
+      "bytes": 44550,
+      "sha256": "46974ad8a4945873f8d9e9ad7dd6ce8482552d4ac0907a12c89868f1d52629af"
+    },
+    {
+      "path": "public/data/riverwatch/national/b7.json",
+      "bytes": 31007,
+      "sha256": "e212fd68c185ee5513f6ffe9281883257705e897a2a92763d6c6ba7f02772498"
+    },
+    {
+      "path": "public/data/riverwatch/national/b8.json",
+      "bytes": 28779,
+      "sha256": "2b854f43e0784d2581390d1cfd58c9f804adee665ee21fd8bee93e91edd8a20a"
+    },
+    {
+      "path": "public/data/riverwatch/national/b9.json",
+      "bytes": 39226,
+      "sha256": "155e35054862633c0e8d627cdc6e3371b6f0c990e1de8d62768df6f6588b527d"
+    },
+    {
+      "path": "public/data/riverwatch/national/ba.json",
+      "bytes": 37352,
+      "sha256": "e39ca0f68db59e96f329741de0575d3b9d991e088719327e3fd2ebf61950d911"
+    },
+    {
+      "path": "public/data/riverwatch/national/bb.json",
+      "bytes": 33048,
+      "sha256": "b24ae55fc68b36c7b943bd883282fe6fbeaf21371f9ee2b178a35723f40bb8e6"
+    },
+    {
+      "path": "public/data/riverwatch/national/bc.json",
+      "bytes": 36966,
+      "sha256": "5a64401f12708d9e75c8bc64949a367c523167bbba45ad0e726b8c3e4deb262e"
+    },
+    {
+      "path": "public/data/riverwatch/national/bd.json",
+      "bytes": 25307,
+      "sha256": "c05c84310850e6e5216f7726c4a4e646ab21233ac6a60c3ec4f3a86bcc558bf7"
+    },
+    {
+      "path": "public/data/riverwatch/national/be.json",
+      "bytes": 54595,
+      "sha256": "f9cbbf86877df3660392ad1b6d4f3538143db7fa908279c3312b9137770ac0d1"
+    },
+    {
+      "path": "public/data/riverwatch/national/bf.json",
+      "bytes": 41539,
+      "sha256": "b9dca53f703900eff9171275991c7e9891484febfb6484c01f374397252e2812"
+    },
+    {
+      "path": "public/data/riverwatch/national/c0.json",
+      "bytes": 43094,
+      "sha256": "29e96e055ba28aa468b2264937c62ccc6a3c0f6e6f6ca879a58f1e8913dec051"
+    },
+    {
+      "path": "public/data/riverwatch/national/c1.json",
+      "bytes": 57615,
+      "sha256": "e484425c4d08283581828373e79801dd84544bb77c1fcc49199e7a375d72b04b"
+    },
+    {
+      "path": "public/data/riverwatch/national/c2.json",
+      "bytes": 22487,
+      "sha256": "6cd06dcb72606a652394b7149307ee88890e91743aed02d38e197a0e87a1dda6"
+    },
+    {
+      "path": "public/data/riverwatch/national/c3.json",
+      "bytes": 34662,
+      "sha256": "ef74503dd272bb8eb66763d0ed374d33e034dde1d3fcbab65853293d21d5e608"
+    },
+    {
+      "path": "public/data/riverwatch/national/c4.json",
+      "bytes": 59974,
+      "sha256": "d41f209b4d60b9132736de650c5f130ca9a0f63520d37db20fc63de05a3bed98"
+    },
+    {
+      "path": "public/data/riverwatch/national/c5.json",
+      "bytes": 38667,
+      "sha256": "17dd2d7a833850e07c95a6ff55aa17b55eb6dca15679c88d6d14737cff553764"
+    },
+    {
+      "path": "public/data/riverwatch/national/c6.json",
+      "bytes": 32346,
+      "sha256": "53aab3e304cf2de8cc5991bfd51fe951cfc719ffd7d7b2cdde7c6482101c888f"
+    },
+    {
+      "path": "public/data/riverwatch/national/c7.json",
+      "bytes": 22371,
+      "sha256": "2e094f08b6e142a604b16595e774b2be36f5a22ec71d37810b0af206d4670473"
+    },
+    {
+      "path": "public/data/riverwatch/national/c8.json",
+      "bytes": 26700,
+      "sha256": "6686174cbb4293cc6829afdca51d80eec03637c3447f38a3916fe132afddbe61"
+    },
+    {
+      "path": "public/data/riverwatch/national/c9.json",
+      "bytes": 49813,
+      "sha256": "fecc9531692bafd7f22da69661bcd372c3556905b1573a4d0a588306fe75a745"
+    },
+    {
+      "path": "public/data/riverwatch/national/ca.json",
+      "bytes": 57770,
+      "sha256": "866ea397b95c08497cc7ff8b3b95cb889824971002cd29136d44e548457f13a6"
+    },
+    {
+      "path": "public/data/riverwatch/national/cb.json",
+      "bytes": 39249,
+      "sha256": "786999f06280ebd81873e5919313cf4fd60bb1de8b6f6c1f6575fe34b800dc2f"
+    },
+    {
+      "path": "public/data/riverwatch/national/cc.json",
+      "bytes": 43887,
+      "sha256": "6936d1396faa8b82d0b73bd3b50c47a24e463b9cdee3f1bc9d6474e7257064c6"
+    },
+    {
+      "path": "public/data/riverwatch/national/cd.json",
+      "bytes": 25591,
+      "sha256": "3f9d9ac11d076744cf4e067dd09f1ad69cd8502efb5e508077e01a30cb47e1d4"
+    },
+    {
+      "path": "public/data/riverwatch/national/ce.json",
+      "bytes": 38309,
+      "sha256": "2e51a94be7db7e5dec20af2e90e69e378512f479ffd1e6e25e61f956807948c0"
+    },
+    {
+      "path": "public/data/riverwatch/national/cf.json",
+      "bytes": 47421,
+      "sha256": "cff118b2dc14118a2f37627138c996dae555dc23ac03bc1fabc0c52273940ae0"
+    },
+    {
+      "path": "public/data/riverwatch/national/d0.json",
+      "bytes": 39417,
+      "sha256": "a99215911960d08c2470e5d93acca0f6a55d2e9277f68550642771138a287720"
+    },
+    {
+      "path": "public/data/riverwatch/national/d1.json",
+      "bytes": 41637,
+      "sha256": "1afa6d5942033edb8ce017d3a0b10215d4048ab03149b6c3b9c6dd4e641a6a48"
+    },
+    {
+      "path": "public/data/riverwatch/national/d2.json",
+      "bytes": 48279,
+      "sha256": "4eca87dcba0028c1101843f4e3aa2e7a1acd2fb4fee91047a79f17ee0f164697"
+    },
+    {
+      "path": "public/data/riverwatch/national/d3.json",
+      "bytes": 47108,
+      "sha256": "3d3cc8b78fb7ca7f0f750c4637e9890de06e45cd3073c1b66e9ce5e9686d0fcf"
+    },
+    {
+      "path": "public/data/riverwatch/national/d4.json",
+      "bytes": 33283,
+      "sha256": "5f9a70d37670943faf311a6de1b340fd5ac480f0c38ac0f5a808f5fd686ff8a9"
+    },
+    {
+      "path": "public/data/riverwatch/national/d5.json",
+      "bytes": 41970,
+      "sha256": "2210c511f4ca6de6d83e6536a7374200f0c3297854e8fe6ee285acc576c99b05"
+    },
+    {
+      "path": "public/data/riverwatch/national/d6.json",
+      "bytes": 42227,
+      "sha256": "ad61e3162248582ea74ef99f9f0e9aaf7ff99933563d00e66b2829f87a4b6827"
+    },
+    {
+      "path": "public/data/riverwatch/national/d7.json",
+      "bytes": 34180,
+      "sha256": "8745888e924855067f341a3f18d22ed98d01606d3833675ce90e4a610a232982"
+    },
+    {
+      "path": "public/data/riverwatch/national/d8.json",
+      "bytes": 55576,
+      "sha256": "279e698eded2fd77325c8f9afb11a08ae3b000d4120dbb2e6a1cffd14097ed73"
+    },
+    {
+      "path": "public/data/riverwatch/national/d9.json",
+      "bytes": 37201,
+      "sha256": "634f20a96f12dba2874528b45b14b9f4a0b0979e096990576dc3f07dab83cb0f"
+    },
+    {
+      "path": "public/data/riverwatch/national/da.json",
+      "bytes": 34793,
+      "sha256": "f8c8c240b43f51582e3187a6b19453b4fa8e3b0f4b293eff0552d413745787e0"
+    },
+    {
+      "path": "public/data/riverwatch/national/db.json",
+      "bytes": 42191,
+      "sha256": "810a3f948bac9650fda3c7797fef1a95613fce6e0700414aad9e21ac7098f93f"
+    },
+    {
+      "path": "public/data/riverwatch/national/dc.json",
+      "bytes": 29221,
+      "sha256": "9091f536f1fc7f33fa1dd9e53e3d97cb840143257b86dbb2b353654003f962d0"
+    },
+    {
+      "path": "public/data/riverwatch/national/dd.json",
+      "bytes": 45906,
+      "sha256": "5d6aa9e4696887c53b82c50cba617a6f3fcac9e3200446398814f3f04cdc3c7d"
+    },
+    {
+      "path": "public/data/riverwatch/national/de.json",
+      "bytes": 37250,
+      "sha256": "4fd1c45f7c28ce5cd0593e00c1a86529a625415211e2a05efe2feffc916e50d3"
+    },
+    {
+      "path": "public/data/riverwatch/national/df.json",
+      "bytes": 45473,
+      "sha256": "04bb52d7484ea47bd770f347e8da18f933b5341ef8c1a9233d22ddc7d0196491"
+    },
+    {
+      "path": "public/data/riverwatch/national/e0.json",
+      "bytes": 46842,
+      "sha256": "7229b891bb3ea5c9ad86ebe214f8b7852d96d9073343792b184a11fcf6140faf"
+    },
+    {
+      "path": "public/data/riverwatch/national/e1.json",
+      "bytes": 25748,
+      "sha256": "e4d9ed8a51d8db159d7ceff562f00129a63ba0008bd922d12abfb600be033051"
+    },
+    {
+      "path": "public/data/riverwatch/national/e2.json",
+      "bytes": 40497,
+      "sha256": "9e154e6cd25dfd2fc59eb7cda33a779516144a325117be1fb08374901089f437"
+    },
+    {
+      "path": "public/data/riverwatch/national/e3.json",
+      "bytes": 50330,
+      "sha256": "ceb7102a8e910868cdf66322a1ae04ef12d6b333de3ca1b73822b370afaafdd9"
+    },
+    {
+      "path": "public/data/riverwatch/national/e4.json",
+      "bytes": 40050,
+      "sha256": "4f01c94cbf7fffdd869cdb1b8df4c49f52ae0a96f02027778906bbfef7d0516b"
+    },
+    {
+      "path": "public/data/riverwatch/national/e5.json",
+      "bytes": 35999,
+      "sha256": "0c8d713b8a3b27eccf23f25f6725713ea65fca2f82b78ef00e23d62b784b30e6"
+    },
+    {
+      "path": "public/data/riverwatch/national/e6.json",
+      "bytes": 47483,
+      "sha256": "bf724b972e913c158f9aeb9a61b1886211f3ef351b17e038da4a8c1d24c3ac99"
+    },
+    {
+      "path": "public/data/riverwatch/national/e7.json",
+      "bytes": 18017,
+      "sha256": "0a28f3691cd9e1f293d37071cfe40ba4fe8d25ffb2c29ef0c997e7732d972a9d"
+    },
+    {
+      "path": "public/data/riverwatch/national/e8.json",
+      "bytes": 39172,
+      "sha256": "478f4cf2ee51fbc92e8a5d034c9878c51678ba404bab1cb2396d1f0afcc14f6c"
+    },
+    {
+      "path": "public/data/riverwatch/national/e9.json",
+      "bytes": 49081,
+      "sha256": "fefc460c3f3a3beea2f729622c3cd53d81185b9ad1cf764f25008b2603e7dd03"
+    },
+    {
+      "path": "public/data/riverwatch/national/ea.json",
+      "bytes": 33711,
+      "sha256": "f3b64f645b8f959202b07e093d8db1246c89e1449caba7a40f6d41ed29dde953"
+    },
+    {
+      "path": "public/data/riverwatch/national/eb.json",
+      "bytes": 26418,
+      "sha256": "a064a566fdab0fbd9acb15f787ab441c433bf939cbd94bb31a6a8a17796f855a"
+    },
+    {
+      "path": "public/data/riverwatch/national/ec.json",
+      "bytes": 44867,
+      "sha256": "862cfe229d13d15dd9c45c5edaa1117aaeafd8caa2da721eb4980d1cd96d7058"
+    },
+    {
+      "path": "public/data/riverwatch/national/ed.json",
+      "bytes": 48460,
+      "sha256": "2308195a1ffa033dfeca6c6b572b0757935a36098c1f1ad3ebd12f18e1237ebf"
+    },
+    {
+      "path": "public/data/riverwatch/national/ee.json",
+      "bytes": 47852,
+      "sha256": "5bba662a0dd331da5cb500c6d70950616eebb87889cae67d95a9262e06427ead"
+    },
+    {
+      "path": "public/data/riverwatch/national/ef.json",
+      "bytes": 32584,
+      "sha256": "0985c4651cf1f5ec37831d6049248979b82d47f9f439a6f6fcf3673300b75289"
+    },
+    {
+      "path": "public/data/riverwatch/national/f0.json",
+      "bytes": 36173,
+      "sha256": "f29a0482b46661c7c5fc3e67c12cbef506eb42788c97ca64a1c3b19e455a4517"
+    },
+    {
+      "path": "public/data/riverwatch/national/f1.json",
+      "bytes": 38079,
+      "sha256": "d292490374fed5c0d119bda8456c19efdb205fcd17530e75c029af9e7d1ce0e5"
+    },
+    {
+      "path": "public/data/riverwatch/national/f2.json",
+      "bytes": 52848,
+      "sha256": "b9b861b3335b0a462898482b68b563104c4915d4f7cb64521bb9af75e97f4a54"
+    },
+    {
+      "path": "public/data/riverwatch/national/f3.json",
+      "bytes": 24146,
+      "sha256": "2a0f91911722aaab4699561a1288edb43fa4e9d69a9ac0aaa83b87aba3263fca"
+    },
+    {
+      "path": "public/data/riverwatch/national/f4.json",
+      "bytes": 40444,
+      "sha256": "eb87f24378d3b8e4c6095bdba2cc19a7e86a940a7d2ffe38518e33ca9fd77fa8"
+    },
+    {
+      "path": "public/data/riverwatch/national/f5.json",
+      "bytes": 33646,
+      "sha256": "24164fb986edcdf6f882248a87a1d2c49114fac25cb376e0ed0a1a833c81b9e8"
+    },
+    {
+      "path": "public/data/riverwatch/national/f6.json",
+      "bytes": 40733,
+      "sha256": "c258695c9a70d7b83a3508dce175069a8f1ccb1c452c3738f19492806c8e6615"
+    },
+    {
+      "path": "public/data/riverwatch/national/f7.json",
+      "bytes": 49094,
+      "sha256": "9dffb93bf831af9f8dda08133b125d213ce1ccb07443352329fa8cb8247fa6b2"
+    },
+    {
+      "path": "public/data/riverwatch/national/f8.json",
+      "bytes": 38984,
+      "sha256": "0d0acdc00e4a6adf7699bf97c0936337a1f8c8e39405c2c44850469703d39cec"
+    },
+    {
+      "path": "public/data/riverwatch/national/f9.json",
+      "bytes": 34855,
+      "sha256": "897847c009daa029df9f9ab37b6d83fa87d81478246a308347fdbc8f45d5199b"
+    },
+    {
+      "path": "public/data/riverwatch/national/fa.json",
+      "bytes": 48532,
+      "sha256": "8512f034341b31bb419775a7ef8350fe07ee03973c99e1cfd0890123907a286e"
+    },
+    {
+      "path": "public/data/riverwatch/national/fb.json",
+      "bytes": 59410,
+      "sha256": "b15b7dc763f784b705973a55ba066a2475223611b1488d83ecf8f63981aa7ba6"
+    },
+    {
+      "path": "public/data/riverwatch/national/fc.json",
+      "bytes": 33129,
+      "sha256": "360672298a284fc11eb2e53d2cc93d4068daca0bcedd4c6b474e1a2509c54577"
+    },
+    {
+      "path": "public/data/riverwatch/national/fd.json",
+      "bytes": 55101,
+      "sha256": "da85bb160fab017d26380ece36ef5817ccef985a19ce035c7ec52ce68c2139bf"
+    },
+    {
+      "path": "public/data/riverwatch/national/fe.json",
+      "bytes": 55821,
+      "sha256": "43062a6fb7a156e3c6351b6ba27cacf9c8e494db9038713b113491767f050b20"
+    },
+    {
+      "path": "public/data/riverwatch/national/ff.json",
+      "bytes": 30324,
+      "sha256": "e527f8b98af10e97d354d84b9fa90366767289a421511a9fc40f83c9a059cec2"
+    },
+    {
+      "path": "public/data/riverwatch/waterways-detail.json",
+      "bytes": 1296514,
+      "sha256": "199a287bbaa41442fd51d2cd996a9c6fae5e2ec87b6339887ba82412a9db907a"
+    },
+    {
+      "path": "public/data/source-register.json",
+      "bytes": 20816,
+      "sha256": "4d9a7e4285c5dce373eae29baa725679bb279f867a94b29e7317cd7a8c9fb83f"
+    },
+    {
+      "path": "public/data/streams/dacope.json",
+      "bytes": 2112761,
+      "sha256": "41fcaf675ec49d38539448aa6418f19b6d57be7a14758ca20699cf4b157fb038"
+    },
+    {
+      "path": "public/data/streams/dhaka.json",
+      "bytes": 1816208,
+      "sha256": "c4cc5b330434af2d5d80f217e48c74d0446cf8ec2ec8ca96c0bc4e49076c7f26"
+    },
+    {
+      "path": "public/data/streams/index.json",
+      "bytes": 2346,
+      "sha256": "8607acac7ac5b30788659f0c6c44ee4fe3b8c6028c34ad002d500b0c82039eca"
+    },
+    {
+      "path": "public/data/streams/sylhet.json",
+      "bytes": 430521,
+      "sha256": "d3c4704639916c2069382382082f72354ca98a646c8e597d1f3e3861f72ca1e6"
+    },
+    {
+      "path": "public/data/water-access-candidates.json",
+      "bytes": 3377084,
+      "sha256": "f6625764c9c0ab4e855473ea4b7c96a3f807559323e868c5997ab02423cc291f"
+    },
+    {
+      "path": "public/data/water-evidence.json",
+      "bytes": 1044355,
+      "sha256": "f6e14c93fac76b94a68d172e205d54292b9048b230139317f5eef8de1b658ffe"
+    },
+    {
+      "path": "public/data/water-stations.geojson",
+      "bytes": 897587,
+      "sha256": "448efa00bcfee7a83c56bf2b792f0bdb060aa50b420adb0952a3f00e3be39ac1"
+    },
+    {
+      "path": "public/data/water-validation.json",
+      "bytes": 86367,
+      "sha256": "e408e7ed0415dfd88909463709f38a1d34944299d2285fdec30c9629e6dec721"
+    },
+    {
+      "path": "public/examples/pollution-points-v3.csv",
+      "bytes": 279,
+      "sha256": "a49b3e29a047fe65724abfb3ee448fd65667e4171478db8cf62e5025d34f09f5"
+    },
+    {
+      "path": "public/examples/pollution-points-v3.geojson",
+      "bytes": 1078,
+      "sha256": "a8a5b6b252439cc401956ba8ce70f75691dac1692eb1f9f2666e05529881db8b"
+    },
+    {
+      "path": "public/fonts/OFL.txt",
+      "bytes": 4387,
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    {
+      "path": "public/fonts/SOURCE.txt",
+      "bytes": 231,
+      "sha256": "d50bb31d202829be4ae0df83d3cec15ae6808bfe1fd70c0d5703019b679395a7"
+    },
+    {
+      "path": "public/fonts/manrope-latin.ttf",
+      "bytes": 95688,
+      "sha256": "b8f802f05b322a7345805f5b89f8bb976604cc719a91530918d5ce3c47160950"
+    },
+    {
+      "path": "public/fonts/manrope-latin.woff2",
+      "bytes": 95688,
+      "sha256": "b8f802f05b322a7345805f5b89f8bb976604cc719a91530918d5ce3c47160950"
+    },
+    {
+      "path": "public/harvest/01_Technical_Design_Manual.docx",
+      "bytes": 59736,
+      "sha256": "0da55561b6cffc829221017a59b7f0a5e1508b7b6240b47be64865b56e239c5c"
+    },
+    {
+      "path": "public/harvest/02_Construction_OM_and_Water_Safety_Plan.docx",
+      "bytes": 53521,
+      "sha256": "bb9f3c8de2facc43a07491df317754d25634faa8f111cd3ad2d76bb6b8e49f83"
+    },
+    {
+      "path": "public/harvest/03_Programme_Implementation_and_DRR_Guide.docx",
+      "bytes": 50119,
+      "sha256": "64745988e8077644494e8e32d95498b1da128b5b714d6523a69bc5c60ed9b8d1"
+    },
+    {
+      "path": "public/harvest/BorshaBandhu_Costing_and_Sizing_Model.xlsx",
+      "bytes": 48137,
+      "sha256": "613f58f04c5501a2b30ad08f50c9d01581ac2297c2c107034272c3fc7c84504d"
+    },
+    {
+      "path": "public/harvest/drawings/D-01_system_schematic.svg",
+      "bytes": 17750,
+      "sha256": "fedddc7ed9c55675e2be7ec7b145711a8030cf2cc317ea4d3b9a9f3d72820a83"
+    },
+    {
+      "path": "public/harvest/drawings/D-02_T1_household_tank.svg",
+      "bytes": 32770,
+      "sha256": "36a6fbc35fd0dd07d21429283c5b339cb62a555ea66d9886690ca81b0c3984a1"
+    },
+    {
+      "path": "public/harvest/drawings/D-03_catchment_firstflush_filter.svg",
+      "bytes": 30910,
+      "sha256": "eadee525031f897c0bd963033798ad13012db9cd6b9fd3a507081aa160750ec1"
+    },
+    {
+      "path": "public/harvest/drawings/D-04_T2_cluster_unit.svg",
+      "bytes": 21766,
+      "sha256": "0825c0acd3f64a4fc68ac108ce3cd933884480d867290792a8344030788d198e"
+    },
+    {
+      "path": "public/harvest/drawings/D-05_T3_institutional_unit.svg",
+      "bytes": 26146,
+      "sha256": "71b2729251f393f12c509a24faf7fa81e7454bc2fa5d76e4e409d9e431d989f6"
+    },
+    {
+      "path": "public/harvest/drawings/D-06_zone_adaptations.svg",
+      "bytes": 25105,
+      "sha256": "2fca1577755f8f81ea7560693cdea465aa4f1e836e24e2f75bcd53d04465d416"
+    },
+    {
+      "path": "public/harvest/drawings/D-07_overflow_mar_access.svg",
+      "bytes": 26383,
+      "sha256": "b9581f0ae96885d06f6aa38f114d932c7eefe7980933ab952eaf8f7905df6c66"
+    },
+    {
+      "path": "public/images/bangladesh-river-atlas.webp",
+      "bytes": 39288,
+      "sha256": "fbcaf679dc3e365d3d066982a2782f927bee34c84753d77f92ee7f2ee84b5aac"
+    },
+    {
+      "path": "public/images/dhaka-river-atlas.webp",
+      "bytes": 75034,
+      "sha256": "f0e63c5019345e376af1618f04d34ce3122a56f1a4b56d6f4cae26601235a6d0"
+    },
+    {
+      "path": "public/playbook/WASH-Operations-Playbook.html",
+      "bytes": 48119,
+      "sha256": "054af3ab966e467ae929a114f2a130bd29d29bddeeac0cd27b9e054eaf1a8250"
+    },
+    {
+      "path": "public/playbook/models.js",
+      "bytes": 11484,
+      "sha256": "ee3c2464b83c06ad3e3e9a01270a5dd3b49696baba548f81c7cb216d4084bff6"
+    },
+    {
+      "path": "public/playbook/projects.js",
+      "bytes": 19475,
+      "sha256": "88f72578ecbe89287ac3ca882b38e98b63eb167d8a2666f4bcd28df4078b0be8"
+    },
+    {
+      "path": "public/playbook/styles.css",
+      "bytes": 17795,
+      "sha256": "eb27700aa0f40c53fbe9013976d29dccee033bb275837bda5dde7a30a1de7dd3"
+    },
+    {
+      "path": "public/playbook/wash-field-templates/01-asset-registry.csv",
+      "bytes": 220,
+      "sha256": "d2ac16603cb4c38ecba2009b89510c64417cffd2faebf793d72aa31c286689b0"
+    },
+    {
+      "path": "public/playbook/wash-field-templates/02-route-survey.csv",
+      "bytes": 214,
+      "sha256": "09fafa00aa4d2418e324237a78d1a80527f657f71c27d138fe78fc7a48c66b6e"
+    },
+    {
+      "path": "public/playbook/wash-field-templates/03-zone-demand.csv",
+      "bytes": 292,
+      "sha256": "4ccfc8bdc6d8630d1374bf1020ebb81903670b2419b0d9c51f4e95a20ebbf10b"
+    },
+    {
+      "path": "public/playbook/wash-field-templates/04-school-stock.csv",
+      "bytes": 451,
+      "sha256": "506e5f0f5f166364005d7e4fcf8fa2a82c220dbe9954c31c510407347f751814"
+    },
+    {
+      "path": "public/playbook/wash-field-templates/05-incident-and-repair.csv",
+      "bytes": 359,
+      "sha256": "046ac5e55594951fe8d6316ad26d9faf443bfb12ae968306ac0518486d4ffb2d"
+    },
+    {
+      "path": "public/playbook/wash-field-templates/06-lot-and-movements.csv",
+      "bytes": 273,
+      "sha256": "bd6067634152f3a4a0e3865da3b30020dacc46e7724f47411bb5f780d78fa0b3"
+    },
+    {
+      "path": "public/playbook/wash-field-templates/07-dispatch-and-receipt.csv",
+      "bytes": 348,
+      "sha256": "a4758add6b308c61da30a960f34717520675a445b84d018b5352174d5cf03dc1"
+    },
+    {
+      "path": "public/playbook/wash-field-templates/08-fallback-and-handover.csv",
+      "bytes": 302,
+      "sha256": "dd15598865403533809b39afaa5aadf57a5cfa301e5260501aea3c3924c7a8df"
+    },
+    {
+      "path": "public/playbook/wash-field-templates/09-indicators.csv",
+      "bytes": 256,
+      "sha256": "de5b521ea3cbcd660accb9de224054cd1bea207175b3214aa72fe2fe2dbdc96e"
+    },
+    {
+      "path": "public/playbook/wash-field-templates/10-pickup-sites.csv",
+      "bytes": 273,
+      "sha256": "bb2e49ecf5a77da9a7e580bafd2059b29f730c2bf77200aac79955fea7a03f09"
+    },
+    {
+      "path": "public/playbook/wash-field-templates/11-group-pickup-allocations.csv",
+      "bytes": 299,
+      "sha256": "6b3ec3a51537668305adac9d629319062e036a500297059f42b1efdc235c95f0"
+    },
+    {
+      "path": "public/playbook/wash-field-templates/12-public-notices.csv",
+      "bytes": 282,
+      "sha256": "f34b3340683642eca2f896daa88971f9692c5f1bdd281cad291146a3695ef089"
+    },
+    {
+      "path": "public/playbook/wash-operations.css",
+      "bytes": 8821,
+      "sha256": "cb2e006160780f7f27a18a89e56b8bcca20e340a0b22c4d7ce62cdb9a9fb7a32"
+    },
+    {
+      "path": "public/playbook/wash-operations.js",
+      "bytes": 19117,
+      "sha256": "f5b11769dec743be5eb1ec1cb9b24efc7a2307f632ebb6ff07210b9e26fd9e0b"
+    },
+    {
+      "path": "requirements-research.txt",
+      "bytes": 152,
+      "sha256": "b7dec01801ee5bbd14233724a214638441dfac79ff62c788ba013cef7614beaf"
+    },
+    {
+      "path": "research/gis/antar-v2/CalamityPanel.jsx",
+      "bytes": 6055,
+      "sha256": "3c8e6ac41833b684767f8dfbaf8264784557120586edd1f0db58e45c7737666f"
+    },
+    {
+      "path": "research/gis/antar-v2/ContinuityMap.jsx",
+      "bytes": 4690,
+      "sha256": "e1688bfcbb3facb523122309688e0914455766556c14ea00d83ab2757a80ae7e"
+    },
+    {
+      "path": "research/gis/antar-v2/HANDOFF-GIS.md",
+      "bytes": 5098,
+      "sha256": "5d38806fa8548e7fffb1ca61760fb48f8f1c39b07c1692fb49e545bd42cb4673"
+    },
+    {
+      "path": "research/gis/antar-v2/gis-network.geojson",
+      "bytes": 17363,
+      "sha256": "586b439d930a69b3ac35bc698e8df5c7d62314a523eb11ce2f1e9a469adc7775"
+    },
+    {
+      "path": "research/gis/antar-v2/gis-network.json",
+      "bytes": 8978,
+      "sha256": "96550624c5192e9058c4c41b4ff887f61e77b4bd00392ee445a1a72218e71797"
+    },
+    {
+      "path": "research/gis/antar-v2/source.json",
+      "bytes": 2231,
+      "sha256": "a86c781bedd9eafa8358f53a357f69b53922af208c39e5df4c382af131ce65a8"
+    },
+    {
+      "path": "research/gis/kaggle-v2/Pollution_Intensity_Coordinates_Updated.csv",
+      "bytes": 570583,
+      "sha256": "6b485b31ef664cfb0ae79f4bef6dab9968916e2646db79ec76363ac6b098d665"
+    },
+    {
+      "path": "research/gis/kaggle-v2/acquisition.json",
+      "bytes": 1179,
+      "sha256": "43dd0b301b29389a9e7a75b1823d340b93963e3b5bcbd226e2e914fb76237993"
+    },
+    {
+      "path": "research/gis/kaggle-v2/dataset-metadata.json",
+      "bytes": 2399,
+      "sha256": "f90c9b1a9965623d59088183ff1e134d9cc895ed0b603a7e3e886927a21b0f5a"
+    },
+    {
+      "path": "research/gis/kaggle-v2/dataset-search.json",
+      "bytes": 1695,
+      "sha256": "cf66869b4a93b6a48d729cc1f7e206d4742e47597cf2ac36a6b8f65989ca55fa"
+    },
+    {
+      "path": "research/gis/kaggle-v2/file-catalogue.json",
+      "bytes": 6063,
+      "sha256": "921a0e9f39654eeef9a669a52d92b7e108dcccfe85998b1cb7873b11a6309a2c"
+    },
+    {
+      "path": "research/gis/regions-v3/chattogram/query.overpassql",
+      "bytes": 80,
+      "sha256": "b66b47e6729f9386d1c3dd072ff42919b8c2f3921cfa346eccf6a1f0d21e5f66"
+    },
+    {
+      "path": "research/gis/regions-v3/chattogram/roads.overpass.json",
+      "bytes": 1483447,
+      "sha256": "41e73f2fa6efaa76430ae48448e384e31b0c68b7002fcd642fc5987b5e636c76"
+    },
+    {
+      "path": "research/gis/regions-v3/chattogram/source.json",
+      "bytes": 1321,
+      "sha256": "34b6787acf2a2fe676714746cf76813e8fc2fa3295039fa15e24a985fc4ce6cb"
+    },
+    {
+      "path": "research/gis/regions-v3/khulna/query.overpassql",
+      "bytes": 81,
+      "sha256": "3dc35dda697bc477e619a2ea419932c71a6c5439e679d2433215628695b202f5"
+    },
+    {
+      "path": "research/gis/regions-v3/khulna/roads.overpass.json",
+      "bytes": 607248,
+      "sha256": "f20d64c54cdddc6752070ef3a6a01f16ba95defe9a186c222b7fbd6d25e30cc1"
+    },
+    {
+      "path": "research/gis/regions-v3/khulna/source.json",
+      "bytes": 1660,
+      "sha256": "a383c346ccf7d970fc94f6caf8fc166f6cc9e16ba913f2d92276ad6b1673bbbe"
+    },
+    {
+      "path": "research/gis/regions-v3/tongi/history/a1e6e3ff983fd7fb/query.overpassql",
+      "bytes": 81,
+      "sha256": "9530350b4a5b3a0daa99501dc851a174f518317a8b7c5b77ca6883c78deae619"
+    },
+    {
+      "path": "research/gis/regions-v3/tongi/history/a1e6e3ff983fd7fb/roads.overpass.json",
+      "bytes": 679698,
+      "sha256": "a1e6e3ff983fd7fb81d240009a3cae0081744511de70f9ba811c412f23514b74"
+    },
+    {
+      "path": "research/gis/regions-v3/tongi/history/a1e6e3ff983fd7fb/source.json",
+      "bytes": 1300,
+      "sha256": "a8846f2910cb6c37e6b8caafd786e9c064f6cf4c63e8973359ef86f3bf7bbfcc"
+    },
+    {
+      "path": "research/gis/regions-v3/tongi/query.overpassql",
+      "bytes": 80,
+      "sha256": "e486f8b38c8f0d8e2cd9568f58e1d39890d2fea2f7826d0e6f09d96743a5fe05"
+    },
+    {
+      "path": "research/gis/regions-v3/tongi/roads.overpass.json",
+      "bytes": 826155,
+      "sha256": "36a0c3c78320f0073ba8e1a1af5c69150cf41d744cac0d66dae394d65b2350d5"
+    },
+    {
+      "path": "research/gis/regions-v3/tongi/source.json",
+      "bytes": 1298,
+      "sha256": "9598134edb1b45ebd44a83b3cfd6ecdee039ebb3e9de86f486de3b7f25625d93"
+    },
+    {
+      "path": "research/gis/regions-v3/ukhia/query.overpassql",
+      "bytes": 80,
+      "sha256": "3ae6f0dbe249af538e4fb432013d9b1cd2412309c6617146679ab7d742959b0e"
+    },
+    {
+      "path": "research/gis/regions-v3/ukhia/roads.overpass.json",
+      "bytes": 426176,
+      "sha256": "89cfb946513feac986f115e7861c9dbb7806dc3b3a8cd0262751ef18ca80849a"
+    },
+    {
+      "path": "research/gis/regions-v3/ukhia/source.json",
+      "bytes": 1298,
+      "sha256": "a2c83ff31f64bb0b287e215847741fa59d0e63f76e4e8b2d255e9cb87e4e4155"
+    },
+    {
+      "path": "research/gis/v1/README-GIS-HANDOFF.txt",
+      "bytes": 2849,
+      "sha256": "35a30f15d7cae72b60fc92d9a1a3802f7c51fce05e91b02eff7f77ecb6fcc546"
+    },
+    {
+      "path": "research/gis/v1/climate_gis.gpkg",
+      "bytes": 2732032,
+      "sha256": "033646cae59e23c55655668323a72bca7219e257d21050b05fa2ca96de2ced65"
+    },
+    {
+      "path": "research/gis/v1/climate_gis.gpkg-shm",
+      "bytes": 32768,
+      "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb"
+    },
+    {
+      "path": "research/gis/v1/climate_gis.gpkg-wal",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/gis/waterways-v4/dacope/osm.json",
+      "bytes": 3312294,
+      "sha256": "b68af73e850a0214f22673111cba5ba3af814fcf8549b06fde249da7dae79ce1"
+    },
+    {
+      "path": "research/gis/waterways-v4/dacope/query.overpassql",
+      "bytes": 113,
+      "sha256": "8967a36d9b85213b3262b278ab1eddef15384009c4dc0901383ef2ae53fc650e"
+    },
+    {
+      "path": "research/gis/waterways-v4/dacope/source.json",
+      "bytes": 719,
+      "sha256": "dcfdb4bff4469c0fcf7b72cd52882ed6b4f613a6e62cf99ea835388924ccd1ad"
+    },
+    {
+      "path": "research/gis/waterways-v4/dhaka/osm.json",
+      "bytes": 2794715,
+      "sha256": "e6fa7b697e1746804e718a58eb7a21092badaec7d41c354bc9991ece7216be9c"
+    },
+    {
+      "path": "research/gis/waterways-v4/dhaka/query.overpassql",
+      "bytes": 115,
+      "sha256": "52e27316db0b7ca966ab4ba8227598adb5148bd63d0eca559530aed82a675aa0"
+    },
+    {
+      "path": "research/gis/waterways-v4/dhaka/source.json",
+      "bytes": 720,
+      "sha256": "f8f9f0f616684fba01f1e9f63f14209cd013958b2f51d812313dd757263e5172"
+    },
+    {
+      "path": "research/gis/waterways-v4/sylhet/osm.json",
+      "bytes": 701169,
+      "sha256": "6985ebaf0265c6a8d3f1b8fac29181b22655da6378f1bd473e9ae839567e731b"
+    },
+    {
+      "path": "research/gis/waterways-v4/sylhet/query.overpassql",
+      "bytes": 116,
+      "sha256": "d6d66b15437207c09be5fbc38d98884e329b1b78d0202ebe016042112d32cecb"
+    },
+    {
+      "path": "research/gis/waterways-v4/sylhet/source.json",
+      "bytes": 720,
+      "sha256": "f88cdeb1ea8c305f33495dfbc8f796fd2333af4f2e9dc1750f91980f2c8ccfee"
+    },
+    {
+      "path": "research/gis/wpdx-2026-10-24/RESULT.json",
+      "bytes": 6556,
+      "sha256": "82d4c4a9de9439975822677e43844dbb8d1d041a6fa9348ef407b162fe6c1e27"
+    },
+    {
+      "path": "research/gis/wpdx-2026-10-24/RESULT.md",
+      "bytes": 5417,
+      "sha256": "6c97779d534f38632fb2877a0b1d56be8a173b588302454a014a2a76d11cde9c"
+    },
+    {
+      "path": "research/gis/wpdx-2026-10-24/bounded-coverage-queries.json",
+      "bytes": 2358,
+      "sha256": "a98e2e18fb06870f2c2ba6825a5afe8c0d78714d4b49ac1f027770ce85751979"
+    },
+    {
+      "path": "research/gis/wpdx-2026-10-24/eqje-vguj-metadata.json",
+      "bytes": 33276,
+      "sha256": "b8ab995152d31e64eefcf6e1353d19b59eacb340c438ceecb38f92e80b98fe03"
+    },
+    {
+      "path": "research/gis/wpdx-2026-10-24/jfkt-jmqa-metadata.json",
+      "bytes": 20930,
+      "sha256": "bc2dac44d667f4967806474c4fe31dc49cd4a24ee20b2b832624813bbb614c1a"
+    },
+    {
+      "path": "research/gis/wpdx-2026-10-24/snapshot-summary.json",
+      "bytes": 4678,
+      "sha256": "bdc226235fc6fd56352f1f429e374c01b0937c9bf3c8cbbe162ffaa906d381c9"
+    },
+    {
+      "path": "research/gis/wpdx-2026-10-24/wpdx-plus-bangladesh.csv",
+      "bytes": 8267368,
+      "sha256": "ee1463b90e43a6ef8380f63ddb5f46eddbeedf3960e2c140f434b432b7d3cda3"
+    },
+    {
+      "path": "research/raw/power.txt",
+      "bytes": 8315,
+      "sha256": "af6f8b715919e3d4b067b7b141627db1f9b4464249795896d9c2d627795c54fe"
+    },
+    {
+      "path": "research/raw/roni.txt",
+      "bytes": 97820,
+      "sha256": "c3a07a7f28a7d69acef4fe03eb91482b062d1a1d63f462c181b0f5d5d4f23ff8"
+    },
+    {
+      "path": "research/water/Water quality.csv",
+      "bytes": 182314,
+      "sha256": "baa149c139cc514b1f339015f49cb8afca459e1c2e7323e10f5d7b6defa49a7a"
+    },
+    {
+      "path": "research/water/basis-metadata.json",
+      "bytes": 7828,
+      "sha256": "347f023eee8c85a9134d65d783dea7ff64e70cfa65c686811b9fda6670942961"
+    },
+    {
+      "path": "research/water/basis-v2.xlsx",
+      "bytes": 85999,
+      "sha256": "3ab21b826163b70fe34370d7816784f394bae22a39830634e19a8affe84704f7"
+    },
+    {
+      "path": "research/water/dhaka-metadata.json",
+      "bytes": 4590,
+      "sha256": "feeb9424acdbb319a947aa5d534d0d334f32cbdac427462c254adb43f4df3abc"
+    },
+    {
+      "path": "research/water/ecr2023-page53.png",
+      "bytes": 223932,
+      "sha256": "f28c85bc7e70b9530ee133dd0e27b3ecc8d1e39560db71e3efc3f14281353195"
+    },
+    {
+      "path": "research/water/ecr2023.pdf",
+      "bytes": 826000,
+      "sha256": "21c2b53f98a4e061f4321818c262149c4aaccf44a6f2a8635b152bde43c23c4a"
+    },
+    {
+      "path": "routing/engine.mjs",
+      "bytes": 22586,
+      "sha256": "655b7c6270d1fc9d659d77912e801d6ff222c461d09e63f1a5568c7771511478"
+    },
+    {
+      "path": "routing/registry.mjs",
+      "bytes": 2588,
+      "sha256": "ee708c9595513b3370d7b8b6b012979a233d9abd19fe49c1909c89405cbf03b8"
+    },
+    {
+      "path": "schemas/observation.schema.json",
+      "bytes": 1546,
+      "sha256": "0b9ce48e3ded934038ef1cb399fedbd04271a955d5a77939f26f143d5bce613d"
+    },
+    {
+      "path": "scripts/acquire-regions.py",
+      "bytes": 4480,
+      "sha256": "5f7ec35780e1e08efe1a1abdcd8369597428922770fa2060476294b1247b9217"
+    },
+    {
+      "path": "scripts/acquire-waterways.py",
+      "bytes": 2464,
+      "sha256": "f97a8f9897d697be91f10340d37fdaa94b0e8edc4022cabed5d0c82d41524298"
+    },
+    {
+      "path": "scripts/benchmark.mjs",
+      "bytes": 1891,
+      "sha256": "b13bea3def3058b87dc59bc226149ef46d1603db4d8056d68ca9127b4516dacd"
+    },
+    {
+      "path": "scripts/build-gis-network.py",
+      "bytes": 19244,
+      "sha256": "e9841df62decd92d28880ebe8c9dd8a07804e385b9b6a8afe817844054095210"
+    },
+    {
+      "path": "scripts/build-gis-resources.py",
+      "bytes": 8929,
+      "sha256": "3759e82de819c6f629799e0cbe43ea82a4788e74e8a33ebf388ec31f56ca93de"
+    },
+    {
+      "path": "scripts/build-regions.py",
+      "bytes": 13266,
+      "sha256": "b8f6ebdcc239e8f3184117b16404f98a6bed1f3cfbf170848d8d1d0dc0141050"
+    },
+    {
+      "path": "scripts/build-road-graph.py",
+      "bytes": 12110,
+      "sha256": "89a2c3f703709c52df25576d562350690b6572552dc7bd905f4fffe7411bb573"
+    },
+    {
+      "path": "scripts/build-verified.sh",
+      "bytes": 661,
+      "sha256": "2ae5329ac860076070c9217a43106a15cb5ecf907a0f7baeb9ef903f76b53c68"
+    },
+    {
+      "path": "scripts/build-waterways.mjs",
+      "bytes": 3696,
+      "sha256": "8fed8a8fc173753d3de5653c00ba4ab26226d41593569564244762da6ae48874"
+    },
+    {
+      "path": "scripts/chain-server.mjs",
+      "bytes": 2059,
+      "sha256": "33afaec26a184885f6ba6302323ae9c96a93f6bda144055b9f9d1bd1768d65dd"
+    },
+    {
+      "path": "scripts/climate-analysis.py",
+      "bytes": 8408,
+      "sha256": "77a9d99f3dd260f2cc03bc401e2b494a667dd6cc9892e30630bce6cb3a5d1244"
+    },
+    {
+      "path": "scripts/collect-v4-evidence.py",
+      "bytes": 2148,
+      "sha256": "1d954792ab8f58e31a834f9ea4acf801f9d8762aa7ae9ee6232a7d94e05b5564"
+    },
+    {
+      "path": "scripts/connector-preview/connector-preview-session.mjs",
+      "bytes": 6769,
+      "sha256": "a589a5bd3e40711bb5bc68a0e1745c0ed61836d999739c1b42edf2a926e9c4e5"
+    },
+    {
+      "path": "scripts/connector-preview/host-binding.mjs",
+      "bytes": 7563,
+      "sha256": "ebea3167a73ff81a071fb9206eb0875c5e5a0ee67e1084404ecbaf2ada2c716c"
+    },
+    {
+      "path": "scripts/connector-preview/protocol.mjs",
+      "bytes": 1799,
+      "sha256": "a0ec86f605300518d09e4868658fef0f47706bc029617e4468159fcad82f01a6"
+    },
+    {
+      "path": "scripts/connector-preview/worker.mjs",
+      "bytes": 627,
+      "sha256": "df12bb38c309e0595c7a092bb458a9882899f6e32ac26b38c6a90df3651fadd5"
+    },
+    {
+      "path": "scripts/credibility-audit.py",
+      "bytes": 5055,
+      "sha256": "4ce1d0041c69cd48a97160c35a892997662860fef520cd0e3d4a118d0a914044"
+    },
+    {
+      "path": "scripts/deploy-cloudflare.mjs",
+      "bytes": 2745,
+      "sha256": "c991af9045a71d74470cbedbf70097dbe29178fdc2c7a6217576105f088839fb"
+    },
+    {
+      "path": "scripts/execution-profile.mjs",
+      "bytes": 650,
+      "sha256": "b24cbb754b582965702a65fef393f42190c66d86b50f21104de8a90d29b82a7d"
+    },
+    {
+      "path": "scripts/export-riverwatch-atlas.py",
+      "bytes": 8528,
+      "sha256": "ad5943971816b75c58183c26c722e98aab24bd449ee6b4da38135635521b1c94"
+    },
+    {
+      "path": "scripts/fetch-font.py",
+      "bytes": 686,
+      "sha256": "9c6f74dacdcfa250c4d0bef1aadc27123611045f1d49aed8efb20ce15b9f1d4f"
+    },
+    {
+      "path": "scripts/fetch-water.py",
+      "bytes": 1107,
+      "sha256": "52f7423124e42d5f981b87a3a9c6bc3e6b974caf6ab0479401e3abcf23a1b8d9"
+    },
+    {
+      "path": "scripts/fix-font-format.py",
+      "bytes": 581,
+      "sha256": "ef39a22d98d661c37823e03ac102e9f9bf2fefea14b218f955e7a74832d52abc"
+    },
+    {
+      "path": "scripts/fix-review.py",
+      "bytes": 2999,
+      "sha256": "bf03053fd15a4f058928f5f676d4b2bf398f662fa4202c4630b0d64d77701d12"
+    },
+    {
+      "path": "scripts/import-harvest-references.py",
+      "bytes": 4010,
+      "sha256": "8ec2deb4369523fc373c78547642f9668cb5be07ce4e0a4a12358997efd73495"
+    },
+    {
+      "path": "scripts/install-ci.mjs",
+      "bytes": 1723,
+      "sha256": "d3380e8a75bd6d6cda164fa299450cee5cd4c07a8e4b2d2ed2541fa984cdc72f"
+    },
+    {
+      "path": "scripts/install-ci.sh",
+      "bytes": 6783,
+      "sha256": "10d8764a61be50351dc3496e13588270de7956f0aa5f1189c49cabb2d89fe5c0"
+    },
+    {
+      "path": "scripts/install-pnpm.sh",
+      "bytes": 9015,
+      "sha256": "a684c02c2b493dfbf262a66252a5cd36f81ca995a4024761728662ae63aa40c0"
+    },
+    {
+      "path": "scripts/integrate-water.py",
+      "bytes": 5229,
+      "sha256": "e2b8e3d8ffcf776fab38ee886ada3783ca4f4e3c887a9ea81d6ab43ca7a394f3"
+    },
+    {
+      "path": "scripts/npm-install.mjs",
+      "bytes": 6857,
+      "sha256": "1614dd474bb96bfb387dc0a123517a77209698011d7d9d22b80aadb3fccfbf98"
+    },
+    {
+      "path": "scripts/package-handoff.py",
+      "bytes": 5104,
+      "sha256": "171c6dfd298cb866872468bd8d9c3a8599799fb328a07244845ab85d0de847d0"
+    },
+    {
+      "path": "scripts/pnpm-install.mjs",
+      "bytes": 11130,
+      "sha256": "bf1a18adb18d6702dcf00ea5a3e918e0cbd0c2d6f8ce72be2521ce1870b58561"
+    },
+    {
+      "path": "scripts/prepare-v4-release.py",
+      "bytes": 1487,
+      "sha256": "2206b3cfd57fa679c63639391bd9d2105caacbe7a1fcee054ba6d8ce6a132282"
+    },
+    {
+      "path": "scripts/prepare-water-data.py",
+      "bytes": 15872,
+      "sha256": "cfe29c99f1148f822a7979e297dab01bc14f703df631f18f57608440f96a9430"
+    },
+    {
+      "path": "scripts/refine-water-inputs.py",
+      "bytes": 4915,
+      "sha256": "c4d8fbdc09bcc90fbc082ba3be8e58f4f350781e5814106e40658aedc90fb897"
+    },
+    {
+      "path": "scripts/register-gis-evidence.py",
+      "bytes": 5674,
+      "sha256": "6478eb31a202aafda515164cdd086b047e8d4a187a4f403a4a21f1077b27eccc"
+    },
+    {
+      "path": "scripts/register-v3-data.mjs",
+      "bytes": 4926,
+      "sha256": "3beb5e32aaa355ea5d184b8e3917262e225d8ef8491fca704e54a6f0c0fb038b"
+    },
+    {
+      "path": "scripts/register-water-platform.mjs",
+      "bytes": 3718,
+      "sha256": "8558bf42c6c4f413b76676547aaeb266390fb209b4489c1df34312a69122691a"
+    },
+    {
+      "path": "scripts/registry.mjs",
+      "bytes": 1331,
+      "sha256": "0fc4c4fb45ed6a62adbfaf8e35da9746d1e2f40f55a9f7f93c5e8ff0ea35c925"
+    },
+    {
+      "path": "scripts/release-tidy.py",
+      "bytes": 1592,
+      "sha256": "5dc4b3bd0cba58ac79093cd9a8e8d379e9dbe02e62bb48a2ffc520dea746d6b6"
+    },
+    {
+      "path": "scripts/render-landing-atlas.py",
+      "bytes": 2937,
+      "sha256": "5036de8cde15f7122aac800cbd5c8393d83c661034f79331b1b9fe3274dbee17"
+    },
+    {
+      "path": "scripts/reproduce.py",
+      "bytes": 3171,
+      "sha256": "6f692d6935971b3850a44231d58aec141a6e38ff881c4a4c2268959242933cac"
+    },
+    {
+      "path": "scripts/run-framework.mjs",
+      "bytes": 1015,
+      "sha256": "26c9be4556a25ccec0ea8eb4010cc7545160de5b72246c724283a0fda92461dc"
+    },
+    {
+      "path": "scripts/serve-local.mjs",
+      "bytes": 6562,
+      "sha256": "e76ab55a50be6f5a6f248812ee66eb8db395a589cf94708f94d760573d1b7f86"
+    },
+    {
+      "path": "scripts/setup-local.mjs",
+      "bytes": 1548,
+      "sha256": "4b549ae5d02982a4c51232d2d3024de83dd8f771928873ef98ae6a5870ae2302"
+    },
+    {
+      "path": "scripts/sites-env.mjs",
+      "bytes": 522,
+      "sha256": "a4a40a3ab8b088f31f78a6a0f3caf4bd608bb653756f0fc0dd99987e935a01d1"
+    },
+    {
+      "path": "scripts/sites-env.sh",
+      "bytes": 1600,
+      "sha256": "d18af7b222db748c9de257d5955b9d7f77ec350dab6321f114f0bc44c20388ac"
+    },
+    {
+      "path": "scripts/smoke-local.mjs",
+      "bytes": 9139,
+      "sha256": "f6d6243de849460cb824a0ed46e80c6cc6d975ff01c706871c4060ea50f006e2"
+    },
+    {
+      "path": "scripts/smoke-water-platform.mjs",
+      "bytes": 9176,
+      "sha256": "8ceb829d5a6ef0418247691801e61b45f07029165c1c6a7d983d07ab3940ab6d"
+    },
+    {
+      "path": "scripts/sync-test-schema.mjs",
+      "bytes": 425,
+      "sha256": "423043c0b1658ae7e640a08d20b34efd907a7612527a415213db0f29fe7d186b"
+    },
+    {
+      "path": "scripts/tool-environment.mjs",
+      "bytes": 787,
+      "sha256": "dd648384a65dcf3a71ef22e71253d635dec955efa1903460c8a2b3c084a13119"
+    },
+    {
+      "path": "scripts/verify-data.mjs",
+      "bytes": 1210,
+      "sha256": "f6297cf034ffd8938bd08dac108fe399d42e3254be12c32c8c68fdc18fb83f40"
+    },
+    {
+      "path": "scripts/verify-manifest.mjs",
+      "bytes": 810,
+      "sha256": "45b8109b17f37e96bf926972ea25b8ad561bf58929b097ab96a768c0298c72f3"
+    },
+    {
+      "path": "scripts/vite/connector-preview-plugin.mjs",
+      "bytes": 6979,
+      "sha256": "d55c733e1266f753c6f0dd46e9516c9e7f144568844450e39f2c26b33e4ac0d9"
+    },
+    {
+      "path": "scripts/vite/sites-vite-plugin.LICENSE",
+      "bytes": 1063,
+      "sha256": "7de1e115d165f176e68f962acdb809b5ab8d8ae78d3981e0701392b2ac50c713"
+    },
+    {
+      "path": "scripts/vite/sites-vite-plugin.ts",
+      "bytes": 6968,
+      "sha256": "2e9c8cfba7a06a5dd0897deffa3548b0181d2c7d9d8e944094c4cdefbf6ed9c9"
+    },
+    {
+      "path": "scripts/write-data-register.py",
+      "bytes": 7321,
+      "sha256": "bff905af9f4ae54bf5668ab304e701fe0741fbdf89d339257ce58c4a7a63debe"
+    },
+    {
+      "path": "src/App.jsx",
+      "bytes": 648,
+      "sha256": "cd9d43e7c9e09ce65bd42ccc57c82091e9c68bf5f4be71b06a7bddb896a94def"
+    },
+    {
+      "path": "src/LegacyApp.jsx",
+      "bytes": 49981,
+      "sha256": "3c043478b96b8f41810f7885f49750083123e16eb0d9f40ef5ed2342a03255ae"
+    },
+    {
+      "path": "src/PollutionPanel.jsx",
+      "bytes": 38414,
+      "sha256": "f8ad38de2bd05ded6277328d93f969a8d4943f03f8c6644e9802e552085438bb"
+    },
+    {
+      "path": "src/components/ResearchMap.jsx",
+      "bytes": 3813,
+      "sha256": "4aaba60df77f60c53982562129af1e6867c95087e9fef5384303adc13345284f"
+    },
+    {
+      "path": "src/date-context.mjs",
+      "bytes": 1476,
+      "sha256": "732abae6f85d6c891bb58ee11fe94438d0a5f61e2ad0eb0fd3afe95ee5b0182b"
+    },
+    {
+      "path": "src/engine.mjs",
+      "bytes": 9075,
+      "sha256": "771fb8acb9836b19e1b66b472fa1a4a85046d3c5656de40495b279a3df0bac12"
+    },
+    {
+      "path": "src/gis-engine.mjs",
+      "bytes": 6752,
+      "sha256": "53a7965f4d9954f4ec7308aea5431d6064b72c65ab7f3d717a298fed7da19198"
+    },
+    {
+      "path": "src/gis-scenario.mjs",
+      "bytes": 1667,
+      "sha256": "484cb1b6c8c7732c05e269512ab6d6a6a114048dbbb43dd76abc624cccc14f74"
+    },
+    {
+      "path": "src/gis/DisasterPlanning.jsx",
+      "bytes": 11866,
+      "sha256": "c25d586d05125f0cca6d4ffee9c8e279fd13b5930c974d369d9bbe5c470bcfb4"
+    },
+    {
+      "path": "src/gis/GISMap.jsx",
+      "bytes": 5242,
+      "sha256": "e3745cbbc8e03b9ff9bc7d654e9653d52f851d97fed3c0297441ab6326a4a341"
+    },
+    {
+      "path": "src/gis/PollutionExplorer.jsx",
+      "bytes": 19587,
+      "sha256": "ad7f9cc5633ad7c5a0aa1c525020a6eb87931a576dfc9ef5905cf1e7ae7f1bda"
+    },
+    {
+      "path": "src/gis/WaterCare.jsx",
+      "bytes": 11633,
+      "sha256": "4bfde4fa1503f8f95da46c893aad8c083795669a668d2848b42df5d81d0be06f"
+    },
+    {
+      "path": "src/gis/WaterFinder.jsx",
+      "bytes": 16789,
+      "sha256": "98d5672df8783ac832acace97f3a04a5d6e080f722f851ed4d4815283b1ea8d1"
+    },
+    {
+      "path": "src/gis/WaterGISWorkspace.jsx",
+      "bytes": 4300,
+      "sha256": "f4a90785335bbf756e00244580a200ed3b534c665dff44857ccfeadb50aeaa26"
+    },
+    {
+      "path": "src/gis/shared.jsx",
+      "bytes": 1356,
+      "sha256": "1dddf2e82cb9915e459b6b69798880d9470ada146cd8f8d2a89a5a70f6db7566"
+    },
+    {
+      "path": "src/gis/use-resource.mjs",
+      "bytes": 1140,
+      "sha256": "99e3f1b6a0f5bc720f4953def40899b9019b5035e3654735ebe85e014a9f990a"
+    },
+    {
+      "path": "src/gis/water-gis.css",
+      "bytes": 17540,
+      "sha256": "31a0827c347734b66bafca9f7b30938594312dc834bb742e2540c8dd390dddbb"
+    },
+    {
+      "path": "src/main.jsx",
+      "bytes": 191,
+      "sha256": "4aebdf5022bf85a80d1629d496debc8c87dea629489701fa18812dc551ef63c4"
+    },
+    {
+      "path": "src/map-style.mjs",
+      "bytes": 336,
+      "sha256": "35ac442c5261a0ace3f7e2e34f1130174b6ee1539c4284c443896ac453173438"
+    },
+    {
+      "path": "src/mvp/MVPMap.jsx",
+      "bytes": 9624,
+      "sha256": "ce710978370bca93a9e113526ccf9989281aea3ce21fbd19ca2270b6a9815ee3"
+    },
+    {
+      "path": "src/mvp/MapMVP.jsx",
+      "bytes": 37175,
+      "sha256": "f0cc9c67f835563d1df572650162ac1aef2de52061e6f947feed27b4cd95e610"
+    },
+    {
+      "path": "src/mvp/PointDetails.jsx",
+      "bytes": 3039,
+      "sha256": "4dd208649270f0dc293c98557bb36ec92e20f6ac0ed042877ed16339bd273985"
+    },
+    {
+      "path": "src/mvp/PollutionInput.jsx",
+      "bytes": 7492,
+      "sha256": "50b29a5688fa50e976a5c0bb65d05e62ec1bd4e2f33ad1756bb41c8e06b3834d"
+    },
+    {
+      "path": "src/mvp/map-mvp.css",
+      "bytes": 16696,
+      "sha256": "3e56370e14c6359043ba49c57cd8c8f96e882cca2df767e9c99e78dfc5992d6f"
+    },
+    {
+      "path": "src/mvp/pollution-vectors.mjs",
+      "bytes": 14563,
+      "sha256": "83ac4bfc1230039582e14e59dff305323c3e4af3fe3cfbfdf7c153a95950796a"
+    },
+    {
+      "path": "src/mvp/scenario-model.mjs",
+      "bytes": 4764,
+      "sha256": "c565e22cabb2aaa4d2a444606aa466f45dd347b9fea10b4efcbd56d25ceafb62"
+    },
+    {
+      "path": "src/mvp/scenario-transport.mjs",
+      "bytes": 848,
+      "sha256": "21f4a018b7ff355bf7d46abd704ca45e372d34824a0f2de1466de029927d3ecb"
+    },
+    {
+      "path": "src/mvp/use-map-data.mjs",
+      "bytes": 1405,
+      "sha256": "44953b64b97e2fb5a492536dc69a650d39d422d56a84b3ce539e331f7f58b254"
+    },
+    {
+      "path": "src/mvp/use-server-plan.mjs",
+      "bytes": 1211,
+      "sha256": "41ed1696636e55fd75381fb905df03eb861a2f072960295cf086b2ff5d9ac41f"
+    },
+    {
+      "path": "src/notice.mjs",
+      "bytes": 265,
+      "sha256": "527c0bb4b582070895af5a9d7d17549d8415bb7a8dc60e95050d8f72d6fe6987"
+    },
+    {
+      "path": "src/operations/LiveOperations.jsx",
+      "bytes": 34267,
+      "sha256": "9133f0b3762f259fbe5f683853531fb7af1dbf015321d38b6dc12e1994e0c994"
+    },
+    {
+      "path": "src/operations/OperationMap.jsx",
+      "bytes": 5015,
+      "sha256": "a144e05a919dbd0764ac73553004765a06bc78525d5c96d3bb5bc0ac250b0255"
+    },
+    {
+      "path": "src/operations/PollutionMonitoring.jsx",
+      "bytes": 21056,
+      "sha256": "a5912433270c316af59edb562cc2927f86a3fca604a2e780b19b6e1f8cf19ccd"
+    },
+    {
+      "path": "src/operations/api-client.mjs",
+      "bytes": 1200,
+      "sha256": "ac1756d6e1104c0ab1b18c11a8cacf1bda184f60a7e02388c7c22cbd76d29762"
+    },
+    {
+      "path": "src/operations/device-gps.mjs",
+      "bytes": 4139,
+      "sha256": "6f8afcb8ef95522f2504adc3cc454fce6b524e39784434e70820bbab1fc0b569"
+    },
+    {
+      "path": "src/operations/invitation-handoff.mjs",
+      "bytes": 1451,
+      "sha256": "aa798394f3b4a3206ff16ec9ac9526a30edacc293a31f1f4cab1816053077ccf"
+    },
+    {
+      "path": "src/operations/operations.css",
+      "bytes": 6581,
+      "sha256": "0ecb1e24764a671abd890b10a409929eaf34369ee4f436d56289e7578385432b"
+    },
+    {
+      "path": "src/operations/pollution-operations.css",
+      "bytes": 1829,
+      "sha256": "f29bf2e9a07708717c72d82c2a2bab5eebf717b7299cf1a6862f1eda0de3d140"
+    },
+    {
+      "path": "src/operations/use-operations.mjs",
+      "bytes": 1734,
+      "sha256": "7d6584d5c192ea3246d590624b6fc7012385219630565bd258855ec98c4ba5c3"
+    },
+    {
+      "path": "src/platform/AtlasMap.jsx",
+      "bytes": 4826,
+      "sha256": "0f2b4c0ad2799fa443c7d239adb3e436747710d30353c52fb6ca7a3b6d3ff4e6"
+    },
+    {
+      "path": "src/platform/EvidenceGuide.jsx",
+      "bytes": 6575,
+      "sha256": "6d517847c96cde95d8a3693e0dc7ff79313aaf7f377b300e53d5f85129fefb76"
+    },
+    {
+      "path": "src/platform/HarvestDrawings.jsx",
+      "bytes": 12768,
+      "sha256": "514c54ef280fe05d10489e67ad370169a57de6dc9138e3df2e6bd507d32b9e35"
+    },
+    {
+      "path": "src/platform/HarvestPlanner.jsx",
+      "bytes": 17430,
+      "sha256": "3b34fc6fd5fed165a749818b63f8ed3eed0d91c140b3c31b2820d965f7a090a0"
+    },
+    {
+      "path": "src/platform/Home.jsx",
+      "bytes": 18436,
+      "sha256": "af8d5d7d2f112630e17e1f72d74bb573342ce64d051369e6f8450b095dce53ee"
+    },
+    {
+      "path": "src/platform/HubPlanner.jsx",
+      "bytes": 18334,
+      "sha256": "968ef2dfe8d457239de62c9271d2f76030c73ed26843dd5545d8a4b9f3bb6080"
+    },
+    {
+      "path": "src/platform/MeasurementEntry.jsx",
+      "bytes": 12895,
+      "sha256": "3abf50584c40a10eb8d428c107a38f1880540f50ef97390b9e617b24c38934ac"
+    },
+    {
+      "path": "src/platform/MyRecords.jsx",
+      "bytes": 7432,
+      "sha256": "ce12804f1f28c4c66138b9e699cffd58f2b71f0415114abeef8cac0f97e89dd7"
+    },
+    {
+      "path": "src/platform/OutageDrill.jsx",
+      "bytes": 2259,
+      "sha256": "5cf1c1f4daad9caf6a95c5d966a5b81a5b80f92bd4d7e1321d1a420b80f73172"
+    },
+    {
+      "path": "src/platform/RiverExplorer.jsx",
+      "bytes": 26567,
+      "sha256": "1d6d024dd10f551447b464c97ed66adfaa90d1895da153b2d3fce870020ace8e"
+    },
+    {
+      "path": "src/platform/RiverWatchAtlas.jsx",
+      "bytes": 23994,
+      "sha256": "c6ea9283b7ec2981aa7f607e0a39079446965ae559f4e0c973f11448c666fc85"
+    },
+    {
+      "path": "src/platform/RiverWatchEvidence.jsx",
+      "bytes": 16100,
+      "sha256": "71b491a000d4ec1caaab6d68b04eccae894bd17281e4de15068af44821fc93e5"
+    },
+    {
+      "path": "src/platform/RiverWatchMap.jsx",
+      "bytes": 8650,
+      "sha256": "e8bffdfd5ae5aa67c42edcab01eac6cfbf845284280ae3a578c702a22cb90202"
+    },
+    {
+      "path": "src/platform/SourceFinder.jsx",
+      "bytes": 26392,
+      "sha256": "fcdee10edc6bd8b731d2eefa021af54f27481f85dbae2c22ce9ecb9a5ce6f9b2"
+    },
+    {
+      "path": "src/platform/SupplyPlanner.jsx",
+      "bytes": 21167,
+      "sha256": "c03db74aaeb94717d71eefd36317a980402fe3ea9ba268e7cdce55114eb6ac98"
+    },
+    {
+      "path": "src/platform/WaterPlatform.jsx",
+      "bytes": 9674,
+      "sha256": "dabc9accce048db41ec14af4fc133877d46ecebc518847b34a801d49a0c7f6a9"
+    },
+    {
+      "path": "src/platform/atlas-place-names.mjs",
+      "bytes": 2620,
+      "sha256": "57a5166bc8b3ffc801c51d6f206685c7c7721c7497b37d447f22fb988c7a9fd9"
+    },
+    {
+      "path": "src/platform/brief.jsx",
+      "bytes": 1046,
+      "sha256": "f09cfe8205fb304798eff248f16025d3f12598298dedc1dfd7aa0da7b0616188"
+    },
+    {
+      "path": "src/platform/channel-topology.mjs",
+      "bytes": 1011,
+      "sha256": "5e08153807f24aea786e1ab66d85a4a03552586019efdf4e7466ac9103440d00"
+    },
+    {
+      "path": "src/platform/guide.jsx",
+      "bytes": 590,
+      "sha256": "35e940d78f32bb22b13c87b4bc326708a924a3b9dc5ba308e66dedfe69c25289"
+    },
+    {
+      "path": "src/platform/harvest-model.mjs",
+      "bytes": 2671,
+      "sha256": "66a55093a3a55e0550b5549219f8f37feec47c5979078ef1d5bc4f62ea6f2502"
+    },
+    {
+      "path": "src/platform/harvest-planner.css",
+      "bytes": 7245,
+      "sha256": "5f3d4af7baa7f85b8de1497c1e2d0f89a74f72e5f5a5c43efb4ae3ba8f80ab0d"
+    },
+    {
+      "path": "src/platform/home-facts.mjs",
+      "bytes": 1150,
+      "sha256": "bed417eff33c174a773a4ab8abe1d0f1633b066bd78c648d1938e0da793115f9"
+    },
+    {
+      "path": "src/platform/hub-planner.css",
+      "bytes": 4582,
+      "sha256": "b0570729eaf2714b731f506ac7d48002cec36ccaad24373ff5c5cb8880202b89"
+    },
+    {
+      "path": "src/platform/riverwatch-atlas.css",
+      "bytes": 8061,
+      "sha256": "a382c242f2554266a5ba3d65540b9bb88971c14b79380f9c0a2fc5260c5699fb"
+    },
+    {
+      "path": "src/platform/riverwatch-model.mjs",
+      "bytes": 1852,
+      "sha256": "b945b4dc9a155cf62f6f703b92ef9183c9b5680f389efb7f82974780cf138656"
+    },
+    {
+      "path": "src/platform/session-draft.mjs",
+      "bytes": 1044,
+      "sha256": "2135d410b9d9bcb335b7d997525361eb0d7709e21b5c588523308265cd503729"
+    },
+    {
+      "path": "src/platform/shared.jsx",
+      "bytes": 1960,
+      "sha256": "1487a7efe6d0950b6461ceee11e7d604fbbefb3a04bb47f34f927fcf595295b8"
+    },
+    {
+      "path": "src/platform/story.css",
+      "bytes": 15224,
+      "sha256": "759da16d48dc032ffb1bd79b5a8ae4ce95316ae574756a07813afd83e130aadc"
+    },
+    {
+      "path": "src/platform/use-water-query.mjs",
+      "bytes": 1251,
+      "sha256": "40a111810c66b7c7d0a3a2a86143090c2c20d04090d31676510f31341048598a"
+    },
+    {
+      "path": "src/platform/water-model.mjs",
+      "bytes": 5458,
+      "sha256": "66e4a9a60c8833dbb545cd3300ec3a6c72efbbc8a95e9f11ffb74c27c1690d99"
+    },
+    {
+      "path": "src/platform/water-platform.css",
+      "bytes": 23980,
+      "sha256": "43ccb1966090d514b2f05b7f81dc098989bf4a8ced25b2111ca79ff41ac5a922"
+    },
+    {
+      "path": "src/pollution.css",
+      "bytes": 7790,
+      "sha256": "a941b722a63d95d1a9e0ab2a7dc4a0bb53e1b57a7d8a41e119a83cbd2b633e13"
+    },
+    {
+      "path": "src/styles.css",
+      "bytes": 20112,
+      "sha256": "babc019f15986129804ee41a0e9951cbf8ce82b19f36b79ff05a9f12b4eb5d64"
+    },
+    {
+      "path": "src/water-engine.mjs",
+      "bytes": 8683,
+      "sha256": "8e6ce19ded96e02636f98e33ea1358e8d92846e3585b940eebc503e362f4002e"
+    },
+    {
+      "path": "tests/backend-api.test.mjs",
+      "bytes": 23850,
+      "sha256": "9c7d483713d4276caf1d0fea1e564ab20021547488e112b9102a9e61831f4f2a"
+    },
+    {
+      "path": "tests/backend-d1.test.mjs",
+      "bytes": 4393,
+      "sha256": "01cb393183d23c5052f7a5f1ef11a4bf04b7e48e749694433f21ce4388ffaf50"
+    },
+    {
+      "path": "tests/backend-routing.test.mjs",
+      "bytes": 12224,
+      "sha256": "1acb5eb451a8cb920831b16488f422898602853c7248c9ec984a4346f9ca4bce"
+    },
+    {
+      "path": "tests/channel-topology.test.mjs",
+      "bytes": 2822,
+      "sha256": "84e2f7650b1a3cf625571ce2b8cd2ece4820951477c025ef3e5315d67209a3a3"
+    },
+    {
+      "path": "tests/data-validation.test.mjs",
+      "bytes": 1902,
+      "sha256": "995faa3e402ec2aa47de1f7a69fa7298d6462a7bc518bd172e603d4dc27547b8"
+    },
+    {
+      "path": "tests/date-context.test.mjs",
+      "bytes": 2656,
+      "sha256": "534b56553b1a101c83a42c9171901236313fbe40e104ed905578a4bf44869993"
+    },
+    {
+      "path": "tests/device-gps.test.mjs",
+      "bytes": 2417,
+      "sha256": "4f48614e1871b29742c1af6e152a529cd2e2940e60f4c2ab92e7970ce93455b0"
+    },
+    {
+      "path": "tests/engine.test.mjs",
+      "bytes": 3486,
+      "sha256": "6fbac5bfda9c21954b83cbee3683c4e59baf07c1c039c796c3aad2bb4109d364"
+    },
+    {
+      "path": "tests/examples.test.mjs",
+      "bytes": 916,
+      "sha256": "7ee45876164145bfa37e2e7b240898de47758b00d4e7ba839954c4796ae5caee"
+    },
+    {
+      "path": "tests/fixtures/borsha-bandhu-published-equations.json",
+      "bytes": 2417,
+      "sha256": "9ac29017764724b3c6a369277560d2384872b4bce1a09adf5d3a57cd60ddc2b6"
+    },
+    {
+      "path": "tests/gis-data.test.mjs",
+      "bytes": 1540,
+      "sha256": "04efbbf90cd895f297e50c74f6034eb037a9238fce627762935bd14cac006d4e"
+    },
+    {
+      "path": "tests/gis-engine.test.mjs",
+      "bytes": 4172,
+      "sha256": "761ffdb57b8c36e3b14f56c8a1a7022dc6c5d56f259b2c728322af400be5f1f4"
+    },
+    {
+      "path": "tests/gis-network.test.mjs",
+      "bytes": 4528,
+      "sha256": "54c208bbaf2f3a000868343bcc7aafb556fef6e52e39c5acfd922cea7b006a3b"
+    },
+    {
+      "path": "tests/gis-resources-rebuild.test.mjs",
+      "bytes": 1249,
+      "sha256": "e8d3bb2395d8fa1cf1b790446b78d172ada6aaa2e2dd769cabd150b3bdd1a2a0"
+    },
+    {
+      "path": "tests/gis-scenario.test.mjs",
+      "bytes": 1566,
+      "sha256": "d43911e85a96150a95314209986b878d82232b53eb7e02b4f3cd3890a2f94245"
+    },
+    {
+      "path": "tests/handoff-regressions.test.mjs",
+      "bytes": 1638,
+      "sha256": "9c317852bfa5f152e0c8acad67ea02c05f93e7f8a038698e5f832ade652a97d0"
+    },
+    {
+      "path": "tests/harvest-model.test.mjs",
+      "bytes": 1680,
+      "sha256": "df8183d39ddadc1d90726ba53aea24630b262ae9c5b3131932b766a8a57902c8"
+    },
+    {
+      "path": "tests/home-facts.test.mjs",
+      "bytes": 1607,
+      "sha256": "d3afd0d604d848c10c3a7a1465703950b574bfa0a977be039ae064fa55f1835c"
+    },
+    {
+      "path": "tests/invitation-handoff.test.mjs",
+      "bytes": 1552,
+      "sha256": "7cb9ed11610508d50f9d8f4af7f646b1cb8017f58a1790911dc795fb6d941267"
+    },
+    {
+      "path": "tests/map-style.test.mjs",
+      "bytes": 535,
+      "sha256": "6122bd91a5be013784e41816e45f7947f826a076bace20efb1956e267c5d1c6d"
+    },
+    {
+      "path": "tests/mvp-scenario.test.mjs",
+      "bytes": 4497,
+      "sha256": "58540878a43368ed5065872dc4c1f81bb5644bb7e4d4cddb99dc5b91e4f49e0a"
+    },
+    {
+      "path": "tests/notice.test.mjs",
+      "bytes": 558,
+      "sha256": "1e30a18a2c69a86f0dd3f6c507132bd7a2ebddd15356e6896c39109baaea70a8"
+    },
+    {
+      "path": "tests/operator-session.test.mjs",
+      "bytes": 2714,
+      "sha256": "0a39699b6c87ffd92c8f7b0bc8e292f1b00c2cb03a10b5a1c7d7b621e463e501"
+    },
+    {
+      "path": "tests/pollution-vectors.test.mjs",
+      "bytes": 10524,
+      "sha256": "5a4a0cdd87f9bac2dc6f1b31afe640ad5888c381043d96e4b2076a11ec24d568"
+    },
+    {
+      "path": "tests/regions-builder.test.py",
+      "bytes": 1978,
+      "sha256": "cd65079515e3c247d204e8123ffb890e13394e159479e5b5bc75bc1b94c3248c"
+    },
+    {
+      "path": "tests/regions.test.mjs",
+      "bytes": 6382,
+      "sha256": "d596fe37d5c7d10c703488f67f30bf4ad1a5cb6346999d3a8d46f19d85da9c00"
+    },
+    {
+      "path": "tests/riverwatch-atlas.test.mjs",
+      "bytes": 4256,
+      "sha256": "51f4746c2664407b250e75a1377459143d1ec28a3af07ce0949f51d39d75bec7"
+    },
+    {
+      "path": "tests/routing-engine.test.mjs",
+      "bytes": 10721,
+      "sha256": "b43b19f076c39ffb0d5ab4e74e25ae5be07d2cb810a877b60fab568164521d44"
+    },
+    {
+      "path": "tests/routing-graph.test.mjs",
+      "bytes": 6432,
+      "sha256": "f1ad0804e246084557390ac689300b6699e020fce3c3116fd00f247451999d44"
+    },
+    {
+      "path": "tests/scenario-transport.test.mjs",
+      "bytes": 1495,
+      "sha256": "56e52e4a7f1db31f3575f070e14aeb1f5a4244056dcf35a93622dd8bd2a4f27e"
+    },
+    {
+      "path": "tests/water-platform-api.test.mjs",
+      "bytes": 5908,
+      "sha256": "ca6ade21e55197faee2ac00b9b9c4a35abfa14fdda20ea659f973ad52c15cf8f"
+    },
+    {
+      "path": "tests/water-platform-model.test.mjs",
+      "bytes": 3279,
+      "sha256": "1466d182c1689ee6a9188c10e1aaf52900aece3201896cb827b9f08da15dfff7"
+    },
+    {
+      "path": "tests/water.test.mjs",
+      "bytes": 4845,
+      "sha256": "453b74fa628096a60fcfce8aed782453fcd330b362f0981923c72bf3e550e83b"
+    },
+    {
+      "path": "tools/local-chain/README.md",
+      "bytes": 1626,
+      "sha256": "97833a379452702bda6d813e6ee030f60549b73c4a5d4b5e06edda59c06c1594"
+    },
+    {
+      "path": "tools/local-chain/package-lock.json",
+      "bytes": 162980,
+      "sha256": "beff4bd1b8cebe586b0d10834cbd011969ca54f07e7d71b138a9df0a9213ee57"
+    },
+    {
+      "path": "tools/local-chain/package.json",
+      "bytes": 430,
+      "sha256": "8af513c9ef0de187c32a84319ee348790e5460b4bdf3761448ef175c5456d0a8"
+    },
+    {
+      "path": "tools/local-chain/registry.mjs",
+      "bytes": 1334,
+      "sha256": "0823f9d7ae14e8d12ccdc594d15886a3009976b599e03c9d227f8ce78d1ab94d"
+    },
+    {
+      "path": "tools/local-chain/server.mjs",
+      "bytes": 2059,
+      "sha256": "33afaec26a184885f6ba6302323ae9c96a93f6bda144055b9f9d1bd1768d65dd"
+    },
+    {
+      "path": "tools/local-chain/tests/registry.test.mjs",
+      "bytes": 1106,
+      "sha256": "0e2952611be273f4051f1f15e2ee7498174c17ec9e91223c77e77faf5668235b"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 835,
+      "sha256": "2edb8a217245d36b61af0add9a557bca75113b3541581bd832bb48c97b0a1fe5"
+    },
+    {
+      "path": "verification/aquavelle-harvest-drawings-desktop.png",
+      "bytes": 164695,
+      "sha256": "d8968d737de9b4bb19718b2eb9da3e40cdb7454fcbf0a016f5ff3a7e2cecbef0"
+    },
+    {
+      "path": "verification/aquavelle-harvest-seasonal-desktop.png",
+      "bytes": 140645,
+      "sha256": "d5b1894bcd49154452a5fc5e442c1f8086f7d616a3f44bf28631275a36d22644"
+    },
+    {
+      "path": "verification/aquavelle-release-accessibility.json",
+      "bytes": 492,
+      "sha256": "e820faa0c8b7a1689aae486bb7f981a8aabb9db4eba13f75a294cae821cc7a57"
+    },
+    {
+      "path": "verification/aquavelle-release-browser.json",
+      "bytes": 913,
+      "sha256": "c00e18f4d44adafd395c91a4e69f0a0b775679b995f0b590c6740671d90cf2d7"
+    },
+    {
+      "path": "verification/aquavelle-release-home-desktop.png",
+      "bytes": 330557,
+      "sha256": "687c62adcddc373029255145d9f464ee0b1fbb9caa8d0ee9dbe196c66ae78da2"
+    },
+    {
+      "path": "verification/aquavelle-release-http-smoke.json",
+      "bytes": 1234,
+      "sha256": "298bdd441c1d9e994fdcba2cb07423e184efa4a21447248723594ebdb142cfd3"
+    },
+    {
+      "path": "verification/aquavelle-release-water-mobile-bangla.png",
+      "bytes": 136730,
+      "sha256": "ee384a6dd742dfa510bfff998039c0b828ad816eb6d37153dfbe3f7f9c7696e8"
+    },
+    {
+      "path": "verification/aquavelle-riverwatch-mobile-bangla.png",
+      "bytes": 75039,
+      "sha256": "b83594a9aecf48c75d7aff50cf7c6f50b9e1da996045148cef3b0d3bb0923005"
+    },
+    {
+      "path": "verification/aquavelle-riverwatch-national-desktop.png",
+      "bytes": 214684,
+      "sha256": "a269359075ba4959ef8eb8815e18553b20cbcc6545062614fa6a32c52cf1c540"
+    },
+    {
+      "path": "verification/aquavelle-riverwatch-pilot-desktop.png",
+      "bytes": 208223,
+      "sha256": "7c5d8a9e09508a93481e4bc9af17bce80326d9e52e0150df7a3ccc159d40ba1e"
+    },
+    {
+      "path": "verification/atlas-harvest-browser.json",
+      "bytes": 1021,
+      "sha256": "8e0d9d045d9edb662e6f8ac211771f40905bb8f793792e6ea04f634af20c1220"
+    },
+    {
+      "path": "verification/atlas-harvest-http-smoke.json",
+      "bytes": 1411,
+      "sha256": "ad2aa2d3402c145e23d883ae09c15ac39c38cb417c2aaa4b168c984124e402e8"
+    },
+    {
+      "path": "verification/browser-checks.json",
+      "bytes": 1861,
+      "sha256": "e47b79f2f9fce42697a9db13b32c867f084342ac0dd09ec3488bd2b401a3608f"
+    },
+    {
+      "path": "verification/core-dependency-audit.json",
+      "bytes": 385,
+      "sha256": "e101486a7030392afa6aab51b2f843f7df0a2772d1de6e5ec347a45c7d0284de"
+    },
+    {
+      "path": "verification/dacope-gis-desktop.png",
+      "bytes": 121440,
+      "sha256": "702a7f0b69febb4e5ac238439a39f6ab9da8cd5934e81ba2c695153bfc4dbab7"
+    },
+    {
+      "path": "verification/interface-detector.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "verification/operations-browser-2026-10-24.json",
+      "bytes": 1740,
+      "sha256": "4fa69782af0bfac9cef658db539d811274a6230b8a1b03a8da4a51505578ff0b"
+    },
+    {
+      "path": "verification/operations-check-2026-10-24.log",
+      "bytes": 32874,
+      "sha256": "067bdc510cebfc4ac3e34997d3d36e3eac59c2f90560e7a1abb48636df37a016"
+    },
+    {
+      "path": "verification/operations-design-scan-2026-10-24.json",
+      "bytes": 4,
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    {
+      "path": "verification/operations-http-smoke-local-2026-10-24.log",
+      "bytes": 820,
+      "sha256": "871fdaf758f2df92a040ce572c79f34d6824cd6cd20bd3c9cbb23990d9816ed4"
+    },
+    {
+      "path": "verification/operations-npm-audit-2026-10-24.json",
+      "bytes": 388,
+      "sha256": "42c984b4eaf9ab964dff594c53669e120f13f6651eecebf9a442fff47bf8c95f"
+    },
+    {
+      "path": "verification/optional-chain-audit.json",
+      "bytes": 50275,
+      "sha256": "c08b3ff1c60e801720e4c0eb7b6d0a489f8c1277e3c8f6fef482babc3e1bd014"
+    },
+    {
+      "path": "verification/release-verification.json",
+      "bytes": 7226,
+      "sha256": "907f9f289ec054175076ae6a74a8435fd96ab39d00851e30706e416e47d98c9d"
+    },
+    {
+      "path": "verification/scientific-reproduction.json",
+      "bytes": 536,
+      "sha256": "fef2448d1be7d82fc69e25ca0548f0c06edd56628a1b477c657337c19cd3206f"
+    },
+    {
+      "path": "verification/v3-browser-checks.json",
+      "bytes": 2206,
+      "sha256": "f7840584f0303a4d1af7d2098cff83503d78f15c266482e7007b808a97aeaee8"
+    },
+    {
+      "path": "verification/v3-check.log",
+      "bytes": 34787,
+      "sha256": "ca5d7329a8e6e735985e7bf0b2eff0b2109b29e6930eea7f30c6c13279de4f1f"
+    },
+    {
+      "path": "verification/v3-core-dependency-audit.json",
+      "bytes": 388,
+      "sha256": "42c984b4eaf9ab964dff594c53669e120f13f6651eecebf9a442fff47bf8c95f"
+    },
+    {
+      "path": "verification/v3-design-detector.json",
+      "bytes": 4,
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    {
+      "path": "verification/v3-http-smoke.log",
+      "bytes": 942,
+      "sha256": "166185d92bb107a5d76a6308f1c131b1d9f4ab946185aaaab5bd0d0c78c9043c"
+    },
+    {
+      "path": "verification/v3-map-desktop.jpg",
+      "bytes": 113732,
+      "sha256": "cc38cdb4405b3228978514b82bfd4f14fc161d90a54e271ce9115d93854293d9"
+    },
+    {
+      "path": "verification/v3-map-mobile.jpg",
+      "bytes": 39362,
+      "sha256": "55fea8ddcd56258c55afd1c1dbd29ffc3235ac74e2ee2beb2c13130158459605"
+    },
+    {
+      "path": "verification/v3-regional-rebuild.log",
+      "bytes": 415,
+      "sha256": "69335cf92a723f28506e57207dfd0d235817ab9d508ef266215acba814ee0770"
+    },
+    {
+      "path": "verification/v4-check.txt",
+      "bytes": 37369,
+      "sha256": "6c5dfe9510b4462243d52a21a189b4de07f6e699ee713ebec8f515648967c5d0"
+    },
+    {
+      "path": "verification/v4-core-audit.json",
+      "bytes": 388,
+      "sha256": "42c984b4eaf9ab964dff594c53669e120f13f6651eecebf9a442fff47bf8c95f"
+    },
+    {
+      "path": "verification/v4-http-smoke.json",
+      "bytes": 928,
+      "sha256": "5c058e54aaa4eefb8ff877b834d2bb41234073d255fbbb06c936ee7935269c1c"
+    },
+    {
+      "path": "verification/v4-legacy-http-smoke.json",
+      "bytes": 826,
+      "sha256": "e77a8b60be8bac59b623c8385cd90500a6a256d3cf3bd4f965aace38b9977acb"
+    },
+    {
+      "path": "verification/v4-python-regions.txt",
+      "bytes": 415,
+      "sha256": "14ea08274d4aff27dd0c4ed30ae26e1d5d844b60729fc0f5bd474821a440afca"
+    },
+    {
+      "path": "verification/v4-rivers-desktop.png",
+      "bytes": 182781,
+      "sha256": "2069d4658e1d6badaa0cb1864eeda3e96ee3514678334745e591028623b2124d"
+    },
+    {
+      "path": "verification/v4-rivers-mobile.png",
+      "bytes": 37527,
+      "sha256": "bf5a2fe1eef4e75d661eec57288d329ed288983d31d2badafd4a9c4dfef43c04"
+    },
+    {
+      "path": "verification/v4-supply-desktop.png",
+      "bytes": 110606,
+      "sha256": "c4881b2e33751ddd0b8681ef4eb3ad602e504609600c88c237432aa41a290fd2"
+    },
+    {
+      "path": "verification/v4-validation-summary.json",
+      "bytes": 1802,
+      "sha256": "3e3b23ae5f9b1db7056c018501ad863e212a4a3a0f68ccb40d130190e64d9aa1"
+    },
+    {
+      "path": "verification/v4-water-mobile.png",
+      "bytes": 37564,
+      "sha256": "92475ee88a7bf5ef6de178e199ec235f5a25850949d11423cd1bad92e79afaf3"
+    },
+    {
+      "path": "verification/water-care-mobile-bangla.png",
+      "bytes": 35624,
+      "sha256": "f79b0e23b5fa882f79dad02403faf2e827d9f2ff46559de9b7a2801cd2e1e031"
+    },
+    {
+      "path": "verification/water-locator-desktop.png",
+      "bytes": 78791,
+      "sha256": "40721dae1b72ac21c2b138702b7032bbefce9fea184e9db48a94469fd6fcc4ca"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 2945,
+      "sha256": "5ca2be2b4d863c3d45ef4ba5e6b558c15d6a3eeba2e606649eb32292efb2d080"
+    },
+    {
+      "path": "worker/index.ts",
+      "bytes": 1830,
+      "sha256": "6fae33d85df0581afef20a2593ad692ca77b2d2007747602a1cd160427e1d96e"
+    }
+  ]
+}

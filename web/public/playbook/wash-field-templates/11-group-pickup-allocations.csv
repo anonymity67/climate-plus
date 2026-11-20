@@ -1,0 +1,1 @@
+﻿assignment_id,incident_id,plan_id,plan_version,group_id,site_id,window_start_utc,window_end_utc,eligible_group_households,assigned_households,allocated_l,planned_path_edge_ids,one_way_minutes,actual_collections,confirmed_at_utc,remaining_households,fallback_exception_id,verification_snapshot_id

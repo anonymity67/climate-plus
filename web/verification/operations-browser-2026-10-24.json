@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-24",
+  "release": "0.4.0",
+  "environment": "Loopback Vinext dev server with real local D1; Seedy test identity",
+  "checks": [
+    {
+      "task": "Create replay trip via form",
+      "result": "Saved and restored after server restart and reload"
+    },
+    {
+      "task": "Block e-407214-0-9",
+      "result": "Route changed7.89km to9.74km, distinct11.21km alternative remains"
+    },
+    {
+      "task": "Replay step",
+      "result": "Persisted replay-labelled supplier position; not GPS"
+    },
+    {
+      "task": "Pollution observation",
+      "result": "Saved representational pH7.1/DO3.2/COD65;2/3 fisheries objectives failed; potability unknown"
+    },
+    {
+      "task": "Investigation",
+      "result": "Linked case created and sampling stage saved with audit"
+    },
+    {
+      "task": "Signed-out invitation",
+      "result": "Non-secret fake token fragment survived local sign-in into prefilled password field; URL query contained no token"
+    },
+    {
+      "task": "Responsive",
+      "result": "Desktop and390px phone-width; table scrolls inside labelled keyboard-focusable region; document width382px at viewport390px after fix"
+    },
+    {
+      "task": "Optional legacy EVM development proxy",
+      "result": "GET /chain/status forwarded to a labelled loopback transport fixture on5174; no new EVM or external timestamp validation claimed"
+    }
+  ],
+  "limits": [
+    "Physical hardware GPS precision and backgrounded mobile behavior not tested",
+    "Hosted private user CRUD requires normal Site access; local test headers are never production authentication",
+    "No field water quality, traffic or flood-safe access validation claimed"
+  ]
+}

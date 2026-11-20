@@ -1,0 +1,14 @@
+* text=auto eol=lf
+research/** -text
+public/data/** -text
+public/examples/** -text
+examples/*.csv -text
+backend/data/** -text
+public/fonts/** -text
+documentation/** -text
+provenance/** -text
+verification/** -text
+*.gpkg -text
+*.png -text
+*.pdf -text
+*.xlsx -text

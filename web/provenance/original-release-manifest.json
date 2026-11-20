@@ -1,0 +1,306 @@
+{
+  "schema": "climate-plus/evidence-manifest-v1",
+  "createdAt": "2026-10-21T18:16:02.731881+00:00",
+  "files": [
+    {
+      "path": "ATTRIBUTIONS.md",
+      "bytes": 3330,
+      "sha256": "e92cf8e492e0449c025c57860f5b110195462b5bd8e06fc0aacf65122ca9a497"
+    },
+    {
+      "path": "DATASETS.json",
+      "bytes": 5713,
+      "sha256": "dc71eb933a69f8ceae89b441384b4b0ab177b634850d2291668c51a7843812a2"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5241,
+      "sha256": "a1ff5fff8631277934ff0ffb2569c0c23fb5d37ed02c8c7a0cd147a34e4f55b1"
+    },
+    {
+      "path": "contracts/EvidenceRegistry.sol",
+      "bytes": 809,
+      "sha256": "5442908182d702cd652041c68e0fa8eb42cb4a662c0f01572c634fcfdcf9bc77"
+    },
+    {
+      "path": "documentation/AUDIT-AND-ENHANCED-PLAN.md",
+      "bytes": 15439,
+      "sha256": "1defbd9d05ad24431a26cf63928b189c969639b70709f260353415035e6f97a4"
+    },
+    {
+      "path": "documentation/BUILD-LEDGER.md",
+      "bytes": 2512,
+      "sha256": "b270f75cd965c23e4fd01d15554fd7383b83e9f65ffcee1f2c915418c5ed3a1e"
+    },
+    {
+      "path": "documentation/CLAIM-LEDGER.md",
+      "bytes": 3681,
+      "sha256": "11ed42bfc9f4912e85acf2894dff7934a990cbb0209c6168bc0285d2a2539be7"
+    },
+    {
+      "path": "documentation/DATASETS.md",
+      "bytes": 7065,
+      "sha256": "f0be6edf51d5e7d5b2c9335455dd001769b0a158c566294775fb5a42a61b912a"
+    },
+    {
+      "path": "documentation/METHODS-AND-VALIDATION.md",
+      "bytes": 12361,
+      "sha256": "0e0e8d8caaf2e5f812abeb864efdee7b5aed5918372b9aa5e99258bb06fa2c27"
+    },
+    {
+      "path": "documentation/OPERATOR-GUIDE.md",
+      "bytes": 5146,
+      "sha256": "fcc5674d00b6a7ee55b726ee92118a139ad30787c5714336f47347929f112599"
+    },
+    {
+      "path": "documentation/PILOT-AND-VENTURE.md",
+      "bytes": 7263,
+      "sha256": "d35d23dea40c622b676a2cf6edc44158ee766f2ce87cae609969178dd99b4a5e"
+    },
+    {
+      "path": "documentation/POLLUTION-IMPLEMENTATION.md",
+      "bytes": 4904,
+      "sha256": "8a69cfe56ea6c76d2c4603f662b6c7543e3fd8187180bc2bfaa8b836d04e4bbc"
+    },
+    {
+      "path": "documentation/SUBMISSION-PACK.md",
+      "bytes": 6454,
+      "sha256": "845d3bfc7c812b8750077749b51d753e2d7f41754a0821d10e2ca414f31ddcf0"
+    },
+    {
+      "path": "documentation/VALIDATION-REPORT.md",
+      "bytes": 3873,
+      "sha256": "cd5ed5bb35dc96e8cb7c2156af6ec7303962eacb0289670c82ba54da04221c8c"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 224732,
+      "sha256": "03be59927ed07932f26ecb460dbed56a305dd549882afd9bf52724f8a7f41bc5"
+    },
+    {
+      "path": "package.json",
+      "bytes": 496,
+      "sha256": "a44e8e25dc167e52d6e21fc9a93ae4107f89141be83b6e86b9c0622d1bc5637f"
+    },
+    {
+      "path": "public/data/benchmark.json",
+      "bytes": 54755,
+      "sha256": "7917e4b423acdcf73000c39dcdf062170c77d30d44433e0823d6f21ac1d37279"
+    },
+    {
+      "path": "public/data/climate-analysis.json",
+      "bytes": 26901,
+      "sha256": "e208cc2ba065c82e0566db551d1f248c5149aada1197c5b42479fc875ebcac8a"
+    },
+    {
+      "path": "public/data/credibility-audit.json",
+      "bytes": 2635,
+      "sha256": "012d57d4076cfaec3247bf5f06b65b1c1e9ee0f322cdc588e55cf5b8ae835a51"
+    },
+    {
+      "path": "public/data/water-evidence.json",
+      "bytes": 1044355,
+      "sha256": "f6e14c93fac76b94a68d172e205d54292b9048b230139317f5eef8de1b658ffe"
+    },
+    {
+      "path": "public/data/water-stations.geojson",
+      "bytes": 897587,
+      "sha256": "448efa00bcfee7a83c56bf2b792f0bdb060aa50b420adb0952a3f00e3be39ac1"
+    },
+    {
+      "path": "public/data/water-validation.json",
+      "bytes": 86367,
+      "sha256": "e408e7ed0415dfd88909463709f38a1d34944299d2285fdec30c9629e6dec721"
+    },
+    {
+      "path": "requirements-research.txt",
+      "bytes": 49,
+      "sha256": "0920b5b7291f820f34583c28a59cba70e258078daf8eb8f570b497c3ef24ecfc"
+    },
+    {
+      "path": "research/raw/power.txt",
+      "bytes": 8315,
+      "sha256": "af6f8b715919e3d4b067b7b141627db1f9b4464249795896d9c2d627795c54fe"
+    },
+    {
+      "path": "research/raw/roni.txt",
+      "bytes": 97820,
+      "sha256": "c3a07a7f28a7d69acef4fe03eb91482b062d1a1d63f462c181b0f5d5d4f23ff8"
+    },
+    {
+      "path": "research/water/Water quality.csv",
+      "bytes": 182314,
+      "sha256": "baa149c139cc514b1f339015f49cb8afca459e1c2e7323e10f5d7b6defa49a7a"
+    },
+    {
+      "path": "research/water/basis-metadata.json",
+      "bytes": 7828,
+      "sha256": "347f023eee8c85a9134d65d783dea7ff64e70cfa65c686811b9fda6670942961"
+    },
+    {
+      "path": "research/water/basis-v2.xlsx",
+      "bytes": 85999,
+      "sha256": "3ab21b826163b70fe34370d7816784f394bae22a39830634e19a8affe84704f7"
+    },
+    {
+      "path": "research/water/dhaka-metadata.json",
+      "bytes": 4590,
+      "sha256": "feeb9424acdbb319a947aa5d534d0d334f32cbdac427462c254adb43f4df3abc"
+    },
+    {
+      "path": "research/water/ecr2023.pdf",
+      "bytes": 826000,
+      "sha256": "21c2b53f98a4e061f4321818c262149c4aaccf44a6f2a8635b152bde43c23c4a"
+    },
+    {
+      "path": "scripts/benchmark.mjs",
+      "bytes": 1417,
+      "sha256": "1b7d30eb07bf72cf83e18ed62c65819d4541c7cf6891adebfbfa09237a068cd8"
+    },
+    {
+      "path": "scripts/chain-server.mjs",
+      "bytes": 1708,
+      "sha256": "0df5495e3554a70e386222fd8643801ebd33e8c74e607905e51c2ed2b3cbbcd2"
+    },
+    {
+      "path": "scripts/climate-analysis.py",
+      "bytes": 6274,
+      "sha256": "e5267a590506fee0f4677462293f73b727a6a54fd48303152b9c0011e64332f4"
+    },
+    {
+      "path": "scripts/credibility-audit.py",
+      "bytes": 4113,
+      "sha256": "19296e490498ed4a9e47dd8d50544d956ab78963f25d81d883f5bf5a6b92417b"
+    },
+    {
+      "path": "scripts/fetch-font.py",
+      "bytes": 686,
+      "sha256": "9c6f74dacdcfa250c4d0bef1aadc27123611045f1d49aed8efb20ce15b9f1d4f"
+    },
+    {
+      "path": "scripts/fetch-water.py",
+      "bytes": 1107,
+      "sha256": "52f7423124e42d5f981b87a3a9c6bc3e6b974caf6ab0479401e3abcf23a1b8d9"
+    },
+    {
+      "path": "scripts/fix-font-format.py",
+      "bytes": 581,
+      "sha256": "ef39a22d98d661c37823e03ac102e9f9bf2fefea14b218f955e7a74832d52abc"
+    },
+    {
+      "path": "scripts/fix-review.py",
+      "bytes": 2999,
+      "sha256": "bf03053fd15a4f058928f5f676d4b2bf398f662fa4202c4630b0d64d77701d12"
+    },
+    {
+      "path": "scripts/integrate-water.py",
+      "bytes": 5229,
+      "sha256": "e2b8e3d8ffcf776fab38ee886ada3783ca4f4e3c887a9ea81d6ab43ca7a394f3"
+    },
+    {
+      "path": "scripts/prepare-water-data.py",
+      "bytes": 10796,
+      "sha256": "01afa1f81a5af3a32b6201418879d859e2bf3107207284069b2a860e150599ae"
+    },
+    {
+      "path": "scripts/refine-water-inputs.py",
+      "bytes": 4915,
+      "sha256": "c4d8fbdc09bcc90fbc082ba3be8e58f4f350781e5814106e40658aedc90fb897"
+    },
+    {
+      "path": "scripts/registry.mjs",
+      "bytes": 1099,
+      "sha256": "6b1f0dea084938a43c82b25e7494193d192ca48616e625b93857ff75dd87faaa"
+    },
+    {
+      "path": "scripts/release-tidy.py",
+      "bytes": 1592,
+      "sha256": "5dc4b3bd0cba58ac79093cd9a8e8d379e9dbe02e62bb48a2ffc520dea746d6b6"
+    },
+    {
+      "path": "scripts/reproduce.py",
+      "bytes": 2602,
+      "sha256": "a1729c741da1a933409203ddb8bc0ba635d7feaef946052d5d9e4ee69ec002ee"
+    },
+    {
+      "path": "scripts/verify-manifest.mjs",
+      "bytes": 710,
+      "sha256": "38768228b15cbaab36e3aac258b0c4699536f8b224f85014d84a7c831b37c930"
+    },
+    {
+      "path": "scripts/write-data-register.py",
+      "bytes": 7321,
+      "sha256": "bff905af9f4ae54bf5668ab304e701fe0741fbdf89d339257ce58c4a7a63debe"
+    },
+    {
+      "path": "src/App.jsx",
+      "bytes": 27448,
+      "sha256": "d9e3138d29a33c007b8a69c698d38bf0afb36ca1276c85a4c4eb9989c8d730da"
+    },
+    {
+      "path": "src/PollutionPanel.jsx",
+      "bytes": 25813,
+      "sha256": "79b8c68da0aa8af0941b56f364ff9a56e1c7ca5b043813662dc64bbc257112d4"
+    },
+    {
+      "path": "src/engine.mjs",
+      "bytes": 6968,
+      "sha256": "7c893cdc930b6f014ba8bd6ce918ccc09f346d7d2829d6e3613e30255d9a39c7"
+    },
+    {
+      "path": "src/main.jsx",
+      "bytes": 186,
+      "sha256": "30428408e7221b6257dcc519c829ba2108b036aa0e8948dd9c9af10853815c6d"
+    },
+    {
+      "path": "src/notice.mjs",
+      "bytes": 238,
+      "sha256": "31ed5ecd0d8b6c7118fd8fd4b86c031853931b4096d7ba3e5ac49d8a1e7e124f"
+    },
+    {
+      "path": "src/pollution.css",
+      "bytes": 6193,
+      "sha256": "43af971589aa2f571ea8099138d13dcd7d473e516c970e7362703281f337e401"
+    },
+    {
+      "path": "src/styles.css",
+      "bytes": 15527,
+      "sha256": "a103943e8648b642525198421db6c1222cc7204ed1112f035c4912da842530db"
+    },
+    {
+      "path": "src/water-engine.mjs",
+      "bytes": 6772,
+      "sha256": "67a3107976f49230622c1e2fbce93d884b348d8be68482952a2e430335c4f0af"
+    },
+    {
+      "path": "tests/data-validation.test.mjs",
+      "bytes": 1665,
+      "sha256": "fd13f3ea794b2c5d078fa7d6e8b57b5f704a243cddbe6e18009e6fd905969336"
+    },
+    {
+      "path": "tests/engine.test.mjs",
+      "bytes": 3002,
+      "sha256": "55a3bc3eaa27faf8cc1333e5e69f271069a46c5f9504d778b4b71fe9935aafe5"
+    },
+    {
+      "path": "tests/notice.test.mjs",
+      "bytes": 510,
+      "sha256": "606f73eebe75baccf6157b3259e3560c6d8d472455533d9c77dcddd9138b1ae0"
+    },
+    {
+      "path": "tests/registry.test.mjs",
+      "bytes": 960,
+      "sha256": "c12b71dd899e31b3f68142580e66ac16b67478558c4903aa48ae08d6ae29c5d0"
+    },
+    {
+      "path": "tests/water.test.mjs",
+      "bytes": 3908,
+      "sha256": "df9c32d902e251ad30066b84b9a5fdee4e951e777d9b83b910e88874845d5cbf"
+    },
+    {
+      "path": "vite.config.js",
+      "bytes": 199,
+      "sha256": "4737b1de3e6b3c96b49cf9e92e43400a11ee731acd36e55ccc56ced8e8b7fd49"
+    }
+  ]
+}

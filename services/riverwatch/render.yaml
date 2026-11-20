@@ -1,0 +1,14 @@
+# One-click deploy on Render (https://render.com) using the Dockerfile.
+services:
+  - type: web
+    name: riverwatch-bd
+    runtime: docker
+    plan: standard        # >= 2 GB RAM recommended for re-runs of the national run
+    healthCheckPath: /api/health
+    envVars:
+      - key: RIVERWATCH_ADMIN_TOKEN
+        generateValue: true
+    disk:
+      name: riverwatch-data
+      mountPath: /app/data/reviews
+      sizeGB: 1

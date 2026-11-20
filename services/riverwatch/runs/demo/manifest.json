@@ -1,0 +1,58 @@
+{
+  "created_utc": "2026-11-19T19:37:08.040681+00:00",
+  "mode": "synthetic",
+  "config": {
+    "crs": "EPSG:32646",
+    "snap_m": 1500,
+    "ambiguity_m": 25,
+    "junction_m": 75,
+    "offset_m": 500,
+    "sample_radius_m": 25,
+    "corridor_km": 10,
+    "buffer_m": 500,
+    "decay_km": 10,
+    "min_water_pixels": 3,
+    "min_pairs": 6,
+    "delta_scale": 0.1,
+    "population_scale": 50000,
+    "poi_scale": 10,
+    "population_label": "Synthetic people-per-pixel raster (not real population data).",
+    "weights": {
+      "optical": 0.35,
+      "severity": 0.3,
+      "population": 0.25,
+      "poi": 0.1
+    }
+  },
+  "inputs": {
+    "sites": "runs/demo/demo_inputs/sites.geojson",
+    "rivers": "runs/demo/demo_inputs/rivers.gpkg",
+    "population": "runs/demo/demo_inputs/population.tif",
+    "pois": "runs/demo/demo_inputs/pois.geojson"
+  },
+  "observation_files": [
+    "runs/demo/synthetic_observations.csv"
+  ],
+  "site_count": 3,
+  "ranked_count": 2,
+  "linked_count_including_references": 3,
+  "union_zone_count": 2,
+  "union_population": {
+    "pop_near": 8241.0,
+    "valid_pop_cells": 680,
+    "zone_cells_in_raster": 680,
+    "pop_coverage_complete": true
+  },
+  "union_mapped_amenities": {
+    "school": 1,
+    "hospital": 1,
+    "drinking_water": 1,
+    "water_well": 1
+  },
+  "observation_qa": {
+    "input_rows": 72,
+    "unknown_pair_rows": 0,
+    "accepted_sample_rows": 72,
+    "valid_paired_dates": 36
+  }
+}

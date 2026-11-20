@@ -1,0 +1,133 @@
+{
+  "retrieved_utc": "2026-10-24T06:09:19.061306+00:00",
+  "request_url": "https://data.waterpointdata.org/resource/eqje-vguj.csv?%24select=row_id%2Cwpdx_id%2Clat_deg%2Clon_deg%2Creport_date%2Cstatus_id%2Cstatus_clean%2Csource%2Cdataset_title%2Cwater_source_clean%2Cwater_tech_clean%2Cfacility_type%2Cclean_adm1%2Cclean_adm2%2Cclean_adm3%2Cclean_adm4%2Csubjective_quality_clean%2Cfecal_coliform_presence%2Cfecal_coliform_value%2Cwater_source%2Cwater_tech%2Cstatus%2Cis_latest%2Cis_duplicate%2Cpublic_data_source%2Cdata_lnk&%24where=clean_country_id%3D%27BGD%27&%24order=row_id&%24limit=50000",
+  "sha256": "ee1463b90e43a6ef8380f63ddb5f46eddbeedf3960e2c140f434b432b7d3cda3",
+  "bytes": 8267368,
+  "records": 20084,
+  "fields": [
+    "row_id",
+    "wpdx_id",
+    "lat_deg",
+    "lon_deg",
+    "report_date",
+    "status_id",
+    "status_clean",
+    "source",
+    "dataset_title",
+    "water_source_clean",
+    "water_tech_clean",
+    "facility_type",
+    "clean_adm1",
+    "clean_adm2",
+    "clean_adm3",
+    "clean_adm4",
+    "subjective_quality_clean",
+    "fecal_coliform_presence",
+    "fecal_coliform_value",
+    "water_source",
+    "water_tech",
+    "status",
+    "is_latest",
+    "is_duplicate",
+    "public_data_source",
+    "data_lnk"
+  ],
+  "counts": {
+    "source": {
+      "WaterAid": 1858,
+      "Reach Initiative": 2081,
+      "UNHCR": 16145
+    },
+    "dataset_title": {
+      "WaterAid PIMS_Bangladesh_2014": 1858,
+      "REACH Initiative - Bangladesh": 2081,
+      "UNHCR_Global_2020": 26,
+      "UNHCR_Global_2022": 16119
+    },
+    "status_id": {
+      "Yes": 14368,
+      "No": 3635,
+      "Unknown": 2081
+    },
+    "status_clean": {
+      "Non-Functional": 19547,
+      "Non-Functional, dry season": 436,
+      "Functional": 101
+    },
+    "clean_adm1": {
+      "Rangpur": 1181,
+      "Khulna": 70,
+      "Rajshahi": 449,
+      "Dhaka": 16,
+      "Sylhet": 24,
+      "Chittagong": 18310,
+      "Barisal": 34
+    },
+    "clean_adm2": {
+      "Kurigram": 337,
+      "Khulna": 66,
+      "Nilphamari": 278,
+      "Rangpur": 523,
+      "Naogaon": 133,
+      "Tangail": 13,
+      "Sylhet": 24,
+      "Panchagarh": 39,
+      "Dhaka": 3,
+      "Rajshahi": 207,
+      "Cox'S Bazar": 18233,
+      "Satkhira": 4,
+      "Nawabganj": 109,
+      "Chittagong": 57,
+      "Bhola": 34,
+      "Dinajpur": 3,
+      "Gaibandha": 1,
+      "Bandarban": 20
+    },
+    "facility_type": {
+      "Improved": 20084
+    },
+    "is_latest": {
+      "true": 20084
+    },
+    "is_duplicate": {
+      "": 5510,
+      "true": 14574
+    },
+    "fecal_coliform_presence": {
+      "": 20065,
+      "Absent": 19
+    },
+    "fecal_coliform_value": {
+      "": 20084
+    }
+  },
+  "report_date_min": "2014-01-01T00:00:00.000",
+  "report_date_max": "2019-11-21T00:00:00.000",
+  "country_filter": "clean_country_id='BGD'",
+  "api_metadata_file": "eqje-vguj-metadata.json",
+  "unique_wpdx_ids": 20084,
+  "unique_coordinate_pairs": 20084,
+  "invalid_wgs84_coordinates": 0,
+  "conflicting_presence_vs_clean_status_rows": 14399,
+  "is_duplicate_true_but_wpdx_id_unique": 14574,
+  "coordinate_bounds": {
+    "min_lat": 20.7662083333333,
+    "max_lat": 26.20406,
+    "min_lon": 88.1614783333333,
+    "max_lon": 92.32694
+  },
+  "safety_clearance_records": 0,
+  "licence_url": "https://www.waterpointdata.org/share-data/",
+  "licence": "CC BY 4.0 per WPdx Provider Agreement; API metadata does not itself populate a licence field",
+  "standard_url": "https://www.waterpointdata.org/wp-content/uploads/2021/04/WPDx_Data_Standard.pdf",
+  "role": "Historical water-point inventory; confirmation-required candidates only",
+  "conflict_rule": "status_id Yes and status_clean starts Non-Functional, or status_id No and status_clean Functional. These are distinct constructs; flagged for review rather than silently equated or resolved.",
+  "notes": [
+    "API current metadata update timestamps must not be mistaken for water-point assessment dates.",
+    "is_duplicate is a provider processing flag; all returned wpdx_ids and exact coordinate pairs are unique. Do not drop 14,574 records merely from this flag without understanding cluster semantics.",
+    "No phone, email, manager names, photo links or free-text notes were requested.",
+    "All 20,084 points are more than six years old as of 2026-10-24 and require current local confirmation.",
+    "Improved is a technology classification, not a drinking-water safety result.",
+    "19 records have historic fecal-coliform Absent; no numeric coliform results, no current laboratory clearance, no arsenic/salinity tests."
+  ]
+}

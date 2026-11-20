@@ -1,125 +1,50 @@
-# Climate++
+# Aquavelle
 
-**Keep essential water flowing when a storm, flood or salt intrusion hits.**
+**Watch:** [20-second overview](media/Aquavelle-20s.mp4) · **Deploy:** `web/docs/DEPLOY-AQUAVELLE.md`, or push to `main` after adding the three Cloudflare secrets listed in `.github/workflows/aquavelle.yml`.
 
-Climate++ is a research prototype built for the IEEE ClimateChain 2026 hackathon. It helps people who deal with fresh-water distribution in coastal Bangladesh see three things before a calamity forces the decision:
+The October 2026 IEEE ClimateChain version of Climate++ is kept at the tag `climatechain-oct-2026`.
 
-1. **Who gets water first.** Set a budget and a school floor, and the Continuity desk calculates a fair seven-day response.
-2. **Which deliveries slow down.** The Response map shows how a Moderate or Severe storm delays a delivery on real roads, labelled _open_, _delayed_ or _extreme delay_.
-3. **Where river pollution is highest near customers.** The pollution tabs show measured river readings and a pollution-intensity grid, and look up the nearest points to any customer.
+**Store the rain. Have water all year.** Aquavelle is a rainwater-harvesting planner for Bangladesh, in Bangla and English. Many rivers are too polluted to rely on, and only 134 of 2,301 mm of yearly rain falls in the five driest months (Dhaka area, CHIRPS 2017–2021). Aquavelle helps households, schools, NGOs and local government plan rain tanks, choose shared tank sites and keep a backup water source.
 
-|                |                                                                               |
-| -------------- | ----------------------------------------------------------------------------- |
-| **Live demo**  | https://tourmaline-squirrel-94d50f.netlify.app                                |                                                           |
-| **Team**       | Ahnaf Antar (GIS and response map) · Munim Hasnat (water evidence) |
-| **Status**     | Research prototype. Scenario data. No live alerts.                            |
+- **Rainwater:** size a tank for a home, shared site or school, see which months need backup water, and use the Borsha-Bandhu construction drawings.
+- **Shared tanks:** 15 proposed shared tanks in the Dhaka study area, chosen by a Bayesian model of rainfall and river pollution, for about 75,000 people; each met its dry-season target in 90–93% of simulated years. Model estimates; sites need field checks.
+- **Find water / Check before you drink:** recorded backup sources and what to ask before using any source, including stored rain.
+- **Field teams:** river pollution atlas, river measurements, outage drill and private field records.
 
-> **Please read this first.** Storm areas, storm delays and the service network are **scenarios, not forecasts**. The pollution grid is a publisher score with no sampling date, unit or laboratory validation: it helps decide where to look first and is **not a drinking-water or health rating**. Climate++ has no ordering, payment or dispatch feature. The next step is a field pilot with a local operator.
+`gis/DEMO.md` is a 4-minute demo script that walks through the same data in QGIS and in the app.
 
-## What you can do in the app
+## Run locally
 
-| Tab                          | What it does                                                                                                                                             |
-| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Continuity desk**          | Pick Storm, Salinity or Dry. Set the budget, a demand assumption (0.8x to 1.4x) and a school daily floor. Calculate a fair seven-day response.           |
-| **Response map**             | Five regions on real OpenStreetMap roads. Choose Storm, then Moderate or Severe, and see the delivery detour and its delay label. Block a road yourself. |
-| **Pollution monitoring**     | Historical Dhaka river measurements (pH, dissolved oxygen, COD) screened against fisheries objectives, plus source investigation and model validation.   |
-| **Customer pollution check** | All 9,958 pollution-intensity grid points. Click a place or add customers to see the nearest class, the worst class within 1, 2 or 5 km, and export CSV. |
-| **Compare responses**        | The calculated plan beside the reference plan, with the trade-offs explicit.                                                                             |
-| **Action register**          | Assign actions. Completion is recorded separately from confirmation.                                                                                     |
-| **Resident notice**          | A printable water-service notice (English and Bangla) for confirmed plans only.                                                                          |
-| **Evidence & trust**         | Sources, assumptions and a verifiable receipt for the plan.                                                                                              |
-
-### How the storm delay is calculated
-
-For the same supplier-to-reserve trip, `factor = scenario trip time / clear-road trip time`.
-
-- **Open:** below 1.2x. **Delayed:** 1.2x or more. **Extreme delay:** 1.75x or more. **No route:** the destination is unreachable.
-- **Dacope:** the roads touched by each storm area close, so the detour comes from the original polygons (7.89 km clear, 11.2 km moderate at 1.42x, 15.9 km severe at 2.02x).
-- **Ukhia, Chattogram, Khulna, Tongi:** a synthetic storm area on the clear route slows the roads inside it (moderate 50% speed, severe 20%). The areas are invented for the scenario.
-- Routes are calculated in the browser at an assumed 25 km/h with road-type caps. They are modelled times, not traffic estimates.
-
-### How the pollution check works
-
-The grid comes from the Kaggle dataset _Bangladesh River Pollution GIS_ (A.B.M. Mostakim Niloy, MIT licence). For a customer location the app finds the nearest grid points. If the nearest point is more than 1.5 km away, the place is reported as **outside the grid**, never as clean. The grid covers roughly Dhaka, Gazipur, Narsingdi, Brahmanbaria and Sylhet; most of the five regions fall outside it.
-
-## Run it on your computer
-
-Install **Node.js 24 LTS** (the app accepts Node 22.12 to 24). Open the project folder in VS Code, then in a terminal:
+Install Node.js 24 LTS. In PowerShell:
 
 ```powershell
-npm ci
-npm run check
-npm run dev
+cd web
+npm.cmd ci
+npm.cmd run setup:local
+npm.cmd run build
+npm.cmd run serve:local -- --port 5198
 ```
 
-Open **http://127.0.0.1:5173**. Stop with Ctrl+C.
+Open http://127.0.0.1:5198/. Use `npm` on macOS or Linux. See [deployment and verification](web/docs/DEPLOY-AQUAVELLE.md) for Cloudflare Workers, D1 and optional operator sign-in.
 
-- On Windows, if PowerShell blocks `npm.ps1`, use `npm.cmd` for the same commands.
-- For a production preview: `npm run build` then `npm run preview`, and open http://127.0.0.1:4173.
-- Deployments must serve the `dist` folder at the **website root**, because data files load from `/data/`. Opening `index.html` directly does not work. GitHub Pages project sites serve from a subfolder and will break.
-- Map background tiles need internet. Without it the roads, routes and pollution points still show.
+## Data and methods
 
-No API key, account or server is needed. Routes are calculated in the browser, entered points stay in the session (export the GeoJSON to keep them), and there is no central database.
+| Source | What it supports |
+| --- | --- |
+| WPdx historical inventory | 20,084 recorded points in 46 district and subdistrict combinations. Records span 2014–2019 and are concentrated in Cox’s Bazar. Current service and quality require local checks. |
+| Dhaka river dataset | 1,495 dated observations at original coordinates from 2017–2021. The site reader uses a partial fishery comparison. This cannot establish current drinking-water safety. |
+| RainHub, CHIRPS and WorldPop | A Dhaka-area scenario for 15 proposed shared tanks. Its estimated coverage and reliability use historical inputs and design assumptions. |
+| RiverWatch, OpenStreetMap and HydroRIVERS | A screening map of possible inspection leads. Sites, modelled river links and nearby population require field verification before any attribution or exposure claim. |
+| Borsha-Bandhu | Roof, tank and daily-use examples for home, shared and school planning. The calculator estimates water volume under the rainfall people enter. Its results are independent of the workbook’s monthly reliability model. |
+| District WASH Operations Playbook and Climate Plus | Outage tabletop practice, field forms and simulated delivery planning. Practice results do not describe a real service or a live hazard. |
 
-## Commands
-
-| Command               | Purpose                                                          |
-| --------------------- | ---------------------------------------------------------------- |
-| `npm ci`              | Install the exact locked dependencies                            |
-| `npm run dev`         | Run the app on port 5173                                         |
-| `npm test`            | Run the tests                                                    |
-| `npm run check`       | Check formatting, tests, production build and frozen data hashes |
-| `npm run verify:data` | Check the frozen data files against their recorded hashes        |
-| `npm run build`       | Build the app into `dist`                                        |
-
-To regenerate the storm-severity scenario files run `node scripts/build-storm-severity.mjs` (add `--check` to verify without writing).
+The [release plan](web/docs/AQUAVELLE-RELEASE-PLAN.md) records the archive decisions and reproduction limits. [Sources and licences](web/ATTRIBUTIONS.md) lists the original data providers.
 
 ## Project layout
 
-```text
-src/
-  App.jsx                    App shell and the Continuity desk workflows
-  response-map/              Response map and Customer pollution check (storm delay, routing UI, pollution lookup)
-  routing/engine.mjs         Road-graph shortest-path engine
-  PollutionPanel.jsx         Measured water evidence and investigation interface
-  engine.mjs                 Continuity planning and receipt functions
-  water-engine.mjs           Screening, mass balance and dissolved-oxygen model
-public/data/
-  regions/                   Road graphs and scenarios for the five regions
-  river-pollution-context.json   Pollution-intensity grid (9,958 points)
-research/                    Original data snapshots and acquisition records
-scripts/                     Reproduction, integrity checks and the storm-severity builder
-tests/                       Unit, regression and data-parity tests
-docs/ documentation/         Architecture, data contracts and the scientific write-ups
-DATASETS.json                Sources, versions, authors, rights and hashes
-DATA-MANIFEST.json           Checksums of the frozen data files
-```
+- `web/` contains the bilingual public entry points, field workspace, Worker API and D1 migrations.
+- `model/rainhub/` contains the R modelling pipeline, archived outputs and restored CHIRPS and WorldPop inputs.
+- `services/riverwatch/` contains the RiverWatch analysis pipeline and optional analyst service.
+- `gis/` contains the QGIS project, GeoPackage and offline map images.
 
-## Data and credits
-
-| Source                                                               | Used for                                           | Terms                  |
-| -------------------------------------------------------------------- | -------------------------------------------------- | ---------------------- |
-| OpenStreetMap contributors                                           | Road networks for all five regions and the basemap | ODbL 1.0               |
-| Kaggle, _Bangladesh River Pollution GIS_ (A.B.M. Mostakim Niloy)     | Pollution-intensity grid                           | MIT                    |
-| Dhaka river water quality, Mendeley Data (DOI 10.17632/xftpv7jvx3.1) | Measured pH, DO, COD, 2017 to 2021                 | CC BY 4.0              |
-| BASIS Sylhet survey, Mendeley Data (DOI 10.17632/bncwnj8yjt.2)       | Velocity points and mixing groups                  | CC BY 4.0              |
-| NASA POWER and NOAA CPC                                              | Rainfall and climate-feature experiments           | Source terms           |
-| Bangladesh ECR 2023 Gazette                                          | Fisheries objectives (pH, DO, COD)                 | Government publication |
-
-Full authors, dates, units and transformations are in `DATASETS.json`, `ATTRIBUTIONS.md` and `documentation/DATASETS.md`. No data provider endorses Climate++. The Dacope boundary file in `research/gis/v1/` has an unconfirmed licence; see `LICENSE-NOTICE.md`.
-
-## Limits
-
-- The service networks, assets and storm areas are fictional or synthetic scenarios placed on real roads. They are not surveyed facilities or forecasts.
-- Travel times assume 25 km/h with road caps. Current traffic, flooding and road access are unknown.
-- The pollution grid has no sampling date, unit or laboratory validation. Measured readings are historical and do not establish whether water is safe to drink.
-- No production authentication, server storage, dispatch, SMS or current contamination alerts exist.
-- The dissolved-oxygen model was tested on familiar historical locations, not on unseen river basins.
-
-## Licence
-
-Code released under the **MIT Licence** (see `LICENSE`). Third-party data keeps its own terms, listed above.
-
-## Learn more
-
-`docs/ARCHITECTURE.md`, `docs/DATA-CONTRACTS.md`, `docs/GIS-EXTENSION.md` and `docs/CONTRIBUTING.md` explain how to extend it. `documentation/PILOT-AND-VENTURE.md` describes the field-pilot plan.
+Project team. Ahnaf Antar and Munim Hasnat.

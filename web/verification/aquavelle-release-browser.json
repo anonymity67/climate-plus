@@ -1,0 +1,17 @@
+{
+  "browser": "Microsoft Edge",
+  "origin": "http://127.0.0.1:5205/",
+  "checks": [
+    "Desktop navigation fits one row and the real GIS cover renders",
+    "Area search, source inspection, map without internet tiles and pagination",
+    "Location sharing requires an explicit action and sends rounded coordinates in the body",
+    "Loopback sign-in, private visit saved through the form, reloaded from D1 and signed out",
+    "River observations, shared-tank scenario, RiverWatch screening and the WASH playbook open",
+    "Climate Plus delivery practice and advanced research remain reachable",
+    "Desktop flows emit no unhandled browser errors",
+    "Bangla mobile flows preserve language and accept Bengali numerals in the rainwater calculator",
+    "Home, water safety and tank planning fit 320–1440 px",
+    "The Bangla guidance and official links render with JavaScript disabled"
+  ],
+  "ok": true
+}

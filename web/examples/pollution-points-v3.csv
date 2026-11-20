@@ -1,0 +1,3 @@
+date,latitude,longitude,ph,do_mg_l,cod_mg_l,source,sourceKind
+2025-10-01,22.5738,89.5135,7.2,4.5,55,"REPRESENTATIONAL example only, no actual sample claim",representational
+2025-10-02,23.896,90.402,7.5,,40,"REPRESENTATIONAL example only, no actual sample claim",representational

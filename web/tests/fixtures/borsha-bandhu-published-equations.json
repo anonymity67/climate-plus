@@ -1,0 +1,122 @@
+[
+  {
+    "profile": "A",
+    "preset": "home",
+    "annualServedL": 10950,
+    "dryCoveragePct": 100.0,
+    "spillL": 8586.0,
+    "endL": 2636.0
+  },
+  {
+    "profile": "A",
+    "preset": "cluster",
+    "annualServedL": 93468.0,
+    "dryCoveragePct": 74.79245283018868,
+    "spillL": 62820.0,
+    "endL": 5568.0
+  },
+  {
+    "profile": "A",
+    "preset": "school",
+    "annualServedL": 412080.0,
+    "dryCoveragePct": 29.547169811320757,
+    "spillL": 174000.0,
+    "endL": 0.0
+  },
+  {
+    "profile": "B",
+    "preset": "home",
+    "annualServedL": 10950,
+    "dryCoveragePct": 100.0,
+    "spillL": 31350.0,
+    "endL": 3326.0
+  },
+  {
+    "profile": "B",
+    "preset": "cluster",
+    "annualServedL": 100824.0,
+    "dryCoveragePct": 86.35849056603774,
+    "spillL": 237576.0,
+    "endL": 12948.0
+  },
+  {
+    "profile": "B",
+    "preset": "school",
+    "annualServedL": 468000.0,
+    "dryCoveragePct": 39.62264150943396,
+    "spillL": 801000.0,
+    "endL": 0.0
+  },
+  {
+    "profile": "C",
+    "preset": "home",
+    "annualServedL": 10950,
+    "dryCoveragePct": 100.0,
+    "spillL": 23886.0,
+    "endL": 2636.0
+  },
+  {
+    "profile": "C",
+    "preset": "cluster",
+    "annualServedL": 100548.0,
+    "dryCoveragePct": 85.9245283018868,
+    "spillL": 178140.0,
+    "endL": 5568.0
+  },
+  {
+    "profile": "C",
+    "preset": "school",
+    "annualServedL": 478680.0,
+    "dryCoveragePct": 42.14150943396226,
+    "spillL": 566400.0,
+    "endL": 0.0
+  },
+  {
+    "profile": "D",
+    "preset": "home",
+    "annualServedL": 10950,
+    "dryCoveragePct": 100.0,
+    "spillL": 7566.0,
+    "endL": 2564.0
+  },
+  {
+    "profile": "D",
+    "preset": "cluster",
+    "annualServedL": 89820.0,
+    "dryCoveragePct": 69.0566037735849,
+    "spillL": 58308.0,
+    "endL": 4992.0
+  },
+  {
+    "profile": "D",
+    "preset": "school",
+    "annualServedL": 379320.0,
+    "dryCoveragePct": 23.858490566037734,
+    "spillL": 176160.0,
+    "endL": 0.0
+  },
+  {
+    "profile": "E",
+    "preset": "home",
+    "annualServedL": 10950,
+    "dryCoveragePct": 100.0,
+    "spillL": 14814.0,
+    "endL": 2804.0
+  },
+  {
+    "profile": "E",
+    "preset": "cluster",
+    "annualServedL": 99300.0,
+    "dryCoveragePct": 83.9622641509434,
+    "spillL": 106812.0,
+    "endL": 6912.0
+  },
+  {
+    "profile": "E",
+    "preset": "school",
+    "annualServedL": 470160.0,
+    "dryCoveragePct": 40.132075471698116,
+    "spillL": 302760.0,
+    "endL": 0.0
+  }
+]

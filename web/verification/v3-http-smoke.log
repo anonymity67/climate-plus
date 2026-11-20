@@ -1,0 +1,18 @@
+
+> climateplus-v3-map-mvp@3.0.0 smoke:local
+> node scripts/smoke-local.mjs http://127.0.0.1:5191
+
+{
+  "status": "passed",
+  "checkedAt": "2026-10-24T18:07:30.211Z",
+  "baseOrigin": "http://127.0.0.1:5191",
+  "checks": [
+    "actual HTTP adapter reaches D1; private API rejects unauthenticated caller",
+    "five-region unsigned server plans, actual storm detours, region-persisted private routes/replays, and built page entry",
+    "real graph routes, distinct alternative, persisted closure exclusion and preference",
+    "two independent HTTP actors join a scoped trip with single-use invitation",
+    "fixture device telemetry crosses HTTP; off-graph ETA withheld; role deletion acknowledged",
+    "replay stays labelled; immutable observation screening/hash, revision-safe cases and ownership export"
+  ],
+  "limits": "Local identity-header fixtures are not production authentication or real hardware GPS validation."
+}

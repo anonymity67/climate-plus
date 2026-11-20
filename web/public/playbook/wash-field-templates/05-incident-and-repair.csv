@@ -1,0 +1,1 @@
+﻿event_id,incident_id,work_order_id,ward_id,asset_id,event_type,status,observed_at_utc,received_at_utc,verification_ref,severity,affected_households,critical_facility_ids,alternate_available,assignee_role,assigned_at_utc,arrival_eta_utc,next_review_utc,block_reason,repair_evidence_ref,release_authority_role,clearance_ref,clearance_at_utc,expected_version

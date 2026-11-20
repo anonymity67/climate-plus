@@ -1,0 +1,142 @@
+{
+  "source": "Borsha-Bandhu engineering archive · rwh_model.py & bom.json",
+  "runoff": 0.8,
+  "dryFactor": 0.75,
+  "days": [
+    31,
+    28,
+    31,
+    30,
+    31,
+    30,
+    31,
+    31,
+    30,
+    31,
+    30,
+    31
+  ],
+  "profiles": [
+    {
+      "id": "A",
+      "name": "Southwest Coastal Belt",
+      "examples": "Khulna, Satkhira, Bagerhat, Barguna, Patuakhali, Pirojpur",
+      "mm": [
+        8,
+        24,
+        40,
+        78,
+        165,
+        300,
+        320,
+        290,
+        240,
+        130,
+        25,
+        8
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Southeast Coastal Belt",
+      "examples": "Cox's Bazar, Chattogram, Bhola, Noakhali, Feni",
+      "mm": [
+        4,
+        17,
+        35,
+        122,
+        287,
+        802,
+        925,
+        667,
+        330,
+        214,
+        109,
+        13
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Flood Plain & Haor",
+      "examples": "Kurigram, Gaibandha, Sirajganj, Jamalpur, Sunamganj, Netrokona",
+      "mm": [
+        10,
+        30,
+        90,
+        220,
+        400,
+        550,
+        560,
+        450,
+        380,
+        180,
+        25,
+        8
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Barind & Char (drought)",
+      "examples": "Rajshahi, Chapainawabganj, Naogaon, Pabna, char lands",
+      "mm": [
+        11,
+        18,
+        25,
+        64,
+        136,
+        265,
+        321,
+        274,
+        296,
+        106,
+        16,
+        11
+      ]
+    },
+    {
+      "id": "E",
+      "name": "Central Plain",
+      "examples": "Dhaka, Mymensingh, Cumilla, Tangail, Faridpur",
+      "mm": [
+        8,
+        29,
+        66,
+        156,
+        339,
+        340,
+        373,
+        317,
+        300,
+        172,
+        34,
+        13
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "id": "home",
+      "roofM2": 20,
+      "tankL": 5000,
+      "dailyDemandL": 30,
+      "users": 6,
+      "archiveDailyDemandL": 30
+    },
+    {
+      "id": "cluster",
+      "roofM2": 160,
+      "tankL": 30000,
+      "dailyDemandL": 300,
+      "users": 60,
+      "archiveDailyDemandL": 300
+    },
+    {
+      "id": "school",
+      "roofM2": 600,
+      "tankL": 60000,
+      "dailyDemandL": 2000,
+      "users": 400,
+      "archiveDailyDemandL": 1000
+    }
+  ]
+}

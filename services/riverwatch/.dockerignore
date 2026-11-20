@@ -1,0 +1,9 @@
+.cache
+.shots
+.git
+**/__pycache__
+runs/demo
+runs/_work_*
+runs/*_previous
+uploads
+*.zip

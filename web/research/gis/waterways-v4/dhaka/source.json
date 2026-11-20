@@ -1,0 +1,20 @@
+{
+  "area": "dhaka",
+  "bounds": [
+    90.2,
+    23.65,
+    90.6,
+    24.12
+  ],
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "acquiredAt": "2026-11-17T07:27:33.274612+00:00",
+  "osmBaseTimestamp": "2026-11-17T07:26:27Z",
+  "sha256": "e6fa7b697e1746804e718a58eb7a21092badaec7d41c354bc9991ece7216be9c",
+  "bytes": 2794715,
+  "ways": 2431,
+  "attribution": "\u00a9 OpenStreetMap contributors",
+  "license": "ODbL 1.0",
+  "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "sourceUrl": "https://www.openstreetmap.org/copyright",
+  "meaning": "Mapped channel geometry and shared-node connectivity only; flow, contamination transport and present conditions are unverified."
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "query": "home",
+    "width": 1440,
+    "passes": 19,
+    "violations": []
+  },
+  {
+    "query": "?view=care&lang=bn",
+    "width": 390,
+    "passes": 18,
+    "violations": []
+  },
+  {
+    "query": "?view=water&lang=bn",
+    "width": 390,
+    "passes": 23,
+    "violations": []
+  },
+  {
+    "query": "?view=supply&lang=bn",
+    "width": 390,
+    "passes": 22,
+    "violations": []
+  },
+  {
+    "query": "?view=field",
+    "width": 1440,
+    "passes": 18,
+    "violations": []
+  }
+]

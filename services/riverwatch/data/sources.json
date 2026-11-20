@@ -1,0 +1,78 @@
+{
+  "_note": "Source manifest (README section 2): title, provider, URL, version, date obtained, licence, units and known gaps for every input dataset.",
+  "obtained": "2026-11-19",
+  "sources": [
+    {
+      "id": "hydrorivers",
+      "title": "HydroRIVERS v1.0 (Asia)",
+      "provider": "WWF / HydroSHEDS (Lehner & Grill 2013)",
+      "url": "https://www.hydrosheds.org/products/hydrorivers",
+      "file": "HydroRIVERS_v10_as_shp.zip",
+      "version": "1.0",
+      "license": "HydroSHEDS free licence (attribution required; see HydroSHEDS licence agreement)",
+      "units": "Polylines, WGS84; DIS_AV_CMS = long-term mean discharge in m3/s (modelled)",
+      "used_for": "Directed river network (HYRIV_ID, NEXT_DOWN), site-to-reach snapping, 10 km downstream corridors, sampling probes",
+      "known_gaps": "Derived from a 15 arc-second DEM. Distributaries and braided or tidal channels in the Ganges–Brahmaputra–Meghna delta (e.g. Buriganga, Shitalakshya) can be simplified, misplaced by hundreds of metres or missing. Topology encodes one downstream branch and cannot represent tidal flow reversal."
+    },
+    {
+      "id": "worldpop",
+      "title": "WorldPop Bangladesh 2020, unconstrained, 100 m, people per pixel (bgd_ppp_2020)",
+      "provider": "WorldPop, University of Southampton",
+      "url": "https://hub.worldpop.org/geodata/summary?id=29700",
+      "file": "bgd_ppp_2020.tif",
+      "version": "Global_2000_2020 (2020 layer)",
+      "license": "CC BY 4.0",
+      "units": "Estimated persons per ~100 m grid cell (people per pixel, NOT per km2)",
+      "used_for": "Residents near modelled corridors, per site and for the union headline",
+      "known_gaps": "Modelled estimate for 2020, not a census count. NoData cells inside the national boundary (water, uninhabited land) are set to 0 by scripts/prepare_population.py. Cells outside the boundary stay NoData and are flagged as partial coverage."
+    },
+    {
+      "id": "osm",
+      "title": "OpenStreetMap Bangladesh extract",
+      "provider": "OpenStreetMap contributors via Geofabrik",
+      "url": "https://download.geofabrik.de/asia/bangladesh.html",
+      "file": "bangladesh-latest.osm.pbf",
+      "version": "Geofabrik daily extract dated 2026-11-19",
+      "license": "ODbL 1.0 — (c) OpenStreetMap contributors",
+      "units": "Points, lines, polygons (WGS84)",
+      "used_for": "Waste sources (man_made=works, landuse=industrial, industrial=*, craft=tannery|dyer, landuse=landfill, amenity=waste_transfer_station, man_made=wastewater_plant); receptors (amenity=school|hospital|drinking_water, man_made=water_well); named rivers and water bodies; HydroRIVERS reach names",
+      "known_gaps": "Volunteer-mapped and uneven. Garment and industrial clusters around Dhaka, Gazipur, Narayanganj and Chattogram are dense, rural areas are sparse. Some features are out of date: for example, Hazaribagh tannery points remain even though the tanneries were officially relocated to the Savar Tannery Industrial Estate in 2017. A factory footprint or centroid is not an outfall. A missing feature does not prove absence."
+    },
+    {
+      "id": "geoboundaries",
+      "title": "geoBoundaries gbOpen BGD ADM0 / ADM1 / ADM2 (simplified)",
+      "provider": "William & Mary geoLab",
+      "url": "https://www.geoboundaries.org/",
+      "file": "geoBoundaries-BGD-ADM{0,1,2}_simplified.geojson",
+      "version": "gbOpen main branch",
+      "license": "CC BY 4.0",
+      "units": "Polygons (WGS84)",
+      "used_for": "National mask, division/district attribution, map context",
+      "known_gaps": "Simplified boundaries; not an authoritative legal boundary."
+    },
+    {
+      "id": "sentinel2",
+      "title": "Sentinel-2 Level-2A surface reflectance (COGs)",
+      "provider": "ESA Copernicus via Element 84 Earth Search on AWS Open Data",
+      "url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a",
+      "file": "data/observations/dhaka_dry_2025_26.csv (derived)",
+      "version": "Collection sentinel-2-l2a, scenes 2025-11-01 to 2026-05-01 (end exclusive)",
+      "license": "Copernicus Sentinel data terms (free, full and open; attribution: contains modified Copernicus Sentinel data 2025-2026)",
+      "units": "NDTI = (B4 - B3)/(B4 + B3), dimensionless; median of clear (SCL 4/5/6) water (NDWI > 0.05) 10 m pixels within 25 m of each sample point",
+      "used_for": "Same-scene upstream/downstream optical contrast for the Dhaka pilot (riverwatch/s2_stac.py, same output as gee/sentinel2_pairs.js)",
+      "known_gaps": "Optical contrast reflects sediment, colour, algae, shallow bottoms, ships or haze as well as effluent. It is a prompt for review, not evidence of a discharge. Narrow channels and sample points misplaced by HydroRIVERS give few water pixels."
+    },
+    {
+      "id": "ecr_rubric",
+      "title": "Severity rubric v1: ECR 1997 Schedule-1 / ECR 2023 industry categories",
+      "provider": "Department of Environment, Bangladesh (category basis); RiverWatch BD (keyword inference)",
+      "url": "http://www.doe.gov.bd/",
+      "file": "data/severity_rubric.md",
+      "version": "v1",
+      "license": "Rubric text: project licence",
+      "units": "severity 0-1 (Red 1.0, Orange-B 0.66, Orange-A 0.33, Green 0.10, blank = unknown)",
+      "used_for": "Optional severity component of the review score",
+      "known_gaps": "The category is inferred from OSM names and tags. It is a potential-hazard proxy, not a measured discharge or a permit status."
+    }
+  ]
+}

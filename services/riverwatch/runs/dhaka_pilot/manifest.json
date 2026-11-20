@@ -1,0 +1,58 @@
+{
+  "created_utc": "2026-11-19T20:07:38.769863+00:00",
+  "mode": "screening",
+  "config": {
+    "crs": "EPSG:32646",
+    "snap_m": 1500,
+    "ambiguity_m": 25,
+    "junction_m": 75,
+    "offset_m": 500,
+    "sample_radius_m": 25,
+    "corridor_km": 10,
+    "buffer_m": 500,
+    "decay_km": 10,
+    "min_water_pixels": 3,
+    "min_pairs": 6,
+    "delta_scale": 0.1,
+    "population_scale": 50000,
+    "poi_scale": 10,
+    "population_label": "WorldPop 2020 unconstrained 100 m, people per pixel (bgd_ppp_2020.tif, WorldPop/Univ. of Southampton, CC BY 4.0).",
+    "weights": {
+      "optical": 0.35,
+      "severity": 0.3,
+      "population": 0.25,
+      "poi": 0.1
+    }
+  },
+  "inputs": {
+    "sites": "data/inputs/pilot_dhaka_sites.geojson",
+    "rivers": "data/inputs/rivers.gpkg",
+    "population": ".cache/population_bgd_2020_ppp.tif",
+    "pois": "data/inputs/pois.geojson"
+  },
+  "observation_files": [
+    "data/observations/dhaka_dry_2025_26.csv"
+  ],
+  "site_count": 29,
+  "ranked_count": 0,
+  "linked_count_including_references": 31,
+  "union_zone_count": 29,
+  "union_population": {
+    "pop_near": 892296.941300869,
+    "valid_pop_cells": 12726,
+    "zone_cells_in_raster": 12726,
+    "pop_coverage_complete": true
+  },
+  "union_mapped_amenities": {
+    "school": 78,
+    "hospital": 19,
+    "drinking_water": 8,
+    "water_well": 1
+  },
+  "observation_qa": {
+    "input_rows": 1477,
+    "unknown_pair_rows": 0,
+    "accepted_sample_rows": 977,
+    "valid_paired_dates": 109
+  }
+}
